@@ -11,7 +11,6 @@ css_dir = "/"
 sass_dir = "sass"
 images_dir = "i"
 fonts_dir = "fonts"
-fonts_path = "fonts"
 javascripts_dir = "js"
 
 relative_assets = true

@@ -143,6 +143,7 @@ function acf_get_valid_field_key( $key = '' ) {
 	
 	// test if valid
 	if( !acf_is_field_key($key) ) {
+<<<<<<< HEAD
 		
 		// empty
 		if( !$key ) {
@@ -151,6 +152,16 @@ function acf_get_valid_field_key( $key = '' ) {
 			
 		} 
 		
+=======
+		
+		// empty
+		if( !$key ) {
+			
+			$key =  uniqid();
+			
+		} 
+		
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 		
 		// add prefix
 		$key = "field_{$key}";
@@ -162,6 +173,7 @@ function acf_get_valid_field_key( $key = '' ) {
 	return $key;
 	
 }
+
 
 
 /*

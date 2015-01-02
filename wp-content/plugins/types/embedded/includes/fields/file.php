@@ -1,7 +1,11 @@
 <?php
 /*
  *
+<<<<<<< HEAD
  * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5.1/embedded/includes/fields/file.php $
+=======
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5/embedded/includes/fields/file.php $
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
  * $LastChangedDate: 2014-08-22 01:02:43 +0000 (Fri, 22 Aug 2014) $
  * $LastChangedRevision: 970205 $
  * $LastChangedBy: brucepearson $

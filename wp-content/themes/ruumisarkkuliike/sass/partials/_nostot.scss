@@ -1,0 +1,79 @@
+.nosto {
+
+    text-align: center;
+    // display: table;
+    // width: 100%;
+    // table-layout: fixed;
+
+    .wrapper {
+        @include clearfix;
+        // display: table-cell;
+        // vertical-align: middle;
+        width: 100%;
+        padding: 5% 0;
+    }
+}
+
+.kuvallinen-nosto {
+    @extend .nosto;
+
+    // height: 33vw;
+    background-color: rgba(40,40,40,1);
+    background-size: cover;
+    color: #fff;
+
+    .wrapper {
+        padding: 12% 0;
+        display: block;
+    }
+
+    h2 {
+        text-transform: uppercase;
+    }
+
+    a {
+        color: #fff;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.kategoria-nosto {
+    @extend .nosto;
+    @include clearfix;
+
+    // height: 44vw;
+    // max-height: 670px;
+
+    .wrapper {
+        // @include max-site-wide;
+
+        position: relative;
+
+        > div {
+            width: 50%;
+            float: left;
+            padding: 4rem 8rem;
+
+            &:first-child {
+                border-right: 1px solid $grey;
+            }
+        }
+
+    }
+
+    img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        right: 7%;
+    }
+
+}
+
+.kategoria-nosto .section-title {
+    font-size: 38px;
+}

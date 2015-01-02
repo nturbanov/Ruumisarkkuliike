@@ -10,7 +10,11 @@ define( "CLASS_NAME_PREFIX", "WPToolset_Field_" );
  * Creation Form Class
  * @author onTheGo System
  *
+<<<<<<< HEAD
  * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5.1/embedded/common/toolset-forms/classes/class.form_factory.php $
+=======
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5/embedded/common/toolset-forms/classes/class.form_factory.php $
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
  * $LastChangedDate: 2015-01-28 06:42:34 +0000 (Wed, 28 Jan 2015) $
  * $LastChangedRevision: 1077234 $
  * $LastChangedBy: iworks $

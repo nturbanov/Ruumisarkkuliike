@@ -47,7 +47,11 @@ class acf_settings_info {
 
 
 		// add page
+<<<<<<< HEAD
 		add_submenu_page('edit.php?post_type=acf-field-group', __('Info','acf'), __('Info','acf'), acf_get_setting('capability'),'acf-settings-info', array($this,'html'));
+=======
+		add_submenu_page('edit.php?post_type=acf-field-group', __('Info','acf'), __('Info','acf'), 'manage_options','acf-settings-info', array($this,'html'));
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 
 	}
 

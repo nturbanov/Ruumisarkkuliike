@@ -149,6 +149,7 @@ img.acf-fw {
 *  tooltip
 *
 *---------------------------------------------------------------------------------------------*/
+<<<<<<< HEAD
 /* tooltip */
 .acf-tooltip {
   background: #2F353E;
@@ -168,6 +169,34 @@ img.acf-fw {
   content: "";
   left: 50%;
   position: absolute;
+=======
+.acf-tooltip {
+  display: inline;
+  position: relative;
+}
+.acf-tooltip:hover:after {
+  background: #333;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  bottom: 26px;
+  color: #fff;
+  content: attr(title);
+  left: 20%;
+  padding: 5px 15px;
+  position: absolute;
+  z-index: 98;
+  width: 220px;
+}
+.acf-tooltip:hover:before {
+  border: solid;
+  border-color: #333 transparent;
+  border-width: 6px 6px 0 6px;
+  bottom: 20px;
+  content: "";
+  left: 50%;
+  position: absolute;
+  z-index: 99;
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 }
 /*---------------------------------------------------------------------------------------------
 *
@@ -547,6 +576,14 @@ img.acf-fw {
   border: 0 none !important;
   padding: 4px;
 }
+<<<<<<< HEAD
+=======
+/* input table */
+.acf-input-table {
+  border: 1px solid #F5F5F5;
+  background: #F9F9F9;
+}
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 /*--------------------------------------------------------------------------------------------
 *
 *	acf-button
@@ -702,6 +739,7 @@ img.acf-fw {
 .metabox-prefs label.acf-hidden {
   display: none;
 }
+<<<<<<< HEAD
 /* edit field group */
 .acf-postbox .hndle .acf-hndle-cog {
   color: #AAAAAA;
@@ -719,6 +757,8 @@ img.acf-fw {
 .acf-postbox .hndle .acf-hndle-cog:hover {
   color: #777777;
 }
+=======
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 /*---------------------------------------------------------------------------------------------
 *
 *  wp-admin
@@ -823,10 +863,13 @@ img.acf-fw {
 *---------------------------------------------------------------------------------------------*/
 .acf-input-table {
   border: #DFDFDF solid 1px;
+<<<<<<< HEAD
   background: #F9F9F9;
 }
 .compat-item .acf-input-table {
   border: #DFDFDF solid 1px;
+=======
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 }
 .acf-input-table > thead th {
   background: #fff;
@@ -858,8 +901,13 @@ img.acf-fw {
 /* order */
 .acf-input-table > thead > tr > th.order,
 .acf-input-table > tbody > tr > td.order {
+<<<<<<< HEAD
   width: 16px;
   text-align: center;
+=======
+  width: 16px !important;
+  text-align: center !important;
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
   vertical-align: middle;
 }
 .acf-input-table > tbody > tr > td.order {
@@ -875,12 +923,15 @@ img.acf-fw {
 .acf-input-table > tbody > tr > td.order + td {
   border-left-color: #DFDFDF;
 }
+<<<<<<< HEAD
 .acf-input-table .order-spacer,
 .acf-input-table .remove-spacer {
   width: 16px;
   display: block;
   height: 1px;
 }
+=======
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 /* row block layout */
 .acf-table.row-layout > tbody > tr > td,
 .acf-table.block-layout > tbody > tr > td {
@@ -889,12 +940,19 @@ img.acf-fw {
 /* remove */
 .acf-input-table > thead > tr > th.remove,
 .acf-input-table > tbody > tr > td.remove {
+<<<<<<< HEAD
   width: 16px;
+=======
+  width: 16px !important;
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
   vertical-align: middle;
 }
 .acf-input-table > tbody > tr > td.remove {
   background: #F9F9F9;
+<<<<<<< HEAD
   border-left-color: #DFDFDF;
+=======
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 }
 /* border limits */
 .acf-input-table > thead > tr > th:first-child,
@@ -919,12 +977,15 @@ img.acf-fw {
   opacity: 1;
 }
 /* media fix */
+<<<<<<< HEAD
 .media-modal .acf-field * {
   box-sizing: border-box;
 }
 .media-modal .acf-table {
   table-layout: auto;
 }
+=======
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 .media-item .describe .acf-input-table > thead > tr > th {
   width: auto;
 }
@@ -1104,6 +1165,7 @@ img.acf-fw {
 }
 /*--------------------------------------------------------------------------------------------
 *
+<<<<<<< HEAD
 *	acf-hl cols
 *
 *--------------------------------------------------------------------------------------------*/
@@ -1128,6 +1190,8 @@ img.acf-fw {
 }
 /*--------------------------------------------------------------------------------------------
 *
+=======
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 *	RTL
 *
 *--------------------------------------------------------------------------------------------*/

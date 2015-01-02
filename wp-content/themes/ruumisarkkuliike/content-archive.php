@@ -7,7 +7,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 
-        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
 
 		<?php
         $terms = get_the_terms( $post->ID, 'sarjat' );

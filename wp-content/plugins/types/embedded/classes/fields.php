@@ -2,7 +2,11 @@
 /**
  * Fields class.
  *
+<<<<<<< HEAD
  * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5.1/embedded/classes/fields.php $
+=======
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5/embedded/classes/fields.php $
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
  * $LastChangedDate: 2014-05-07 06:56:23 +0000 (Wed, 07 May 2014) $
  * $LastChangedRevision: 909470 $
  * $LastChangedBy: iworks $

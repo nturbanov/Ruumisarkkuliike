@@ -2,7 +2,11 @@
 /*
  * Frontend functions.
  *
+<<<<<<< HEAD
  * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5.1/embedded/frontend.php $
+=======
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5/embedded/frontend.php $
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
  * $LastChangedDate: 2015-01-28 06:42:34 +0000 (Wed, 28 Jan 2015) $
  * $LastChangedRevision: 1077234 $
  * $LastChangedBy: iworks $

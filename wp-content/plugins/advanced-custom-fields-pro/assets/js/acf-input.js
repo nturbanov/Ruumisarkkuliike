@@ -1674,12 +1674,21 @@ var acf;
 				
 				
 				$fields.each(function( i ){
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					
 					// vars
 					var $el = $(this),
 						this_top = $el.position().top;
 					
 					
+=======
+					
+					// vars
+					var $el = $(this),
+						this_top = $el.position().top;
+					
+					
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					// set top
 					if( i == 0 ) {
 						
@@ -1915,6 +1924,8 @@ var acf;
 	});
 	
 	acf.add_action('sortstart', function( $item, $placeholder ){
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+=======
 				
 		acf.get_fields('', $item).each(function(){
 			
@@ -2034,9 +2045,700 @@ var acf;
 		}
 		
 		
+		// update setting
+		acf.update('changed', true);
+		
+	});
+	
+	
+	/*
+	*  unload
+	*
+	*  description
+	*
+	*  @type	function
+	*  @date	1/09/2014
+	*  @since	5.0.0
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	var unload = function(){
+			
+		if( acf.get('changed') ) {
+			
+			return acf._e('unload');
+			
+		}
+		
+	};	
+	
+	
+	// add unload if validation fails
+	acf.add_filter('validation_complete', function( json, $form ){
+		
+		if( json.errors ) {
+			
+			$(window).on('beforeunload', unload);
+			
+		}
+		
+		
+		// return
+		return json;
+		
+	});
+	
+	
+	// remove unload when submitting form
+	$(document).on('submit', 'form', function( e ){
+		
+		$(window).off('beforeunload', unload);
+						
+	});
+	
+	acf.add_action('submit', function( $form ){
+		
+		$(window).off('beforeunload', unload);
+						
+	});
+	
+	
+	// add unload event
+	$(window).on('beforeunload', unload);
+			
+	
+	/*
+	*  Sortable
+	*
+	*  These functions will hook into the start and stop of a jQuery sortable event and modify the item and placeholder to look seamless
+	*
+	*  @type	function
+	*  @date	12/11/2013
+	*  @since	5.0.0
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	acf.add_action('sortstart', function( $item, $placeholder ){
+		
+		// if $item is a tr, apply some css to the elements
+		if( $item.is('tr') ) {
+			
+			// temp set as relative to find widths
+			$item.css('position', 'relative');
+			
+			
+			// set widths for td children		
+			$item.children().each(function(){
+			
+				$(this).width($(this).width());
+				
+			});
+			
+			
+			// revert position css
+			$item.css('position', 'absolute');
+			
+			
+			// add markup to the placeholder
+			$placeholder.html('<td style="height:' + $item.height() + 'px; padding:0;" colspan="' + $item.children('td').length + '"></td>');
+		
+		}
+		
+	});
+	
+	
+	
+	/*
+	*  before & after duplicate
+	*
+	*  This function will modify the DOM before it is cloned. Primarily fixes a cloning issue with select elements
+	*
+	*  @type	function
+	*  @date	16/05/2014
+	*  @since	5.0.0
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	acf.add_action('before_duplicate', function( $orig ){
+		
+		// save select values
+		$orig.find('select').each(function(){
+			
+			$(this).find(':selected').addClass('selected');
+			
+		});
+		
+	});
+	
+	acf.add_action('after_duplicate', function( $orig, $duplicate ){
+		
+		// restore select values
+		$orig.find('select').each(function(){
+			
+			$(this).find('.selected').removeClass('selected');
+			
+		});
+		
+		
+		// set select values
+		$duplicate.find('select').each(function(){
+			
+			var $selected = $(this).find('.selected');
+			
+			$(this).val( $selected.attr('value') );
+			
+			$selected.removeClass('selected');
+			
+		});
+		
+	});
+	
+	
+	/*
+console.time("acf_test_ready");
+	console.time("acf_test_load");
+	
+	acf.add_action('ready', function(){
+		
+		console.timeEnd("acf_test_ready");
+		
+	}, 999);
+	
+	acf.add_action('load', function(){
+		
+		console.timeEnd("acf_test_load");
+		
+	}, 999);
+*/
+	
+	
+})(jQuery);
+
+(function($){
+	
+	acf.ajax = acf.model.extend({
+		
+		actions: {
+			'ready': 'onReady'
+		},
+		
+		o : {
+			action 			: 'acf/post/get_field_groups',
+			post_id			: 0,
+			page_template	: 0,
+			page_parent		: 0,
+			page_type		: 0,
+			post_format		: 0,
+			post_taxonomy	: 0,
+			lang			: 0,
+		},
+		
+		update : function( k, v ){
+			
+			this.o[ k ] = v;
+			return this;
+			
+		},
+		
+		get : function( k ){
+			
+			return this.o[ k ] || null;
+			
+		},
+		
+		onReady : function(){
+			
+			// bail early if ajax is disabled
+			if( ! acf.get('ajax') ) {
+			
+				return false;
+				
+			}
+			
+			
+			// vars
+			this.update('post_id', acf.get('post_id'));
+			
+			
+			// MPML
+			if( $('#icl-als-first').length > 0 ) {
+			
+				var href = $('#icl-als-first').children('a').attr('href'),
+					regex = new RegExp( "lang=([^&#]*)" ),
+					results = regex.exec( href );
+				
+				// lang
+				this.update('lang', results[1]);
+				
+			}
+			
+			
+			// add triggers
+			this.add_events();
+			
+		},
+		
+		fetch : function(){
+			
+			// reference
+			var _this = this;
+			
+			
+			// ajax
+			$.ajax({
+				url			: acf.get('ajaxurl'),
+				data		: acf.prepare_for_ajax( this.o ),
+				type		: 'post',
+				dataType	: 'json',
+				success		: function( json ){
+					
+					if( acf.is_ajax_success( json ) ) {
+						
+						_this.render( json.data );
+						
+					}
+					
+				}
+			});
+			
+		},
+		
+		render : function( json ){
+			
+			// hide all metaboxes
+			$('.acf-postbox').addClass('acf-hidden');
+			$('.acf-postbox-toggle').addClass('acf-hidden');
+			
+			
+			// show the new postboxes
+			$.each(json, function( k, field_group ){
+				
+				// vars
+				var $el = $('#acf-' + field_group.key),
+					$toggle = $('#adv-settings .acf_postbox-toggle[for="acf-' + field_group.key + '-hide"]');
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+				
+		acf.get_fields('', $item).each(function(){
+			
+			acf.do_action('sortstart_field', $(this));
+			acf.do_action('sortstart_field/type=' + acf.get_field_type($(this)), $(this));
+			
+		});
+		
+	});
+	
+	acf.add_action('sortstop', function( $item, $placeholder ){
+				
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+		acf.get_fields('', $item).each(function(){
+			
+			acf.do_action('sortstop_field', $(this));
+			acf.do_action('sortstop_field/type=' + acf.get_field_type($(this)), $(this));
+			
+		});
+		
+	});
+	
+	acf.add_action('hide_field', function( $el, context ){
+=======
+				// classes
+				$el.removeClass('acf-hidden hide-if-js');
+				$toggle.removeClass('acf-hidden hide-if-js');
+				$toggle.find('input[type="checkbox"]').attr('checked', 'checked');
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+				
+		acf.do_action('hide_field/type=' + acf.get_field_type($el), $el, context);
+		
+	});
+	
+	acf.add_action('show_field', function( $el, context ){
+				
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+		acf.do_action('show_field/type=' + acf.get_field_type($el), $el, context);
+=======
+				// replace HTML if needed
+				$el.find('.acf-replace-with-fields').each(function(){
+					
+					$(this).replaceWith( field_group.html );
+					
+					acf.do_action('append', $el);
+					
+				});
+				
+				
+				// update style if needed
+				if( k === 0 )
+				{
+					$('#acf-style').html( field_group.style );
+				}
+				
+			});
+			
+		},
+		
+		sync_taxonomy_terms : function(){
+			
+			// vars
+			var values = [];
+			
+			
+			$('.categorychecklist, .acf-taxonomy-field').each(function(){
+				
+				// vars
+				var $el = $(this),
+					$checkbox = $el.find('input[type="checkbox"]').not(':disabled'),
+					$radio = $el.find('input[type="radio"]').not(':disabled'),
+					$select = $el.find('select').not(':disabled'),
+					$hidden = $el.find('input[type="hidden"]').not(':disabled');
+				
+				
+				// bail early if not a field which saves taxonomy terms to post
+				if( $el.is('.acf-taxonomy-field') && $el.attr('data-load_save') != '1' ) {
+					
+					return;
+					
+				}
+				
+				
+				// bail early if in attachment
+				if( $el.closest('.media-frame').exists() ) {
+					
+					return;
+				
+				}
+				
+				
+				// checkbox
+				if( $checkbox.exists() ) {
+					
+					$checkbox.filter(':checked').each(function(){
+						
+						values.push( $(this).val() );
+						
+					});
+					
+				} else if( $radio.exists() ) {
+					
+					$radio.filter(':checked').each(function(){
+						
+						values.push( $(this).val() );
+						
+					});
+					
+				} else if( $select.exists() ) {
+					
+					$select.find('option:selected').each(function(){
+						
+						values.push( $(this).val() );
+						
+					});
+					
+				} else if( $hidden.exists() ) {
+					
+					$hidden.each(function(){
+						
+						// ignor blank values or those which contain a comma (select2 multi-select)
+						if( ! $(this).val() || $(this).val().indexOf(',') > -1 ) {
+							
+							return;
+							
+						}
+						
+						values.push( $(this).val() );
+						
+					});
+					
+				}
+								
+			});
+	
+			
+			// filter duplicates
+			values = values.filter (function (v, i, a) { return a.indexOf (v) == i });
+			
+			
+			// update screen
+			this.update( 'post_taxonomy', values ).fetch();
+			
+		},
+		
+		add_events : function(){
+			
+			// reference
+			var _this = this;
+			
+			
+			// page template
+			$(document).on('change', '#page_template', function(){
+				
+				var page_template = $(this).val();
+				
+				_this.update( 'page_template', page_template ).fetch();
+			    
+			});
+			
+			
+			// page parent
+			$(document).on('change', '#parent_id', function(){
+				
+				var page_type = 'parent',
+					page_parent = 0;
+				
+				
+				if( $(this).val() != "" ) {
+				
+					page_type = 'child';
+					page_parent = $(this).val();
+					
+				}
+				
+				_this.update( 'page_type', page_type ).update( 'page_parent', page_parent ).fetch();
+			    
+			});
+			
+			
+			// post format
+			$(document).on('change', '#post-formats-select input[type="radio"]', function(){
+				
+				var post_format = $(this).val();
+				
+				if( post_format == '0' )
+				{
+					post_format = 'standard';
+				}
+				
+				_this.update( 'post_format', post_format ).fetch();
+				
+			});
+			
+			
+			// post taxonomy
+			$(document).on('change', '.categorychecklist input, .acf-taxonomy-field input, .acf-taxonomy-field select', function(){
+				
+				// a taxonomy field may trigger this change event, however, the value selected is not
+				// actually a term relationship, it is meta data
+				var $el = $(this).closest('.acf-taxonomy-field');
+				
+				if( $el.exists() && $el.attr('data-load_save') != '1' ) {
+					
+					return;
+					
+				}
+				
+				
+				// this may be triggered from editing an image in a popup. Popup does not support correct metaboxes so ignore this
+				if( $(this).closest('.media-frame').exists() ) {
+					
+					return;
+				
+				}
+				
+				
+				// set timeout to fix issue with chrome which does not register the change has yet happened
+				setTimeout(function(){
+					
+					_this.sync_taxonomy_terms();
+				
+				}, 1);
+				
+				
+			});
+			
+			
+			
+			// user role
+			/*
+			$(document).on('change', 'select[id="role"][name="role"]', function(){
+				
+				_this.update( 'user_role', $(this).val() ).fetch();
+				
+			});
+			*/
+			
+		}
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+		
+	});
+
+
+	
+})(jQuery);
+
+(function($){
+	
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+	/*
+	*  ready
+	*
+	*  description
+	*
+	*  @type	function
+	*  @date	19/02/2014
+	*  @since	5.0.0
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	$(document).ready(function(){
+		
+		// action for 3rd party customization
+		acf.do_action('ready', $('body'));
+		
+	});
+	
+	
+	/*
+	*  load
+	*
+	*  description
+	*
+	*  @type	function
+	*  @date	19/02/2014
+	*  @since	5.0.0
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	$(window).load(function(){
+		
+		// action for 3rd party customization
+		acf.do_action('load', $('body'));
+		
+	});
+	
+	
+	/*
+	*  preventDefault helper
+	*
+	*  This function will prevent default of any link with an href of #
+	*
+	*  @type	function
+	*  @date	24/07/2014
+	*  @since	5.0.0
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	$(document).on('click', '.acf-field a[href="#"]', function( e ){
+		
+		e.preventDefault();
+=======
+	acf.fields.color_picker = acf.field.extend({
+		
+		type: 'color_picker',
+		timeout: null,
+		
+		actions: {
+			'ready':	'initialize',
+			'append':	'initialize'
+		},
+		
+		focus: function(){
+			
+			this.$input = this.$field.find('input[type="text"]');
+			
+		},
+		
+		initialize: function(){
+			
+			// reference
+			var self = this;
+			
+			
+			// vars
+			var $hidden = this.$input.clone();
+			
+			
+			// modify hidden
+			$hidden.attr({
+				'type'	: 'hidden',
+				'class' : '',
+				'id'	: '',
+				'value'	: ''
+ 			});
+ 			
+ 			
+ 			// append hidden
+ 			this.$input.before( $hidden );
+ 			
+ 			
+ 			// iris
+			this.$input.wpColorPicker({
+				
+				change: function( event, ui ){
+			
+					if( self.timeout ) {
+				
+						clearTimeout( self.timeout );
+						
+					}
+					
+					
+					self.timeout = setTimeout(function(){
+						
+						$hidden.trigger('change');
+						
+					}, 1000);
+					
+				}
+				
+			});
+			
+		}
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+		
+	});
+	
+
+})(jQuery);
+
+(function($){
+	
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+	/*
+	*  Force revisions
+	*
+	*  description
+	*
+	*  @type	function
+	*  @date	19/02/2014
+	*  @since	5.0.0
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	$(document).on('change', '.acf-field input, .acf-field textarea, .acf-field select', function(){
+		
+		// preview hack
+		if( $('#acf-form-data input[name="_acfchanged"]').exists() ) {
+		
+			$('#acf-form-data input[name="_acfchanged"]').val(1);
+			
+		}
+=======
+	acf.conditional_logic = acf.model.extend({
+			
+		actions: {
+			'ready 20': 	'render',
+			'append 20': 	'render'
+		},
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+		
+		
 		// action for 3rd party customization
 		acf.do_action('change', $(this));
 		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 	});
 	
 	
@@ -2081,6 +2783,54 @@ var acf;
 			
 			// return
 			return json;
+=======
+		add : function( key, groups ){
+			
+			// debug
+			//console.log( 'conditional_logic.add(%o, %o)', key, groups );
+			
+			
+			// reference
+			var self = this;
+			
+			
+			// populate triggers
+			for( var i in groups ) {
+				
+				var group = groups[i];
+				
+				for( var k in group ) {
+					
+					var rule = group[k];
+					
+										
+					// add rule.field to triggers
+					if( typeof this.triggers[rule.field] === 'undefined' ) {
+					
+						this.triggers[rule.field] = [];
+						
+					}
+					
+					
+					// ignore trigger if already exists
+					if( this.triggers[rule.field].indexOf(key) !== -1 ) {
+					
+						 continue;
+						 
+					}
+					
+					
+					// append key to this trigger
+					this.triggers[rule.field].push( key );
+										
+				}
+				
+			}
+			
+			
+			// append items
+			this.items[ key ] = groups;
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
 		},
 		
@@ -2271,6 +3021,7 @@ var acf;
 
 			}
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		}
 		
 	});
@@ -2296,74 +3047,166 @@ var acf;
 			
 			// temp set as relative to find widths
 			$item.css('position', 'relative');
+=======
+			
+			// set $trigger
+			$trigger = $triggers.first();
 			
 			
-			// set widths for td children		
-			$item.children().each(function(){
-			
-				$(this).width($(this).width());
+			// find better $trigger
+			if( $triggers.length > 1 ) {
 				
-			});
+				$triggers.each(function(){
+					
+					// vars
+					$parent = $(this).parent();
+					
+					
+					if( $target.closest( $parent ).exists() ) {
+						
+						$trigger = $(this);
+						return false;
+					}
+	
+				});
+				
+			}
 			
 			
-			// revert position css
-			$item.css('position', 'absolute');
+			// calculate
+			var visibility = this.calculate( rule, $trigger, $target );
 			
 			
+			// return
+			return visibility;
+		},
+		
+		calculate : function( rule, $trigger, $target ){
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+			
+			// debug
+			//console.log( 'calculate(%o, %o, %o)', rule, $trigger, $target);
+			
+			
+			// vars
+			var type = acf.get_data($trigger, 'type');
+			
+			
+			// input with :checked
+			if( type == 'true_false' || type == 'checkbox' || type == 'radio' ) {
+				
+				var exists = $trigger.find('input[value="' + rule.value + '"]:checked').exists();
+				
+				if( rule.operator == "==" && exists ) {
+				
+					return true;
+					
+				} else if( rule.operator == "!=" && !exists ) {
+				
+					return true;
+					
+				}
+				
+			} else if( type == 'select' ) {
+				
+				// vars
+				var $select = $trigger.find('select'),
+					data = acf.get_data( $select ),
+					val = [];
+				
+				
+				if( data.multiple && data.ui ) {
+					
+					$trigger.find('.acf-select2-multi-choice').each(function(){
+						
+						val.push( $(this).val() );
+						
+					});
+					
+				} else if( data.multiple ) {
+					
+					val = $select.val();
+					
+				} else if( data.ui ) {
+					
+					val.push( $trigger.find('input').first().val() );
+					
+				} else {
+					
+					val.push( $select.val() );
+				
+				}
+				
+				
+				if( rule.operator == "==" ) {
+					
+					if( $.inArray(rule.value, val) > -1 ) {
+					
+						return true;
+						
+					}
+					
+				} else {
+				
+					if( $.inArray(rule.value, val) < 0 ) {
+					
+						return true;
+						
+					}
+					
+				}
+				
+			}
+			
+			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// add markup to the placeholder
 			$placeholder.html('<td style="height:' + $item.height() + 'px; padding:0;" colspan="' + $item.children('td').length + '"></td>');
 		
+=======
+			// return
+			return false;
+			
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		}
 		
 	});
+
+})(jQuery);
+
+(function($){
 	
-	
-	
-	/*
-	*  before & after duplicate
-	*
-	*  This function will modify the DOM before it is cloned. Primarily fixes a cloning issue with select elements
-	*
-	*  @type	function
-	*  @date	16/05/2014
-	*  @since	5.0.0
-	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
-	*/
-	
-	acf.add_action('before_duplicate', function( $orig ){
+	acf.fields.date_picker = acf.field.extend({
 		
-		// save select values
-		$orig.find('select').each(function(){
-			
-			$(this).find(':selected').addClass('selected');
-			
-		});
+		type: 'date_picker',
+		$el: null,
+		$input: null,
+		$hidden: null,
 		
-	});
-	
-	acf.add_action('after_duplicate', function( $orig, $duplicate ){
+		o : {},
 		
-		// restore select values
-		$orig.find('select').each(function(){
-			
-			$(this).find('.selected').removeClass('selected');
-			
-		});
+		actions: {
+			'ready':	'initialize',
+			'append':	'initialize'
+		},
 		
+		events: {
+			'blur input[type="text"]': 'blur',
+		},
 		
-		// set select values
-		$duplicate.find('select').each(function(){
+		focus: function(){
 			
-			var $selected = $(this).find('.selected');
+			// get elements
+			this.$el = this.$field.find('.acf-date_picker');
+			this.$input = this.$el.find('input[type="text"]');
+			this.$hidden = this.$el.find('input[type="hidden"]');
 			
-			$(this).val( $selected.attr('value') );
+			// get options
+			this.o = acf.get_data( this.$el );
 			
-			$selected.removeClass('selected');
-			
-		});
+		},
 		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 	});
 	
 	
@@ -2380,21 +3223,322 @@ console.time("acf_test_ready");
 	acf.add_action('load', function(){
 		
 		console.timeEnd("acf_test_load");
+=======
+		initialize: function(){
+			
+			// get and set value from alt field
+			this.$input.val( this.$hidden.val() );
+			
+			
+			// create options
+			var args = $.extend( {}, acf.l10n.date_picker, { 
+				dateFormat		:	'yymmdd',
+				altField		:	this.$hidden,
+				altFormat		:	'yymmdd',
+				changeYear		:	true,
+				yearRange		:	"-100:+100",
+				changeMonth		:	true,
+				showButtonPanel	:	true,
+				firstDay		:	this.o.first_day
+			});
+			
+			
+			// filter for 3rd party customization
+			args = acf.apply_filters('date_picker_args', args, this.$el);
+			
+			
+			// add date picker
+			this.$input.addClass('active').datepicker( args );
+			
+			
+			// now change the format back to how it should be.
+			this.$input.datepicker( "option", "dateFormat", this.o.display_format );
+			
+			
+			// wrap the datepicker (only if it hasn't already been wrapped)
+			if( $('body > #ui-datepicker-div').exists() ) {
+			
+				$('body > #ui-datepicker-div').wrap('<div class="acf-ui-datepicker" />');
+				
+			}
+			
+		},
 		
-	}, 999);
-*/
-	
+		blur : function(){
+			
+			if( !this.$input.val() ) {
+			
+				this.$hidden.val('');
+				
+			}
+			
+		}
+		
+	});
 	
 })(jQuery);
 
 (function($){
 	
-	acf.ajax = acf.model.extend({
+	acf.fields.file = acf.field.extend({
+		
+		type: 'file',
+		$el: null,
 		
 		actions: {
-			'ready': 'onReady'
+			'ready':	'initialize',
+			'append':	'initialize'
 		},
 		
+		events: {
+			'click [data-name="add"]': 		'add',
+			'click [data-name="edit"]': 	'edit',
+			'click [data-name="remove"]':	'remove',
+			'change input[type="file"]':	'change'
+		},
+		
+		focus: function(){
+			
+			// get elements
+			this.$el = this.$field.find('.acf-file-uploader');
+			
+			// get options
+			this.o = acf.get_data( this.$el );
+			
+		},
+		
+		initialize: function(){
+			
+			// add attribute to form
+			if( this.$el.hasClass('basic') ) {
+				
+				this.$el.closest('form').attr('enctype', 'multipart/form-data');
+				
+			}
+				
+		},
+		
+		add : function() {
+			
+			// reference
+			var self = this,
+				$field = this.$field;
+			
+			
+			// get repeater
+			var $repeater = acf.get_closest_field( $field, 'repeater' );
+			
+			
+			// popup
+			var frame = acf.media.popup({
+				
+				title:		acf._e('file', 'select'),
+				mode:		'select',
+				type:		'',
+				multiple:	$repeater.exists(),
+				library:	this.o.library,
+				
+				select: function( attachment, i ) {
+					
+					
+					// select / add another image field?
+			    	if( i > 0 ) {
+			    		
+						// vars
+						var key = acf.get_field_key( $field ),
+							$tr = $field.closest('.acf-row');
+						
+						
+						// reset field
+						$field = false;
+							
+						
+						// find next image field
+						$tr.nextAll('.acf-row:visible').each(function(){
+							
+							// get next $field
+							$field = acf.get_field( key, $(this) );
+							
+							
+							// bail early if $next was not found
+							if( !$field ) {
+								
+								return;
+								
+							}
+							
+							
+							// bail early if next file uploader has value
+							if( $field.find('.acf-file-uploader.has-value').exists() ) {
+								
+								$field = false;
+								return;
+								
+							}
+								
+								
+							// end loop if $next is found
+							return false;
+							
+						});
+						
+						
+						
+						// add extra row if next is not found
+						if( !$field ) {
+							
+							$tr = acf.fields.repeater.doFocus( $repeater ).add();
+							
+							
+							// bail early if no $tr (maximum rows hit)
+							if( !$tr ) {
+								
+								return false;
+								
+							}
+							
+							
+							// get next $field
+							$field = acf.get_field( key, $tr );
+							
+						}
+						
+					}
+					
+					
+					// focus
+					self.doFocus( $field );
+					
+								
+			    	// render
+					self.render( self.prepare(attachment) );
+					
+				}
+			});
+			
+		},
+		
+		prepare: function( attachment ) {
+		
+			// vars
+	    	var file = {
+		    	id:		attachment.id,
+		    	title:	attachment.attributes.title,
+		    	name:	attachment.attributes.filename,
+		    	url:	attachment.attributes.url,
+		    	icon:	attachment.attributes.icon,
+		    	size:	attachment.attributes.filesize
+	    	};
+	    	
+	    	
+	    	// return
+	    	return file;
+			
+		},
+		
+		render : function( file ){
+			
+			// set atts
+			this.$el.find('[data-name="icon"]').attr( 'src', file.icon );
+			this.$el.find('[data-name="title"]').text( file.title );
+		 	this.$el.find('[data-name="name"]').text( file.name ).attr( 'href', file.url );
+		 	this.$el.find('[data-name="size"]').text( file.size );
+			this.$el.find('[data-name="id"]').val( file.id ).trigger('change');
+			
+					 	
+		 	// set div class
+		 	this.$el.addClass('has-value');
+	
+		},
+		
+		edit : function() {
+			
+			// reference
+			var self = this,
+				$field = this.$field;
+			
+			
+			// vars
+			var id = this.$el.find('[data-name="id"]').val();
+			
+			
+			// popup
+			var frame = acf.media.popup({
+			
+				title:		acf._e('file', 'edit'),
+				button:		acf._e('file', 'update'),
+				mode:		'edit',
+				id:			id,
+				
+				select:	function( attachment, i ) {
+					
+					// focus
+					self.doFocus( $field );
+					
+					
+					// render
+			    	self.render( self.prepare(attachment) );
+					
+				}
+			});
+			
+		},
+		
+		remove : function() {
+			
+			// vars
+	    	var file = {
+		    	id:		'',
+		    	title:	'',
+		    	name:	'',
+		    	url:	'',
+		    	icon:	'',
+		    	size:	''
+	    	};
+	    	
+	    	
+	    	// add file to field
+	        this.render( file );
+	        
+	        
+			// remove class
+			this.$el.removeClass('has-value');
+			
+		},
+		
+		change: function( e ){
+			
+			this.$el.find('[data-name="id"]').val( e.$el.val() );
+			
+		}
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+		
+	});
+	
+
+})(jQuery);
+
+(function($){
+	
+	acf.fields.google_map = acf.field.extend({
+		
+		type: 'google_map',
+		$el: null,
+		$input : null,
+		
+		status : '', // '', 'loading', 'ready'
+		geocoder : false,
+		map : false,
+		maps : {},
+		pending: $(),
+		
+		actions: {
+			'ready':	'initialize',
+			'append':	'initialize',
+			'show':		'show'
+		},
+		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		o: {
 			action 			: 'acf/post/get_field_groups',
 			post_id			: 0,
@@ -2404,85 +3548,159 @@ console.time("acf_test_ready");
 			post_format		: 0,
 			post_taxonomy	: 0,
 			lang			: 0,
+=======
+		events: {
+			'click a[data-name="clear-location"]': 	'clear',
+			'click a[data-name="find-location"]': 	'locate',
+			'click .title h4': 						'edit',
+			'keydown .search': 						'keydown',
+			'blur .search': 						'blur',
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		},
 		
-		update : function( k, v ){
+		focus: function(){
 			
-			this.o[ k ] = v;
-			return this;
+			// get elements
+			this.$el = this.$field.find('.acf-google-map');
+			this.$input = this.$el.find('.value');
 			
-		},
-		
-		get : function( k ){
 			
-			return this.o[ k ] || null;
+			// get options
+			this.o = acf.get_data( this.$el );
 			
-		},
-		
-		onReady : function(){
-			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// bail early if ajax is disabled
 			if( !acf.get('ajax') ) {
+=======
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
-				return false;
+			// get map
+			if( this.maps[ this.o.id ] ) {
+				
+				this.map = this.maps[ this.o.id ];
 				
 			}
-			
-			
-			// vars
-			this.update('post_id', acf.get('post_id'));
-			
-			
-			// MPML
-			if( $('#icl-als-first').length > 0 ) {
-			
-				var href = $('#icl-als-first').children('a').attr('href'),
-					regex = new RegExp( "lang=([^&#]*)" ),
-					results = regex.exec( href );
-				
-				// lang
-				this.update('lang', results[1]);
-				
-			}
-			
-			
-			// add triggers
-			this.add_events();
 			
 		},
 		
-		fetch : function(){
+		/*
+		*  is_ready
+		*
+		*  This function will ensure google API is available and return a boolean for the current status
+		*
+		*  @type	function
+		*  @date	19/11/2014
+		*  @since	5.0.9
+		*
+		*  @param	n/a
+		*  @return	(boolean)
+		*/
+		
+		is_ready: function(){ 
 			
 			// reference
-			var _this = this;
+			var self = this;
 			
 			
-			// ajax
-			$.ajax({
-				url			: acf.get('ajaxurl'),
-				data		: acf.prepare_for_ajax( this.o ),
-				type		: 'post',
-				dataType	: 'json',
-				success		: function( json ){
+			// debug
+			//console.log('is_ready: %o', this.status);
+			
+			// check
+			if( this.status == 'ready' ) {
+				
+				return true;
+				
+			} else if( this.status == 'loading' ) {
+				
+				return false;
+				
+			} else if( typeof google === 'undefined' ) {
+				
+				// set status
+				self.status = 'loading';
+				
+				
+				// load API
+				$.getScript('https://www.google.com/jsapi', function(){
 					
-					if( acf.is_ajax_success( json ) ) {
-						
-						_this.render( json.data );
-						
-					}
+					// load maps
+				    google.load('maps', '3', { other_params: 'sensor=false&libraries=places', callback: function(){
+				    	
+				    	// set status
+				    	self.status = 'ready';
+				    	
+				    	
+				    	// initialize pending
+				    	self.initialize_pending();
+				        
+				    }});
+				    
+				});
+				
+				return false;
 					
-				}
-			});
+			} else if( typeof google.maps === 'undefined' ) {
+				
+				
+				// set status
+				self.status = 'loading';
+				
+				
+				// load maps
+			    google.load('maps', '3', { other_params: 'sensor=false&libraries=places', callback: function(){
+			    	
+			    	// set status
+			    	self.status = 'ready';
+			    	
+			    	
+			    	// initialize pending
+			    	self.initialize_pending();
+			        
+			    }});
+				
+				return false;
+					
+			}
+			
+			
+			// google must exist already
+			this.status = 'ready';
+			
+			
+			// return
+			return true;
 			
 		},
 		
-		render : function( json ){
+		initialize_pending: function(){
 			
+			// debug
+			//console.log('initialize_pending', this.status);
+			
+			// reference
+			var self = this;
+			
+			this.pending.each(function(){
+				
+				self.doFocus( $(this) ).initialize();
+				
+			});
+			
+			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// hide
 			$('.acf-postbox').addClass('acf-hidden');
 			$('.acf-postbox-toggle').addClass('acf-hidden');
+=======
+			// reset
+			this.pending = $();
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
+		},
+		
+		initialize: function(){
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// show the new postboxes
 			$.each(json, function( k, field_group ){
 				
@@ -2497,8 +3715,14 @@ console.time("acf_test_ready");
 				$postbox.removeClass('acf-hidden hide-if-js').show();
 				$label.removeClass('acf-hidden hide-if-js').show();
 				$toggle.attr('checked', 'checked');
+=======
+			// add to pending
+			if( !this.is_ready() ) {
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				
+				this.pending = this.pending.add( this.$field );
 				
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				// replace HTML if needed
 				var $replace = $postbox.find('.acf-replace-with-fields');
 				
@@ -2509,276 +3733,310 @@ console.time("acf_test_ready");
 					acf.do_action('append', $postbox);
 					
 				}
+=======
+				return false;
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				
+			}
+			
+			
+			// load geocode
+			if( !this.geocoder ) {
 				
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				// update style if needed
 				if( k === 0 ) {
 					
 					$('#acf-style').html( field_group.style );
 					
 				}
+=======
+				this.geocoder = new google.maps.Geocoder();
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				
-			});
+			}
 			
-		},
-		
-		sync_taxonomy_terms : function(){
-			
-			// vars
-			var values = [];
-			
-			
-			$('.categorychecklist, .acf-taxonomy-field').each(function(){
-				
-				// vars
-				var $el = $(this),
-					$checkbox = $el.find('input[type="checkbox"]').not(':disabled'),
-					$radio = $el.find('input[type="radio"]').not(':disabled'),
-					$select = $el.find('select').not(':disabled'),
-					$hidden = $el.find('input[type="hidden"]').not(':disabled');
-				
-				
-				// bail early if not a field which saves taxonomy terms to post
-				if( $el.is('.acf-taxonomy-field') && $el.attr('data-load_save') != '1' ) {
-					
-					return;
-					
-				}
-				
-				
-				// bail early if in attachment
-				if( $el.closest('.media-frame').exists() ) {
-					
-					return;
-				
-				}
-				
-				
-				// checkbox
-				if( $checkbox.exists() ) {
-					
-					$checkbox.filter(':checked').each(function(){
-						
-						values.push( $(this).val() );
-						
-					});
-					
-				} else if( $radio.exists() ) {
-					
-					$radio.filter(':checked').each(function(){
-						
-						values.push( $(this).val() );
-						
-					});
-					
-				} else if( $select.exists() ) {
-					
-					$select.find('option:selected').each(function(){
-						
-						values.push( $(this).val() );
-						
-					});
-					
-				} else if( $hidden.exists() ) {
-					
-					$hidden.each(function(){
-						
-						// ignor blank values or those which contain a comma (select2 multi-select)
-						if( ! $(this).val() || $(this).val().indexOf(',') > -1 ) {
-							
-							return;
-							
-						}
-						
-						values.push( $(this).val() );
-						
-					});
-					
-				}
-								
-			});
-	
-			
-			// filter duplicates
-			values = values.filter (function (v, i, a) { return a.indexOf (v) == i });
-			
-			
-			// update screen
-			this.update( 'post_taxonomy', values ).fetch();
-			
-		},
-		
-		add_events : function(){
 			
 			// reference
-			var _this = this;
-			
-			
-			// page template
-			$(document).on('change', '#page_template', function(){
-				
-				var page_template = $(this).val();
-				
-				_this.update( 'page_template', page_template ).fetch();
-			    
-			});
-			
-			
-			// page parent
-			$(document).on('change', '#parent_id', function(){
-				
-				var page_type = 'parent',
-					page_parent = 0;
-				
-				
-				if( $(this).val() != "" ) {
-				
-					page_type = 'child';
-					page_parent = $(this).val();
-					
-				}
-				
-				_this.update( 'page_type', page_type ).update( 'page_parent', page_parent ).fetch();
-			    
-			});
-			
-			
-			// post format
-			$(document).on('change', '#post-formats-select input[type="radio"]', function(){
-				
-				var post_format = $(this).val();
-				
-				if( post_format == '0' )
-				{
-					post_format = 'standard';
-				}
-				
-				_this.update( 'post_format', post_format ).fetch();
-				
-			});
-			
-			
-			// post taxonomy
-			$(document).on('change', '.categorychecklist input, .acf-taxonomy-field input, .acf-taxonomy-field select', function(){
-				
-				// a taxonomy field may trigger this change event, however, the value selected is not
-				// actually a term relationship, it is meta data
-				var $el = $(this).closest('.acf-taxonomy-field');
-				
-				if( $el.exists() && $el.attr('data-load_save') != '1' ) {
-					
-					return;
-					
-				}
-				
-				
-				// this may be triggered from editing an image in a popup. Popup does not support correct metaboxes so ignore this
-				if( $(this).closest('.media-frame').exists() ) {
-					
-					return;
-				
-				}
-				
-				
-				// set timeout to fix issue with chrome which does not register the change has yet happened
-				setTimeout(function(){
-					
-					_this.sync_taxonomy_terms();
-				
-				}, 1);
-				
-				
-			});
-			
-			
-			
-			// user role
-			/*
-			$(document).on('change', 'select[id="role"][name="role"]', function(){
-				
-				_this.update( 'user_role', $(this).val() ).fetch();
-				
-			});
-			*/
-			
-		}
-		
-	});
-
-
-	
-})(jQuery);
-
-(function($){
-	
-	acf.fields.color_picker = acf.field.extend({
-		
-		type: 'color_picker',
-		timeout: null,
-		
-		actions: {
-			'ready':	'initialize',
-			'append':	'initialize'
-		},
-		
-		focus: function(){
-			
-			this.$input = this.$field.find('input[type="text"]');
-			
-		},
-		
-		initialize: function(){
-			
-			// reference
-			var self = this;
+			var self = this,
+				$field = this.$field,
+				$el = this.$el;
 			
 			
 			// vars
-			var $hidden = this.$input.clone();
+			var args = {
+        		zoom		: parseInt(this.o.zoom),
+        		center		: new google.maps.LatLng(this.o.lat, this.o.lng),
+        		mapTypeId	: google.maps.MapTypeId.ROADMAP
+        	};
+			
+			// create map	        	
+        	this.map = new google.maps.Map( this.$el.find('.canvas')[0], args);
+	        
+	        
+	        // add search
+			var autocomplete = new google.maps.places.Autocomplete( this.$el.find('.search')[0] );
+			autocomplete.map = this.map;
+			autocomplete.bindTo('bounds', this.map);
 			
 			
-			// modify hidden
-			$hidden.attr({
-				'type'	: 'hidden',
-				'class' : '',
-				'id'	: '',
-				'value'	: ''
- 			});
- 			
- 			
- 			// append hidden
- 			this.$input.before( $hidden );
- 			
- 			
- 			// iris
-			this.$input.wpColorPicker({
-				
-				change: function( event, ui ){
-			
-					if( self.timeout ) {
-				
-						clearTimeout( self.timeout );
+			// add dummy marker
+	        this.map.marker = new google.maps.Marker({
+		        draggable	: true,
+		        raiseOnDrag	: true,
+		        map			: this.map,
+		    });
+		    
+		    
+		    // add references
+		    this.map.$el = this.$el;
+		    this.map.$field = this.$field;
+		    
+		    
+		    // value exists?
+		    var lat = this.$el.find('.input-lat').val(),
+		    	lng = this.$el.find('.input-lng').val();
+		    
+		    if( lat && lng ) {
+			    
+			    this.update(lat, lng).center();
+			    
+		    }
+		    
+		    
+			// events
+			google.maps.event.addListener(autocomplete, 'place_changed', function( e ) {
+			    
+			    // reference
+			    var $el = this.map.$el,
+			    	$field = this.map.$field;
+					
+					
+			    // manually update address
+			    var address = $el.find('.search').val();
+			    $el.find('.input-address').val( address );
+			    $el.find('.title h4').text( address );
+			    
+			    
+			    // vars
+			    var place = this.getPlace();
+			    
+			    
+			    // if place exists
+			    if( place.geometry ) {
+				    
+			    	var lat = place.geometry.location.lat(),
+						lng = place.geometry.location.lng();
+						
+					
+					self.doFocus( $field ).update( lat, lng ).center();
+				    
+				    // bail early
+				    return;
+			    }
+			    
+			    
+			    // client hit enter, manually get the place
+			    self.geocoder.geocode({ 'address' : address }, function( results, status ){
+			    	
+			    	// validate
+					if( status != google.maps.GeocoderStatus.OK ) {
+						
+						console.log('Geocoder failed due to: ' + status);
+						return;
+						
+					} else if( !results[0] ) {
+						
+						console.log('No results found');
+						return;
 						
 					}
 					
 					
-					self.timeout = setTimeout(function(){
+					// get place
+					place = results[0];
+					
+					var lat = place.geometry.location.lat(),
+						lng = place.geometry.location.lng();
 						
-						$hidden.trigger('change');
-						
-					}, 1000);
+					
+					self.doFocus( $field ).update( lat, lng ).center();
+				    
+				});
+			    
+			});
+		    
+		    
+		    google.maps.event.addListener( this.map.marker, 'dragend', function(){
+		    	
+		    	// reference
+			    var $field = this.map.$field;
+			    
+			    
+		    	// vars
+				var position = this.map.marker.getPosition(),
+					lat = position.lat(),
+			    	lng = position.lng();
+			    	
+				self.doFocus( $field ).update( lat, lng ).sync();
+			    
+			});
+			
+			
+			google.maps.event.addListener( this.map, 'click', function( e ) {
+				
+				// reference
+			    var $field = this.$field;
+			    
+			    
+				// vars
+				var lat = e.latLng.lat(),
+					lng = e.latLng.lng();
+				
+				
+				self.doFocus( $field ).update( lat, lng ).sync();
+			
+			});
+			
+			
+	        // add to maps
+	        this.maps[ this.o.id ] = this.map;
+	        
+		},
+		
+		update : function( lat, lng ){
+			
+			// vars
+			var latlng = new google.maps.LatLng( lat, lng );
+		    
+		    
+		    // update inputs
+		    acf.val( this.$el.find('.input-lat'), lat );
+		    acf.val( this.$el.find('.input-lng'), lng );
+		    
+			
+		    // update marker
+		    this.map.marker.setPosition( latlng );
+		    
+		    
+			// show marker
+			this.map.marker.setVisible( true );
+		    
+		    
+	        // update class
+	        this.$el.addClass('active');
+	        
+	        
+	        // validation
+			this.$field.removeClass('error');
+			
+			
+	        // return for chaining
+	        return this;
+		},
+		
+		center : function(){
+			
+			// vars
+			var position = this.map.marker.getPosition(),
+				lat = this.o.lat,
+				lng = this.o.lng;
+			
+			
+			// if marker exists, center on the marker
+			if( position ) {
+				
+				lat = position.lat();
+				lng = position.lng();
+				
+			}
+			
+			
+			var latlng = new google.maps.LatLng( lat, lng );
+				
+			
+			// set center of map
+	        this.map.setCenter( latlng );
+	        
+		},
+		
+		sync : function(){
+			
+			// reference
+			var $el	= this.$el;
+				
+			
+			// vars
+			var position = this.map.marker.getPosition(),
+				latlng = new google.maps.LatLng( position.lat(), position.lng() );
+			
+			
+			this.geocoder.geocode({ 'latLng' : latlng }, function( results, status ){
+				
+				// validate
+				if( status != google.maps.GeocoderStatus.OK ) {
+					
+					console.log('Geocoder failed due to: ' + status);
+					return;
+					
+				} else if( !results[0] ) {
+					
+					console.log('No results found');
+					return;
 					
 				}
 				
+				
+				// get location
+				var location = results[0];
+				
+				
+				// update h4
+				$el.find('.title h4').text( location.formatted_address );
+
+				
+				// update input
+				acf.val( $el.find('.input-address'), location.formatted_address );
+				
 			});
 			
-		}
+			
+			// return for chaining
+	        return this;
+	        
+		},
 		
-	});
-	
+		locate : function(){
+			
+			// reference
+			var self = this,
+				$field = this.$field;
+			
+			
+			// Try HTML5 geolocation
+			if( ! navigator.geolocation ) {
+				
+				alert( acf.l10n.google_map.browser_support );
+				return this;
+				
+			}
+			
+			
+			// show loading text
+			this.$el.find('.title h4').text(acf.l10n.google_map.locating + '...');
+			this.$el.addClass('active');
+			
+		    navigator.geolocation.getCurrentPosition(function(position){
+		    	
+		    	// vars
+				var lat = position.coords.latitude,
+			    	lng = position.coords.longitude;
+			    	
+				self.doFocus( $field ).update( lat, lng ).sync().center();
+				
+			});
 
-})(jQuery);
-
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 (function($){
 	
 	acf.conditional_logic = acf.model.extend({
@@ -2851,15 +4109,74 @@ console.time("acf_test_ready");
 			
 			// debug
 			//console.log( 'conditional_logic.change(%o)', $input );
+=======
+				
+		},
+		
+		
+		clear : function(){
+			
+			// update class
+	        this.$el.removeClass('active');
 			
 			
+			// clear search
+			this.$el.find('.search').val('');
+			
+			
+			// clear inputs
+			acf.val( this.$el.find('.input-address'), '' );
+			acf.val( this.$el.find('.input-lat'), '' );
+			acf.val( this.$el.find('.input-lng'), '' );
+						
+			
+			// hide marker
+			this.map.marker.setVisible( false );
+		},
+		
+		edit : function(){
+			
+			// update class
+	        this.$el.removeClass('active');
+			
+			
+			// clear search
+			var val = this.$el.find('.title h4').text();
+			
+			
+			this.$el.find('.search').val( val ).focus();
+			
+		},
+		
+		refresh : function(){
+			
+			// trigger resize on div
+			google.maps.event.trigger(this.map, 'resize');
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+			
+			// center map
+			this.center();
+			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// vars
 			var $input	= e.$el,
 				$field	= acf.get_field_wrap( $input ),
 				$parent = $field.parent(),
 				key		= acf.get_field_key( $field );
+=======
+		},
+		
+		keydown: function( e ){
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
+			// prevent form from submitting
+			if( e.which == 13 ) {
+				
+				e.preventDefault();
+			    
+			}
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// bail early if this field does not trigger any actions
 			if( typeof this.triggers[key] === 'undefined' ) {
 				
@@ -2880,6 +4197,16 @@ console.time("acf_test_ready");
 				
 				
 				this.render_fields( $targets );
+=======
+		},
+		
+		blur: function(){
+			
+			// has a value?
+			if( this.$el.find('.input-lat').val() ) {
+				
+				this.$el.addClass('active');
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				
 			}
 			
@@ -2889,6 +4216,7 @@ console.time("acf_test_ready");
 			
 		},
 		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		render : function( $el ){
 			
 			// debug
@@ -2910,6 +4238,32 @@ console.time("acf_test_ready");
 			// action for 3rd party customization
 			acf.do_action('refresh', $el);
 			
+=======
+		show: function(){
+			
+			if( this.is_ready() ) {
+				
+				this.refresh();
+				
+			}
+			
+		}
+		
+	});
+
+})(jQuery);
+
+(function($){
+	
+	acf.fields.image = acf.field.extend({
+		
+		type: 'image',
+		$el: null,
+		
+		actions: {
+			'ready':	'initialize',
+			'append':	'initialize'
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		},
 		
 		render_fields : function( $targets ) {
@@ -2917,6 +4271,11 @@ console.time("acf_test_ready");
 			// reference
 			var self = this;
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+=======
+			// get elements
+			this.$el = this.$field.find('.acf-image-uploader');
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
 			// loop over targets and render them			
 			$targets.each(function(){
@@ -2947,13 +4306,20 @@ console.time("acf_test_ready");
 				
 				return false;
 				
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			}
+=======
+		},
+		
+		add: function() {
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
 			
 			// debug
 			//console.log( 'conditional_logic.render_field(%o)', $field );
 			
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// get conditional logic
 			var groups = this.items[ key ];
 			
@@ -2973,6 +4339,81 @@ console.time("acf_test_ready");
 						
 						match_group = false;
 						break;
+=======
+			// get repeater
+			var $repeater = acf.get_closest_field( this.$field, 'repeater' );
+			
+			
+			// popup
+			var frame = acf.media.popup({
+				'title'		: acf._e('image', 'select'),
+				'mode'		: 'select',
+				'type'		: 'image',
+				'multiple'	: $repeater.exists(),
+				'library'	: this.o.library,
+				'select'	: function( attachment, i ) {
+					
+					// select / add another image field?
+			    	if( i > 0 ) {
+			    		
+			    		// vars
+						var key = acf.get_field_key( $field ),
+							$tr = $field.closest('.acf-row');
+						
+						
+						// reset field
+						$field = false;
+						
+						
+						// find next image field
+						$tr.nextAll('.acf-row:visible').each(function(){
+							
+							// get next $field
+							$field = acf.get_field( key, $(this) );
+							
+							
+							// bail early if $next was not found
+							if( !$field ) {
+								
+								return;
+								
+							}
+							
+							
+							// bail early if next file uploader has value
+							if( $field.find('.acf-image-uploader.has-value').exists() ) {
+								
+								$field = false;
+								return;
+								
+							}
+								
+								
+							// end loop if $next is found
+							return false;
+							
+						});
+						
+						
+						// add extra row if next is not found
+						if( !$field ) {
+							
+							$tr = acf.fields.repeater.doFocus( $repeater ).add();
+							
+							
+							// bail early if no $tr (maximum rows hit)
+							if( !$tr ) {
+								
+								return false;
+								
+							}
+							
+							
+							// get next $field
+							$field = acf.get_field( key, $tr );
+							
+						}
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 						
 					}
 										
@@ -2981,14 +4422,24 @@ console.time("acf_test_ready");
 				
 				if( match_group ) {
 					
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					visibility = true;
 					break;
+=======
+					// focus
+					self.doFocus( $field );
+					
+								
+			    	// render
+					self.render( self.prepare(attachment) );
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					
 				}
 				
 			}
 			
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// hide / show field
 			if( visibility ) {
 				
@@ -3235,15 +4686,56 @@ console.time("acf_test_ready");
 			
 			// get options
 			this.o = acf.get_data( this.$el );
+=======
+		},
+		
+		prepare: function( attachment ) {
+		
+			// vars
+			var image = {
+		    	id:		attachment.id,
+		    	url:	attachment.attributes.url
+	    	};			
+			
+			
+			// check for preview size
+			if( acf.isset(attachment.attributes, 'sizes', this.o.preview_size, 'url') ) {
+	    	
+		    	image.url = attachment.attributes.sizes[ this.o.preview_size ].url;
+		    	
+	    	}
+	    	
+	    	
+	    	// return
+	    	return image;
 			
 		},
 		
+		render: function( image ){
+			
+	    	
+			// set atts
+		 	this.$el.find('[data-name="image"]').attr( 'src', image.url );
+			this.$el.find('[data-name="id"]').val( image.id ).trigger('change');
+			
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+			
+			// set div class
+		 	this.$el.addClass('has-value');
+	
+		},
+		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		initialize: function(){
 			
 			// get and set value from alt field
 			this.$input.val( this.$hidden.val() );
+=======
+		edit: function() {
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// create options
 			var args = $.extend( {}, acf.l10n.date_picker, { 
 				dateFormat		:	'yymmdd',
@@ -3255,8 +4747,13 @@ console.time("acf_test_ready");
 				showButtonPanel	:	true,
 				firstDay		:	this.o.first_day
 			});
+=======
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
+			// vars
+			var id = this.$el.find('[data-name="id"]').val();
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// filter for 3rd party customization
 			args = acf.apply_filters('date_picker_args', args, this.$field);
 			
@@ -3283,9 +4780,26 @@ console.time("acf_test_ready");
 			if( !this.$input.val() ) {
 			
 				this.$hidden.val('');
-				
-			}
+=======
 			
+			// popup
+			var frame = acf.media.popup({
+			
+				title:		acf._e('image', 'edit'),
+				button:		acf._e('image', 'update'),
+				mode:		'edit',
+				id:			id,
+				
+				select:	function( attachment, i ) {
+				
+			    	self.render( self.prepare(attachment) );
+					
+				}
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+				
+			});
+			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		}
 		
 	});
@@ -3341,8 +4855,65 @@ console.time("acf_test_ready");
 			
 			// get repeater
 			var $repeater = acf.get_closest_field( $field, 'repeater' );
+=======
+		},
+		
+		remove: function() {
 			
+			// vars
+	    	var attachment = {
+		    	id:		'',
+		    	url:	''
+	    	};
+	    	
+	    	
+	    	// add file to field
+	        this.render( attachment );
+	        
+	        
+			// remove class
+			this.$el.removeClass('has-value');
 			
+		},
+		
+		change: function( e ){
+			
+			this.$el.find('[data-name="id"]').val( e.$el.val() );
+			
+		}
+		
+	});
+	
+
+})(jQuery);
+
+(function($){
+	
+	acf.media = acf.model.extend({
+		
+		actions: {
+			'ready':	'onReady',
+			'load':		'onLoad'
+		},
+		
+		popup : function( args ) {
+			
+			// defaults
+			var defaults = {
+				'mode'			: 'select', // 'upload'|'edit'
+				'title'			: '',		// 'Upload Image'
+				'button'		: '',		// 'Select Image'
+				'type'			: '',		// 'image'
+				'library'		: 'all',	// 'all'|'uploadedTo'
+				'multiple'		: false,	// false, true, 'add'
+			};
+			
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+			
+			// vars
+			args = $.extend({}, defaults, args);
+			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// popup
 			var frame = acf.media.popup({
 				
@@ -3494,8 +5065,144 @@ console.time("acf_test_ready");
 					
 					// render
 			    	self.render( self.prepare(attachment) );
+=======
+			
+			// frame options
+			var options = {
+				'title'			: args.title,
+				'multiple'		: args.multiple,
+				'library'		: {},
+				'states'		: [],
+			};
+			
+			
+			// add library
+			if( args.type ) {
+				
+				options.library = {
+					'type' : args.type
+				};
+				
+			}
+			
+			
+			// limit query
+			if( args.mode == 'edit' ) {
+				
+				options.library = {
+					'post__in' : [args.id]
+				};
+				
+			}
+			
+			
+			// add button
+			if( args.button ) {
+			
+				options.button = {
+					'text' : args.button
+				};
+				
+			}
+			
+			
+			// add states
+			options.states = [
+				
+				// main state
+				new wp.media.controller.Library({
+					library		: wp.media.query( options.library ),
+					multiple	: options.multiple,
+					title		: options.title,
+					priority	: 20,
+					filterable	: 'all',
+					editable	: true,
+
+					// If the user isn't allowed to edit fields,
+					// can they still edit it locally?
+					allowLocalEdits: true,
+				})
+				
+			];
+			
+			
+			// edit image functionality (added in WP 3.9)
+			if( typeof wp.media.controller.EditImage !== 'undefined' ) {
+				
+				options.states.push( new wp.media.controller.EditImage() );
+				
+			}
+			
+			
+			// create frame
+			var frame = wp.media( options );
+			
+			
+			// log events
+			/*
+frame.on('all', function( e ) {
+				
+				console.log( 'frame all: %o', e );
+			
+			});
+*/
+			
+			
+			// edit image view
+			// source: media-views.js:2410 editImageContent()
+			frame.on('content:render:edit-image', function(){
+				
+				var image = this.state().get('image'),
+					view = new wp.media.view.EditImage( { model: image, controller: this } ).render();
+	
+				this.content.set( view );
+	
+				// after creating the wrapper view, load the actual editor via an ajax call
+				view.loadEditor();
+				
+			}, frame);
+			
+			
+			// modify DOM
+			frame.on('content:activate:browse', function(){
+				
+				// populate above vars making sure to allow for failure
+				try {
+					
+					var content = frame.content.get(),
+						toolbar = content.toolbar,
+						filters = toolbar.get('filters');
+				
+				} catch(e) {
+				
+					// one of the objects was 'undefined'... perhaps the frame open is Upload Files
+					// console.log( 'error %o', e );
+					return;
 					
 				}
+				
+				
+				// uploaded to post
+				if( args.library == 'uploadedTo' && $.isNumeric(acf.get('post_id')) ) {
+					
+					// remove 'uploaded' option
+					filters.$el.find('option[value="uploaded"]').remove();
+					
+					
+					// add 'uploadedTo' text
+					filters.$el.after('<span class="acf-uploadedTo">' + acf._e('image', 'uploadedTo') + '</span>')
+					
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+					
+					// add uploadedTo to filters
+					$.each( filters.filters, function( k, v ){
+						
+						v.props.uploadedTo = acf.get('post_id');
+						
+					});
+				
+				}
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			});
 			
 		},
@@ -3567,10 +5274,179 @@ console.time("acf_test_ready");
 			this.$el = this.$field.find('.acf-google-map');
 			this.$input = this.$el.find('.value');
 			
+=======
+				
+				
+				// type = image
+				if( args.type == 'image' ) {
+					
+					// filter only images
+					$.each( filters.filters, function( k, v ){
+					
+						v.props.type = 'image';
+						
+					});
+					
+					
+					// remove non image options from filter list
+					filters.$el.find('option').each(function(){
+						
+						// vars
+						var v = $(this).attr('value');
+						
+						
+						// don't remove the 'uploadedTo' if the library option is 'all'
+						if( v == 'uploaded' && args.library == 'all' ) {
+						
+							return;
+							
+						}
+						
+						
+						// remove this option
+						if( v.indexOf('image') === -1 ) {
+						
+							$(this).remove();
+							
+						}
+						
+					});
+					
+					
+					// set default filter
+					filters.$el.val('image');
+					
+				}
+				
+				
+				// trigger change
+				filters.$el.trigger('change')
+				
+				
+			});
 			
-			// get options
-			this.o = acf.get_data( this.$el );
 			
+			// select callback
+			if( typeof args.select === 'function' ) {
+			
+			frame.on( 'select', function() {
+				
+				// reference
+				var self = this,
+					i = -1;
+				
+								
+				// get selected images
+				var selection = frame.state().get('selection');
+				
+				
+				// loop over selection
+				if( selection ) {
+					
+					selection.each(function( attachment ){
+						
+						i++;
+						
+						args.select.apply( self, [ attachment, i] );
+						
+					});
+				}
+				
+			});
+			
+			}
+			
+			
+			// close
+			frame.on('close',function(){
+			
+				setTimeout(function(){
+					
+					// detach
+					frame.detach();
+					frame.dispose();
+					
+					
+					// reset var
+					frame = null;
+					
+				}, 500);
+				
+			});
+			
+			
+			// edit mode
+			if( args.mode == 'edit' ) {
+				
+			frame.on('open',function() {
+				
+				// set to browse
+				if( this.content.mode() != 'browse' ) {
+				
+					this.content.mode('browse');
+					
+				}
+				
+				
+				// add class
+				this.$el.closest('.media-modal').addClass('acf-media-modal acf-expanded');
+					
+				
+				// set selection
+				var state 		= this.state(),
+					selection	= state.get('selection'),
+					attachment	= wp.media.attachment( args.id );
+				
+				
+				selection.add( attachment );
+						
+			}, frame);
+			
+			frame.on('close',function(){
+				
+				// remove class
+				frame.$el.closest('.media-modal').removeClass('acf-media-modal');
+				
+			});
+				
+			}
+			
+			
+			// add button
+			if( args.button ) {
+			
+			/*
+			*  Notes
+			*
+			*  The normal button setting seems to break the 'back' functionality when editing an image.
+			*  As a work around, the following code updates the button text.
+			*/
+			
+			frame.on( 'toolbar:create:select', function( toolbar ) {
+				
+				options = {
+					'text'			: args.button,
+					'controller'	: this
+				};	
+
+				toolbar.view = new wp.media.view.Toolbar.Select( options );
+				
+				
+			}, frame );
+					
+			}
+			
+			
+			// open popup
+			setTimeout(function(){
+				
+				frame.open();
+				
+			}, 1);
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+			
+			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
 			// get map
 			if( this.maps[ this.o.id ] ) {
@@ -3599,10 +5475,22 @@ console.time("acf_test_ready");
 			// reference
 			var self = this;
 			
+=======
+			// return
+			return frame;
+			
+		},
+		
+		onReady: function(){
+			
+			// vars
+			var version = acf.get('wp_version');
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
 			// debug
 			//console.log('is_ready: %o', this.status);
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// check
 			if( this.status == 'ready' ) {
 				
@@ -4744,10 +6632,17 @@ console.time("acf_test_ready");
 				
 				// add body class
 				$('body').addClass('acf-wp-' + version);
+=======
+			// bail early if no version
+			if( !version ) {
+				
+				return;
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				
 			}
 			
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// customize wp.media views
 			this.customize_AttachmentFiltersAll();
 			this.customize_AttachmentCompat();
@@ -4755,10 +6650,19 @@ console.time("acf_test_ready");
 		},
 		
 		customize_AttachmentFiltersAll: function(){
+=======
+			// use only major version
+			if( typeof version == 'string' ) {
+				
+				version = version.substr(0,1);
+				
+			}
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
 			// bail ealry if no view
 			if( !acf.isset(window,'wp','media','view','AttachmentFilters','All') ) {
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				return false;
 				
 			}
@@ -4783,6 +6687,24 @@ console.time("acf_test_ready");
 			
 			// bail ealry if no view
 			if( !acf.isset(window,'wp','media','view','AttachmentCompat') ) {
+=======
+			$('body').addClass('acf-wp-' + version);
+			
+		},
+		
+		onLoad: function(){
+			
+			// bail early if wp.media does not exist (field group edit page)
+			if( typeof wp == 'undefined' ) {
+			
+				return false;
+				
+			}
+			
+			
+			// validate prototype
+			if( ! acf.isset(wp, 'media', 'view', 'AttachmentCompat', 'prototype') ) {
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
 				return false;
 				
@@ -4790,6 +6712,7 @@ console.time("acf_test_ready");
 			
 			
 			// vars
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			var view = wp.media.view.AttachmentCompat.prototype;
 			
 			
@@ -4807,6 +6730,25 @@ console.time("acf_test_ready");
 				
 				// validate
 				if( this.ignore_render ) {
+=======
+			var _prototype = wp.media.view.AttachmentCompat.prototype;
+			
+			
+			// orig
+			_prototype.orig_render = _prototype.render;
+			_prototype.orig_dispose = _prototype.dispose;
+			
+			
+			// modify render
+			_prototype.render = function() {
+				
+				// reference
+				var _this = this;
+				
+				
+				// validate
+				if( _this.ignore_render ) {
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				
 					return this;	
 					
@@ -4814,14 +6756,22 @@ console.time("acf_test_ready");
 				
 				
 				// run the old render function
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				this.render2();
+=======
+				this.orig_render();
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				
 				
 				// add button
 				setTimeout(function(){
 					
 					// vars
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					var $media_model = self.$el.closest('.media-modal');
+=======
+					var $media_model = _this.$el.closest('.media-modal');
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					
 					
 					// is this an edit only modal?
@@ -4841,7 +6791,11 @@ console.time("acf_test_ready");
 					
 					
 					// create button
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					var $a = $([
+=======
+					var button = $([
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 						'<a href="#" class="acf-expand-details">',
 							'<span class="is-closed"><span class="acf-icon small"><i class="acf-sprite-left"></i></span>' + acf._e('expand_details') +  '</span>',
 							'<span class="is-open"><span class="acf-icon small"><i class="acf-sprite-right"></i></span>' + acf._e('collapse_details') +  '</span>',
@@ -4850,7 +6804,11 @@ console.time("acf_test_ready");
 					
 					
 					// add events
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					$a.on('click', function( e ){
+=======
+					button.on('click', function( e ){
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 						
 						e.preventDefault();
 						
@@ -4868,7 +6826,11 @@ console.time("acf_test_ready");
 					
 					
 					// append
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					$media_model.find('.media-frame-router').append( $a );
+=======
+					$media_model.find('.media-frame-router').append( button );
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 						
 				
 				}, 0);
@@ -4879,36 +6841,59 @@ console.time("acf_test_ready");
 				clearTimeout( acf.media.render_timout );
 				acf.media.render_timout = setTimeout(function(){
 					
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					acf.do_action('append', self.$el);
+=======
+					acf.do_action('append', _this.$el);
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					
 				}, 50);
 
 				
 				// return based on the original render function
 				return this;
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				
+=======
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			};
 			
 			
 			// modify dispose
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			view.dispose = function() {
+=======
+			_prototype.dispose = function() {
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				
 				// remove
 				acf.do_action('remove', this.$el);
 				
 				
 				// run the old render function
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				this.dispose2();
+=======
+				this.orig_dispose();
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				
 			};
 			
 			
 			// override save
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			view.save = function( e ) {
 			
 				if( e ) {
 					
 					e.preventDefault();
+=======
+			_prototype.save = function( event ) {
+			
+				if( event ) {
+					
+					event.preventDefault();
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					
 				}
 				
@@ -4925,10 +6910,34 @@ console.time("acf_test_ready");
 				this.model.saveCompat( data );
 				
 			};
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
 		}
 		
 		
+=======
+			
+			
+			// update the wp.media.view.settings.post.id setting
+			setTimeout(function(){
+			
+				// Hack for CPT without a content editor
+				try {
+				
+					// post_id may be string (user_1) and therefore, the uploaded image cannot be attached to the post
+					if( $.isNumeric(acf.o.post_id) ) {
+					
+						wp.media.view.settings.post.id = acf.o.post_id;
+						
+					}
+					
+				} catch(e) {}
+				
+			}, 10);
+			
+			
+		}
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 	});
 
 })(jQuery);
@@ -7031,8 +9040,19 @@ ed.on('ResizeEditor', function(e) {
 				var ed = tinyMCE.get( this.o.id )
 					
 				
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				// save
 				ed.save();
+=======
+				ed.save();
+				
+				var val = this.$textarea.get(0).value;
+				
+				// destroy editor
+				ed.destroy();
+				
+				this.$textarea.get(0).value = val;
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				
 				
 				// destroy editor
@@ -7045,11 +9065,19 @@ ed.on('ResizeEditor', function(e) {
 		enable: function(){
 			
 			// bail early if html mode
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			if( this.$el.hasClass('tmce-active') && acf.isset(window,'switchEditors') ) {
 				
 				switchEditors.go( this.o.id, 'tmce');
 				
 			}
+=======
+			if( this.$el.hasClass('tmce-active') ) {
+				
+				this.$el.find('.switch-tmce').trigger('click');
+				
+			}			
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
 		},
 		

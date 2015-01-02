@@ -102,6 +102,13 @@ function ruumisarkkuliike_scripts() {
 
     wp_enqueue_style( 'ResponsiveSlides', get_template_directory_uri() . '/js/ResponsiveSlides/responsiveslides.css', array(), '1.54', 'all' );
 
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js', false, '1.11.2', true );
+    // wp_register_script('jquery', get_template_directory_uri() . '/js/vendor/jquery.min.js', false, '1.11.2', true);
+    wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('ResponsiveSlides', 'jquery'), filemtime(get_stylesheet_directory() . '/js/main.js'), true );
+
+
 }
 add_action( 'wp_enqueue_scripts', 'ruumisarkkuliike_scripts' );
 

@@ -2,7 +2,11 @@
 /*
  * Plugin contextual help
  *
+<<<<<<< HEAD
  * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5.1/help.php $
+=======
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5/help.php $
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
  * $LastChangedDate: 2014-05-29 08:44:10 +0000 (Thu, 29 May 2014) $
  * $LastChangedRevision: 922956 $
  * $LastChangedBy: iworks $

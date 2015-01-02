@@ -205,7 +205,11 @@
   margin: 0 0 3px;
 }
 .location-groups .location-group td.param {
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/css/acf-field-group.css
   width: 35%;
+=======
+  width: 40%;
+>>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e:wp-content/plugins/advanced-custom-fields-pro/assets/css/acf-field-group.css
 }
 .location-groups .location-group td.operator {
   width: 20%;

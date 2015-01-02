@@ -1,0 +1,12 @@
+.page {
+    background: #fff;
+
+    article {
+        @extend .col-md-offset-2;
+        @extend .col-md-8;
+    }
+
+    .entry-header {
+        color: $dark-grey;
+    }
+}
