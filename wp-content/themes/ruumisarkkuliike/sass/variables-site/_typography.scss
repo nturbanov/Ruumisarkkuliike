@@ -1,0 +1,14 @@
+@font-face {font-family: 'LancelotPro';src: url('../webfonts/2C9BF0_0_0.eot');src: url('../webfonts/2C9BF0_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/2C9BF0_0_0.woff2') format('woff2'),url('../webfonts/2C9BF0_0_0.woff') format('woff'),url('../webfonts/2C9BF0_0_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Adagio_Serif-Bold';src: url('../webfonts/2C9BF0_1_0.eot');src: url('../webfonts/2C9BF0_1_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/2C9BF0_1_0.woff2') format('woff2'),url('../webfonts/2C9BF0_1_0.woff') format('woff'),url('../webfonts/2C9BF0_1_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Adagio_Serif-Regular';src: url('../webfonts/2C9BF0_2_0.eot');src: url('../webfonts/2C9BF0_2_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/2C9BF0_2_0.woff2') format('woff2'),url('../webfonts/2C9BF0_2_0.woff') format('woff'),url('../webfonts/2C9BF0_2_0.ttf') format('truetype');}
+
+$font__main: 'Adagio_Serif-Regular', serif;
+$font__bold: 'Adagio_Serif-Bold', serif;
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;

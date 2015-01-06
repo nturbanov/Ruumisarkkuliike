@@ -1,0 +1,19 @@
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+}
+
+.page-title,
+.section-title {
+    font-size: 60px;
+    font-weight: normal;
+    font-family: $font__bold;
+
+    div {
+        font-size: 18px;
+        font-family: $font__main;
+    }
+}
+
+.kategoria-nosto .section-title {
+    font-size: 38px;
+}
