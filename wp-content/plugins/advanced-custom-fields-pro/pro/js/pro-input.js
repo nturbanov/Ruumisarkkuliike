@@ -186,6 +186,7 @@
 		
 		type: 'repeater',
 		$el: null,
+		$input: null,
 		$tbody: null,
 		$clone: null,
 		
@@ -203,6 +204,7 @@
 		focus: function(){
 			
 			this.$el = this.$field.find('.acf-repeater:first');
+			this.$input = this.$field.find('input:first');
 			this.$tbody = this.$el.find('tbody:first');
 			this.$clone = this.$tbody.children('tr.acf-clone');
 			
@@ -247,21 +249,30 @@
 						forcePlaceholderSize	: true,
 						scroll					: true,
 						
-						start : function (event, ui) {
+						start: function(event, ui) {
+							
+							// focus
+							self.doFocus($field);
 							
 							acf.do_action('sortstart', ui.item, ui.placeholder);
 							
 			   			},
 			   			
-			   			stop : function (event, ui) {
-						
-							acf.do_action('sortstop', ui.item, ui.placeholder);
-							
+			   			stop: function(event, ui) {
 							
 							// render
-							self.doFocus($field).render();
+							self.render();
 							
-			   			}
+							acf.do_action('sortstop', ui.item, ui.placeholder);
+							
+			   			},
+			   			
+			   			update: function(event, ui) {
+				   			
+				   			// trigger change
+							self.$input.trigger('change');
+							
+				   		}
 			   			
 					});
 				
@@ -420,6 +431,10 @@
 			}
 			
 			
+			// trigger change to allow attachmetn save
+			this.$input.trigger('change');
+				
+				
 			// animate out tr
 			acf.remove_tr( $tr, function(){
 				
@@ -451,6 +466,7 @@
 		
 		type: 'flexible_content',
 		$el: null,
+		$input: null,
 		$values: null,
 		$clones: null,
 		
@@ -470,7 +486,8 @@
 		
 		focus: function(){
 			
-			this.$el = this.$field.find('.acf-flexible-content').first();
+			this.$el = this.$field.find('.acf-flexible-content:first');
+			this.$input = this.$field.find('input:first');
 			this.$values = this.$el.children('.values');
 			this.$clones = this.$el.children('.clones');
 			
@@ -512,36 +529,36 @@
 						forcePlaceholderSize	: true,
 						scroll					: true,
 						
-						start : function (event, ui) {
-						
+						start: function(event, ui) {
+							
+							// focus
+							self.doFocus($field);
+							
 							acf.do_action('sortstart', ui.item, ui.placeholder);
-			        		
+							
 			   			},
-			   			stop : function (event, ui) {
+			   			
+			   			stop: function(event, ui) {
+							
+							// render
+							self.render();
 							
 							acf.do_action('sortstop', ui.item, ui.placeholder);
 							
-							
-							// render
-							self.doFocus($field).render();
-			   			}
+			   			},
 			   			
+			   			update: function(event, ui) {
+				   			
+				   			// trigger change
+							self.$input.trigger('change');
+							
+				   		}
+				   		
 					});
 				
 				});
 				
 			}
-			
-			
-			// set column widths
-			// no longer needed due to refresh action in acf.pro model
-			/*
-this.$values.find('> .layout > .acf-table').each(function(){
-			
-				acf.pro.render_table( $(this) );
-				
-			});
-*/
 			
 			
 			// disable clone inputs
@@ -933,6 +950,10 @@ this.$values.find('> .layout > .acf-table').each(function(){
 				end_height = $message.outerHeight();
 				
 			}
+			
+			
+			// trigger change
+			this.$input.trigger('change');
 			
 			
 			// remove
@@ -1443,7 +1464,7 @@ this.$values.find('> .layout > .acf-table').each(function(){
 			
 		},
 		
-		add : function( image ){
+		add : function( a ){
 			
 			// validate
 			if( this.o.max > 0 && this.count() >= this.o.max ) {
@@ -1455,13 +1476,46 @@ this.$values.find('> .layout > .acf-table').each(function(){
 			}
 			
 			
-			// append to image data
-			image.name = this.$el.find('[data-name="ids"]').attr('name');
+			// vars
+			var thumb_url = a.url,
+				thumb_class = 'acf-gallery-attachment acf-soh',
+				filename = '',
+				name = this.$el.find('[data-name="ids"]').attr('name');
+
+			
+			// title
+			if( a.type !== 'image' && a.filename ) {
+				
+				filename = '<div class="filename">' + a.filename + '</div>';
+				
+			}
 			
 			
-			// template
-			var tmpl = acf._e('gallery', 'tmpl'),
-				html = _.template(tmpl, image);
+			// icon
+			if( !thumb_url ) {
+				
+				thumb_url = a.icon;
+				thumb_class += ' is-mime-icon';
+				
+			}
+			
+			
+			// html
+			var html = [
+			'<div class="' + thumb_class + '" data-id="' + a.id + '">',
+				'<input type="hidden" value="' + a.id + '" name="' + name + '[]">',
+				'<div class="margin" title="' + a.filename + '">',
+					'<div class="thumbnail">',
+						'<img src="' + thumb_url + '">',
+					'</div>',
+					filename,
+				'</div>',
+				'<div class="actions acf-soh-target">',
+					'<a href="#" class="acf-icon dark remove-attachment" data-id="' + a.id + '">',
+						'<i class="acf-sprite-delete"></i>',
+					'</a>',
+				'</div>',
+			'</div>'].join('');
 			
 			
 			// append
@@ -1608,46 +1662,51 @@ this.$values.find('> .layout > .acf-table').each(function(){
 			
 			// popup
 			var frame = acf.media.popup({
-				'title'			: acf._e('gallery', 'select'),
-				'mode'			: 'select',
-				'type'			: 'all',
-				'multiple'		: 'add',
-				'library'		: library,
-				'select'		: function( attachment, i ) {
+				title:		acf._e('gallery', 'select'),
+				mode:		'select',
+				type:		'all',
+				multiple:	'add',
+				library:	library,
+				
+				select: function( attachment, i ) {
+					
+					// vars
+					var atts = attachment.attributes;
+					
 					
 					// is image already in gallery?
-					if( self.get_attachment(attachment.id).exists() ) {
+					if( self.get_attachment(atts.id).exists() ) {
 					
 						return;
 						
 					}
 					
-					
+					//console.log( attachment );
+			    	
 			    	// vars
-			    	var image = {
-				    	'id'	: attachment.id,
-				    	'url'	: attachment.attributes.url
+			    	var a = {
+				    	id:			atts.id,
+				    	type:		atts.type,
+				    	icon:		atts.icon,
+				    	filename:	atts.filename,
+				    	url:		''
 			    	};
 			    	
 			    	
-			    	// file?
-				    if( attachment.attributes.type != 'image' ) {
-				    
-					    image.url = attachment.attributes.icon;
-					    
+			    	// type
+			    	if( a.type === 'image' ) {
+				    	
+				    	a.url = acf.maybe_get(atts, 'sizes', preview_size, 'url') || atts.url;
+				    	
+			    	} else {
+				    	
+				    	a.url = acf.maybe_get(atts, 'thumb', 'src') || '';
+				    	
 				    }
 				    
 				    
-				    // is preview size available?
-			    	if( acf.isset(attachment, 'attributes', 'sizes', preview_size) ) {
-			    	
-				    	image.url = attachment.attributes.sizes[ preview_size ].url;
-				    	
-			    	}
-				    
-				    
 			    	// add file to field
-			        self.add( image );
+			        self.add( a );
 					
 				}
 			});
