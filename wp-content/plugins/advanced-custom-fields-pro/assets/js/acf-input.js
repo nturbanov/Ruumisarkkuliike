@@ -580,6 +580,7 @@ var acf;
 			if( s ) {
 				
 				// append
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				selector += '-' + s;
 				
 				
@@ -589,6 +590,13 @@ var acf;
 				
 				// remove potential double up
 				selector = selector.split('field-field-').join('field-');
+=======
+				selector += '-' + s.replace('_', '-');
+				
+				
+				// remove potential double up
+				selector = selector.replace('field-field-', 'field-');
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			}
 			
@@ -628,12 +636,23 @@ var acf;
 			
 			
 			// vars
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			var selector = this.get_selector(s);
 			
+=======
+			var $fields = $( this.get_selector(s), $el );
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			// get child fields
 			var $fields = $( selector, $el );
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+=======
+			// is current $el a field?
+			// this is the case when editing a field group
+			/* is this neeed?
+if( $el.is( selector ) ) {
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			// append context to fields if also matches selector.
 			// * Required for field group 'change_filed_type' append $tr to work
@@ -650,8 +669,15 @@ var acf;
 				});
 				
 			}
+*/
 			
 			
+			//console.log('get_fields(%o, %o, %o) %o', s, $el, all, $fields);
+			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+=======
+			
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			// filter out fields
 			if( !all ) {
 				
@@ -660,7 +686,10 @@ var acf;
 			}
 			
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			//console.log('get_fields(%o, %o, %o) %o', s, $el, all, $fields);
+=======
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			//console.log('acf.get_fields(%o):', this.get_selector(s) );
 			//console.timeEnd("acf.get_fields");
 			
@@ -1950,7 +1979,11 @@ var acf;
 	
 	
 	/*
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 	*  ready
+=======
+	*  layout
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 	*
 	*  description
 	*
@@ -1988,6 +2021,7 @@ var acf;
 		// action for 3rd party customization
 		acf.do_action('load', $('body'));
 		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 	});
 	
 	
@@ -2007,6 +2041,109 @@ var acf;
 	$(document).on('click', '.acf-field a[href="#"]', function( e ){
 		
 		e.preventDefault();
+=======
+		refresh: function( $el ){
+			
+			//console.time('acf.width.render');
+			
+			// defaults
+			$el = $el || false;
+			
+			
+			// loop over visible fields
+			$('.acf-fields:visible', $el).each(function(){
+				
+				// vars
+				var $els = $(),
+					top = 0,
+					height = 0,
+					cell = -1;
+				
+				
+				// get fields
+				var $fields = $(this).children('.acf-field[data-width]:visible');
+				
+				
+				// bail early if no fields
+				if( !$fields.exists() ) {
+					
+					return;
+					
+				}
+				
+				
+				// reset fields
+				$fields.removeClass('acf-r0 acf-c0').css({'min-height': 0});
+				
+				
+				$fields.each(function( i ){
+					
+					// vars
+					var $el = $(this),
+						this_top = $el.position().top;
+					
+					
+					// set top
+					if( i == 0 ) {
+						
+						top = this_top;
+						
+					}
+					
+					
+					// detect new row
+					if( this_top != top ) {
+						
+						// set previous heights
+						$els.css({'min-height': (height+1)+'px'});
+						
+						// reset
+						$els = $();
+						top = $el.position().top; // don't use variable as this value may have changed due to min-height css
+						height = 0;
+						cell = -1;
+						
+					}
+					
+											
+					// increase
+					cell++;
+				
+					// set height
+					height = ($el.outerHeight() > height) ? $el.outerHeight() : height;
+					
+					// append
+					$els = $els.add( $el );
+					
+					// add classes
+					if( this_top == 0 ) {
+						
+						$el.addClass('acf-r0');
+						
+					} else if( cell == 0 ) {
+						
+						$el.addClass('acf-c0');
+						
+					}
+					
+				});
+				
+				
+				// clean up
+				if( $els.exists() ) {
+					
+					$els.css({'min-height': (height+1)+'px'});
+					
+				}
+				
+				
+			});
+			
+			//console.timeEnd('acf.width.render');
+
+			
+		}
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 		
 	});
 	
@@ -2034,8 +2171,14 @@ var acf;
 		}
 		
 		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		// update setting
 		acf.update('changed', true);
+=======
+		items: {},
+		triggers: {},
+		cache: {},
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 		
 	});
 	
@@ -2123,7 +2266,22 @@ var acf;
 			// set widths for td children		
 			$item.children().each(function(){
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				$(this).width($(this).width());
+=======
+			// update visibility
+			for( var i in this.triggers[ key ] ) {
+				
+				// get the target key
+				var target_key = this.triggers[ key ][ i ];
+				
+				
+				// get targets
+				var $targets = acf.get_fields(target_key, $parent, true);
+				
+				
+				this.render_fields( $targets );
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 				
 			});
 			
@@ -2159,7 +2317,12 @@ var acf;
 		// save select values
 		$orig.find('select').each(function(){
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			$(this).find(':selected').addClass('selected');
+=======
+			// defaults
+			$el = $el || false;
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 		});
 		
@@ -2170,7 +2333,12 @@ var acf;
 		// restore select values
 		$orig.find('select').each(function(){
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			$(this).find('.selected').removeClass('selected');
+=======
+			// get targets
+			var $targets = acf.get_fields( '', $el, true );
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 		});
 		
@@ -2233,6 +2401,10 @@ console.time("acf_test_ready");
 			this.o[ k ] = v;
 			return this;
 			
+			
+			// clear cache
+			this.cache = {};
+			
 		},
 		
 		get : function( k ){
@@ -2267,13 +2439,40 @@ console.time("acf_test_ready");
 				
 			}
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+=======
+		},
+		
+		show_field : function( $field ){
+			
+			// add class
+			$field.removeClass( 'hidden-by-conditional-logic' );
+			
+			
+			// remove "disabled"
+			// ignore inputs which have a class of 'acf-disabled'. These inputs are disabled for life
+			$field.find('input, textarea, select').not('.acf-disabled').removeAttr('disabled');
+			
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			// add triggers
 			this.add_events();
 			
 		},
 		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		fetch : function(){
+=======
+		hide_field : function( $field ){
+			
+			// debug
+			//console.log( 'conditional_logic.hide_field(%o)', $field );
+			
+			
+			// add class
+			$field.addClass( 'hidden-by-conditional-logic' );
+			
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			// reference
 			var _this = this;
@@ -2298,11 +2497,32 @@ console.time("acf_test_ready");
 			
 		},
 		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		render : function( json ){
 			
 			// hide all metaboxes
 			$('.acf-postbox').addClass('acf-hidden');
 			$('.acf-postbox-toggle').addClass('acf-hidden');
+=======
+		get_visibility : function( $target, rule ){
+			
+			//console.log( 'conditional_logic.get_visibility(%o, %o)', $target, rule );
+			
+			// update cache (cache is cleared after render_fields)
+			if( !acf.isset(this.cache, rule.field) ) {
+				
+				//console.log('get_fields(%o)', rule.field);
+				
+				// get all fields for this field_key and store in cache
+				this.cache[ rule.field ] = acf.get_fields(rule.field, false, true);
+				
+			}
+			
+			
+			// vars
+			var $triggers = this.cache[ rule.field ],
+				$trigger = null;
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			
 			// show the new postboxes
@@ -2723,16 +2943,59 @@ console.time("acf_test_ready");
 			// render fields
 			this.render_fields( $targets );
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+=======
+		});
+		
+	});
+	
+	
+	/*
+	*  field model
+	*
+	*  description
+	*
+	*  @type	function
+	*  @date	14/08/2014
+	*  @since	5.0.0
+	*
+	*  @param	$post_id (int)
+	*  @return	$post_id (int)
+	*/
+	
+	acf.add_action('ready', function( $el ){
+				
+		acf.get_fields('', $el).each(function(){
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			// action for 3rd party customization
 			acf.do_action('refresh', $el);
 			
 		},
 		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		render_fields : function( $targets ) {
 		
 			// reference
 			var self = this;
+=======
+	});
+	
+	acf.add_action('append', function( $el ){
+				
+		acf.get_fields('', $el).each(function(){
+			
+			acf.do_action('append_field', $(this));
+			acf.do_action('append_field/type=' + acf.get_field_type($(this)), $(this));
+			
+		});
+		
+	});
+	
+	acf.add_action('load', function( $el ){
+				
+		acf.get_fields('', $el).each(function(){
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			
 			// loop over targets and render them			
@@ -2740,7 +3003,11 @@ console.time("acf_test_ready");
 					
 				self.render_field( $(this) );
 				
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			});
+=======
+		acf.get_fields('', $el).each(function(){
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			
 			// clear cache
@@ -2748,11 +3015,29 @@ console.time("acf_test_ready");
 			
 		},
 		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		render_field : function( $field ){
+=======
+	});
+	
+	acf.add_action('sortstart', function( $item, $placeholder ){
+				
+		acf.get_fields('', $item).each(function(){
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			// reference
 			var self = this;
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+=======
+		});
+		
+	});
+	
+	acf.add_action('sortstop', function( $item, $placeholder ){
+				
+		acf.get_fields('', $item).each(function(){
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			// vars
 			var visibility	= false,
@@ -2786,6 +3071,7 @@ console.time("acf_test_ready");
 					
 					var rule = group[k];
 					
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					if( !self.get_visibility( $field, rule) ) {
 						
 						match_group = false;
@@ -2794,9 +3080,26 @@ console.time("acf_test_ready");
 					}
 										
 				}
+=======
+				});
+			
+			});
+			
+			
+			// setup events
+			var context = acf.get_selector(model.type);
+			
+			$.each(model.events, function( k, callback ){
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 				
 				
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				if( match_group ) {
+=======
+				$(document).on(event, context + ' ' + selector, function( e ){
+					
+					e.$el = $(this);
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 					
 					visibility = true;
 					break;
@@ -2922,8 +3225,13 @@ console.time("acf_test_ready");
 			//console.log( 'calculate(%o, %o, %o)', rule, $trigger, $target);
 			
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			// vars
 			var type = acf.get_data($trigger, 'type');
+=======
+			// focus
+			this.doFocus( acf.get_closest_field( e.$el, this.type ) );
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			
 			// input with :checked
@@ -2998,8 +3306,31 @@ console.time("acf_test_ready");
 			
 		}
 		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 	});
 
+=======
+	};
+	
+	/*
+console.time("acf_test_ready");
+	console.time("acf_test_load");
+	
+	acf.add_action('ready', function(){
+		
+		console.timeEnd("acf_test_ready");
+		
+	}, 999);
+	
+	acf.add_action('load', function(){
+		
+		console.timeEnd("acf_test_load");
+		
+	}, 999);
+*/
+	
+	
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 })(jQuery);
 
 (function($){
@@ -3710,12 +4041,21 @@ console.time("acf_test_ready");
 		sync : function(){
 			
 			// reference
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			var $el	= this.$el;
 				
 			
 			// vars
 			var position = this.map.marker.getPosition(),
 				latlng = new google.maps.LatLng( position.lat(), position.lng() );
+=======
+			var self = this,
+				$field = this.$field;
+			
+			
+			// get repeater
+			var $repeater = acf.get_closest_field( $field, 'repeater' );
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			
 			this.geocoder.geocode({ 'latLng' : latlng }, function( results, status ){
@@ -3723,6 +4063,7 @@ console.time("acf_test_ready");
 				// validate
 				if( status != google.maps.GeocoderStatus.OK ) {
 					
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					console.log('Geocoder failed due to: ' + status);
 					return;
 					
@@ -3730,6 +4071,80 @@ console.time("acf_test_ready");
 					
 					console.log('No results found');
 					return;
+=======
+					
+					// select / add another image field?
+			    	if( i > 0 ) {
+			    		
+						// vars
+						var key = acf.get_field_key( $field ),
+							$tr = $field.closest('.acf-row');
+						
+						
+						// reset field
+						$field = false;
+							
+						
+						// find next image field
+						$tr.nextAll('.acf-row:visible').each(function(){
+							
+							// get next $field
+							$field = acf.get_field( key, $(this) );
+							
+							
+							// bail early if $next was not found
+							if( !$field ) {
+								
+								return;
+								
+							}
+							
+							
+							// bail early if next file uploader has value
+							if( $field.find('.acf-file-uploader.has-value').exists() ) {
+								
+								$field = false;
+								return;
+								
+							}
+								
+								
+							// end loop if $next is found
+							return false;
+							
+						});
+						
+						
+						
+						// add extra row if next is not found
+						if( !$field ) {
+							
+							$tr = acf.fields.repeater.doFocus( $repeater ).add();
+							
+							
+							// bail early if no $tr (maximum rows hit)
+							if( !$tr ) {
+								
+								return false;
+								
+							}
+							
+							
+							// get next $field
+							$field = acf.get_field( key, $tr );
+							
+						}
+						
+					}
+					
+					
+					// focus
+					self.doFocus( $field );
+					
+								
+			    	// render
+					self.render( self.prepare(attachment) );
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 					
 				}
 				
@@ -3807,7 +4222,15 @@ console.time("acf_test_ready");
 			this.map.marker.setVisible( false );
 		},
 		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		edit : function(){
+=======
+		edit : function() {
+			
+			// reference
+			var self = this,
+				$field = this.$field;
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			// update class
 	        this.$el.removeClass('active');
@@ -3817,7 +4240,26 @@ console.time("acf_test_ready");
 			var val = this.$el.find('.title h4').text();
 			
 			
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			this.$el.find('.search').val( val ).focus();
+=======
+				title:		acf._e('file', 'edit'),
+				button:		acf._e('file', 'update'),
+				mode:		'edit',
+				id:			id,
+				
+				select:	function( attachment, i ) {
+					
+					// focus
+					self.doFocus( $field );
+					
+					
+					// render
+			    	self.render( self.prepare(attachment) );
+					
+				}
+			});
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 		},
 		
@@ -3896,13 +4338,78 @@ console.time("acf_test_ready");
 			
 		},
 		
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 		initialize: function(){
 			
 			// add attribute to form
 			if( this.$el.hasClass('basic') ) {
+=======
+		/*
+		*  is_ready
+		*
+		*  This function will ensure google API is available and return a boolean for the current status
+		*
+		*  @type	function
+		*  @date	19/11/2014
+		*  @since	5.0.9
+		*
+		*  @param	n/a
+		*  @return	(boolean)
+		*/
+		
+		is_ready: function(){ 
+			
+			// reference
+			var self = this;
+			
+			
+			// debug
+			//console.log('is_ready: %o', this.status);
+			
+			// check
+			if( this.status == 'ready' ) {
+				
+				return true;
+				
+			} else if( this.status == 'loading' ) {
+				
+				return false;
+				
+			} else if( typeof google === 'undefined' ) {
+				
+				// set status
+				self.status = 'loading';
+				
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 				
 				this.$el.closest('form').attr('enctype', 'multipart/form-data');
 				
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
+=======
+				return false;
+					
+			} else if( typeof google.maps === 'undefined' ) {
+				
+				
+				// set status
+				self.status = 'loading';
+				
+				
+				// load maps
+			    google.load('maps', '3', { other_params: 'sensor=false&libraries=places', callback: function(){
+			    	
+			    	// set status
+			    	self.status = 'ready';
+			    	
+			    	
+			    	// initialize pending
+			    	self.initialize_pending();
+			        
+			    }});
+				
+				return false;
+					
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			}
 				
 		},
@@ -4472,6 +4979,7 @@ frame.on('all', function( e ) {
 				return false;
 				
 			}
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 			
 			
 			// vars
@@ -4481,6 +4989,20 @@ frame.on('all', function( e ) {
 			// orig
 			_prototype.orig_render = _prototype.render;
 			_prototype.orig_dispose = _prototype.dispose;
+=======
+				
+		},
+		
+		add: function() {
+			
+			// reference
+			var self = this,
+				$field = this.$field;
+			
+			
+			// get repeater
+			var $repeater = acf.get_closest_field( this.$field, 'repeater' );
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			
 			
 			// modify render
@@ -4495,6 +5017,7 @@ frame.on('all', function( e ) {
 				
 					return this;	
 					
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				}
 				
 				
@@ -4536,22 +5059,91 @@ frame.on('all', function( e ) {
 					
 					// add events
 					button.on('click', function( e ){
+=======
+					// select / add another image field?
+			    	if( i > 0 ) {
+			    		
+			    		// vars
+						var key = acf.get_field_key( $field ),
+							$tr = $field.closest('.acf-row');
+						
+						
+						// reset field
+						$field = false;
+						
+						
+						// find next image field
+						$tr.nextAll('.acf-row:visible').each(function(){
+							
+							// get next $field
+							$field = acf.get_field( key, $(this) );
+							
+							
+							// bail early if $next was not found
+							if( !$field ) {
+								
+								return;
+								
+							}
+							
+							
+							// bail early if next file uploader has value
+							if( $field.find('.acf-image-uploader.has-value').exists() ) {
+								
+								$field = false;
+								return;
+								
+							}
+								
+								
+							// end loop if $next is found
+							return false;
+							
+						});
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 						
 						e.preventDefault();
 						
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 						if( $media_model.hasClass('acf-expanded') ) {
 						
 							$media_model.removeClass('acf-expanded');
+=======
+						// add extra row if next is not found
+						if( !$field ) {
+							
+							$tr = acf.fields.repeater.doFocus( $repeater ).add();
+							
+							
+							// bail early if no $tr (maximum rows hit)
+							if( !$tr ) {
+								
+								return false;
+								
+							}
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 							
 						} else {
 							
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 							$media_model.addClass('acf-expanded');
 							
 						}
 						
 					});
+=======
+							// get next $field
+							$field = acf.get_field( key, $tr );
+							
+						}
+						
+					}
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 					
+					// focus
+					self.doFocus( $field );
 					
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 					// append
 					$media_model.find('.media-frame-router').append( button );
 						
@@ -4563,6 +5155,11 @@ frame.on('all', function( e ) {
 				// The clearTimout is needed to prevent many setup functions from running at the same time
 				clearTimeout( acf.media.render_timout );
 				acf.media.render_timout = setTimeout(function(){
+=======
+								
+			    	// render
+					self.render( self.prepare(attachment) );
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 					
 					acf.do_action('append', _this.$el);
 					
@@ -5859,12 +6456,17 @@ var scroll_timer = null;
 				html = '<div class="acf-tab-wrap"><ul class="acf-hl acf-tab-group"></ul></div>';
 				
 				// tab placement
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-input.js
 				if( $wrap.hasClass('acf-fields') ) {
 					
 					$wrap.addClass('acf-tp' + this.$el.data('placement').substr(0, 1));
 					
 				}
 				
+=======
+				$wrap.addClass('acf-tp' + this.$el.data('placement').substr(0, 1));
+			
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/input.js
 			}
 			
 			

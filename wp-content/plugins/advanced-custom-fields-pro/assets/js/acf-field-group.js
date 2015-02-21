@@ -1323,8 +1323,13 @@
 			// update class
 			$el.removeClass('acf-field-object-' + old_type.replace('_', '-'));
 			$el.addClass('acf-field-object-' + new_type.replace('_', '-'));
+<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/assets/js/acf-field-group.js
 			
 			
+=======
+			
+			
+>>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/js/field-group.js
 			// update atts
 			$el.attr('data-type', new_type);
 			
