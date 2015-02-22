@@ -1,0 +1,42 @@
+#page {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.home {
+    text-align: center;
+
+    #page {
+        max-width: 100%;
+    }
+}
+
+#title {
+    height: 100vh;
+    background: url(i/Front-BG.jpg) no-repeat center center;
+    background-color: rgba(70,70,70,1);
+    background-size: cover;
+
+    img {
+        width: 556px;
+        height: auto;
+        margin-top: 15vw;
+    }
+}
+
+.home .content {
+    background: $light-grey;
+
+    > div {
+        // @include max-site-wide;
+        padding: 8rem 8rem;
+        font-family: 'LancelotPro';
+        font-weight: normal;
+        text-transform: uppercase;
+        font-size: 26px;
+    }
+}
+
+.float-left {
+    float: left;
+}

@@ -11,18 +11,7 @@
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-        <?php
-        $media = get_attached_media( 'image' );
-
-        if ($media) : ?>
-
-        <ul class="rslides">
-        <?php foreach ($media as $image) : ?>
-            <li><?php echo wp_get_attachment_image($image->ID, 'large'); ?></li>
-        <?php endforeach; ?>
-        </ul>
-
-        <?php endif; ?>
+        <?php require_once('partials/single-header-images.php'); ?>
 
         <div class="entry-meta">
 
@@ -49,7 +38,7 @@
 
                 <div class="label">Suunnittelija</div>
                 <div>
-                    <?php echo get_the_term_list( $post->ID, 'suunnittelijat', null, ', ', null ); ?>
+                    <?php $suunnittelija = get_field( 'suunnittelija' ); echo $suunnittelija->post_title; ?>
                 </div>
 
                 <div class="label">Avainsanat</div>

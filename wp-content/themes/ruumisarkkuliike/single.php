@@ -12,7 +12,14 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'content', 'single' ); ?>
+			<?php
+            if ( 'suunnittelijat' == get_post_type() ) {
+                get_template_part( 'content', 'single-suunnittelija' );
+            }
+            else {
+                get_template_part( 'content', 'single' );
+            }
+            ?>
 
 			<?php //ruumisarkkuliike_post_nav(); ?>
 

@@ -11,14 +11,12 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo get_post_type_archive_link( 'verhoillut-arkut' ); ?>">verhoillut arkut</a>
-            <a href="<?php echo get_post_type_archive_link( 'puuarkut' ); ?>">puuarkut</a>
-            <a href="<?php echo get_post_type_archive_link( 'uurnat' ); ?>">uurnat</a>
-		</div><!-- .site-info -->
-        <div>
-            <a href="mailto:info@ruumisarkkuliike.fi">info@ruumisarkkuliike.fi</a>
-            <div class="tel">040 703 7332</a>
+        <div class="container">
+        	<div class="row">
+    			<a class="col-md-2" href="<?php echo get_post_type_archive_link( 'verhoillut-arkut' ); ?>">verhoillut arkut</a>
+                <a class="col-md-2" href="<?php echo get_post_type_archive_link( 'puuarkut' ); ?>">puuarkut</a>
+                <a class="col-md-2" href="<?php echo get_post_type_archive_link( 'uurnat' ); ?>">uurnat</a>
+            </div>
         </div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

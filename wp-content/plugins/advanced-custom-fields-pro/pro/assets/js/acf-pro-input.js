@@ -265,7 +265,6 @@
 							
 							// render
 							self.render();
-<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/pro/assets/js/acf-pro-input.js
 							
 							acf.do_action('sortstop', ui.item, ui.placeholder);
 							
@@ -276,18 +275,6 @@
 				   			// trigger change
 							self.$input.trigger('change');
 							
-=======
-							
-							acf.do_action('sortstop', ui.item, ui.placeholder);
-							
-			   			},
-			   			
-			   			update: function(event, ui) {
-				   			
-				   			// trigger change
-							self.$input.trigger('change');
-							
->>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/pro/js/pro-input.js
 				   		}
 			   			
 					});
@@ -1495,7 +1482,6 @@
 				filename = '',
 				name = this.$el.find('[data-name="ids"]').attr('name');
 
-<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/pro/assets/js/acf-pro-input.js
 			
 			// title
 			if( a.type !== 'image' && a.filename ) {
@@ -1512,29 +1498,8 @@
 				thumb_class += ' is-mime-icon';
 				
 			}
-=======
->>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/pro/js/pro-input.js
-			
-			// title
-			if( a.type !== 'image' && a.filename ) {
-				
-				filename = '<div class="filename">' + a.filename + '</div>';
-				
-			}
-			
-<<<<<<< HEAD:wp-content/plugins/advanced-custom-fields-pro/pro/assets/js/acf-pro-input.js
-=======
-			
-			// icon
-			if( !thumb_url ) {
-				
-				thumb_url = a.icon;
-				thumb_class += ' is-mime-icon';
-				
-			}
 			
 			
->>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a:wp-content/plugins/advanced-custom-fields-pro/pro/js/pro-input.js
 			// html
 			var html = [
 			'<div class="' + thumb_class + '" data-id="' + a.id + '">',

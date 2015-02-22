@@ -1,0 +1,8 @@
+@include font-face("LancelotPro", font-files("LancelotPro/2C9BF0_0_0.woff", "LancelotPro/2C9BF0_0_0.woff2", "LancelotPro/2C9BF0_0_0.ttf"), "LancelotPro/2C9BF0_0_0.eot");
+
+@include font-face("Adagio Serif", font-files("AdagioSerif/2C9BF0_2_0.woff", "AdagioSerif/2C9BF0_2_0.woff2", "AdagioSerif/2C9BF0_2_0.ttf"), "AdagioSerif/2C9BF0_2_0.eot");
+
+@include font-face("Adagio Serif", font-files("AdagioSerif/2C9BF0_1_0.woff", "AdagioSerif/2C9BF0_1_0.woff", "AdagioSerif/2C9BF0_1_0.ttf"), "AdagioSerif/2C9BF0_1_0.eot", bold);
+
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;

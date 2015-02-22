@@ -1,0 +1,8 @@
+.share {
+    @extend .row;
+
+    > div {
+        @extend .col-md-6;
+    }
+
+}

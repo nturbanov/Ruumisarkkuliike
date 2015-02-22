@@ -87,3 +87,17 @@ function ruumisarkkuliike_setup_author() {
 	}
 }
 add_action( 'wp', 'ruumisarkkuliike_setup_author' );
+
+// // Force crop default image sizes
+// if ( !get_option( 'medium_crop' ) ) {
+//     add_option( 'medium_crop', '1' );
+// }
+// else {
+//      update_option( 'medium_crop', '1' );
+// }
+// if ( !get_option( 'large_crop' ) ) {
+//     add_option( 'large_crop', '1' );
+// }
+// else {
+//      update_option( 'large_crop', '1' );
+// }

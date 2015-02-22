@@ -107,7 +107,6 @@ http://support.advancedcustomfields.com/
 
 == Changelog ==
 
-<<<<<<< HEAD
 = 5.1.8 =
 * WYSIWYG field: Fixed bug causing formatting issue when drag/drop
 * Tab field: Fixed UI glitch where left aligned tabs would get cut off in small field group
@@ -115,8 +114,6 @@ http://support.advancedcustomfields.com/
 * Core: Minor fixes and improvements
 * Language: Updated Russian translation - thanks to Andy Toniyevych
 
-=======
->>>>>>> c3db499f9f4c506662b8e5ddf7b79882a5cbb67a
 = 5.1.7.1 =
 * Core: Fixed JS error on data input screens
 * Core: Fixed incorrect return_url when using `acf_form()`

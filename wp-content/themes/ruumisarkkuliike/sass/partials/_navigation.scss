@@ -1,0 +1,115 @@
+.main-navigation {
+    display: block;
+    float: right;
+    text-align: left;
+    position: relative;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+
+        ul {
+            // box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+            // float: left;
+            position: absolute;
+            top: 70px;;
+            left: -999em;
+            z-index: 99999;
+            width: 100%;
+            padding: 1rem 0 2rem;
+
+            ul {
+                position: static;
+                padding-bottom: 0;
+
+                a {
+                }
+            }
+
+            li {
+                float: none;
+
+                &:hover > ul {
+                    left: 100%;
+                }
+            }
+
+            a {
+                // width: 200px;
+                line-height: 3;
+            }
+
+            :hover > a {
+            }
+
+            a:hover {
+            }
+        }
+
+        li:hover > ul {
+            left: 0;
+            background: $darkest-grey;
+        }
+    }
+    li {
+        float: left;
+
+        &:hover {
+            background: $darkest-grey;
+        }
+    }
+    a {
+        display: block;
+        text-decoration: none;
+        padding: 0 3rem;
+        line-height: 70px;
+        color: $dark-grey;
+
+        &:hover {
+            color: $navi-hover!important;
+        }
+    }
+
+    a[href="#"] {
+        color: $navi-hover!important;
+        font-size: 14px;
+    }
+
+    li.cpt a {
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 2;
+    }
+
+    .current_page_item > a,
+    .current-menu-item > a,
+    .current_page_ancestor > a {
+    }
+
+    li.sarjat,
+    #menu-item-30 {
+        background: $darkest-grey;
+    }
+}
+
+.home .main-navigation a,
+.archive .main-navigation a {
+    color: #fff;
+}
+
+/* Small menu */
+.menu-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .menu-toggle,
+    .main-navigation.toggled .nav-menu {
+        display: block;
+    }
+
+    .main-navigation ul {
+        display: none;
+    }
+}
