@@ -106,7 +106,6 @@ http://support.advancedcustomfields.com/
 
 == Changelog ==
 
-<<<<<<< HEAD
 = 5.2.1 =
 * Core: Fixed bug where 'Taxonomy' field group location rule would change to 'Post Taxonomy'
 * Core: Fixed bug where field group postboxes would disappear from post edit screen
@@ -148,18 +147,12 @@ http://support.advancedcustomfields.com/
 * Language: Updated Russian translation - thanks to Alexey Samoylov
 * Language: Updated Ukrainian translation - thanks to Jurko Chervony
 
-=======
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 = 5.1.8 =
 * WYSIWYG field: Fixed bug causing formatting issue when drag/drop
 * Tab field: Fixed UI glitch where left aligned tabs would get cut off in small field group
 * Message field: Added missing wrapper settings
 * Core: Minor fixes and improvements
-<<<<<<< HEAD
 * Language: Updated Swedish translation - thanks to Andy Toniyevych
-=======
-* Language: Updated Russian translation - thanks to Andy Toniyevych
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 
 = 5.1.7.1 =
 * Core: Fixed JS error on data input screens

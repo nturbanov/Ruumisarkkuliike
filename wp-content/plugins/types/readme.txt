@@ -4,13 +4,8 @@ Donate link: http://wp-types.com
 Tags: CMS, custom field, custom fields, custom post type, custom post types, post, post type, post types, cck, taxonomy, fields
 License: GPLv2
 Requires at least: 3.4
-<<<<<<< HEAD
 Tested up to: 4.1.1
 Stable tag: 1.6.5.1
-=======
-Tested up to: 4.1
-Stable tag: 1.6.5
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 
 The complete and reliable plugin for managing custom post types, custom taxonomy and custom fields.
 
@@ -158,7 +153,6 @@ Additionally, Types is the only plugin that lets you define parent/child relatio
 
 == Changelog ==
 
-<<<<<<< HEAD
 = 1.6.5.1 =
 
 * Release date: 2015-02-24
@@ -169,10 +163,6 @@ Additionally, Types is the only plugin that lets you define parent/child relatio
 = 1.6.5 =
 
 * Release date: 2015-02-10
-=======
-= 1.6.5 =
-
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 * Change in relationships, now all posts are showed, even those which have show_ui to false.
 * Added ability to hide custom post types on post relationships list. https://wp-types.com/forums/topic/post-relationship-doesnt-show-post-type-events-created-by-events-espresso/ using filter add_filter('wpcf_show_ui_hide_in_relationships', '__return_false');
 * Fixed a problem with deleting last children on post relationships table.

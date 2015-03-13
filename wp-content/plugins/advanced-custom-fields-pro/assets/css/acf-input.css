@@ -461,17 +461,10 @@ html[dir="rtl"] .pac-container .pac-item {
 *	WYSIWYG
 *	
 *-------------------------------------------------------------------------*/
-<<<<<<< HEAD
 .acf-editor-wrap iframe {
   min-height: 200px;
 }
 .acf-editor-wrap .wp-editor-container {
-=======
-.acf-wysiwyg-wrap iframe {
-  min-height: 200px;
-}
-.acf-wysiwyg-wrap .wp-editor-container {
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
   border: 1px solid #E5E5E5;
   box-shadow: none;
 }
@@ -479,21 +472,13 @@ html[dir="rtl"] .pac-container .pac-item {
   z-index: 150005 !important;
 }
 /* WP < 4.1 */
-<<<<<<< HEAD
 .acf-editor-wrap .wp-switch-editor {
-=======
-.acf-wysiwyg-wrap .wp-switch-editor {
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
   float: left;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
-<<<<<<< HEAD
 .acf-editor-wrap.tmce-active .wp-editor-area {
-=======
-.acf-wysiwyg-wrap.tmce-active .wp-editor-area {
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
   color: #333 !important;
 }
 /*---------------------------------------------------------------------------------------------
@@ -900,7 +885,6 @@ html[dir="rtl"] .acf-image-uploader .view {
 .media-modal .compat-attachment-fields td.acf-input table th {
   display: table-cell;
 }
-<<<<<<< HEAD
 /* field widths floats */
 .media-modal .compat-attachment-fields > tbody > .acf-field {
   margin: 0;
@@ -926,10 +910,6 @@ html[dir="rtl"] .acf-image-uploader .view {
   padding: 0;
   float: right;
   display: block;
-=======
-.compat-item table.widefat {
-  border: #DFDFDF solid 1px;
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 }
 /* Expand / Collapse button */
 .media-modal .acf-expand-details {
@@ -1021,22 +1001,12 @@ html[dir="rtl"] .acf-image-uploader .view {
   overflow: hidden;
 }
 .media-modal.acf-expanded .media-sidebar .setting span,
-<<<<<<< HEAD
 .media-modal.acf-expanded .compat-attachment-fields > tbody > .acf-field > .acf-label {
-=======
-.media-modal.acf-expanded .compat-item .label,
-.media-modal.acf-expanded .compat-item .acf-label {
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
   min-width: 20%;
 }
 .media-modal.acf-expanded .media-sidebar .setting input,
 .media-modal.acf-expanded .media-sidebar .setting textarea,
-<<<<<<< HEAD
 .media-modal.acf-expanded .compat-attachment-fields > tbody > .acf-field > .acf-input {
-=======
-.media-modal.acf-expanded .compat-item .field,
-.media-modal.acf-expanded .compat-item .acf-input {
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
   width: 77%;
 }
 /* Create gallery fix */
@@ -1044,7 +1014,6 @@ html[dir="rtl"] .acf-image-uploader .view {
   padding-top: 8px;
   margin: 0 10px 0 0;
 }
-<<<<<<< HEAD
 /* fix % margin which causes .acf-uploadedTo to drop down below select */
 .media-frame select.attachment-filters {
   margin-right: 6px !important;
@@ -1061,14 +1030,6 @@ html[dir="rtl"] .acf-image-uploader .view {
 /* allow line breaks in upload error */
 .media-modal .upload-error-message {
   white-space: pre-wrap;
-=======
-.media-modal .acf-uploadedTo {
-  line-height: 28px;
-  display: inline-block;
-  position: relative;
-  bottom: -6px;
-  margin: 0 10px 0 0;
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 }
 /*---------------------------------------------------------------------------------------------
 *
@@ -1167,34 +1128,6 @@ html[dir="rtl"] .acf-image-uploader .view {
 .compat-field-acf-blank {
   display: none !important;
 }
-<<<<<<< HEAD
-=======
-.compat-item .acf-field {
-  margin: 0;
-}
-.compat-item .acf-label {
-  min-width: 30%;
-  margin: 0;
-  padding: 0;
-  text-align: right;
-  display: block;
-  float: left;
-}
-.compat-item .acf-label label {
-  padding-top: 7px;
-  margin: 5px 0 0;
-  color: #666666;
-  font-weight: 400;
-  line-height: 16px;
-}
-.compat-item .acf-input {
-  width: 66%;
-  margin: 5px 0 0;
-  padding: 0;
-  float: right;
-  display: block;
-}
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 /* WP4 */
 body.acf-wp-4 .media-modal.acf-media-modal .media-frame-content {
   top: 50px;
@@ -1211,7 +1144,6 @@ body.acf-wp-4 .media-modal.acf-media-modal .media-frame-content {
 }
 /*--------------------------------------------------------------------------
 *
-<<<<<<< HEAD
 *	Profile page
 *	
 *-------------------------------------------------------------------------*/
@@ -1220,8 +1152,6 @@ body.acf-wp-4 .media-modal.acf-media-modal .media-frame-content {
 }
 /*--------------------------------------------------------------------------
 *
-=======
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 *	Conditional Logic
 *	
 *-------------------------------------------------------------------------*/

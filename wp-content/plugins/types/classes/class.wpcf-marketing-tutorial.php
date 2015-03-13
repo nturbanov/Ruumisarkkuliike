@@ -3,15 +3,9 @@
  *
  * Types Tutorial Class
  *
-<<<<<<< HEAD
  * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5.1/classes/class.wpcf-marketing-tutorial.php $
  * $LastChangedDate: 2015-02-24 10:05:51 +0000 (Tue, 24 Feb 2015) $
  * $LastChangedRevision: 1097977 $
-=======
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5/classes/class.wpcf-marketing-tutorial.php $
- * $LastChangedDate: 2015-01-28 06:42:34 +0000 (Wed, 28 Jan 2015) $
- * $LastChangedRevision: 1077234 $
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
  * $LastChangedBy: iworks $
  *
  */
@@ -77,11 +71,7 @@ class WPCF_Types_Marketing_Tutorial extends WPCF_Types_Marketing
         if ( empty($url) ) {
             return $this->error('empty url');
         }
-<<<<<<< HEAD
         $url = $this->add_ga_campain($url, 'fetch-data');
-=======
-        $url = $this->add_ga_campain($url);
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 
         $resp = wp_remote_get($url);
 

@@ -5,7 +5,6 @@
   Description: Define custom post types, custom taxonomy and custom fields.
   Author: OnTheGoSystems
   Author URI: http://www.onthegosystems.com
-<<<<<<< HEAD
   Version: 1.6.5.1
  */
 /**
@@ -13,15 +12,6 @@
  * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5.1/wpcf.php $
  * $LastChangedDate: 2015-02-24 10:05:51 +0000 (Tue, 24 Feb 2015) $
  * $LastChangedRevision: 1097977 $
-=======
-  Version: 1.6.5
- */
-/**
- *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5/wpcf.php $
- * $LastChangedDate: 2015-02-04 13:43:06 +0000 (Wed, 04 Feb 2015) $
- * $LastChangedRevision: 1082328 $
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
  * $LastChangedBy: iworks $
  *
  */
@@ -30,11 +20,7 @@ if ( !defined( 'WPCF_VERSION' ) ) {
     /**
      * make sure that WPCF_VERSION in embedded/bootstrap.php is the same!
      */
-<<<<<<< HEAD
     define( 'WPCF_VERSION', '1.6.5.1' );
-=======
-    define( 'WPCF_VERSION', '1.6.5' );
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
 }
 
 define( 'WPCF_REPOSITORY', 'http://api.wp-types.com/' );

@@ -4,11 +4,7 @@
  *
  * Since Types 1.2
  *
-<<<<<<< HEAD
  * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5.1/embedded/includes/module-manager.php $
-=======
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5/embedded/includes/module-manager.php $
->>>>>>> 0ac586bb2dd6d5e231189d512c4652573374114e
  * $LastChangedDate: 2014-11-18 06:47:25 +0000 (Tue, 18 Nov 2014) $
  * $LastChangedRevision: 1027712 $
  * $LastChangedBy: iworks $
