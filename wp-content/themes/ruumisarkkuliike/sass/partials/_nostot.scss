@@ -25,6 +25,12 @@
     .wrapper {
         padding: 12% 0;
         display: block;
+        background: rgba(85, 94, 109, 0.4);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background: rgba(85, 94, 109, 0.1);
+        }
     }
 
     h2 {
@@ -41,20 +47,23 @@
 }
 
 .kategoria-nosto {
-    @extend .nosto;
+    // @extend .nosto;
     @include clearfix;
+
+    padding: 5% 0;
+    text-align: left;
 
     // height: 44vw;
     // max-height: 670px;
 
     .wrapper {
-        // @include max-site-wide;
-
+        @extend .container;
         position: relative;
 
         > div {
-            width: 50%;
-            float: left;
+            @extend .col-sm-6;
+            // width: 50%;
+            // float: left;
             padding: 4rem 8rem;
 
             &:first-child {
@@ -62,6 +71,10 @@
             }
         }
 
+    }
+
+    .desctription {
+        margin-bottom: 2em;
     }
 
     img {
@@ -76,4 +89,5 @@
 
 .kategoria-nosto .section-title {
     font-size: 38px;
+    margin: 0 0 0.5em;
 }

@@ -8,7 +8,7 @@ if ($images) : ?>
 <?php endforeach; ?>
 </ul>
 
-<?php elseif ( has_post_thumbnail() ) : $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' ); ?>
+<?php elseif ( has_post_thumbnail() ) : $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' ); ?>
 
     <a href="<?php echo $full_image_url[0] ?>" title="<?php the_title_attribute( 'echo=0' ) ?>">
     <?php the_post_thumbnail( 'large' ); ?>

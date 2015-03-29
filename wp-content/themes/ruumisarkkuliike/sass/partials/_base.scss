@@ -9,4 +9,8 @@
 .entry-content {
     font-size: $content_font_size;
     line-height: $content_line_height;
+
+    @include breakpoint(0 $screen-md - 1) {
+        font-size: 18px;
+    }
 }

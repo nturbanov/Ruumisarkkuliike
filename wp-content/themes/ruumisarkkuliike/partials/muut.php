@@ -3,9 +3,9 @@
     <div class="container">
 
         <?php if ( is_singular( array( 'verhoillut-arkut', 'puuarkut', 'uurnat' ) ) ) : ?>
-            <h1>Saattaisit pitää myös näistä</h1>
+            <h2>Saattaisit pitää myös näistä</h2>
         <?php else : ?>
-            <h1>Lisää suunnittelijoita</h1>
+            <h2>Lisää suunnittelijoita</h2>
         <?php endif; ?>
 
         <div class="row">

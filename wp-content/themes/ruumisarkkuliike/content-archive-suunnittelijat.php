@@ -11,7 +11,7 @@
 
 		<?php
         $terms = get_the_terms( $post->ID, 'sarjat' );
-        if ($terms && !is_post_type_archive( 'suunnittelijat' )) {
+        if ( $terms && !is_post_type_archive( 'suunnittelijat' ) && !is_singular( 'suunnittelijat' ) ) {
             $term = array_pop($terms);
             echo '<a href="'.get_term_link($term->slug, 'sarjat').'">'.$term->name.'</a> | ';
         }

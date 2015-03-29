@@ -4,16 +4,22 @@
     padding-top: 40px;
     padding-bottom: 40px;
 
-    h1 {
+    h2 {
         text-align: center;
         font-weight: normal;
         font-family: LancelotPro;
         text-transform: uppercase;
+
+        .single-suunnittelijat & {
+            color: $dark-grey;
+        }
     }
 
     article {
 
         @extend .col-md-3;
+
+        // padding: 0 1em;
 
         text-align: left;
 
@@ -25,9 +31,32 @@
             }
         }
 
+        .entry-header {
+            text-align: left;
+        }
+
         .entry-title {
             display: inline-block;
-            font-size: 14px;
+            font-size: 18px;
+
+            .single-suunnittelijat & {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                text-align: center;
+                font-weight: normal;
+                margin-top: -1em;
+
+                a {
+                    color: white;
+                }
+            }
+        }
+
+        .product-image {
+            height: 183px;
+            display: block;
+            background: rgba(255, 255, 255, 0.1);
         }
     }
 }

@@ -7,7 +7,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 
-        <?php $sarja = wp_get_post_terms( $post->ID, 'sarjat' ); echo $sarja[0]->name; ?>
+        <div class="subheader"><?php $sarja = wp_get_post_terms( $post->ID, 'sarjat' ); echo $sarja[0]->name; ?></div>
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
