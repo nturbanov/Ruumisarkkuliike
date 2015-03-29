@@ -1,3 +1,12 @@
 .screen-reader-text {
     @extend .sr-only;
 }
+
+.label {
+    font-weight: bold;
+}
+
+.entry-content {
+    font-size: $content_font_size;
+    line-height: $content_line_height;
+}

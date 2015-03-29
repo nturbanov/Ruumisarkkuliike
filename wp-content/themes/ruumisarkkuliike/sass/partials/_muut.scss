@@ -1,0 +1,33 @@
+.muut {
+
+    background: #fff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    h1 {
+        text-align: center;
+        font-weight: normal;
+        font-family: LancelotPro;
+        text-transform: uppercase;
+    }
+
+    article {
+
+        @extend .col-md-3;
+
+        text-align: left;
+
+        a {
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        .entry-title {
+            display: inline-block;
+            font-size: 14px;
+        }
+    }
+}

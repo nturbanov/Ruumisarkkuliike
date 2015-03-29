@@ -5,4 +5,53 @@
         color: $dark-grey;
     }
 
+    .entry-meta {
+        @extend .row;
+
+        border-top: $light-grey 1px solid;
+        border-bottom: $light-grey 1px solid;
+        margin: 3em 0;
+        padding: 3em 0;
+
+        > div {
+            @extend .col-md-6;
+
+            .meta-item {
+
+                margin-bottom: 1em;
+                clear: left;
+                text-align: left;
+                overflow: hidden;
+
+                .label {
+                    float: left;
+                    width: 80px;
+                    margin-right: 3em;
+                    clear: left;
+
+                }
+
+                > * {
+                    float: left;
+                }
+
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                &.materiaalit {
+                    margin-bottom: 2em;
+                }
+
+            }
+
+        }
+
+        > div:first-of-type {
+            border-right: $light-grey 1px solid;
+        }
+
+    }
 }

@@ -1010,22 +1010,22 @@ hr {
 }
 
 /* line 39, sass/vendor/bootstrap/_grid.scss */
-.row, body:not(.home) #primary #main .archive-wrapper, .share {
+.row, body:not(.home) #primary #main .archive-wrapper, .share, .single:not(.single-suunnittelijat) .entry-meta {
   margin-left: -5px;
   margin-right: -5px;
 }
 /* line 14, sass/vendor/bootstrap/mixins/_clearfix.scss */
-.row:before, body:not(.home) #primary #main .archive-wrapper:before, .share:before, .row:after, body:not(.home) #primary #main .archive-wrapper:after, .share:after {
+.row:before, body:not(.home) #primary #main .archive-wrapper:before, .share:before, .single:not(.single-suunnittelijat) .entry-meta:before, .row:after, body:not(.home) #primary #main .archive-wrapper:after, .share:after, .single:not(.single-suunnittelijat) .entry-meta:after {
   content: " ";
   display: table;
 }
 /* line 19, sass/vendor/bootstrap/mixins/_clearfix.scss */
-.row:after, body:not(.home) #primary #main .archive-wrapper:after, .share:after {
+.row:after, body:not(.home) #primary #main .archive-wrapper:after, .share:after, .single:not(.single-suunnittelijat) .entry-meta:after {
   clear: both;
 }
 
 /* line 11, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .share > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, body.single article, .page article, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .muut article, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, body.single .site-content article, .page article, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 5px;
@@ -1555,7 +1555,7 @@ hr {
 }
 @media (min-width: 999px) {
   /* line 27, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-md-5, .col-md-6, .share > div, .col-md-7, .col-md-8, body.single article, .page article, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, .muut article, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-md-5, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-md-7, .col-md-8, body.single .site-content article, .page article, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
 
@@ -1570,7 +1570,7 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-3 {
+  .col-md-3, .muut article {
     width: 25%;
   }
 
@@ -1585,7 +1585,7 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-6, .share > div {
+  .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div {
     width: 50%;
   }
 
@@ -1595,7 +1595,7 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-8, body.single article, .page article {
+  .col-md-8, body.single .site-content article, .page article {
     width: 66.66667%;
   }
 
@@ -1760,7 +1760,7 @@ hr {
   }
 
   /* line 60, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-offset-2, body.single article, .page article {
+  .col-md-offset-2, body.single .site-content article, .page article {
     margin-left: 16.66667%;
   }
 
@@ -2091,6 +2091,17 @@ hr {
   src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.ttf?1420215361') format('truetype');
   font-weight: bold;
 }
+/* line 5, sass/partials/_base.scss */
+.label {
+  font-weight: bold;
+}
+
+/* line 9, sass/partials/_base.scss */
+.entry-content {
+  font-size: 22px;
+  line-height: 32px;
+}
+
 /* line 4, sass/partials/_structure.scss */
 body:not(.home) #primary {
   padding-top: 120px;
@@ -2146,6 +2157,49 @@ body:not(.home) #primary {
 /* line 11, sass/partials/_footer.scss */
 #colophon a {
   color: #fff;
+  color: #B3B9CE;
+  text-decoration: none;
+  position: relative;
+  padding-left: 30px;
+  line-height: 20px;
+  display: inline-block;
+  margin-right: 40px;
+}
+/* line 21, sass/partials/_footer.scss */
+#colophon a span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #B3B9CE;
+  position: absolute;
+}
+/* line 28, sass/partials/_footer.scss */
+#colophon a span:nth-of-type(1) {
+  left: 0;
+  top: 0;
+}
+/* line 29, sass/partials/_footer.scss */
+#colophon a span:nth-of-type(2) {
+  left: 12px;
+  top: 0;
+}
+/* line 30, sass/partials/_footer.scss */
+#colophon a span:nth-of-type(3) {
+  left: 12px;
+  bottom: 0;
+}
+/* line 31, sass/partials/_footer.scss */
+#colophon a span:nth-of-type(4) {
+  left: 0;
+  bottom: 0;
+}
+/* line 34, sass/partials/_footer.scss */
+#colophon a:hover {
+  color: #fff;
+}
+/* line 37, sass/partials/_footer.scss */
+#colophon a:hover span {
+  border-color: #fff;
 }
 
 /* line 1, sass/partials/_archive.scss */
@@ -2450,6 +2504,34 @@ body:not(.home) #primary {
   font-size: 38px;
 }
 
+/* line 1, sass/partials/_muut.scss */
+.muut {
+  background: #fff;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+/* line 7, sass/partials/_muut.scss */
+.muut h1 {
+  text-align: center;
+  font-weight: normal;
+  font-family: LancelotPro;
+  text-transform: uppercase;
+}
+/* line 14, sass/partials/_muut.scss */
+.muut article {
+  text-align: left;
+}
+/* line 22, sass/partials/_muut.scss */
+.muut article a img {
+  max-width: 100%;
+  height: auto;
+}
+/* line 28, sass/partials/_muut.scss */
+.muut article .entry-title {
+  display: inline-block;
+  font-size: 14px;
+}
+
 /* line 1, sass/partials/_page.scss */
 .page {
   background: #fff;
@@ -2472,6 +2554,45 @@ body:not(.home) #primary {
 /* line 4, sass/partials/_tuote.scss */
 .single:not(.single-suunnittelijat) .entry-header {
   color: #555e6d;
+}
+/* line 8, sass/partials/_tuote.scss */
+.single:not(.single-suunnittelijat) .entry-meta {
+  border-top: #DEDEE8 1px solid;
+  border-bottom: #DEDEE8 1px solid;
+  margin: 3em 0;
+  padding: 3em 0;
+}
+/* line 19, sass/partials/_tuote.scss */
+.single:not(.single-suunnittelijat) .entry-meta > div .meta-item {
+  margin-bottom: 1em;
+  clear: left;
+  text-align: left;
+  overflow: hidden;
+}
+/* line 26, sass/partials/_tuote.scss */
+.single:not(.single-suunnittelijat) .entry-meta > div .meta-item .label {
+  float: left;
+  width: 80px;
+  margin-right: 3em;
+  clear: left;
+}
+/* line 34, sass/partials/_tuote.scss */
+.single:not(.single-suunnittelijat) .entry-meta > div .meta-item > * {
+  float: left;
+}
+/* line 38, sass/partials/_tuote.scss */
+.single:not(.single-suunnittelijat) .entry-meta > div .meta-item ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 44, sass/partials/_tuote.scss */
+.single:not(.single-suunnittelijat) .entry-meta > div .meta-item.materiaalit {
+  margin-bottom: 2em;
+}
+/* line 52, sass/partials/_tuote.scss */
+.single:not(.single-suunnittelijat) .entry-meta > div:first-of-type {
+  border-right: #DEDEE8 1px solid;
 }
 
 /*# sourceMappingURL=style.css.map */

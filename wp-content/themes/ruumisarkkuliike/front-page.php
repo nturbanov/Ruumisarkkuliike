@@ -29,7 +29,7 @@ get_header(); ?>
 
                     if( get_row_layout() == 'taustakuvallinen_nosto' ): ?>
 
-                        <section class="kuvallinen-nosto" style="background-image: url(<?php $img = wp_get_attachment_image_src( get_sub_field('kuva'), 'large' ); echo $img[0]; ?>);">
+                        <section class="kuvallinen-nosto" style="background-image: url(<?php $img = wp_get_attachment_image_src( get_sub_field('kuva'), 'full' ); echo $img[0]; ?>);">
                             <a class="wrapper" href="<?php the_sub_field('linkki'); ?>">
                                 <h2 class="section-title"><?php the_sub_field('otsikko'); ?></h2>
                                 <div class="description">

@@ -23,28 +23,42 @@
         ?>
 
             <div>
-
-                <div class="label">Materiaalit</div>
-                <ul>
-                    <?php foreach ($materiaalit as $materiaali) : ?>
-                    <li><?php echo $materiaali->name; ?></li>
-                    <?php endforeach; ?>
-                </ul>
-
-                <div class="label">Kategoriat</div>
-                <div>
-                    <?php echo get_the_term_list( $post->ID, 'sarjat', null, ', ', null ); ?>
+                <div class="meta-item materiaalit">
+                    <div class="label">Materiaalit</div>
+                    <ul>
+                        <?php foreach ($materiaalit as $materiaali) : ?>
+                        <li><?php echo $materiaali->name; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
                 </div>
 
-                <div class="label">Suunnittelija</div>
-                <div>
-                    <?php $suunnittelija = get_field( 'suunnittelija' ); echo $suunnittelija->post_title; ?>
+                <div class="meta-item">
+                    <div class="label">Kategoriat</div>
+                    <div>
+                        <?php echo get_the_term_list( $post->ID, 'sarjat', null, ', ', null ); ?>
+                    </div>
                 </div>
 
-                <div class="label">Avainsanat</div>
-                <div>
-                    <?php echo get_the_tag_list( null, ', ', null ); ?>
+                <div class="meta-item">
+                    <div class="label">Suunnittelija</div>
+                    <div>
+                        <?php $suunnittelija = get_field( 'suunnittelija' ); echo $suunnittelija->post_title; ?>
+                    </div>
                 </div>
+
+                <div class="meta-item">
+                    <div class="label">Avainsanat</div>
+                    <div>
+                        <?php echo get_the_tag_list( null, ', ', null ); ?>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="label">Samaa paria</div>
+                <article>
+
+                </article>
             </div>
 
         </div><!-- .entry-meta -->

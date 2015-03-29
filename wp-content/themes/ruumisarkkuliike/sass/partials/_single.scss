@@ -1,6 +1,6 @@
 body.single {
 
-    article {
+    .site-content article {
         @extend .col-md-offset-2;
         @extend .col-md-8;
     }
