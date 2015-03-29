@@ -29,14 +29,14 @@ get_header(); ?>
 
                     if( get_row_layout() == 'taustakuvallinen_nosto' ): ?>
 
-                        <section class="kuvallinen-nosto" style="background-image: url(<?php $img = wp_get_attachment_image_src( get_sub_field('kuva'), 'large' ); echo $img[0]; ?>);">
-                            <a class="wrapper" href="<?php the_sub_field('linkki'); ?>">
+                        <section class="kuvallinen-nosto parallax-window" data-parallax="scroll" data-image-src="<?php $img = wp_get_attachment_image_src( get_sub_field('kuva'), 'full' ); echo $img[0]; ?>" style="background-image: url(<?php echo $img[0]; ?>);">
+                            <div class="wrapper">
                                 <h2 class="section-title"><?php the_sub_field('otsikko'); ?></h2>
                                 <div class="description">
                                     <p><?php the_sub_field('teksti'); ?></p>
-
+                                    <a class="button" href="<?php the_sub_field('linkki'); ?>"><?php the_sub_field('linkkiteksti'); ?></a>
                                 </div>
-                            </a>
+                            </div>
                         </section>
 
                     <?php elseif( get_row_layout() == 'tuotekategoria_nosto' ): $post_type_object = get_post_type_object( get_sub_field('tuotetyyppi') ); ?>

@@ -57,9 +57,9 @@ function ruumisarkkuliike_setup() {
 	 * Enable support for Post Formats.
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
-	add_theme_support( 'post-formats', array(
+/*	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link',
-	) );
+	) );*/
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'ruumisarkkuliike_custom_background_args', array(
@@ -98,9 +98,14 @@ function ruumisarkkuliike_scripts() {
 
 	wp_enqueue_script( 'ruumisarkkuliike-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-    wp_enqueue_script( 'ResponsiveSlides', get_template_directory_uri() . '/js/ResponsiveSlides/responsiveslides.min.js', array('jquery'), '1.54', true );
+    wp_enqueue_script( 'ResponsiveSlides', get_template_directory_uri() . '/js/vendor/ResponsiveSlides/responsiveslides.min.js', array('jquery'), '1.54', true );
 
-    wp_enqueue_style( 'ResponsiveSlides', get_template_directory_uri() . '/js/ResponsiveSlides/responsiveslides.css', array(), '1.54', 'all' );
+    wp_enqueue_style( 'ResponsiveSlides', get_template_directory_uri() . '/js/vendor/ResponsiveSlides/responsiveslides.css', array(), '1.54', 'all' );
+
+    // wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/vendor/parallax.js-1.3.1/parallax.min.js', array(), '1.3.1', true );
+
+    // wp_enqueue_script( 'skrollr', get_template_directory_uri() . '/js/vendor/skrollr.min.js', array(), '0.6.29', true );
+
 
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js', false, '1.11.2', true );
@@ -138,3 +143,83 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /* CUSTOM KOODIA */
+
+
+// EI TOIMI //
+
+/*function show_only_products($query) {
+  if ( !is_admin() && $query->is_main_query() ) {
+    if ( $query->is_tax() ) {
+        // var_dump($query->get( 'tax_query' ));
+        // var_dump( get_query_var( 'taxonomy' ) );
+      // $query->set('post_type', array( 'verhoillut-arkut', 'puuarkut', 'uurnat' ) );
+      $tax_query = array(
+        'relation' => 'OR',
+         array(
+            'taxonomy' => 'category',
+            'field' => 'id',
+            'terms' => array( 366 )
+         ),
+         array(
+            'taxonomy' => 'food',
+            'field' => 'id',
+            'terms' => array( 364 )
+         )
+      );
+
+      // $query->set('tax_query', $tax_query);
+
+
+    $tax_obj = $query->get_queried_object();
+
+    var_dump($tax_obj);
+
+    $tax_query = array(
+                    'taxonomy' => $tax_obj->taxonomy,
+                    'field' => 'slug',
+                    'terms' => $tax_obj->slug
+            );
+
+   $query->tax_query->queries[] = $tax_query;
+   $query->query_vars['tax_query'] = $query->tax_query->queries;
+   $query->set('post_type', array( 'verhoillut-arkut', 'puuarkut', 'uurnat' ) );
+
+    }
+  }
+  var_dump($query);
+  return $query;
+}*/
+
+// add_action('pre_get_posts','show_only_products');
+
+
+// add_action( 'pre_get_posts', 'exclude_cpt' );
+/*function exclude_cpt( $query ) {
+    if ( $query->is_tax('sarjat') ) {
+        $query->set( 'post_type', array( 'verhoillut-arkut', 'puuarkut', 'uurnat' ) );
+
+        // $query->set( 'posts_per_page', '1' );
+    }
+    return $query;
+}*/
+
+
+add_action( 'pre_get_posts', 'all_my_pregets' );
+function all_my_pregets( $query ) {
+    if ( !is_admin() && $query->is_main_query() ) {
+        $query->set( 'posts_per_page', -1 );
+    }
+    return $query;
+}
+
+
+if(false === get_option("medium_crop"))
+    add_option("medium_crop", "1");
+else
+    update_option("medium_crop", "1");
+
+
+if(false === get_option("large_crop"))
+    add_option("large_crop", "1");
+else
+    update_option("large_crop", "1");

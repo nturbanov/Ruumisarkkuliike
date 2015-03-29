@@ -6,9 +6,8 @@
     z-index: 10;
 }
 
-.site-title a {
-    color: #fff;
-    display: inline-block;
+.site-title {
+
     line-height: 70px;
     margin: 0 0 0 2rem;
     font-size: 20px;
@@ -16,8 +15,12 @@
     font-weight: normal;
     text-transform: uppercase;
 
-    &:hover {
-        text-decoration: none;
+        a {
+        color: #fff;
+        display: inline-block;
+            &:hover {
+                text-decoration: none;
+            }
     }
 }
 

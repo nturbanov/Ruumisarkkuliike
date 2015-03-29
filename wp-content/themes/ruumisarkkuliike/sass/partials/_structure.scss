@@ -4,7 +4,7 @@ body {
 body:not(.home) #primary {
     @extend .container;
 
-    padding-top: 120px;
+    padding-top: 80px;
 
     // @include breakpoint($screen-md) {
     //     padding-top: 120px;

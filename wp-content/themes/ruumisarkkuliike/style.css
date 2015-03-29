@@ -958,36 +958,36 @@ hr {
 }
 
 /* line 10, sass/vendor/bootstrap/_grid.scss */
-.container, body:not(.home) #primary {
+.container, body:not(.home) #primary, .kategoria-nosto .wrapper {
   margin-right: auto;
   margin-left: auto;
   padding-left: 5px;
   padding-right: 5px;
 }
 /* line 14, sass/vendor/bootstrap/mixins/_clearfix.scss */
-.container:before, body:not(.home) #primary:before, .container:after, body:not(.home) #primary:after {
+.container:before, body:not(.home) #primary:before, .kategoria-nosto .wrapper:before, .container:after, body:not(.home) #primary:after, .kategoria-nosto .wrapper:after {
   content: " ";
   display: table;
 }
 /* line 19, sass/vendor/bootstrap/mixins/_clearfix.scss */
-.container:after, body:not(.home) #primary:after {
+.container:after, body:not(.home) #primary:after, .kategoria-nosto .wrapper:after {
   clear: both;
 }
 @media (min-width: 768px) {
   /* line 10, sass/vendor/bootstrap/_grid.scss */
-  .container, body:not(.home) #primary {
+  .container, body:not(.home) #primary, .kategoria-nosto .wrapper {
     width: 730px;
   }
 }
 @media (min-width: 999px) {
   /* line 10, sass/vendor/bootstrap/_grid.scss */
-  .container, body:not(.home) #primary {
+  .container, body:not(.home) #primary, .kategoria-nosto .wrapper {
     width: 950px;
   }
 }
 @media (min-width: 1200px) {
   /* line 10, sass/vendor/bootstrap/_grid.scss */
-  .container, body:not(.home) #primary {
+  .container, body:not(.home) #primary, .kategoria-nosto .wrapper {
     width: 1200px;
   }
 }
@@ -1025,7 +1025,7 @@ hr {
 }
 
 /* line 11, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .muut article, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, body.single .site-content article, .page article, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .muut article, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .kategoria-nosto .wrapper > div, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, body.single .site-content article, .page article, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 5px;
@@ -1294,7 +1294,7 @@ hr {
 
 @media (min-width: 768px) {
   /* line 27, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .kategoria-nosto .wrapper > div, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
   }
 
@@ -1324,7 +1324,7 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-6 {
+  .col-sm-6, .kategoria-nosto .wrapper > div {
     width: 50%;
   }
 
@@ -2099,12 +2099,18 @@ hr {
 /* line 9, sass/partials/_base.scss */
 .entry-content {
   font-size: 22px;
-  line-height: 32px;
+  line-height: 1.45;
+}
+@media (min-width: 0) and (max-width: 998px) {
+  /* line 9, sass/partials/_base.scss */
+  .entry-content {
+    font-size: 18px;
+  }
 }
 
 /* line 4, sass/partials/_structure.scss */
 body:not(.home) #primary {
-  padding-top: 120px;
+  padding-top: 80px;
 }
 
 /* line 1, sass/partials/_header.scss */
@@ -2117,9 +2123,7 @@ body:not(.home) #primary {
 }
 
 /* line 9, sass/partials/_header.scss */
-.site-title a {
-  color: #fff;
-  display: inline-block;
+.site-title {
   line-height: 70px;
   margin: 0 0 0 2rem;
   font-size: 20px;
@@ -2127,22 +2131,27 @@ body:not(.home) #primary {
   font-weight: normal;
   text-transform: uppercase;
 }
-/* line 19, sass/partials/_header.scss */
+/* line 18, sass/partials/_header.scss */
+.site-title a {
+  color: #fff;
+  display: inline-block;
+}
+/* line 21, sass/partials/_header.scss */
 .site-title a:hover {
   text-decoration: none;
 }
 
-/* line 24, sass/partials/_header.scss */
+/* line 27, sass/partials/_header.scss */
 .home #masthead {
   background-color: rgba(216, 216, 216, 0.05);
 }
 
-/* line 28, sass/partials/_header.scss */
+/* line 31, sass/partials/_header.scss */
 .home .site-title {
   opacity: 0;
 }
 
-/* line 36, sass/partials/_header.scss */
+/* line 39, sass/partials/_header.scss */
 .site-branding {
   float: left;
 }
@@ -2206,10 +2215,6 @@ body:not(.home) #primary {
 .archive {
   background: #555e6d;
 }
-/* line 5, sass/partials/_archive.scss */
-.archive.tax-sarjat {
-  background: #B3B9CE;
-}
 
 /* line 10, sass/partials/_archive.scss */
 .post-type-desc {
@@ -2225,16 +2230,27 @@ body:not(.home) #primary {
   text-align: center;
 }
 
-/* line 32, sass/partials/_archive.scss */
+/* line 25, sass/partials/_archive.scss */
+.archive article .entry-header {
+  text-align: left;
+}
+/* line 29, sass/partials/_archive.scss */
 .archive article a {
   color: #fff;
 }
-/* line 35, sass/partials/_archive.scss */
+/* line 32, sass/partials/_archive.scss */
 .archive article a img {
   max-width: 100%;
   height: auto;
 }
-/* line 41, sass/partials/_archive.scss */
+/* line 38, sass/partials/_archive.scss */
+.archive article .product-image {
+  height: 246px;
+  display: block;
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* line 45, sass/partials/_archive.scss */
 .archive article .entry-title {
   display: inline-block;
   font-size: 14px;
@@ -2249,6 +2265,14 @@ body:not(.home) #primary {
   padding: 0 2rem;
   font-size: 16px;
   text-transform: none;
+  color: #3E4652;
+  transition: all 0.3s ease-in-out;
+}
+/* line 14, sass/partials/_buttons.scss */
+.button:hover {
+  background: #555e6d;
+  color: white;
+  text-decoration: none;
 }
 
 /* line 1, sass/partials/_content-header.scss */
@@ -2260,16 +2284,22 @@ body:not(.home) #primary {
 .entry-header .section-title,
 .entry-header .entry-title {
   font-size: 60px;
+  margin-top: 0.25em;
 }
-/* line 11, sass/partials/_content-header.scss */
+/* line 12, sass/partials/_content-header.scss */
 .entry-header .section-title div,
 .entry-header .entry-title div {
   font-size: 18px;
 }
-/* line 16, sass/partials/_content-header.scss */
+/* line 17, sass/partials/_content-header.scss */
 .entry-header a img {
   max-width: 100%;
   height: auto;
+}
+
+/* line 23, sass/partials/_content-header.scss */
+.subheader {
+  font-size: 18px;
 }
 
 /* line 1, sass/partials/_front-page.scss */
@@ -2425,21 +2455,21 @@ body:not(.home) #primary {
   }
 }
 /* line 1, sass/partials/_nostot.scss */
-.nosto, .kuvallinen-nosto, .kategoria-nosto {
+.nosto, .kuvallinen-nosto {
   text-align: center;
 }
 /* line 8, sass/partials/_nostot.scss */
-.nosto .wrapper, .kuvallinen-nosto .wrapper, .kategoria-nosto .wrapper {
+.nosto .wrapper, .kuvallinen-nosto .wrapper {
   width: 100%;
   padding: 5% 0;
 }
 /* line 14, sass/vendor/bootstrap/mixins/_clearfix.scss */
-.nosto .wrapper:before, .kuvallinen-nosto .wrapper:before, .kategoria-nosto .wrapper:before, .nosto .wrapper:after, .kuvallinen-nosto .wrapper:after, .kategoria-nosto .wrapper:after {
+.nosto .wrapper:before, .kuvallinen-nosto .wrapper:before, .nosto .wrapper:after, .kuvallinen-nosto .wrapper:after {
   content: " ";
   display: table;
 }
 /* line 19, sass/vendor/bootstrap/mixins/_clearfix.scss */
-.nosto .wrapper:after, .kuvallinen-nosto .wrapper:after, .kategoria-nosto .wrapper:after {
+.nosto .wrapper:after, .kuvallinen-nosto .wrapper:after {
   clear: both;
 }
 
@@ -2453,20 +2483,31 @@ body:not(.home) #primary {
 .kuvallinen-nosto .wrapper {
   padding: 12% 0;
   display: block;
+  background: rgba(85, 94, 109, 0.4);
+  transition: all 0.3s ease-in-out;
 }
-/* line 30, sass/partials/_nostot.scss */
+/* line 31, sass/partials/_nostot.scss */
+.kuvallinen-nosto .wrapper:hover {
+  background: rgba(85, 94, 109, 0.1);
+}
+/* line 36, sass/partials/_nostot.scss */
 .kuvallinen-nosto h2 {
   text-transform: uppercase;
 }
-/* line 34, sass/partials/_nostot.scss */
+/* line 40, sass/partials/_nostot.scss */
 .kuvallinen-nosto a {
   color: #fff;
 }
-/* line 37, sass/partials/_nostot.scss */
+/* line 43, sass/partials/_nostot.scss */
 .kuvallinen-nosto a:hover {
   text-decoration: none;
 }
 
+/* line 49, sass/partials/_nostot.scss */
+.kategoria-nosto {
+  padding: 5% 0;
+  text-align: left;
+}
 /* line 14, sass/vendor/bootstrap/mixins/_clearfix.scss */
 .kategoria-nosto:before, .kategoria-nosto:after {
   content: " ";
@@ -2476,21 +2517,23 @@ body:not(.home) #primary {
 .kategoria-nosto:after {
   clear: both;
 }
-/* line 50, sass/partials/_nostot.scss */
+/* line 59, sass/partials/_nostot.scss */
 .kategoria-nosto .wrapper {
   position: relative;
 }
-/* line 55, sass/partials/_nostot.scss */
+/* line 63, sass/partials/_nostot.scss */
 .kategoria-nosto .wrapper > div {
-  width: 50%;
-  float: left;
   padding: 4rem 8rem;
 }
-/* line 60, sass/partials/_nostot.scss */
+/* line 69, sass/partials/_nostot.scss */
 .kategoria-nosto .wrapper > div:first-child {
   border-right: 1px solid #959DB5;
 }
-/* line 67, sass/partials/_nostot.scss */
+/* line 76, sass/partials/_nostot.scss */
+.kategoria-nosto .desctription {
+  margin-bottom: 2em;
+}
+/* line 80, sass/partials/_nostot.scss */
 .kategoria-nosto img {
   position: absolute;
   top: 50%;
@@ -2499,9 +2542,15 @@ body:not(.home) #primary {
   right: 7%;
 }
 
-/* line 77, sass/partials/_nostot.scss */
+/* line 90, sass/partials/_nostot.scss */
 .kategoria-nosto .section-title {
   font-size: 38px;
+  margin: 0 0 0.5em;
+}
+
+/* line 1, sass/partials/_share.scss */
+.share {
+  display: none;
 }
 
 /* line 1, sass/partials/_muut.scss */
@@ -2511,25 +2560,52 @@ body:not(.home) #primary {
   padding-bottom: 40px;
 }
 /* line 7, sass/partials/_muut.scss */
-.muut h1 {
+.muut h2 {
   text-align: center;
   font-weight: normal;
   font-family: LancelotPro;
   text-transform: uppercase;
 }
-/* line 14, sass/partials/_muut.scss */
+/* line 13, sass/partials/_muut.scss */
+.single-suunnittelijat .muut h2 {
+  color: #555e6d;
+}
+/* line 18, sass/partials/_muut.scss */
 .muut article {
   text-align: left;
 }
-/* line 22, sass/partials/_muut.scss */
+/* line 28, sass/partials/_muut.scss */
 .muut article a img {
   max-width: 100%;
   height: auto;
 }
-/* line 28, sass/partials/_muut.scss */
+/* line 34, sass/partials/_muut.scss */
+.muut article .entry-header {
+  text-align: left;
+}
+/* line 38, sass/partials/_muut.scss */
 .muut article .entry-title {
   display: inline-block;
-  font-size: 14px;
+  font-size: 18px;
+}
+/* line 42, sass/partials/_muut.scss */
+.single-suunnittelijat .muut article .entry-title {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-weight: normal;
+  margin-top: -1em;
+}
+/* line 50, sass/partials/_muut.scss */
+.single-suunnittelijat .muut article .entry-title a {
+  color: white;
+}
+/* line 56, sass/partials/_muut.scss */
+.muut article .product-image {
+  height: 183px;
+  display: block;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* line 1, sass/partials/_page.scss */

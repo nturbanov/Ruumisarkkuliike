@@ -7,7 +7,15 @@
  * @package Honkasen Ruumisarkkuliike
  */
 
-get_header(); ?>
+get_header();
+
+// Tämmöstä shaibaa koska jostain syystä pre__getissä ei toimi set_post_type tax queryn kanssa
+
+// global $wp_query;
+// $wp_query->query_vars['post_type'] = array( 'verhoillut-arkut', 'puuarkut', 'uurnat' );
+// $args = $wp_query->query_vars;
+// query_posts( $args );
+?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
