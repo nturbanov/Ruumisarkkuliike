@@ -1,0 +1,29 @@
+.suunnittelijan-sarjat {
+
+    @extend .container;
+
+    h3 {
+        @extend .col-md-offset-2;
+        @extend .col-md-8;
+        border-top: 1px solid $purple;
+        padding-top: 5em;
+        padding-bottom: 1em;
+    }
+
+    article {
+        margin-bottom: 7em;
+        @extend .col-md-2;
+
+        &:first-of-type {
+            @extend .col-md-offset-2;
+        }
+
+        img {
+            display: block;
+        }
+
+        a {
+            color: white;
+        }
+    }
+}

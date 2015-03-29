@@ -11,6 +11,9 @@ body:not(.home) #primary {
     // }
 
     #main {
+
+        @extend .row;
+
         .archive-wrapper {
             @extend .row;
 

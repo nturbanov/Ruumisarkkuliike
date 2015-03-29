@@ -958,36 +958,36 @@ hr {
 }
 
 /* line 10, sass/vendor/bootstrap/_grid.scss */
-.container, body:not(.home) #primary, .kategoria-nosto .wrapper {
+.container, body:not(.home) #primary, .kategoria-nosto .wrapper, .suunnittelijan-sarjat {
   margin-right: auto;
   margin-left: auto;
   padding-left: 5px;
   padding-right: 5px;
 }
 /* line 14, sass/vendor/bootstrap/mixins/_clearfix.scss */
-.container:before, body:not(.home) #primary:before, .kategoria-nosto .wrapper:before, .container:after, body:not(.home) #primary:after, .kategoria-nosto .wrapper:after {
+.container:before, body:not(.home) #primary:before, .kategoria-nosto .wrapper:before, .suunnittelijan-sarjat:before, .container:after, body:not(.home) #primary:after, .kategoria-nosto .wrapper:after, .suunnittelijan-sarjat:after {
   content: " ";
   display: table;
 }
 /* line 19, sass/vendor/bootstrap/mixins/_clearfix.scss */
-.container:after, body:not(.home) #primary:after, .kategoria-nosto .wrapper:after {
+.container:after, body:not(.home) #primary:after, .kategoria-nosto .wrapper:after, .suunnittelijan-sarjat:after {
   clear: both;
 }
 @media (min-width: 768px) {
   /* line 10, sass/vendor/bootstrap/_grid.scss */
-  .container, body:not(.home) #primary, .kategoria-nosto .wrapper {
+  .container, body:not(.home) #primary, .kategoria-nosto .wrapper, .suunnittelijan-sarjat {
     width: 730px;
   }
 }
 @media (min-width: 999px) {
   /* line 10, sass/vendor/bootstrap/_grid.scss */
-  .container, body:not(.home) #primary, .kategoria-nosto .wrapper {
+  .container, body:not(.home) #primary, .kategoria-nosto .wrapper, .suunnittelijan-sarjat {
     width: 950px;
   }
 }
 @media (min-width: 1200px) {
   /* line 10, sass/vendor/bootstrap/_grid.scss */
-  .container, body:not(.home) #primary, .kategoria-nosto .wrapper {
+  .container, body:not(.home) #primary, .kategoria-nosto .wrapper, .suunnittelijan-sarjat {
     width: 1200px;
   }
 }
@@ -1010,22 +1010,22 @@ hr {
 }
 
 /* line 39, sass/vendor/bootstrap/_grid.scss */
-.row, body:not(.home) #primary #main .archive-wrapper, .share, .single:not(.single-suunnittelijat) .entry-meta {
+.row, body:not(.home) #primary #main, body:not(.home) #primary #main .archive-wrapper, .share, .single:not(.single-suunnittelijat) .entry-meta {
   margin-left: -5px;
   margin-right: -5px;
 }
 /* line 14, sass/vendor/bootstrap/mixins/_clearfix.scss */
-.row:before, body:not(.home) #primary #main .archive-wrapper:before, .share:before, .single:not(.single-suunnittelijat) .entry-meta:before, .row:after, body:not(.home) #primary #main .archive-wrapper:after, .share:after, .single:not(.single-suunnittelijat) .entry-meta:after {
+.row:before, body:not(.home) #primary #main:before, body:not(.home) #primary #main .archive-wrapper:before, .share:before, .single:not(.single-suunnittelijat) .entry-meta:before, .row:after, body:not(.home) #primary #main:after, body:not(.home) #primary #main .archive-wrapper:after, .share:after, .single:not(.single-suunnittelijat) .entry-meta:after {
   content: " ";
   display: table;
 }
 /* line 19, sass/vendor/bootstrap/mixins/_clearfix.scss */
-.row:after, body:not(.home) #primary #main .archive-wrapper:after, .share:after, .single:not(.single-suunnittelijat) .entry-meta:after {
+.row:after, body:not(.home) #primary #main:after, body:not(.home) #primary #main .archive-wrapper:after, .share:after, .single:not(.single-suunnittelijat) .entry-meta:after {
   clear: both;
 }
 
 /* line 11, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .muut article, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .kategoria-nosto .wrapper > div, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, body.single .site-content article, .page article, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .suunnittelijan-sarjat article, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .muut article, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .kategoria-nosto .wrapper > div, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .suunnittelijan-sarjat h3, body.single #primary article, .page article, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 5px;
@@ -1555,7 +1555,7 @@ hr {
 }
 @media (min-width: 999px) {
   /* line 27, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-1, .col-md-2, .col-md-3, .muut article, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-md-5, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-md-7, .col-md-8, body.single .site-content article, .page article, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .suunnittelijan-sarjat article, .col-md-3, .muut article, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-md-5, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-md-7, .col-md-8, .suunnittelijan-sarjat h3, body.single #primary article, .page article, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
 
@@ -1565,7 +1565,7 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-2 {
+  .col-md-2, .suunnittelijan-sarjat article {
     width: 16.66667%;
   }
 
@@ -1595,7 +1595,7 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-8, body.single .site-content article, .page article {
+  .col-md-8, .suunnittelijan-sarjat h3, body.single #primary article, .page article {
     width: 66.66667%;
   }
 
@@ -1760,7 +1760,7 @@ hr {
   }
 
   /* line 60, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-offset-2, body.single .site-content article, .page article {
+  .col-md-offset-2, .suunnittelijan-sarjat h3, .suunnittelijan-sarjat article:first-of-type, body.single #primary article, .page article {
     margin-left: 16.66667%;
   }
 
@@ -2583,12 +2583,16 @@ body:not(.home) #primary {
 .muut article .entry-header {
   text-align: left;
 }
-/* line 38, sass/partials/_muut.scss */
+/* line 37, sass/partials/_muut.scss */
+.muut article .entry-header a {
+  color: #555e6d;
+}
+/* line 42, sass/partials/_muut.scss */
 .muut article .entry-title {
   display: inline-block;
   font-size: 18px;
 }
-/* line 42, sass/partials/_muut.scss */
+/* line 46, sass/partials/_muut.scss */
 .single-suunnittelijat .muut article .entry-title {
   position: absolute;
   top: 50%;
@@ -2597,15 +2601,34 @@ body:not(.home) #primary {
   font-weight: normal;
   margin-top: -1em;
 }
-/* line 50, sass/partials/_muut.scss */
+/* line 54, sass/partials/_muut.scss */
 .single-suunnittelijat .muut article .entry-title a {
   color: white;
 }
-/* line 56, sass/partials/_muut.scss */
+/* line 60, sass/partials/_muut.scss */
 .muut article .product-image {
   height: 183px;
   display: block;
   background: rgba(255, 255, 255, 0.1);
+}
+
+/* line 5, sass/partials/_suunnittelijan-sarjat.scss */
+.suunnittelijan-sarjat h3 {
+  border-top: 1px solid #B3B9CE;
+  padding-top: 5em;
+  padding-bottom: 1em;
+}
+/* line 13, sass/partials/_suunnittelijan-sarjat.scss */
+.suunnittelijan-sarjat article {
+  margin-bottom: 7em;
+}
+/* line 21, sass/partials/_suunnittelijan-sarjat.scss */
+.suunnittelijan-sarjat article img {
+  display: block;
+}
+/* line 25, sass/partials/_suunnittelijan-sarjat.scss */
+.suunnittelijan-sarjat article a {
+  color: white;
 }
 
 /* line 1, sass/partials/_page.scss */

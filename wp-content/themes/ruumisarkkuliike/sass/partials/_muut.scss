@@ -33,6 +33,10 @@
 
         .entry-header {
             text-align: left;
+
+            a {
+                color: $dark-grey;
+            }
         }
 
         .entry-title {
