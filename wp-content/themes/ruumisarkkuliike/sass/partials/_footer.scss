@@ -10,5 +10,33 @@
 
     a {
         color: #fff;
+        color: $purple;
+        text-decoration: none;
+        position: relative;
+        padding-left: 30px;
+        line-height: 20px;
+        display: inline-block;
+        margin-right: 40px;
+
+        span {
+            display: block;
+            width: 8px;
+            height: 8px;
+            border: 1px solid $purple;
+            position: absolute;
+
+            &:nth-of-type(1) { left: 0; top: 0; }
+            &:nth-of-type(2) { left: 12px; top: 0; }
+            &:nth-of-type(3) { left: 12px; bottom: 0; }
+            &:nth-of-type(4) { left: 0; bottom: 0; }
+        }
+
+        &:hover {
+            color: #fff;
+
+            span {
+                border-color: #fff;
+            }
+        }
     }
 }
