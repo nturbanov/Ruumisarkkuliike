@@ -2077,18 +2077,18 @@ hr {
 }
 @font-face {
   font-family: "LancelotPro";
-  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?1420215361');
-  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/LancelotPro/2C9BF0_0_0.woff?1420215361') format('woff'), url('fonts/LancelotPro/2C9BF0_0_0.woff2?1420215361') format('woff2'), url('fonts/LancelotPro/2C9BF0_0_0.ttf?1420215361') format('truetype');
+  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?1427626385');
+  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?&1427626385#iefix') format('embedded-opentype'), url('fonts/LancelotPro/2C9BF0_0_0.woff?1427626385') format('woff'), url('fonts/LancelotPro/2C9BF0_0_0.woff2?1427626385') format('woff2'), url('fonts/LancelotPro/2C9BF0_0_0.ttf?1427626385') format('truetype');
 }
 @font-face {
   font-family: "Adagio Serif";
-  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?1420215361');
-  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_2_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_2_0.woff2?1420215361') format('woff2'), url('fonts/AdagioSerif/2C9BF0_2_0.ttf?1420215361') format('truetype');
+  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?1427626384');
+  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?&1427626384#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_2_0.woff?1427626385') format('woff'), url('fonts/AdagioSerif/2C9BF0_2_0.woff2?1427626385') format('woff2'), url('fonts/AdagioSerif/2C9BF0_2_0.ttf?1427626385') format('truetype');
 }
 @font-face {
   font-family: "Adagio Serif";
-  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?1420215361');
-  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.ttf?1420215361') format('truetype');
+  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?1427626384');
+  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?&1427626384#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1427626384') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1427626384') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.ttf?1427626384') format('truetype');
   font-weight: bold;
 }
 /* line 5, sass/partials/_base.scss */
@@ -2629,6 +2629,14 @@ body:not(.home) #primary {
 /* line 25, sass/partials/_suunnittelijan-sarjat.scss */
 .suunnittelijan-sarjat article a {
   color: white;
+}
+
+/* line 1, sass/partials/_jalleenmyyjat.scss */
+.acf-map {
+  width: 100%;
+  height: 400px;
+  border: #ccc solid 1px;
+  margin: 20px 0;
 }
 
 /* line 1, sass/partials/_page.scss */

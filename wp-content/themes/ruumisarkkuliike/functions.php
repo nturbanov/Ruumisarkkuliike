@@ -106,6 +106,8 @@ function ruumisarkkuliike_scripts() {
 
     // wp_enqueue_script( 'skrollr', get_template_directory_uri() . '/js/vendor/skrollr.min.js', array(), '0.6.29', true );
 
+    wp_enqueue_script( 'google-maps-api', '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3', true );
+
 
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js', false, '1.11.2', true );
