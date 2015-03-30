@@ -92,6 +92,9 @@ add_action( 'widgets_init', 'ruumisarkkuliike_widgets_init' );
  * Enqueue scripts and styles.
  */
 function ruumisarkkuliike_scripts() {
+
+    $GOOGLE_API_KEY = 'AIzaSyDnP5-UFawxjSCb5e4jlvjd4JO5FUrCQx4';
+
 	wp_enqueue_style( 'ruumisarkkuliike-style', get_bloginfo('stylesheet_directory').'/style.css' );
 
 	wp_enqueue_script( 'ruumisarkkuliike-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -106,8 +109,9 @@ function ruumisarkkuliike_scripts() {
 
     // wp_enqueue_script( 'skrollr', get_template_directory_uri() . '/js/vendor/skrollr.min.js', array(), '0.6.29', true );
 
-    wp_enqueue_script( 'google-maps-api', '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3', true );
-
+    // wp_enqueue_script( 'google-maps-api', '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3', true );
+    wp_enqueue_script('google_jsapi', 'https://www.google.com/jsapi?key='.$GOOGLE_API_KEY, null, '', true);
+    wp_enqueue_script('google_maps', 'https://maps.googleapis.com/maps/api/js?key='.$GOOGLE_API_KEY.'&sensor=true&libraries=geometry', null, '', true);
 
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js', false, '1.11.2', true );
@@ -225,3 +229,59 @@ if(false === get_option("large_crop"))
     add_option("large_crop", "1");
 else
     update_option("large_crop", "1");
+
+
+/** http://wordpress.stackexchange.com/a/33322
+ * @param  $classes array
+ * @param  $item object
+ * @return array
+ */
+function normalize_wp_classes($classes, $item){
+
+  // old class => new class
+  if(get_post_type() == 'post'){
+    $replacement = 'active-parent';
+  }
+  else{
+    $replacement = '';
+  }
+  $replacements = array(
+      'current-menu-item'     => 'active',
+      'current-menu-parent'   => 'active-parent',
+      'current-menu-ancestor' => 'active-parent',
+      'current_page_item'     => 'active',
+      'current_page_parent'   => $replacement,
+      'current_page_ancestor' => 'active-parent',
+      'current-page-ancestor' => 'active-parent',
+      'current-page-parent'   => 'active-parent',
+      'menu-item-has-children'=> 'has-children',
+      'menu-item'             => 'menu-item',
+      'fa'                    => 'fa'
+  );
+
+  // do the replacements above
+  $classes = strtr(implode(',', $classes), $replacements);
+  $classes = explode(',', $classes);
+
+  // remove any classes that are not present in the replacements array,
+  // and return the result
+
+  return array_unique(array_intersect(array_values($replacements), $classes));
+}
+
+// for custom menus
+add_filter('nav_menu_css_class', 'normalize_wp_classes', 10, 2);
+
+// for the page menu fallback (wp_list_pages)
+add_filter('page_css_class', 'normalize_wp_classes', 10, 2);
+
+
+//Page Slug Body Class
+function add_slug_body_class( $classes ) {
+    global $post;
+    if ( isset( $post ) ) {
+        $classes[] = $post->post_type . '-' . $post->post_name;
+    }
+    return $classes;
+}
+add_filter( 'body_class', 'add_slug_body_class' );
