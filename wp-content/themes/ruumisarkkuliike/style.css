@@ -4983,18 +4983,18 @@ input[type="button"].btn-block {
 
 @font-face {
   font-family: "LancelotPro";
-  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?1427626385');
-  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?&1427626385#iefix') format('embedded-opentype'), url('fonts/LancelotPro/2C9BF0_0_0.woff?1427626385') format('woff'), url('fonts/LancelotPro/2C9BF0_0_0.woff2?1427626385') format('woff2'), url('fonts/LancelotPro/2C9BF0_0_0.ttf?1427626385') format('truetype');
+  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?1420215361');
+  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/LancelotPro/2C9BF0_0_0.woff?1420215361') format('woff'), url('fonts/LancelotPro/2C9BF0_0_0.woff2?1420215361') format('woff2'), url('fonts/LancelotPro/2C9BF0_0_0.ttf?1420215361') format('truetype');
 }
 @font-face {
   font-family: "Adagio Serif";
-  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?1427626384');
-  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?&1427626384#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_2_0.woff?1427626385') format('woff'), url('fonts/AdagioSerif/2C9BF0_2_0.woff2?1427626385') format('woff2'), url('fonts/AdagioSerif/2C9BF0_2_0.ttf?1427626385') format('truetype');
+  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?1420215361');
+  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_2_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_2_0.woff2?1420215361') format('woff2'), url('fonts/AdagioSerif/2C9BF0_2_0.ttf?1420215361') format('truetype');
 }
 @font-face {
   font-family: "Adagio Serif";
-  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?1427626384');
-  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?&1427626384#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1427626384') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1427626384') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.ttf?1427626384') format('truetype');
+  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?1420215361');
+  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.ttf?1420215361') format('truetype');
   font-weight: bold;
 }
 /* line 5, sass/partials/_base.scss */
@@ -5535,6 +5535,62 @@ body:not(.home) #primary {
 /* line 25, sass/partials/_suunnittelijan-sarjat.scss */
 .suunnittelijan-sarjat article a {
   color: white;
+}
+
+/* line 1, sass/partials/_lahin-jalleenmyyja.scss */
+.nearest-dist {
+  float: right;
+  color: white;
+  text-align: left;
+  padding: 0 1em;
+  background: #555e6d;
+  position: relative;
+}
+/* line 9, sass/partials/_lahin-jalleenmyyja.scss */
+.nearest-dist:hover {
+  cursor: pointer;
+}
+/* line 13, sass/partials/_lahin-jalleenmyyja.scss */
+.nearest-dist > span {
+  line-height: 70px;
+}
+/* line 16, sass/partials/_lahin-jalleenmyyja.scss */
+.nearest-dist > span .glyphicon {
+  font-size: 30px;
+  position: relative;
+  top: 10px;
+  margin-left: 6px;
+}
+/* line 24, sass/partials/_lahin-jalleenmyyja.scss */
+.nearest-dist > div {
+  display: none;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  right: 0;
+  top: 70px;
+  width: 320px;
+  background: #555e6d;
+  padding: 1em;
+}
+/* line 34, sass/partials/_lahin-jalleenmyyja.scss */
+.nearest-dist > div.open {
+  display: block;
+}
+/* line 38, sass/partials/_lahin-jalleenmyyja.scss */
+.nearest-dist > div p {
+  opacity: 0.4;
+  font-size: 16px;
+}
+/* line 43, sass/partials/_lahin-jalleenmyyja.scss */
+.nearest-dist > div a {
+  color: white;
+  display: block;
+  padding: 1em 0 0;
+}
+/* line 49, sass/partials/_lahin-jalleenmyyja.scss */
+.nearest-dist > div .vcard {
+  padding-bottom: 2em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* line 3, sass/partials/_jalleenmyyjat.scss */

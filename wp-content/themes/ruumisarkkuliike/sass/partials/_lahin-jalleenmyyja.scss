@@ -1,0 +1,54 @@
+.nearest-dist {
+    float: right;
+    color: white;
+    text-align: left;
+    padding: 0 1em;
+    background: $dark-grey;
+    position: relative;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    > span {
+        line-height: 70px;
+
+        .glyphicon {
+            font-size: 30px;
+            position: relative;
+            top: 10px;
+            margin-left: 6px;
+        }
+    }
+
+    > div {
+        display: none;
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        right: 0;
+        top: 70px;
+        width: 320px;
+        background: $dark-grey;
+        padding: 1em;
+
+        &.open {
+            display: block;
+        }
+
+        p {
+            opacity: 0.4;
+            font-size: 16px;
+        }
+
+        a {
+            color: white;
+            display: block;
+            padding: 1em 0 0;
+        }
+
+        .vcard {
+            padding-bottom: 2em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    }
+}

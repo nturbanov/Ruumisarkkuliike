@@ -46,10 +46,19 @@
 			<!-- <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2> -->
 		</div>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Primary Menu', 'ruumisarkkuliike' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
+        <div class="nearest-dist">
+            <span>Lähin jälleenmyyjä <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
+            <div>
+                <p>Sijaintisti perusteella suosittelemme</p>
+                <a class="all" href="/jalleenmyyjat/">Katso kaikki jälleenmyyjät »</a>
+            </div>
+        </div>
+
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle"><?php _e( 'Primary Menu', 'ruumisarkkuliike' ); ?></button>
+            <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+        </nav><!-- #site-navigation -->
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

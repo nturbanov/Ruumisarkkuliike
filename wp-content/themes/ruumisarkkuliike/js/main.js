@@ -23,8 +23,12 @@ function render_map( $el ) {
         mapTypeId   : google.maps.MapTypeId.ROADMAP
     };
 
+    var styles = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}];
+
     // create map
     var map = new google.maps.Map( $el[0], args);
+
+    map.setOptions({styles: styles});
 
     // add a markers reference
     map.markers = [];
@@ -130,7 +134,7 @@ function center_map( map ) {
 }
 
 var stores = new Array();
-var distributors = [];
+// var distributors = [];
 var distances = [];
 var closestDistributor;
 var $markers;
@@ -171,30 +175,30 @@ jQuery(document).ready(function ($) {
         // One-shot position request
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(closestDistributor, geoError);
-            get_distributors();
+            // get_distributors();
         } else {
             console.log('no GeoLocation support');
         }
     }
     geoLocateMe();
 
-    function get_distributors() {
-        $markers.each(function( index ) {
-            // console.log( $( this ).find('h4').text() );
-            this_dist = {
-                name : $( this ).find('h4').text(),
-                address : $( this ).find('.address').text(),
-                phone : $( this ).find('.puhnro').text(),
-                website : $( this ).find('a').attr('href'),
-                latitude : $( this ).attr('data-lat'),
-                longitude : $( this ).attr('data-lng')
-            };
-            // console.log(this_dist);
-            distributors.push(this_dist);
-        });
+    // function get_distributors() {
+    //     $markers.each(function( index ) {
+    //         // console.log( $( this ).find('h4').text() );
+    //         this_dist = {
+    //             name : $( this ).find('h4').text(),
+    //             address : $( this ).find('.address').text(),
+    //             phone : $( this ).find('.puhnro').text(),
+    //             website : $( this ).find('a').attr('href'),
+    //             latitude : $( this ).attr('data-lat'),
+    //             longitude : $( this ).attr('data-lng')
+    //         };
+    //         // console.log(this_dist);
+    //         distributors.push(this_dist);
+    //     });
 
-        console.log(distributors);
-    }
+    //     console.log(distributors);
+    // }
 
     function geoCallback(position) {
         var distances = new Array();
@@ -205,19 +209,19 @@ jQuery(document).ready(function ($) {
                     {x:stores[i][2], y:stores[i][3]})
             );
         };
-        console.log(distances);
+        // console.log(distances);
         var i = distances.indexOf(Math.min.apply(Math, distances));
         // $('.section5 .answers:nth-child(' + i + ')').click();
         //if (!storeSelected) $('.section4 .answers .answer:nth-child(' + (i+1) + ')').click();
         //$('.preloaderx').fadeOut();
 
         //console.log('closest shop: ' + stores[i][0]);
-        console.log('latitude: ' + position.coords.latitude);
-        console.log('longitude: ' + position.coords.longitude);
+        // console.log('latitude: ' + position.coords.latitude);
+        // console.log('longitude: ' + position.coords.longitude);
     }
 
     function closestDistributor(position) {
-        console.log(position);
+        // console.log(position);
 
         distributors.forEach(function (distributor) {
             //console.log(obj);
@@ -237,22 +241,23 @@ jQuery(document).ready(function ($) {
 
         closestDistributor = distributors[minIndex];
 
-        secondClosestDistributor = distributors[minIndex+1];
+        // secondClosestDistributor = distributors[minIndex+1];
 
-        thirdClosestDistributor = distributors[minIndex+2];
+        // thirdClosestDistributor = distributors[minIndex+2];
 
-        fourthClosestDistributor = distributors[minIndex+3];
+        // fourthClosestDistributor = distributors[minIndex+3];
 
-        console.log(closestDistributor);
+        // console.log(distributors);
 
-        $newDistributor = $( '<div><h2>' + closestDistributor.name + '</h2><p>' + closestDistributor.address + '</p><p>' + closestDistributor.phone + '</p><a href="' + closestDistributor.website + '">' + closestDistributor.website + '</a></div>' );
+        $newDistributor = $( '<div class="vcard"><div>' + closestDistributor.name + '</div><div>' + closestDistributor.address + '</div><div>' + closestDistributor.phone + '</div><a href="' + closestDistributor.website + '">' + closestDistributor.website + '</a></div>' );
 
-        $newDistributor1 = $( '<div><h2>' + secondClosestDistributor.name + '</h2><p>' + secondClosestDistributor.address + '</p><p>' + secondClosestDistributor.phone + '</p><a href="' + secondClosestDistributor.website + '">' + secondClosestDistributor.website + '</a></div>' );
-        $newDistributor2 = $( '<div><h2>' + thirdClosestDistributor.name + '</h2><p>' + thirdClosestDistributor.address + '</p><p>' + thirdClosestDistributor.phone + '</p><a href="' + thirdClosestDistributor.website + '">' + thirdClosestDistributor.website + '</a></div>' );
-        $newDistributor3 = $( '<div><h2>' + fourthClosestDistributor.name + '</h2><p>' + fourthClosestDistributor.address + '</p><p>' + fourthClosestDistributor.phone + '</p><a href="' + fourthClosestDistributor.website + '">' + fourthClosestDistributor.website + '</a></div>' );
+        $('.nearest-dist p').after($newDistributor);
 
+        // $newDistributor1 = $( '<div><h2>' + secondClosestDistributor.name + '</h2><p>' + secondClosestDistributor.address + '</p><p>' + secondClosestDistributor.phone + '</p><a href="' + secondClosestDistributor.website + '">' + secondClosestDistributor.website + '</a></div>' );
+        // $newDistributor2 = $( '<div><h2>' + thirdClosestDistributor.name + '</h2><p>' + thirdClosestDistributor.address + '</p><p>' + thirdClosestDistributor.phone + '</p><a href="' + thirdClosestDistributor.website + '">' + thirdClosestDistributor.website + '</a></div>' );
+        // $newDistributor3 = $( '<div><h2>' + fourthClosestDistributor.name + '</h2><p>' + fourthClosestDistributor.address + '</p><p>' + fourthClosestDistributor.phone + '</p><a href="' + fourthClosestDistributor.website + '">' + fourthClosestDistributor.website + '</a></div>' );
 
-        $('.lahimmat-jalleenmyyjat').append($newDistributor, $newDistributor1, $newDistributor2, $newDistributor3);
+        // $('.lahimmat-jalleenmyyjat').append($newDistributor, $newDistributor1, $newDistributor2, $newDistributor3);
     }
 
     // function doStuff() {
@@ -282,5 +287,10 @@ jQuery(document).ready(function ($) {
         //console.log(distance);//In metres
         distances.push(distance);
     }
+
+    $('.nearest-dist').click( function() {
+        // console.log('wh');
+        $(this).find('div').toggleClass('open');
+    });
 
 }); // jQuery(document).ready
