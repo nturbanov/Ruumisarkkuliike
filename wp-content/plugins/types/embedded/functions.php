@@ -3,9 +3,9 @@
  * Basic and init functions.
  * Since Types 1.2 moved from /embedded/types.php
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5.1/embedded/functions.php $
- * $LastChangedDate: 2015-01-16 14:28:15 +0000 (Fri, 16 Jan 2015) $
- * $LastChangedRevision: 1069430 $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.6/embedded/functions.php $
+ * $LastChangedDate: 2015-03-25 12:38:40 +0000 (Wed, 25 Mar 2015) $
+ * $LastChangedRevision: 1120400 $
  * $LastChangedBy: iworks $
  *
  */
@@ -149,10 +149,6 @@ function wpcf_embedded_check_import()
                     $_POST['overwrite-fields'] = 1;
                     $_POST['overwrite-types'] = 1;
                     $_POST['overwrite-tax'] = 1;
-//                    $_POST['delete-groups'] = 0;
-//                    $_POST['delete-fields'] = 0;
-//                    $_POST['delete-types'] = 0;
-//                    $_POST['delete-tax'] = 0;
                     $_POST['post_relationship'] = 1;
                     require_once WPCF_EMBEDDED_INC_ABSPATH . '/fields.php';
                     require_once WPCF_EMBEDDED_INC_ABSPATH . '/import-export.php';
@@ -167,38 +163,6 @@ function wpcf_embedded_check_import()
             }
         }
     }
-}
-
-/**
- * Display information about upgrading to the plugin version of types.
- *
- */
-function wpcf_promote_types_admin()
-{
-    $custom_types = get_option( 'wpcf-custom-types', array() );
-
-    ?>
-
-    <?php
-    if ( sizeof( $custom_types ) > 0 ) {
-        echo '<p>' . __( 'Types creates Custom Post Types. These are user-defined WordPress content types. On your theme the following types are defined:',
-                'wpcf' ) . "</p>\n";
-        echo "<ul style='margin-left:20px;'>\n";
-        foreach ( $custom_types as $type ) {
-            echo "<li>" . $type['labels']['name'] . "</li>\n";
-        }
-        echo "</ul>\n";
-    }
-
-    ?>
-    <p><?php
-        echo sprintf( __( 'If you want to edit these or create your own you can download the full version of <strong>Types</strong> from <a href="%s">%s</a>',
-                        'wpcf' ), 'http://wordpress.org/extend/plugins/types/',
-                'http://wordpress.org/extend/plugins/types/' );
-
-        ?></p>
-
-    <?php
 }
 
 /**
@@ -510,13 +474,12 @@ function wpcf_enqueue_scripts()
         /**
          * Basic JS
          */
-        wp_enqueue_script( 'wpcf-js', WPCF_RES_RELPATH . '/js/basic.js',
-                array('jquery', 'jquery-ui-sortable', 'jquery-ui-draggable', 'jquery-ui-tabs'),
-                WPCF_VERSION.'-C1' );
-        /**
-         * Basic CSS
-         */
-        wp_enqueue_style('wpcf-css');
+        wp_enqueue_script(
+            'wpcf-js',
+            WPCF_RES_RELPATH . '/js/basic.js',
+            array('jquery', 'jquery-ui-sortable', 'jquery-ui-draggable', 'jquery-ui-tabs'),
+            WPCF_VERSION
+        );
     }
     /**
      * Basic JS
@@ -525,7 +488,7 @@ function wpcf_enqueue_scripts()
         'wpcf-js-embedded',
         WPCF_EMBEDDED_RES_RELPATH . '/js/basic.js',
         array('jquery', 'jquery-ui-sortable', 'jquery-ui-draggable', 'jquery-ui-tabs'),
-        WPCF_VERSION.'-D9'
+        WPCF_VERSION
     );
     /*
      *

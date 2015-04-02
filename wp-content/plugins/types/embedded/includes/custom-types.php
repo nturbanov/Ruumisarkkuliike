@@ -3,9 +3,9 @@
  *
  * Custom Post Types embedded code.
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.5.1/embedded/includes/custom-types.php $
- * $LastChangedDate: 2014-11-18 06:47:25 +0000 (Tue, 18 Nov 2014) $
- * $LastChangedRevision: 1027712 $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.6/embedded/includes/custom-types.php $
+ * $LastChangedDate: 2015-03-16 12:03:31 +0000 (Mon, 16 Mar 2015) $
+ * $LastChangedRevision: 1113864 $
  * $LastChangedBy: iworks $
  *
  */
@@ -200,38 +200,26 @@ function wpcf_custom_types_register( $post_type, $data ) {
         $data['permalink_epmask'] = constant( $data['permalink_epmask'] );
     }
 
-    $args = register_post_type( $post_type,
-            apply_filters( 'wpcf_type', $data, $post_type ) );
+    /**
+     * set default support options
+     */
+    $support_fields = array(
+        'editor' => false,
+        'author' => false,
+        'thumbnail' => false,
+        'excerpt' => false,
+        'trackbacks' => false,
+        'custom-fields' => false,
+        'comments' => false,
+        'revisions' => false,
+        'page-attributes' => false,
+        'post-formats' => false,
+    );
+    $data['supports'] = array_merge_recursive( $data['supports'], $support_fields );
+
+    $args = register_post_type( $post_type, apply_filters( 'wpcf_type', $data, $post_type ) );
 
     do_action( 'wpcf_type_registered', $args );
-
-    /*
-     * Since Types 1.2
-     * We do not encourage plural and singular names to be same.
-     */
-    $wpcf->post_types->set( $post_type, $data );
-    if ( $wpcf->post_types->check_singular_plural_match() ) {
-        if ( is_admin() ) {
-//            wpcf_admin_message_dismiss( $post_type . 'warning_singular_plural_match',
-//                    $wpcf->post_types->message( 'warning_singular_plural_match' )
-//            );
-        }
-    }
-
-    // Add the standard tags and categoires if the're set.
-    $body = '';
-    if ( in_array( 'post_tag', $data['taxonomies'] ) ) {
-        $body = 'register_taxonomy_for_object_type("post_tag", "' . $post_type . '");';
-    }
-    if ( in_array( 'category', $data['taxonomies'] ) ) {
-        $body .= 'register_taxonomy_for_object_type("category", "' . $post_type . '");';
-    }
-
-    // make sure the function name is OK
-    $post_type = str_replace( '-', '_', $post_type );
-    if ( $body != '' ) {
-        add_action( 'init', create_function('', $body ));
-    }
 }
 
 /**
@@ -297,3 +285,48 @@ function wpcf_get_active_custom_types() {
     }
     return $types;
 }
+
+/** This action is documented in wp-admin/includes/dashboard.php */
+add_action('dashboard_glance_items', 'wpcf_dashboard_glance_items');
+
+/**
+ * Add CPT info to "At a Glance"
+ *
+ * Add to "At a Glance" WordPress admin dashboard widget information
+ * about number of posts.
+ *
+ * @since 1.6.6
+ *
+ */
+function wpcf_dashboard_glance_items()
+{
+    $custom_types = get_option( 'wpcf-custom-types', array() );
+    ksort($custom_types);
+    if ( !empty( $custom_types ) ) {
+        foreach ( $custom_types as $post_type => $data ) {
+            if ( !isset($data['dashboard_glance']) || !$data['dashboard_glance']) {
+                continue;
+            }
+            if ( isset($data['disabled']) && $data['disabled'] ) {
+                continue;
+            }
+            $num_posts = wp_count_posts($post_type);
+            $num = number_format_i18n($num_posts->publish);
+            $text = _n( $data['labels']['singular_name'], $data['labels']['name'], intval($num_posts->publish) );
+            printf(
+                '<li class="page-count %s-count"><a href="%s"%s>%d %s</a></li>',
+                $post_type,
+                add_query_arg(
+                    array(
+                        'post_type' => $post_type,
+                    ),
+                    admin_url('edit.php')
+                ),
+                isset($data['icon'])? sprintf('class="dashicons-%s"', $data['icon']):'',
+                $num,
+                $text
+            );
+        }
+    }
+}
+

@@ -23,10 +23,10 @@ function render_map( $el ) {
         mapTypeId   : google.maps.MapTypeId.ROADMAP
     };
 
-    var styles = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}];
+    var styles = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}];
 
     // create map
-    var map = new google.maps.Map( $el[0], args);
+    map = new google.maps.Map( $el[0], args);
 
     map.setOptions({styles: styles});
 
@@ -64,11 +64,23 @@ function add_marker( $marker, map ) {
     // var
     var latlng = new google.maps.LatLng( $marker.attr('data-lat'), $marker.attr('data-lng') );
 
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+
     // create marker
-    var marker = new google.maps.Marker({
-        position    : latlng,
-        map         : map
-    });
+    // var marker = new google.maps.Marker({
+    //     position    : latlng,
+    //     map         : map,
+    //     iconBase    : iconBase + 'schools_maps.png'
+    // });
+
+    var marker = new RichMarker({
+          position: latlng,
+          map: map,
+          draggable: false,
+          shadow: false,
+          content: '<span style="font-size: 40px; background: transparent; box-shadow: none;" class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>'
+          });
+
 
     // add to array
     map.markers.push( marker );
@@ -123,7 +135,12 @@ function center_map( map ) {
     {
         // set center of map
         map.setCenter( bounds.getCenter() );
-        map.setZoom( 16 );
+        map.setZoom( 12 );
+    }
+    else if( myLoc.lat && myLoc.lng ) {
+        console.log(myLoc.lat);
+        map.setCenter( new google.maps.LatLng(myLoc.lat, myLoc.lng) );
+        map.setZoom( 12 );
     }
     else
     {
@@ -133,13 +150,16 @@ function center_map( map ) {
 
 }
 
-var stores = new Array();
+var map;
+var stores = [];
 // var distributors = [];
 var distances = [];
-var closestDistributor;
+var closestDistributor = {};
+var myLoc = {};
 var $markers;
 
 jQuery(document).ready(function ($) {
+
 
     $('.rslides').responsiveSlides({
         auto: true,             // Boolean: Animate automatically, true or false
@@ -174,8 +194,14 @@ jQuery(document).ready(function ($) {
     function geoLocateMe() {
         // One-shot position request
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(closestDistributor, geoError);
+            navigator.geolocation.getCurrentPosition(findClosestDistributor, geoError, {timeout: 30000, enableHighAccuracy: true, maximumAge: 75000});
             // get_distributors();
+            // console.log('yes GeoLocation support');
+            // navigator.geolocation.getCurrentPosition( function(position) {
+            //   myLoc.lat = position.coords.latitude;
+            //   myLoc.lng = position.coords.longitude;
+            // });
+
         } else {
             console.log('no GeoLocation support');
         }
@@ -220,8 +246,13 @@ jQuery(document).ready(function ($) {
         // console.log('longitude: ' + position.coords.longitude);
     }
 
-    function closestDistributor(position) {
-        // console.log(position);
+    function findClosestDistributor(position) {
+        // console.log(position.coords);
+
+        myLoc.lat = position.coords.latitude;
+        myLoc.lng = position.coords.longitude;
+
+        center_map( map );
 
         distributors.forEach(function (distributor) {
             //console.log(obj);
@@ -241,43 +272,12 @@ jQuery(document).ready(function ($) {
 
         closestDistributor = distributors[minIndex];
 
-        // secondClosestDistributor = distributors[minIndex+1];
-
-        // thirdClosestDistributor = distributors[minIndex+2];
-
-        // fourthClosestDistributor = distributors[minIndex+3];
-
-        // console.log(distributors);
-
         $newDistributor = $( '<div class="vcard"><div>' + closestDistributor.name + '</div><div>' + closestDistributor.address + '</div><div>' + closestDistributor.phone + '</div><a href="' + closestDistributor.website + '">' + closestDistributor.website + '</a></div>' );
 
-        $('.nearest-dist p').after($newDistributor);
+        $('.nearest-dist > div').prepend($newDistributor);
 
-        // $newDistributor1 = $( '<div><h2>' + secondClosestDistributor.name + '</h2><p>' + secondClosestDistributor.address + '</p><p>' + secondClosestDistributor.phone + '</p><a href="' + secondClosestDistributor.website + '">' + secondClosestDistributor.website + '</a></div>' );
-        // $newDistributor2 = $( '<div><h2>' + thirdClosestDistributor.name + '</h2><p>' + thirdClosestDistributor.address + '</p><p>' + thirdClosestDistributor.phone + '</p><a href="' + thirdClosestDistributor.website + '">' + thirdClosestDistributor.website + '</a></div>' );
-        // $newDistributor3 = $( '<div><h2>' + fourthClosestDistributor.name + '</h2><p>' + fourthClosestDistributor.address + '</p><p>' + fourthClosestDistributor.phone + '</p><a href="' + fourthClosestDistributor.website + '">' + fourthClosestDistributor.website + '</a></div>' );
-
-        // $('.lahimmat-jalleenmyyjat').append($newDistributor, $newDistributor1, $newDistributor2, $newDistributor3);
     }
 
-    // function doStuff() {
-    //     $.get('/jalleenmyyjat/',function(content){
-    //         $content = $('<div>').html(content);
-    //         $content.find('.jalleenmyyja').each( function(i) {
-    //             var jalleenmyyja = {
-    //                                 id:i,
-    //                                 name:$(this).find('.organization-name').text(),
-    //                                 address:$(this).find('.address').text(),
-    //                                 tel:$(this).find('.tel').text(),
-    //                                 url:$(this).find('.url').text()
-    //                                 };
-
-    //             distributors.push(jalleenmyyja);
-    //         });
-    //         console.log(distributors);
-    //         initialize();
-    //     });
-    // }
 
     function getLocation(distributor, position) {
         //console.log(position);

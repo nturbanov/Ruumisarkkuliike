@@ -105,13 +105,17 @@ function ruumisarkkuliike_scripts() {
 
     wp_enqueue_style( 'ResponsiveSlides', get_template_directory_uri() . '/js/vendor/ResponsiveSlides/responsiveslides.css', array(), '1.54', 'all' );
 
+    wp_enqueue_script( 'richmarker', get_template_directory_uri() . '/js/vendor/richmarker-compiled.js', array('google_maps'), '1.54', 'true' );
+
+
+
     // wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/vendor/parallax.js-1.3.1/parallax.min.js', array(), '1.3.1', true );
 
     // wp_enqueue_script( 'skrollr', get_template_directory_uri() . '/js/vendor/skrollr.min.js', array(), '0.6.29', true );
 
     // wp_enqueue_script( 'google-maps-api', '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3', true );
     wp_enqueue_script('google_jsapi', 'https://www.google.com/jsapi?key='.$GOOGLE_API_KEY, null, '', true);
-    wp_enqueue_script('google_maps', 'https://maps.googleapis.com/maps/api/js?key='.$GOOGLE_API_KEY.'&sensor=true&libraries=geometry', null, '', true);
+    wp_enqueue_script('google_maps', 'https://maps.googleapis.com/maps/api/js?key='.$GOOGLE_API_KEY.'&sensor=true&libraries=geometry,drawing', null, '', true);
 
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js', false, '1.11.2', true );
@@ -214,6 +218,9 @@ add_action( 'pre_get_posts', 'all_my_pregets' );
 function all_my_pregets( $query ) {
     if ( !is_admin() && $query->is_main_query() ) {
         $query->set( 'posts_per_page', -1 );
+        $query->set('order', 'ASC');
+        $query->set('orderby', 'menu_order');
+
     }
     return $query;
 }

@@ -5423,23 +5423,23 @@ body:not(.home) #primary {
 .kategoria-nosto:after {
   clear: both;
 }
-/* line 59, sass/partials/_nostot.scss */
+/* line 68, sass/partials/_nostot.scss */
 .kategoria-nosto .wrapper {
   position: relative;
 }
-/* line 63, sass/partials/_nostot.scss */
+/* line 72, sass/partials/_nostot.scss */
 .kategoria-nosto .wrapper > div {
   padding: 4rem 8rem;
 }
-/* line 69, sass/partials/_nostot.scss */
+/* line 78, sass/partials/_nostot.scss */
 .kategoria-nosto .wrapper > div:first-child {
   border-right: 1px solid #959DB5;
 }
-/* line 76, sass/partials/_nostot.scss */
+/* line 85, sass/partials/_nostot.scss */
 .kategoria-nosto .desctription {
   margin-bottom: 2em;
 }
-/* line 80, sass/partials/_nostot.scss */
+/* line 89, sass/partials/_nostot.scss */
 .kategoria-nosto img {
   position: absolute;
   top: 50%;
@@ -5448,7 +5448,7 @@ body:not(.home) #primary {
   right: 7%;
 }
 
-/* line 90, sass/partials/_nostot.scss */
+/* line 99, sass/partials/_nostot.scss */
 .kategoria-nosto .section-title {
   font-size: 38px;
   margin: 0 0 0.5em;

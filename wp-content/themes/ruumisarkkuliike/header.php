@@ -47,10 +47,9 @@
 		</div>
 
         <div class="nearest-dist">
-            <span>Lähin jälleenmyyjä <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
+            <span>Lähin hautaustoimisto <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
             <div>
-                <p>Sijaintisti perusteella suosittelemme</p>
-                <a class="all" href="/jalleenmyyjat/">Katso kaikki jälleenmyyjät »</a>
+                <a class="all" href="/jalleenmyyjat/">Katso kaikki hautaustoimistot »</a>
             </div>
         </div>
 

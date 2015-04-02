@@ -56,6 +56,15 @@
     // height: 44vw;
     // max-height: 670px;
 
+    // &:nth-of-type(odd) {
+    //     .wrapper {
+    //          > div {
+    //             @extend .col-sm-6;
+    //             @extend .col-sm-offset-6;
+    //         }
+    //     }
+    // }
+
     .wrapper {
         @extend .container;
         position: relative;
