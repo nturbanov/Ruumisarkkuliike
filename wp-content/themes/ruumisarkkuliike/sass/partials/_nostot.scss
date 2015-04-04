@@ -71,12 +71,13 @@
 
         > div {
             @extend .col-sm-6;
-            // width: 50%;
-            // float: left;
-            padding: 4rem 8rem;
 
             &:first-child {
                 border-right: 1px solid $grey;
+            }
+
+            @include breakpoint($screen-md) {
+                padding: 4rem 8rem;
             }
         }
 
@@ -87,11 +88,17 @@
     }
 
     img {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
         display: block;
-        right: 7%;
+        max-width: 100%;
+        height: auto;
+
+        @include breakpoint($screen-md) {
+            max-width: 400px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 7%;
+        }
     }
 
 }

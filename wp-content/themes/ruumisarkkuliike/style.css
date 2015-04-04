@@ -2334,7 +2334,7 @@ hr {
 }
 
 /* line 11, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .suunnittelijan-sarjat article, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .muut article, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .kategoria-nosto .wrapper > div, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .suunnittelijan-sarjat h3, body.single #primary article, .page article, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .suunnittelijan-sarjat article, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .muut article, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .kategoria-nosto .wrapper > div, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, body:not(.home) #primary #main.only-one article, .suunnittelijan-sarjat h3, body.single #primary article, .page article, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 5px;
@@ -2864,7 +2864,7 @@ hr {
 }
 @media (min-width: 999px) {
   /* line 27, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-1, .col-md-2, .suunnittelijan-sarjat article, .col-md-3, .muut article, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-md-5, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-md-7, .col-md-8, .suunnittelijan-sarjat h3, body.single #primary article, .page article, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .suunnittelijan-sarjat article, .col-md-3, .muut article, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-md-5, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-md-7, .col-md-8, body:not(.home) #primary #main.only-one article, .suunnittelijan-sarjat h3, body.single #primary article, .page article, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
 
@@ -2904,7 +2904,7 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-8, .suunnittelijan-sarjat h3, body.single #primary article, .page article {
+  .col-md-8, body:not(.home) #primary #main.only-one article, .suunnittelijan-sarjat h3, body.single #primary article, .page article {
     width: 66.66667%;
   }
 
@@ -3069,7 +3069,7 @@ hr {
   }
 
   /* line 60, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-offset-2, .suunnittelijan-sarjat h3, .suunnittelijan-sarjat article:first-of-type, body.single #primary article, .page article {
+  .col-md-offset-2, body:not(.home) #primary #main.only-one article, .suunnittelijan-sarjat h3, .suunnittelijan-sarjat article:first-of-type, body.single #primary article, .page article {
     margin-left: 16.66667%;
   }
 
@@ -4983,18 +4983,18 @@ input[type="button"].btn-block {
 
 @font-face {
   font-family: "LancelotPro";
-  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?1420215361');
-  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/LancelotPro/2C9BF0_0_0.woff?1420215361') format('woff'), url('fonts/LancelotPro/2C9BF0_0_0.woff2?1420215361') format('woff2'), url('fonts/LancelotPro/2C9BF0_0_0.ttf?1420215361') format('truetype');
+  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?1427626385');
+  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?&1427626385#iefix') format('embedded-opentype'), url('fonts/LancelotPro/2C9BF0_0_0.woff?1427626385') format('woff'), url('fonts/LancelotPro/2C9BF0_0_0.woff2?1427626385') format('woff2'), url('fonts/LancelotPro/2C9BF0_0_0.ttf?1427626385') format('truetype');
 }
 @font-face {
   font-family: "Adagio Serif";
-  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?1420215361');
-  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_2_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_2_0.woff2?1420215361') format('woff2'), url('fonts/AdagioSerif/2C9BF0_2_0.ttf?1420215361') format('truetype');
+  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?1427626384');
+  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?&1427626384#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_2_0.woff?1427626385') format('woff'), url('fonts/AdagioSerif/2C9BF0_2_0.woff2?1427626385') format('woff2'), url('fonts/AdagioSerif/2C9BF0_2_0.ttf?1427626385') format('truetype');
 }
 @font-face {
   font-family: "Adagio Serif";
-  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?1420215361');
-  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.ttf?1420215361') format('truetype');
+  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?1427626384');
+  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?&1427626384#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1427626384') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1427626384') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.ttf?1427626384') format('truetype');
   font-weight: bold;
 }
 /* line 5, sass/partials/_base.scss */
@@ -5153,13 +5153,17 @@ body:not(.home) #primary {
 .archive article .product-image {
   height: 246px;
   display: block;
-  background: rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 /* line 45, sass/partials/_archive.scss */
 .archive article .entry-title {
   display: inline-block;
   font-size: 14px;
+}
+
+/* line 52, sass/partials/_archive.scss */
+.only-one article .product-image {
+  height: auto;
 }
 
 /* line 1, sass/partials/_buttons.scss */
@@ -5243,16 +5247,25 @@ body:not(.home) #primary {
 }
 /* line 30, sass/partials/_front-page.scss */
 .home .content > div {
-  padding: 8rem 8rem;
+  padding: 1rem 1rem;
   font-family: 'LancelotPro';
   font-weight: normal;
   text-transform: uppercase;
-  font-size: 26px;
+  font-size: 18px;
+}
+@media (min-width: 999px) {
+  /* line 30, sass/partials/_front-page.scss */
+  .home .content > div {
+    padding: 8rem 8rem;
+    font-size: 26px;
+  }
 }
 
-/* line 40, sass/partials/_front-page.scss */
-.float-left {
-  float: left;
+@media (min-width: 999px) {
+  /* line 45, sass/partials/_front-page.scss */
+  .float-left {
+    float: left;
+  }
 }
 
 /* line 1, sass/partials/_navigation.scss */
@@ -5427,28 +5440,38 @@ body:not(.home) #primary {
 .kategoria-nosto .wrapper {
   position: relative;
 }
-/* line 72, sass/partials/_nostot.scss */
-.kategoria-nosto .wrapper > div {
-  padding: 4rem 8rem;
-}
-/* line 78, sass/partials/_nostot.scss */
+/* line 75, sass/partials/_nostot.scss */
 .kategoria-nosto .wrapper > div:first-child {
   border-right: 1px solid #959DB5;
 }
-/* line 85, sass/partials/_nostot.scss */
+@media (min-width: 999px) {
+  /* line 72, sass/partials/_nostot.scss */
+  .kategoria-nosto .wrapper > div {
+    padding: 4rem 8rem;
+  }
+}
+/* line 86, sass/partials/_nostot.scss */
 .kategoria-nosto .desctription {
   margin-bottom: 2em;
 }
-/* line 89, sass/partials/_nostot.scss */
+/* line 90, sass/partials/_nostot.scss */
 .kategoria-nosto img {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   display: block;
-  right: 7%;
+  max-width: 100%;
+  height: auto;
+}
+@media (min-width: 999px) {
+  /* line 90, sass/partials/_nostot.scss */
+  .kategoria-nosto img {
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 7%;
+  }
 }
 
-/* line 99, sass/partials/_nostot.scss */
+/* line 106, sass/partials/_nostot.scss */
 .kategoria-nosto .section-title {
   font-size: 38px;
   margin: 0 0 0.5em;

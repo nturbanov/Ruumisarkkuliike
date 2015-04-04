@@ -21,6 +21,11 @@ body:not(.home) #primary {
                 @extend .col-md-4;
             }
         }
+
+        &.only-one article {
+            @extend .col-md-8;
+            @extend .col-md-offset-2;
+        }
     }
 }
 

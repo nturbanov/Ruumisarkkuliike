@@ -15,10 +15,11 @@ global $wp_query;
 $wp_query->query_vars['post_type'] = array( 'verhoillut-arkut', 'puuarkut', 'uurnat' );
 $args = $wp_query->query_vars;
 query_posts( $args );
+
 ?>
 
 	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main <?php echo ( $wp_query->post_count == 1 ) ? 'only-one' : ''; ?>" role="main">
 
 		<?php if ( have_posts() ) : ?>
 

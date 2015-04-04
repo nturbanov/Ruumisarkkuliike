@@ -48,7 +48,7 @@ get_header(); ?>
                                     <div class="description">
                                         <p><?php the_sub_field('teksti'); ?></p>
                                     </div>
-                                    <a class="button" href="<?php echo get_post_type_archive_link( $post_type_object->name ); ?>">kaikki verhoillut arkut</a>
+                                    <a class="button" href="<?php echo get_post_type_archive_link( $post_type_object->name ); ?>">kaikki <?php echo strtolower($post_type_object->label); ?></a>
                                 </div>
                                 <img class="kuva" src="<?php $img = wp_get_attachment_image_src( get_sub_field('kuva'), 'medium' ); echo $img[0]; ?>" />
                             </div>
