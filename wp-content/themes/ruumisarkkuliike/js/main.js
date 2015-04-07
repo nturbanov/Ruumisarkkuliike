@@ -1,3 +1,10 @@
+var infowindow;
+var map;
+var stores = [];
+var distances = [];
+var closestDistributor = {};
+var myLoc = {};
+var $markers;
 /*
 *  render_map
 *
@@ -89,7 +96,7 @@ function add_marker( $marker, map ) {
     if( $marker.html() )
     {
         // create info window
-        var infowindow = new google.maps.InfoWindow({
+        infowindow = new google.maps.InfoWindow({
             content     : $marker.html()
         });
 
@@ -130,16 +137,16 @@ function center_map( map ) {
 
     });
 
+    if( myLoc.lat && myLoc.lng ) {
+        console.log(myLoc.lat, myLoc.lng);
+        map.setCenter( new google.maps.LatLng(myLoc.lat, myLoc.lng) );
+        map.setZoom( 12 );
+    }
     // only 1 marker?
-    if( map.markers.length == 1 )
+    else if( map.markers.length == 1 )
     {
         // set center of map
         map.setCenter( bounds.getCenter() );
-        map.setZoom( 12 );
-    }
-    else if( myLoc.lat && myLoc.lng ) {
-        console.log(myLoc.lat);
-        map.setCenter( new google.maps.LatLng(myLoc.lat, myLoc.lng) );
         map.setZoom( 12 );
     }
     else
@@ -149,14 +156,6 @@ function center_map( map ) {
     }
 
 }
-
-var map;
-var stores = [];
-// var distributors = [];
-var distances = [];
-var closestDistributor = {};
-var myLoc = {};
-var $markers;
 
 jQuery(document).ready(function ($) {
 
@@ -206,53 +205,12 @@ jQuery(document).ready(function ($) {
             console.log('no GeoLocation support');
         }
     }
-    geoLocateMe();
-
-    // function get_distributors() {
-    //     $markers.each(function( index ) {
-    //         // console.log( $( this ).find('h4').text() );
-    //         this_dist = {
-    //             name : $( this ).find('h4').text(),
-    //             address : $( this ).find('.address').text(),
-    //             phone : $( this ).find('.puhnro').text(),
-    //             website : $( this ).find('a').attr('href'),
-    //             latitude : $( this ).attr('data-lat'),
-    //             longitude : $( this ).attr('data-lng')
-    //         };
-    //         // console.log(this_dist);
-    //         distributors.push(this_dist);
-    //     });
-
-    //     console.log(distributors);
-    // }
-
-    function geoCallback(position) {
-        var distances = new Array();
-        for (var i = 0; i < stores.length; i++) {
-            distances.push(
-                lineDistance(
-                    {x:position.coords.latitude, y:position.coords.longitude},
-                    {x:stores[i][2], y:stores[i][3]})
-            );
-        };
-        // console.log(distances);
-        var i = distances.indexOf(Math.min.apply(Math, distances));
-        // $('.section5 .answers:nth-child(' + i + ')').click();
-        //if (!storeSelected) $('.section4 .answers .answer:nth-child(' + (i+1) + ')').click();
-        //$('.preloaderx').fadeOut();
-
-        //console.log('closest shop: ' + stores[i][0]);
-        // console.log('latitude: ' + position.coords.latitude);
-        // console.log('longitude: ' + position.coords.longitude);
-    }
 
     function findClosestDistributor(position) {
         // console.log(position.coords);
 
         myLoc.lat = position.coords.latitude;
         myLoc.lng = position.coords.longitude;
-
-        center_map( map );
 
         distributors.forEach(function (distributor) {
             //console.log(obj);
@@ -274,7 +232,7 @@ jQuery(document).ready(function ($) {
 
         $newDistributor = $( '<div class="vcard"><div>' + closestDistributor.name + '</div><div>' + closestDistributor.address + '</div><div>' + closestDistributor.phone + '</div><a href="' + closestDistributor.website + '">' + closestDistributor.website + '</a></div>' );
 
-        $('.nearest-dist > div').prepend($newDistributor);
+        $('.nearest-dist > div').html($newDistributor);
 
     }
 
@@ -289,8 +247,79 @@ jQuery(document).ready(function ($) {
     }
 
     $('.nearest-dist').click( function() {
-        // console.log('wh');
-        $(this).find('div').toggleClass('open');
+        geoLocateMe();
+        $(this).find('> div').toggleClass('open');
+    });
+
+    if ( $('.page-jalleenmyyjat').length > 0 ) {
+        geoLocateMe();
+        center_map( map );
+    }
+
+    $('.typeahead').typeahead({
+      minLength: 3,
+      highlight: true,
+    },
+    {
+      name: 'distributors',
+      source: substringMatcher(distributors)
+    });
+
+    $('.typeahead').on('typeahead:selected typeahead:autocompleted', function (e, val) {
+        // console.log(val);
+
+        $.each(distributors, function( index, value ) {
+            // console.log(value.position);
+            // console.log(val.value);
+            if ( value.name === val.value ) {
+                // console.log(value.lat);
+                // console.log(map.markers);
+
+                var result = $.grep(map.markers, function(e,i){
+                    // console.log('k: '+e.position.k);
+                    // console.log('D: '+e.position.D);
+                    // console.log(parseFloat(value.lat));
+                    // console.log(parseFloat(e.position.k));
+                    // console.log(( parseFloat(e.position.k) === parseFloat(value.lat) ));
+                    return ( parseFloat(e.position.k) === parseFloat(value.lat) && parseFloat(e.position.D) === parseFloat(value.lng) );
+                });
+
+                // console.log(result[0].position);
+                map.setZoom(17);
+                map.panTo(result[0].position);
+                infowindow.open( map, result[0] );
+                // curmarker
+            }
+        });
+
+        // map.setZoom(17);
+        // map.panTo(curmarker.position);
     });
 
 }); // jQuery(document).ready
+
+var substringMatcher = function(strs) {
+  return function findMatches(q, cb) {
+    var matches, substrRegex;
+
+    // an array that will be populated with substring matches
+    matches = [];
+
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+        // console.log(strs.address);
+      if (substrRegex.test(str.address)) {
+        // the typeahead jQuery plugin expects suggestions to a
+        // JavaScript object, refer to typeahead docs for more info
+        matches.push({ value: str.name });
+      }
+    });
+
+    cb(matches);
+    // console.log($markers);
+  };
+};

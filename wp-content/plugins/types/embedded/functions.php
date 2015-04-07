@@ -3,9 +3,9 @@
  * Basic and init functions.
  * Since Types 1.2 moved from /embedded/types.php
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.6/embedded/functions.php $
- * $LastChangedDate: 2015-03-25 12:38:40 +0000 (Wed, 25 Mar 2015) $
- * $LastChangedRevision: 1120400 $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.6.1/embedded/functions.php $
+ * $LastChangedDate: 2015-04-03 12:05:28 +0000 (Fri, 03 Apr 2015) $
+ * $LastChangedRevision: 1126995 $
  * $LastChangedBy: iworks $
  *
  */
@@ -101,6 +101,16 @@ function wpcf_init_custom_types_taxonomies()
         require_once WPCF_EMBEDDED_INC_ABSPATH . '/custom-types.php';
         wpcf_custom_types_init();
     }
+}
+
+/**
+ * bind build-in taxonomies
+ */
+
+function wpcf_init_build_in_taxonomies()
+{
+    require_once WPCF_EMBEDDED_INC_ABSPATH . '/custom-types.php';
+    wpcf_init_bind_build_in_taxonomies();
 }
 
 /**
