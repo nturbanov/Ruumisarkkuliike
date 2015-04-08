@@ -5724,17 +5724,26 @@ body:not(.home) #primary {
   -moz-background-clip: padding;
   background-clip: padding-box;
   width: 100%;
+  position: static;
 }
 
-/* line 103, sass/style.scss */
+/* line 104, sass/style.scss */
 .tt-suggestion {
   display: block;
   padding: 3px 20px;
 }
 
-/* line 108, sass/style.scss */
+/* line 109, sass/style.scss */
+.tt-suggestion:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #B3B9CE;
+}
+
+/* line 116, sass/style.scss */
 .tt-suggestion.tt-is-under-cursor {
   color: #fff;
+  cursor: pointer;
   background-color: #0081c2;
   background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
@@ -5745,12 +5754,12 @@ body:not(.home) #primary {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
 
-/* line 120, sass/style.scss */
+/* line 129, sass/style.scss */
 .tt-suggestion.tt-is-under-cursor a {
   color: #fff;
 }
 
-/* line 124, sass/style.scss */
+/* line 133, sass/style.scss */
 .tt-suggestion p {
   margin: 0;
 }

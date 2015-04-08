@@ -1,4 +1,4 @@
-var infowindow;
+// var infowindow;
 var map;
 var stores = [];
 var distances = [];
@@ -49,7 +49,6 @@ function render_map( $el ) {
 
     // center map
     center_map( map );
-
 }
 
 /*
@@ -81,12 +80,12 @@ function add_marker( $marker, map ) {
     // });
 
     var marker = new RichMarker({
-          position: latlng,
-          map: map,
-          draggable: false,
-          shadow: false,
-          content: '<span style="font-size: 40px; background: transparent; box-shadow: none;" class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>'
-          });
+        position: latlng,
+        map: map,
+        draggable: false,
+        shadow: false,
+        content: '<span style="font-size: 40px; background: transparent; box-shadow: none;" class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>'
+    });
 
 
     // add to array
@@ -95,18 +94,25 @@ function add_marker( $marker, map ) {
     // if marker contains HTML, add it to an infoWindow
     if( $marker.html() )
     {
+        // console.log($marker.html());
         // create info window
-        infowindow = new google.maps.InfoWindow({
+        var infowindow = new google.maps.InfoWindow({
             content     : $marker.html()
         });
 
         // show info window when marker is clicked
         google.maps.event.addListener(marker, 'click', function() {
-
             infowindow.open( map, marker );
-
         });
+
+    // google.maps.event.addListener(map, 'click', function() {
+    //     infowindow.close();
+    // });
+
     }
+
+
+
 
 }
 
@@ -151,8 +157,11 @@ function center_map( map ) {
     }
     else
     {
+
+        map.setCenter( bounds.getCenter() );
+        map.setZoom( 5 );
         // fit to bounds
-        map.fitBounds( bounds );
+        // map.fitBounds( bounds );
     }
 
 }
@@ -262,7 +271,7 @@ jQuery(document).ready(function ($) {
     },
     {
       name: 'distributors',
-      source: substringMatcher(distributors)
+      source: substringMatcher(cities)
     });
 
     $('.typeahead').on('typeahead:selected typeahead:autocompleted', function (e, val) {
@@ -285,9 +294,9 @@ jQuery(document).ready(function ($) {
                 });
 
                 // console.log(result[0].position);
-                map.setZoom(17);
-                map.panTo(result[0].position);
-                infowindow.open( map, result[0] );
+                // map.setZoom(17);
+                // map.panTo(result[0].position);
+                // infowindow.open( map, result[0] );
                 // curmarker
             }
         });
@@ -311,11 +320,18 @@ var substringMatcher = function(strs) {
     // iterate through the pool of strings and for any string that
     // contains the substring `q`, add it to the `matches` array
     $.each(strs, function(i, str) {
-        // console.log(strs.address);
-      if (substrRegex.test(str.address)) {
+
+        // console.log(str.address);
+        // var re = /, [0-9]{5} (.*), Finland/;
+        // var newtext = str.address.replace(re, "$1");
+        // console.log(newtext);
+
+        // console.log(str.address);
+
+      if (substrRegex.test(str)) {
         // the typeahead jQuery plugin expects suggestions to a
         // JavaScript object, refer to typeahead docs for more info
-        matches.push({ value: str.name });
+        matches.push({ value: str });
       }
     });
 
@@ -323,3 +339,21 @@ var substringMatcher = function(strs) {
     // console.log($markers);
   };
 };
+
+var cities = [];
+
+$.each(distributors, function(i, distributor) {
+    // console.log(distributor);
+    var myRegexp = /,.*? (.*), Finland/;
+    var match = myRegexp.exec(distributor.address);
+    // console.log(match[1]);
+    var city = match[1];
+    city = city.replace(/[0-9]/g, '');
+    city = city.replace(/\s+/g, '');
+    if (cities.indexOf(city) < 0) {
+        // console.log(distributor);
+        cities.push(city);
+    }
+});
+
+// console.log(cities);

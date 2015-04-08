@@ -28,7 +28,9 @@
 <?php
 $args = array(
     'post_type' => 'jalleenmyyja',
-    'posts_per_page' => -1
+    'posts_per_page' => -1,
+    'orderby' => 'menu_order',
+    'order' => 'ASC'
     );
 
 $jalleenmyyjat = get_posts($args);
