@@ -1,6 +1,6 @@
 .archive {
 
-    background: $dark-grey;
+    background: $dark;
 
     &.tax-sarjat {
         // background: $purple;
@@ -11,7 +11,7 @@
     max-width: 800px;
     margin: 3rem auto 5rem;
     padding-bottom: 4rem;
-    border-bottom: 1px solid $light-grey;
+    border-bottom: 1px solid $light;
 }
 
 .archive-wrapper {
@@ -22,8 +22,10 @@
 
 .archive article {
 
+    margin-bottom: 2em;
+
     .entry-header {
-        text-align: left;
+        text-align: center;
     }
 
     a {
@@ -40,12 +42,14 @@
         display: block;
         // background: rgba(255, 255, 255, 0.1);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 1em;
     }
 
     .entry-title {
         display: inline-block;
         font-size: 14px;
         font-weight: normal;
+        margin: 0;
     }
 }
 

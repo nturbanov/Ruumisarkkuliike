@@ -1,19 +1,22 @@
 .button {
     border-radius: 6px;
-    border: 1px solid #959DB5;
-    // font-size: 15px;
-    // color: #3E4652;
+    border: 1px solid $dark;
     line-height: 46px;
     display: inline-block;
     padding: 0 2rem;
     font-size: 16px;
     text-transform: none;
-    color: $darkest-grey;
+    color: $dark;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-        background: $dark-grey;
+        background: $dark;
         color: white;
         text-decoration: none;
+    }
+
+    .kuvallinen-nosto & {
+        border-color: white;
+        color: white;
     }
 }

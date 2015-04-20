@@ -24,7 +24,7 @@ query_posts( $args );
 		<?php if ( have_posts() ) : ?>
 
 			<header class="entry-header">
-				<h1 class="entry-title">
+				<h1 class="section-title">
 					<?php
 						if ( is_category() ) :
 							single_cat_title();

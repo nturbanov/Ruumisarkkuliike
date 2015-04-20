@@ -109,6 +109,14 @@ function ruumisarkkuliike_scripts() {
 
     wp_enqueue_script( 'typeahead', get_template_directory_uri() . '/js/vendor/typeahead.js/typeahead.bundle.min.js', array('jquery'), '0.10.5', 'true' );
 
+    wp_enqueue_script( 'swipebox', get_template_directory_uri() . '/js/vendor/swipebox/js/jquery.swipebox.min.js', array('jquery'), '1.4.1', 'true' );
+
+    wp_enqueue_style( 'swipebox', get_bloginfo('stylesheet_directory').'/js/vendor/swipebox/css/swipebox.min.css' );
+
+    wp_enqueue_script( 'headroom', get_template_directory_uri() . '/js/vendor/headroom.min.js', null, '0.7.0', 'true' );
+
+    wp_enqueue_script( 'jQuery-headroom', get_template_directory_uri() . '/js/vendor/jQuery.headroom.js', array('headroom', 'jquery'), '0.7.0', 'true' );
+
 
     // wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/vendor/parallax.js-1.3.1/parallax.min.js', array(), '1.3.1', true );
 
@@ -293,3 +301,16 @@ function add_slug_body_class( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'add_slug_body_class' );
+
+
+function wp_get_attachment( $attachment_id ) {
+    $attachment = get_post( $attachment_id );
+    return array(
+        'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+        'caption' => $attachment->post_excerpt,
+        'description' => $attachment->post_content,
+        'href' => get_permalink( $attachment->ID ),
+        'src' => $attachment->guid,
+        'title' => $attachment->post_title
+    );
+}

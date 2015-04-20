@@ -1,5 +1,5 @@
-.page {
-    background: #fff;
+body.page {
+    background: $offwhite;
 
     article {
         @extend .col-md-offset-2;
@@ -7,6 +7,6 @@
     }
 
     .entry-header {
-        color: $dark-grey;
+        color: $dark;
     }
 }

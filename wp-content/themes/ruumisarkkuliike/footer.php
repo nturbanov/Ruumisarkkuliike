@@ -17,9 +17,10 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
         <div class="container">
         	<div class="row">
-    			<a href="<?php echo get_post_type_archive_link( 'verhoillut-arkut' ); ?>"><span></span><span></span><span></span><span></span>verhoillut arkut</a>
-                <a href="<?php echo get_post_type_archive_link( 'puuarkut' ); ?>"><span></span><span></span><span></span><span></span>puuarkut</a>
-                <a href="<?php echo get_post_type_archive_link( 'uurnat' ); ?>"><span></span><span></span><span></span><span></span>uurnat</a>
+                <a href="/">Etusivu</a>
+    			<a href="<?php echo get_post_type_archive_link( 'verhoillut-arkut' ); ?>">verhoillut arkut</a>
+                <a href="<?php echo get_post_type_archive_link( 'puuarkut' ); ?>">puuarkut</a>
+                <a href="<?php echo get_post_type_archive_link( 'uurnat' ); ?>">uurnat</a>
             </div>
         </div>
 	</footer><!-- #colophon -->

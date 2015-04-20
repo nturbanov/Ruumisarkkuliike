@@ -1,7 +1,41 @@
 body.single {
 
+    background: $offwhite;
+
+    #main {
+        position: relative;
+    }
+
     #primary article {
         @extend .col-md-offset-2;
         @extend .col-md-8;
+        margin-top: 40px;
+    }
+
+    .related-product {
+        text-align: right;
+        border-left: $light 1px solid;
+
+        .label {
+            margin-bottom: 1em;
+            display: block;
+        }
+
+        > div {
+            display: inline-block;
+
+            > div {
+                margin-bottom: 1em;
+            }
+        }
+
+        a {
+            border-bottom: none;
+
+            img {
+                height: 120px;
+                width: auto;
+            }
+        }
     }
 }

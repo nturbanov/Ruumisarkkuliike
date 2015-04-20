@@ -38,8 +38,6 @@
     }
 
     a {
-        color: #fff;
-
         &:hover {
             text-decoration: none;
         }
@@ -69,11 +67,11 @@
         @extend .container;
         position: relative;
 
-        > div {
+        .left {
             @extend .col-sm-6;
 
             &:first-child {
-                border-right: 1px solid $grey;
+                border-right: 1px solid $dark;
             }
 
             @include breakpoint($screen-md) {
@@ -81,9 +79,32 @@
             }
         }
 
+        .right {
+            position: relative;
+            @extend .col-sm-6;
+            @include breakpoint($screen-md) {
+                padding-top: 25%;
+            }
+        }
+
     }
 
-    .desctription {
+    &.even {
+       .wrapper {
+            .left {
+                @extend .col-sm-push-6;
+                &:first-child {
+                    border-right: none;
+                    border-left: 1px solid $dark;
+                }
+            }
+            .right {
+                @extend .col-sm-pull-6;
+            }
+        }
+    }
+
+    .description {
         margin-bottom: 2em;
     }
 
@@ -102,6 +123,8 @@
     }
 
 }
+
+
 
 .kategoria-nosto .section-title {
     font-size: 38px;

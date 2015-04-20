@@ -22,7 +22,7 @@ get_header(); ?>
             <?php
 
             // check if the flexible content field has rows of data
-            if( have_rows('etusivun_nostot') ):
+            if( have_rows('etusivun_nostot') ): $n = 0;
 
                 // loop through the rows of data
                 while ( have_rows('etusivun_nostot') ) : the_row();
@@ -41,20 +41,22 @@ get_header(); ?>
 
                     <?php elseif( get_row_layout() == 'tuotekategoria_nosto' ): $post_type_object = get_post_type_object( get_sub_field('tuotetyyppi') ); ?>
 
-                        <section class="kategoria-nosto">
+                        <section class="kategoria-nosto<?php if( $n%2 !== 0 ) echo ' even';?>">
                             <div class="wrapper">
-                                <div class="float-left">
+                                <div class="left">
                                     <h3 class="section-title"><?php echo $post_type_object->label; ?></h3>
                                     <div class="description">
                                         <p><?php the_sub_field('teksti'); ?></p>
                                     </div>
                                     <a class="button" href="<?php echo get_post_type_archive_link( $post_type_object->name ); ?>">kaikki <?php echo strtolower($post_type_object->label); ?></a>
                                 </div>
-                                <img class="kuva" src="<?php $img = wp_get_attachment_image_src( get_sub_field('kuva'), 'medium' ); echo $img[0]; ?>" />
+                                <div class="right">
+                                    <img class="kuva" src="<?php $img = wp_get_attachment_image_src( get_sub_field('kuva'), 'medium' ); echo $img[0]; ?>" />
+                                </div>
                             </div>
                         </section>
 
-                    <?php endif;
+                    <?php $n++; endif;
 
                 endwhile;
 

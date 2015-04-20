@@ -4,9 +4,21 @@
     color: #fff;
     text-align: center;
 
+    .single & {
+        text-align: left;
+        .entry-title {
+            margin: 0 0 0.5em;
+        }
+
+        .subheader {
+            margin-top: 2em;
+        }
+    }
+
+
     .section-title,
     .entry-title {
-        font-size: 60px;
+        font-size: 40px;
         margin-top: 0.25em;
 
         div {
@@ -14,9 +26,15 @@
         }
     }
 
-    a img {
-        max-width: 100%;
-        height: auto;
+    .entry-title {
+        color: $normal;
+    }
+
+    a {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     }
 }
 

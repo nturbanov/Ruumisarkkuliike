@@ -4,14 +4,18 @@ if ($images) : ?>
 
 <ul class="rslides">
 <?php foreach ($images as $image) : ?>
-    <li><a href="<?php echo $image['kuva']['url']; ?>"><?php echo wp_get_attachment_image( $image['kuva']['ID'], 'large' ); ?></a></li>
+    <li>
+        <a rel="gallery" class="swipebox" title="<?php echo $image['kuva']['title']; ?>" href="<?php echo $image['kuva']['url']; ?>">
+            <img src="<?php echo $image['kuva']['sizes']['large']; ?>" title="<?php echo $image['kuva']['title']; ?>" alt="<?php echo $image['kuva']['alt'].' '.$image['kuva']['description']; ?>" width="<?php echo $image['kuva']['sizes']['large-width']; ?>" height="<?php echo $image['kuva']['sizes']['large-height']; ?>" />
+        </a>
+    </li>
 <?php endforeach; ?>
 </ul>
 
-<?php elseif ( has_post_thumbnail() ) : $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' ); ?>
+<?php elseif ( has_post_thumbnail() ) : $image = wp_get_attachment( get_post_thumbnail_id() ); ?>
 
-    <a href="<?php echo $full_image_url[0] ?>" title="<?php the_title_attribute( 'echo=0' ) ?>">
-    <?php the_post_thumbnail( 'large' ); ?>
+    <a class="swipebox" title="<?php echo $image['title']; ?>" href="<?php echo $image['src']; ?>">
+        <img src="<?php echo $image['src']; ?>" title="<?php echo $image['title']; ?>" alt="<?php echo $image['alt'].' '.$image['caption']; ?>" />
     </a>
 
 <?php endif; ?>

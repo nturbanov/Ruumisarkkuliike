@@ -1,16 +1,16 @@
 .single:not(.single-suunnittelijat) {
-    background: $dark-grey-5pc;
+    // background: $dark;
 
     .entry-header {
-        color: $dark-grey;
+        color: $dark;
     }
 
     .entry-meta {
         @extend .row;
 
-        border-top: $light-grey 1px solid;
-        border-bottom: $light-grey 1px solid;
-        margin: 3em 0;
+        border-top: $light 1px solid;
+        border-bottom: $light 1px solid;
+        margin: 0 0 3em;
         padding: 3em 0;
 
         > div {
@@ -50,7 +50,6 @@
         }
 
         > div:first-of-type {
-            border-right: $light-grey 1px solid;
         }
 
     }

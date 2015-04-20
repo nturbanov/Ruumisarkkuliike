@@ -14,3 +14,25 @@
         font-size: 18px;
     }
 }
+
+.entry-meta a,
+.entry-content a {
+    text-decoration: none;
+    border-bottom: 1px solid rgba($font-color, 0.5);
+    color: $font-color;
+    transition: 0.1s all ease-in-out;
+
+    &:hover {
+        text-decoration: none;
+        border-color: $font-color;
+    }
+}
+
+a {
+    color: $font-color;
+    transition: 0.1s all ease-in-out;
+
+    :hover {
+        text-decoration: none;
+    }
+}

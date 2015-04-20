@@ -3,6 +3,7 @@
     background: #fff;
     padding-top: 40px;
     padding-bottom: 40px;
+    // background: $offwhite;
 
     h2 {
         text-align: center;
@@ -11,7 +12,7 @@
         text-transform: uppercase;
 
         .single-suunnittelijat & {
-            color: $dark-grey;
+            color: $dark;
         }
     }
 
@@ -32,16 +33,23 @@
         }
 
         .entry-header {
-            text-align: left;
+            text-align: center;
 
             a {
-                color: $dark-grey;
+                color: $dark;
+                font-size: 14px;
+            }
+
+            .entry-title {
+                margin: 0;
+                font-size: 14px;
             }
         }
 
         .entry-title {
             display: inline-block;
             font-size: 18px;
+            font-weight: normal;
 
             .single-suunnittelijat & {
                 position: absolute;

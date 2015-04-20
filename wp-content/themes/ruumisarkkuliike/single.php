@@ -24,8 +24,10 @@ get_header(); ?>
 			<?php //ruumisarkkuliike_post_nav(); ?>
 
             <?php
-            // $prev = mod_get_adjacent_post('prev', array('verhoillut-arkut', 'puuarkut', 'uurnat'));
-            // $next = mod_get_adjacent_post('next', array('verhoillut-arkut', 'puuarkut', 'uurnat'));
+            $prev = mod_get_adjacent_post('prev', array('verhoillut-arkut', 'puuarkut', 'uurnat'));
+            $next = mod_get_adjacent_post('next', array('verhoillut-arkut', 'puuarkut', 'uurnat'));
+
+            // var_dump($prev);
             ?>
 
             <div class="prev">

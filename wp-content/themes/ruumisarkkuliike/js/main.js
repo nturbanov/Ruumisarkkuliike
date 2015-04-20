@@ -171,8 +171,8 @@ jQuery(document).ready(function ($) {
 
     $('.rslides').responsiveSlides({
         auto: true,             // Boolean: Animate automatically, true or false
-        speed: 500,            // Integer: Speed of the transition, in milliseconds
-        timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+        speed: 1500,            // Integer: Speed of the transition, in milliseconds
+        timeout: 7000,          // Integer: Time between slide transitions, in milliseconds
         pager: false,           // Boolean: Show pager, true or false
         nav: false,             // Boolean: Show navigation, true or false
         random: false,          // Boolean: Randomize the order of the slides, true or false
@@ -241,7 +241,7 @@ jQuery(document).ready(function ($) {
 
         $newDistributor = $( '<div class="vcard"><div>' + closestDistributor.name + '</div><div>' + closestDistributor.address + '</div><div>' + closestDistributor.phone + '</div><a href="' + closestDistributor.website + '">' + closestDistributor.website + '</a></div>' );
 
-        $('.nearest-dist > div').html($newDistributor);
+        $('.nearest-dist .dist').html($newDistributor);
 
     }
 
@@ -303,6 +303,20 @@ jQuery(document).ready(function ($) {
 
         // map.setZoom(17);
         // map.panTo(curmarker.position);
+    });
+
+    $( '.swipebox' ).swipebox();
+
+    $('#masthead').headroom({
+        // vertical offset in px before element is first unpinned
+        offset : 0,
+        // scroll tolerance in px before state changes
+        tolerance : 0,
+        // or you can specify tolerance individually for up/down scroll
+        tolerance : {
+            up : 5,
+            down : 0
+        }
     });
 
 }); // jQuery(document).ready

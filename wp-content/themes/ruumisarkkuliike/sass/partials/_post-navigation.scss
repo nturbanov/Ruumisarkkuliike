@@ -1,0 +1,38 @@
+.prev,
+.next {
+    position: absolute;
+    top: 40px;
+    text-align: center;
+
+    a {
+        &:before {
+            font-size: 60px;
+            line-height: 0.8;
+            display: block;
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.prev {
+    left: 40px;
+
+    a {
+        &:before {
+            content: '‹';
+        }
+    }
+}
+
+.next {
+    right: 40px;
+
+    a {
+        &:before {
+            content: '›';
+        }
+    }
+}

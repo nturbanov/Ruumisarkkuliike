@@ -1,5 +1,5 @@
 #colophon {
-    background: $dark-grey;
+    background: $dark;
     color: #fff;
     height: 100px;
     line-height: 100px;
@@ -9,34 +9,27 @@
     }
 
     a {
-        color: #fff;
-        color: $purple;
+        color: rgba(255, 255, 255, 0.5);
         text-decoration: none;
         position: relative;
-        padding-left: 30px;
-        line-height: 20px;
         display: inline-block;
         margin-right: 40px;
-
-        span {
-            display: block;
-            width: 8px;
-            height: 8px;
-            border: 1px solid $purple;
-            position: absolute;
-
-            &:nth-of-type(1) { left: 0; top: 0; }
-            &:nth-of-type(2) { left: 12px; top: 0; }
-            &:nth-of-type(3) { left: 12px; bottom: 0; }
-            &:nth-of-type(4) { left: 0; bottom: 0; }
-        }
+        vertical-align: middle;
 
         &:hover {
-            color: #fff;
+            color: rgba(255, 255, 255, 1);
+        }
 
-            span {
-                border-color: #fff;
-            }
+        &:first-child {
+            background: url(i/honkanen-siluetti-valkoinen.png) no-repeat 0 0;
+            background-size: contain;
+            width: 22px;
+            height: 66px;
+
+            // http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
         }
     }
 }

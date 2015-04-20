@@ -1,9 +1,10 @@
 #masthead {
     height: 70px;
     position: fixed;
-    background-color: rgba(85,94,109,0.2);
+    background-color: white;
     width: 100%;
     z-index: 10;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3);
 }
 
 .site-title {
@@ -16,8 +17,9 @@
     text-transform: uppercase;
 
         a {
-        color: #fff;
+        color: $dark;
         display: inline-block;
+        border-bottom: none;
             &:hover {
                 text-decoration: none;
             }
@@ -25,7 +27,7 @@
 }
 
 .home #masthead {
-    background-color: rgba(216,216,216,0.05);
+    // background-color: rgba(216,216,216,0.05);
 }
 
 .home .site-title {

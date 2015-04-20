@@ -49,6 +49,8 @@
         <div class="nearest-dist">
             <span>Lähin hautaustoimisto <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
             <div>
+                <div class="dist">
+                </div>
                 <a class="all" href="/jalleenmyyjat/">Katso kaikki hautaustoimistot »</a>
             </div>
         </div>

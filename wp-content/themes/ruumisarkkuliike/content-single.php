@@ -7,11 +7,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 
+        <?php require_once('partials/single-header-images.php'); ?>
+
         <div class="subheader"><?php $sarja = wp_get_post_terms( $post->ID, 'sarjat' ); echo $sarja[0]->name; ?></div>
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-        <?php require_once('partials/single-header-images.php'); ?>
+        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
         <div class="entry-meta">
 
@@ -42,7 +42,8 @@
                 <div class="meta-item">
                     <div class="label">Suunnittelija</div>
                     <div>
-                        <?php $suunnittelija = get_field( 'suunnittelija' ); echo $suunnittelija->post_title; ?>
+                        <?php $suunnittelija = get_field( 'suunnittelija' ); ?>
+                        <a href="<?php echo get_permalink($suunnittelija); ?>"><?php echo $suunnittelija->post_title; ?></a>
                     </div>
                 </div>
 
@@ -54,33 +55,29 @@
                 </div>
             </div>
 
-            <div>
-                <div class="label">Samaa paria</div>
-                <article>
+            <div class="related-product">
+                <?php
+                $product = get_field('yhteensopiva_tuote');
+                // var_dump($product);
+                if ( $product ) : ?>
 
-                </article>
+                <div class="label">Samaa paria</div>
+                <div>
+                    <?php $sarja = wp_get_post_terms( $product->ID, 'sarjat' ); ?>
+
+                    <div>
+                        <a href="<?php echo get_permalink($product); ?>">
+                        <?php echo get_the_post_thumbnail( $product->ID, 'thumbnail' ); ?>
+                        </a>
+                    </div>
+
+                    <a href="<?php echo get_term_link( $sarja[0] ); ?>"><?php echo $sarja[0]->name; ?></a> | <a href="<?php echo get_permalink($product); ?>"><?php echo $product->post_title; ?></a> <?php $pto = get_post_type_object( $product->post_type ); echo strtolower($pto->labels->singular_name); ?>
+                </div>
+                <?php endif; ?>
+
             </div>
 
         </div><!-- .entry-meta -->
-
-        <div class="related-product">
-            <?php
-            $product = get_field('yhteensopiva_tuote');
-            // var_dump($product);
-            if ( $product ) : ?>
-
-            Samaa paria
-
-            <?php $sarja = wp_get_post_terms( $product->ID, 'sarjat' ); ?>
-
-            <a href="<?php echo get_permalink($product); ?>">
-                <?php echo get_the_post_thumbnail( $product->ID, 'thumbnail' ); ?>
-            </a>
-
-            <a href="<?php echo get_term_link( $sarja[0] ); ?>"><?php echo $sarja[0]->name; ?></a> | <a href="<?php echo get_permalink($product); ?>"><?php echo $product->post_title; ?></a> <?php $pto = get_post_type_object( $product->post_type ); echo strtolower($pto->labels->singular_name); ?>
-
-            <?php endif; ?>
-        </div>
 
 	</header><!-- .entry-header -->
 
