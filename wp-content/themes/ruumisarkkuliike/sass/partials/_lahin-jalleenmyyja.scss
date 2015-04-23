@@ -11,7 +11,7 @@
     }
 
     > span {
-        line-height: 70px;
+        line-height: $navi-height;
 
         .glyphicon {
             font-size: 30px;
@@ -48,7 +48,40 @@
 
         .vcard {
             padding-bottom: 2em;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba($dark, 0.1);
+        }
+
+        .loader {
+            top: -5px;
+            position: relative;
+
+            .glyphicon {
+                font-size: 30px;
+                display: inline-block;
+                position: relative;
+                bottom: -10px;
+                top: auto;
+                @include animation(rotate);
+                @include animation-duration(3s);
+                @include animation-iteration-count(infinite);
+            }
+
+            @include keyframes(rotate) {
+                from { -webkit-transform: rotateY(0deg) ;}
+                to { -webkit-transform: rotateY(-360deg) ;}
+            }
+        }
+    }
+
+    @include breakpoint( 0 $screen-sm - 1px ) {
+        width: $navi-height;
+        height: $navi-height;
+        > span {
+            font-size: 0;
+
+            .glyphicon {
+                top: 14px;
+            }
         }
     }
 }

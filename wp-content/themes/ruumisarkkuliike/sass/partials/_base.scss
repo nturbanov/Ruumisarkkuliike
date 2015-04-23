@@ -16,7 +16,8 @@
 }
 
 .entry-meta a,
-.entry-content a {
+.entry-content a,
+.nearest-dist a {
     text-decoration: none;
     border-bottom: 1px solid rgba($font-color, 0.5);
     color: $font-color;

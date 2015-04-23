@@ -5,7 +5,7 @@ Tags: CMS, custom field, custom fields, custom post type, custom post types, pos
 License: GPLv2
 Requires at least: 3.4
 Tested up to: 4.1.1
-Stable tag: 1.6.6.1
+Stable tag: 1.6.6.2
 
 The complete and reliable plugin for managing custom post types, custom taxonomy and custom fields.
 
@@ -154,6 +154,11 @@ Additionally, Types is the only plugin that lets you define parent/child relatio
 9. Edit Taxonomy
 
 == Changelog ==
+
+= 1.6.6.2 =
+
+* Release date: 2015-04-10
+* Fixed problem with File Field which do not work when edited from the Parent Post Type. https://wp-types.com/forums/topic/1-6-6-seems-to-break-child-fields-when-parent-has-an-image-field/
 
 = 1.6.6.1 =
 

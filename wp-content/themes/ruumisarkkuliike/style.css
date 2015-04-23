@@ -4982,20 +4982,36 @@ input[type="button"].btn-block {
   margin-left: -1px;
 }
 
+/**
+ * Burger parts
+ *
+ * (---) top    -> &:before
+ * [---] middle -> &
+ * (---) bottom -> &:after
+ */
+/**
+ * Burger
+ */
+/**
+ * Select parts of the burger
+ */
+/**
+ * Burger animations
+ */
 @font-face {
   font-family: "LancelotPro";
-  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?1420215361');
-  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/LancelotPro/2C9BF0_0_0.woff?1420215361') format('woff'), url('fonts/LancelotPro/2C9BF0_0_0.woff2?1420215361') format('woff2'), url('fonts/LancelotPro/2C9BF0_0_0.ttf?1420215361') format('truetype');
+  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?1427626385');
+  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?&1427626385#iefix') format('embedded-opentype'), url('fonts/LancelotPro/2C9BF0_0_0.woff?1427626385') format('woff'), url('fonts/LancelotPro/2C9BF0_0_0.woff2?1427626385') format('woff2'), url('fonts/LancelotPro/2C9BF0_0_0.ttf?1427626385') format('truetype');
 }
 @font-face {
   font-family: "Adagio Serif";
-  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?1420215361');
-  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_2_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_2_0.woff2?1420215361') format('woff2'), url('fonts/AdagioSerif/2C9BF0_2_0.ttf?1420215361') format('truetype');
+  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?1427626384');
+  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?&1427626384#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_2_0.woff?1427626385') format('woff'), url('fonts/AdagioSerif/2C9BF0_2_0.woff2?1427626385') format('woff2'), url('fonts/AdagioSerif/2C9BF0_2_0.ttf?1427626385') format('truetype');
 }
 @font-face {
   font-family: "Adagio Serif";
-  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?1420215361');
-  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.ttf?1420215361') format('truetype');
+  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?1427626384');
+  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?&1427626384#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1427626384') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1427626384') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.ttf?1427626384') format('truetype');
   font-weight: bold;
 }
 /* line 5, sass/partials/_base.scss */
@@ -5017,25 +5033,27 @@ input[type="button"].btn-block {
 
 /* line 18, sass/partials/_base.scss */
 .entry-meta a,
-.entry-content a {
+.entry-content a,
+.nearest-dist a {
   text-decoration: none;
   border-bottom: 1px solid rgba(61, 67, 78, 0.5);
   color: #3d434e;
   transition: 0.1s all ease-in-out;
 }
-/* line 25, sass/partials/_base.scss */
+/* line 26, sass/partials/_base.scss */
 .entry-meta a:hover,
-.entry-content a:hover {
+.entry-content a:hover,
+.nearest-dist a:hover {
   text-decoration: none;
   border-color: #3d434e;
 }
 
-/* line 31, sass/partials/_base.scss */
+/* line 32, sass/partials/_base.scss */
 a {
   color: #3d434e;
   transition: 0.1s all ease-in-out;
 }
-/* line 35, sass/partials/_base.scss */
+/* line 36, sass/partials/_base.scss */
 a :hover {
   text-decoration: none;
 }
@@ -5303,56 +5321,6 @@ body:not(.home) #primary {
   position: relative;
 }
 /* line 7, sass/partials/_navigation.scss */
-.main-navigation ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-/* line 12, sass/partials/_navigation.scss */
-.main-navigation ul ul {
-  position: absolute;
-  top: 70px;
-  left: -999em;
-  z-index: 99999;
-  width: 100%;
-  padding: 1rem 0 2rem;
-}
-/* line 22, sass/partials/_navigation.scss */
-.main-navigation ul ul ul {
-  position: static;
-  padding-bottom: 0;
-}
-/* line 26, sass/partials/_navigation.scss */
-.main-navigation ul ul ul a {
-  color: white;
-}
-/* line 31, sass/partials/_navigation.scss */
-.main-navigation ul ul li {
-  float: none;
-}
-/* line 34, sass/partials/_navigation.scss */
-.main-navigation ul ul li:hover > ul {
-  left: 100%;
-}
-/* line 39, sass/partials/_navigation.scss */
-.main-navigation ul ul a {
-  color: white;
-  line-height: 2;
-}
-/* line 51, sass/partials/_navigation.scss */
-.main-navigation ul li:hover > ul {
-  left: 0;
-  background: #555e6d;
-}
-/* line 56, sass/partials/_navigation.scss */
-.main-navigation li {
-  float: left;
-}
-/* line 59, sass/partials/_navigation.scss */
-.main-navigation li:hover {
-  background: #555e6d;
-}
-/* line 63, sass/partials/_navigation.scss */
 .main-navigation a {
   display: block;
   text-decoration: none;
@@ -5361,66 +5329,219 @@ body:not(.home) #primary {
   color: #3d434e;
   border-bottom: none;
 }
-/* line 71, sass/partials/_navigation.scss */
-.main-navigation a:hover, .main-navigation a:hover a {
-  color: white;
-}
-/* line 77, sass/partials/_navigation.scss */
+/* line 16, sass/partials/_navigation.scss */
 .main-navigation a[href="#"] {
   color: white;
   font-size: 14px;
 }
-/* line 82, sass/partials/_navigation.scss */
-.main-navigation li.cpt a {
-  font-size: 21px;
-  font-weight: bold;
-  line-height: 2;
+/* line 27, sass/partials/_navigation.scss */
+.main-navigation .active,
+.main-navigation .active-parent {
+  background: #3d434e;
 }
-/* line 88, sass/partials/_navigation.scss */
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a {
+/* line 32, sass/partials/_navigation.scss */
+.main-navigation .active > a,
+.main-navigation .active-parent > a {
   color: white;
 }
-/* line 94, sass/partials/_navigation.scss */
-.main-navigation li.sarjat,
-.main-navigation #menu-item-30 {
+/* line 42, sass/partials/_navigation.scss */
+.main-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+/* line 47, sass/partials/_navigation.scss */
+.main-navigation ul ul {
+  position: absolute;
+  top: 70px;
+  left: -999em;
+  z-index: 99999;
+  width: 100%;
+  padding: 0;
+}
+/* line 57, sass/partials/_navigation.scss */
+.main-navigation ul ul ul {
+  position: static;
+  padding-bottom: 0;
+}
+/* line 61, sass/partials/_navigation.scss */
+.main-navigation ul ul ul li {
+  background: rgba(0, 0, 0, 0.1);
+}
+/* line 65, sass/partials/_navigation.scss */
+.main-navigation ul ul ul li a {
+  color: white;
+}
+/* line 71, sass/partials/_navigation.scss */
+.main-navigation ul ul li {
+  float: none;
+}
+/* line 74, sass/partials/_navigation.scss */
+.main-navigation ul ul li a:hover {
   background: #3d434e;
+}
+/* line 77, sass/partials/_navigation.scss */
+.main-navigation ul ul li a:hover > ul {
+  left: 100%;
+}
+/* line 83, sass/partials/_navigation.scss */
+.main-navigation ul ul a {
+  color: white;
+  line-height: 2.5;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* line 90, sass/partials/_navigation.scss */
+.main-navigation ul li:hover > ul {
+  left: 0;
+  background: #555e6d;
+}
+/* line 95, sass/partials/_navigation.scss */
+.main-navigation li {
+  float: left;
+}
+/* line 98, sass/partials/_navigation.scss */
+.main-navigation li:hover {
+  background: #555e6d;
+}
+/* line 101, sass/partials/_navigation.scss */
+.main-navigation li:hover > a {
+  color: white;
+}
+/* line 106, sass/partials/_navigation.scss */
+.main-navigation li a:hover {
+  color: white;
 }
 
 /* Small menu */
-/* line 106, sass/partials/_navigation.scss */
+/* line 118, sass/partials/_navigation.scss */
 .menu-toggle {
   display: none;
 }
 
-@media screen and (max-width: 600px) {
-  /* line 111, sass/partials/_navigation.scss */
+@media (min-width: 0) and (max-width: 767px) {
+  /* line 124, sass/partials/_navigation.scss */
+  .main-navigation {
+    height: 70px;
+  }
+
+  /* line 129, sass/partials/_navigation.scss */
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
     display: block;
   }
 
-  /* line 116, sass/partials/_navigation.scss */
+  /* line 134, sass/partials/_navigation.scss */
   .main-navigation ul {
     display: none;
+  }
+
+  /* line 138, sass/partials/_navigation.scss */
+  .menu-toggle {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    display: block;
+    padding: 23px 20px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  /* line 147, sass/partials/_navigation.scss */
+  .menu-toggle .burger-icon {
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  /* line 22, sass/vendor/_burger.scss */
+  .menu-toggle .burger-icon, .menu-toggle .burger-icon:before, .menu-toggle .burger-icon:after {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #555e6d;
+    -webkit-transition-property: background-color, -webkit-transform;
+    -moz-transition-property: background-color, -moz-transform;
+    -o-transition-property: background-color, -o-transform;
+    transition-property: background-color, transform;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  /* line 42, sass/vendor/_burger.scss */
+  .menu-toggle .burger-icon:before, .menu-toggle .burger-icon:after {
+    position: absolute;
+    content: "";
+  }
+  /* line 47, sass/vendor/_burger.scss */
+  .menu-toggle .burger-icon:before {
+    top: -8px;
+  }
+  /* line 51, sass/vendor/_burger.scss */
+  .menu-toggle .burger-icon:after {
+    top: 8px;
+  }
+
+  /* line 91, sass/vendor/_burger.scss */
+  .main-navigation.is-active .burger-icon {
+    background-color: transparent;
+  }
+  /* line 94, sass/vendor/_burger.scss */
+  .main-navigation.is-active .burger-icon:before {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    -moz-transform: translateY(8px) rotate(45deg);
+    -ms-transform: translateY(8px) rotate(45deg);
+    -o-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+  }
+  /* line 101, sass/vendor/_burger.scss */
+  .main-navigation.is-active .burger-icon:after {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    -moz-transform: translateY(-8px) rotate(-45deg);
+    -ms-transform: translateY(-8px) rotate(-45deg);
+    -o-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  /* line 157, sass/partials/_navigation.scss */
+  .main-navigation.is-active .menu {
+    display: block;
+    position: absolute;
+    background: #3d434e;
+    width: 220px;
+    right: -70px;
+  }
+  /* line 164, sass/partials/_navigation.scss */
+  .main-navigation.is-active .menu li {
+    float: none;
+  }
+  /* line 168, sass/partials/_navigation.scss */
+  .main-navigation.is-active .menu > li > a {
+    font-size: 0;
+    height: 0;
+  }
+  /* line 173, sass/partials/_navigation.scss */
+  .main-navigation.is-active .menu a {
+    color: white;
+  }
+  /* line 177, sass/partials/_navigation.scss */
+  .main-navigation.is-active .menu .sub-menu {
+    position: static;
+    display: block;
   }
 }
 /**
  * Note: I have omitted any vendor-prefixes for clarity.
  * Adding them is left as an exercise for the reader.
  */
-/* line 125, sass/partials/_navigation.scss */
+/* line 190, sass/partials/_navigation.scss */
 .headroom {
   transition: transform 200ms linear;
 }
 
-/* line 128, sass/partials/_navigation.scss */
+/* line 193, sass/partials/_navigation.scss */
 .headroom--pinned {
   transform: translateY(0%);
 }
 
-/* line 131, sass/partials/_navigation.scss */
+/* line 196, sass/partials/_navigation.scss */
 .headroom--unpinned {
   transform: translateY(-100%);
 }
@@ -5721,7 +5842,66 @@ body:not(.home) #primary {
 /* line 49, sass/partials/_lahin-jalleenmyyja.scss */
 .nearest-dist > div .vcard {
   padding-bottom: 2em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(61, 67, 78, 0.1);
+}
+/* line 54, sass/partials/_lahin-jalleenmyyja.scss */
+.nearest-dist > div .loader {
+  top: -5px;
+  position: relative;
+}
+/* line 58, sass/partials/_lahin-jalleenmyyja.scss */
+.nearest-dist > div .loader .glyphicon {
+  font-size: 30px;
+  display: inline-block;
+  position: relative;
+  bottom: -10px;
+  top: auto;
+  -webkit-animation: rotate;
+  -o-animation: rotate;
+  animation: rotate;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+@-moz-keyframes rotate {
+  from {
+    -webkit-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(-360deg);
+  }
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(-360deg);
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(-360deg);
+  }
+}
+@media (min-width: 0) and (max-width: 767px) {
+  /* line 1, sass/partials/_lahin-jalleenmyyja.scss */
+  .nearest-dist {
+    width: 70px;
+    height: 70px;
+  }
+  /* line 79, sass/partials/_lahin-jalleenmyyja.scss */
+  .nearest-dist > span {
+    font-size: 0;
+  }
+  /* line 82, sass/partials/_lahin-jalleenmyyja.scss */
+  .nearest-dist > span .glyphicon {
+    top: 14px;
+  }
 }
 
 /* line 1, sass/partials/_single.scss */
@@ -5832,18 +6012,18 @@ body.page .entry-header {
   margin-bottom: 2em;
 }
 
-/* line 75, sass/style.scss */
+/* line 77, sass/style.scss */
 .twitter-typeahead {
   width: 100%;
 }
 
-/* line 79, sass/style.scss */
+/* line 81, sass/style.scss */
 .twitter-typeahead .tt-query,
 .twitter-typeahead .tt-hint {
   margin-bottom: 0;
 }
 
-/* line 83, sass/style.scss */
+/* line 85, sass/style.scss */
 .tt-dropdown-menu {
   min-width: 160px;
   margin-top: 2px;
@@ -5866,20 +6046,20 @@ body.page .entry-header {
   position: static;
 }
 
-/* line 105, sass/style.scss */
+/* line 107, sass/style.scss */
 .tt-suggestion {
   display: block;
   padding: 3px 20px;
 }
 
-/* line 110, sass/style.scss */
+/* line 112, sass/style.scss */
 .tt-suggestion:hover {
   cursor: pointer;
   color: #fff;
   background-color: #555e6d;
 }
 
-/* line 117, sass/style.scss */
+/* line 119, sass/style.scss */
 .tt-suggestion.tt-is-under-cursor {
   color: #fff;
   cursor: pointer;
@@ -5893,12 +6073,12 @@ body.page .entry-header {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
 
-/* line 130, sass/style.scss */
+/* line 132, sass/style.scss */
 .tt-suggestion.tt-is-under-cursor a {
   color: #fff;
 }
 
-/* line 134, sass/style.scss */
+/* line 136, sass/style.scss */
 .tt-suggestion p {
   margin: 0;
 }

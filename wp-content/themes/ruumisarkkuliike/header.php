@@ -50,13 +50,14 @@
             <span>Lähin hautaustoimisto <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
             <div>
                 <div class="dist">
+                    <div class="loader"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Etsitään lähintä toimistoa</div>
                 </div>
                 <a class="all" href="/jalleenmyyjat/">Katso kaikki hautaustoimistot »</a>
             </div>
         </div>
 
         <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle"><?php _e( 'Primary Menu', 'ruumisarkkuliike' ); ?></button>
+            <div class="menu-toggle"><div class="burger-icon"></div></div>
             <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
         </nav><!-- #site-navigation -->
 

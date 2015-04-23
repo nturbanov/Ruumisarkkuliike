@@ -3,9 +3,9 @@
  *
  * Custom Post Types embedded code.
  *
- * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.6.1/embedded/includes/custom-types.php $
- * $LastChangedDate: 2015-04-03 12:05:28 +0000 (Fri, 03 Apr 2015) $
- * $LastChangedRevision: 1126995 $
+ * $HeadURL: http://plugins.svn.wordpress.org/types/tags/1.6.6.2/embedded/includes/custom-types.php $
+ * $LastChangedDate: 2015-04-03 10:15:58 +0000 (Fri, 03 Apr 2015) $
+ * $LastChangedRevision: 1126927 $
  * $LastChangedBy: iworks $
  *
  */

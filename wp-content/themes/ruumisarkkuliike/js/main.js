@@ -319,6 +319,10 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    $('.menu-toggle').click( function() {
+        $(this).parent('.main-navigation').toggleClass('is-active');
+    });
+
 }); // jQuery(document).ready
 
 var substringMatcher = function(strs) {
