@@ -2,13 +2,67 @@
 # This file is distributed under the same license as the Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-12-17 07:04:17+0000\n"
+"PO-Revision-Date: 2015-04-22 16:04:44+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/1.0-alpha-1000\n"
 "Project-Id-Version: Development\n"
+
+#: views/notice.php:91
+msgid "The connection to akismet.com cannot be established. Please refer to <a href=\"%s\" target=\"_blank\">our guide about firewalls</a> and check your server configuration."
+msgstr "Yhteyttä akismet.com:iin ei voitu muodostaa. Katso <a href=\"%s\" target=\"_blank\">oppaamme palomuureista</a> sekä tarkista palvelimesi asetukset."
+
+#: views/notice.php:90
+msgid "The key you entered could not be verified."
+msgstr "Antamaasi avainta ei voitu varmistaa."
+
+#: views/config.php:95
+msgid "Enabled."
+msgstr "Käytössä."
+
+#: views/config.php:95
+msgid "All systems functional."
+msgstr "Kaikki järjestelmät toiminnassa."
+
+#: views/config.php:86
+msgid "Your Web server cannot make SSL requests; contact your Web host and ask them to add support for SSL requests."
+msgstr "WWW-palvelimesi ei voi tehdä SSL-pyyntöjä; ota yhteyttä palveluntarjoajaasi ja pyydä heitä lisäämään tuki SSL-pyynnöille."
+
+#: views/config.php:92
+msgid "Akismet encountered a problem with a previous SSL request and disabled it temporarily. It will begin using SSL for requests again shortly."
+msgstr "Akismet törmäsi ongelmaan aikaisemman SSL-pyynnön kanssa, ja on ottanut sen väliaikaisesti pois käytöstä. Akismet yrittää käyttää SSL:ää hetken kuluttua uudestaan."
+
+#: views/config.php:92
+msgid "Temporarily disabled."
+msgstr "Väliaikaisesti poissa käytöstä."
+
+#: views/config.php:83 views/config.php:86
+msgid "Disabled."
+msgstr "Poissa käytöstä."
+
+#: views/config.php:76
+msgid "SSL Status"
+msgstr "SSL Tila"
+
+#: views/notice.php:97
+msgid "Your Pro subscription allows the use of Akismet on only one site. Please <a href=\"http://docs.akismet.com/billing/add-more-sites/\">purchase additional Pro subscriptions</a> or upgrade to an Enterprise subscription that allows the use of Akismet on unlimited sites.<br /><br />If you have any questions, please get in touch with our support team."
+msgstr "Pro-tilauksesi sallii Akismetin käytön vain yhdellä sivustolla. Ole hyvä ja <a href=\"http://docs.akismet.com/billing/add-more-sites/\">osta toinen Pro-tilaus</a> tai päivitä Enterprise-tilaukseen, joka sallii Akismetin käytön kaikilla sivustoillasi.<br /><br /> Jos sinulla on kysymyksiä, ota yhteyttä tukeemme."
+
+#: views/config.php:127
+msgid "Spam in the <a href=\"%1$s\">spam folder</a> older than 1 day is deleted automatically."
+msgid_plural "Spam in the <a href=\"%1$s\">spam folder</a> older than %2$d days is deleted automatically."
+msgstr[0] "Yli päivän vanhat viestit <a href=\"%1$s\">Roskaviestit-kansiossa</a> poistetaan automaattisesti."
+msgstr[1] "Yli %2$d päivää vanhat viestit <a href=\"%1$s\">Roskaviestit-kansiossa</a> poistetaan automaattisesti."
+
+#. Description of the plugin/theme
+msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from comment and trackback spam</strong>. It keeps your site protected from spam even while you sleep. To get started: 1) Click the \"Activate\" link to the left of this description, 2) <a href=\"http://akismet.com/get/\">Sign up for an Akismet API key</a>, and 3) Go to your Akismet configuration page, and save your API key."
+msgstr "Miljoonien käyttämänä, Akismet on melko varmasti paras tapa maailmassa <strong>suojata blogisi haitallisilta roskaviesteiltä sekä paluuviitteiltä</strong>. Akismet pitää sivustosi suojattuna roskaviesteiltä jopa nukkuessasi. Aloittaaksesi: 1) Paina \"Ota käyttöön\" linkkiä tämän kuvauksen vasemmalla puolella, 2) <a href=\"http://akismet.com/get/\">Rekisteröidy Akismet API-avainta varten</a>, ja 3) Mene Akismetin asetuksiin, ja tallenna API-avaimesi."
+
+#. Plugin URI of the plugin/theme
+msgid "http://akismet.com/"
+msgstr "http://akismet.com/"
 
 #: class.akismet-admin.php:692
 msgid "Please check your <a href=\"%s\">Akismet configuration</a> and contact your web host if problems persist."
@@ -125,6 +179,14 @@ msgstr "Verkko-ominaisuudet ovat poissa käytöstä."
 #: views/notice.php:20
 msgid "Akismet has detected a problem."
 msgstr "Akismet on havainnut ongelman."
+
+#. Author of the plugin/theme
+msgid "Automattic"
+msgstr "Automattic"
+
+#. Author URI of the plugin/theme
+msgid "http://automattic.com/wordpress-plugins/"
+msgstr "http://automattic.com/wordpress-plugins/"
 
 #: views/notice.php:30
 msgid "Akismet Error Code: %s"
