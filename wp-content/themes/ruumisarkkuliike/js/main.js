@@ -239,7 +239,13 @@ jQuery(document).ready(function ($) {
 
         closestDistributor = distributors[minIndex];
 
-        $newDistributor = $( '<div class="vcard"><div>' + closestDistributor.name + '</div><div>' + closestDistributor.address + '</div><div>' + closestDistributor.phone + '</div><a href="' + closestDistributor.website + '">' + closestDistributor.website + '</a></div>' );
+        distributor_url = null;
+
+        if ( -1 === closestDistributor.website.indexOf('://') ) {
+            distributor_url = 'http://' + closestDistributor.website;
+        }
+
+        $newDistributor = $( '<div class="vcard"><div>' + closestDistributor.name + '</div><div>' + closestDistributor.address + '</div><div>' + closestDistributor.phone + '</div><a target="_blank" href="' + distributor_url + '">' + closestDistributor.website + '</a></div>' );
 
         $('.nearest-dist .dist').html($newDistributor);
 

@@ -5866,26 +5866,26 @@ body:not(.home) #primary {
 }
 @-moz-keyframes rotate {
   from {
-    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
   to {
-    -webkit-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
   }
 }
 @-webkit-keyframes rotate {
   from {
-    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
   to {
-    -webkit-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
   }
 }
 @keyframes rotate {
   from {
-    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
   to {
-    -webkit-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
   }
 }
 @media (min-width: 0) and (max-width: 767px) {
