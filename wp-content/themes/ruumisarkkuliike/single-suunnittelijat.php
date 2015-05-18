@@ -28,18 +28,6 @@ get_header(); ?>
             // $next = mod_get_adjacent_post('next', array('verhoillut-arkut', 'puuarkut', 'uurnat'));
             ?>
 
-            <div class="prev">
-            <?php if($prev) : ?>
-                <a href="<?php echo get_permalink($prev->ID)?>"><?php echo $prev->post_title; ?></a>
-            <?php endif; ?>
-            </div>
-
-            <div class="next">
-            <?php if($next) : ?>
-                <a href="<?php echo get_permalink($next->ID)?>"><?php echo $next->post_title; ?></a>
-            <?php endif; ?>
-            </div>
-
 		<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->

@@ -1,4 +1,8 @@
-.single-suunnittelijat {
+body.single-suunnittelijat {
     background: $dark;
-    color: #fff;
+    color: white;
+
+    .entry-title {
+        color: white;
+    }
 }

@@ -283,6 +283,7 @@ jQuery(document).ready(function ($) {
     $('.typeahead').on('typeahead:selected typeahead:autocompleted', function (e, val) {
         // console.log(val);
 
+        /*
         $.each(distributors, function( index, value ) {
             // console.log(value.position);
             // console.log(val.value);
@@ -306,9 +307,28 @@ jQuery(document).ready(function ($) {
                 // curmarker
             }
         });
+        */
 
         // map.setZoom(17);
         // map.panTo(curmarker.position);
+
+        $('.lahimmat-jalleenmyyjat').empty();
+
+        $.each(distributors, function( index, dist ) {
+            // console.log(dist);
+            if ( dist.address.replace(/ /g,'').indexOf(val.value) > -1 ) {
+                //console.log(dist);
+
+                var distHTML = '<div><h2>' + dist.name + '</h2><div>' + dist.address + '</div><div>' + dist.phone + '</div><a href="' + dist.website + '">' + dist.website + '</a></div>'
+
+                $('.lahimmat-jalleenmyyjat').append(distHTML);
+            }
+
+        });
+
+        //console.log(e, val);
+
+
     });
 
     $( '.swipebox' ).swipebox();
@@ -328,6 +348,15 @@ jQuery(document).ready(function ($) {
     $('.menu-toggle').click( function() {
         $(this).parent('.main-navigation').toggleClass('is-active');
     });
+
+    // new Share(".share-button", {
+    //     disable_css: true,
+    //     networks: {
+    //         facebook: {
+    //           app_id: "abc123"
+    //         }
+    //     }
+    // });
 
 }); // jQuery(document).ready
 

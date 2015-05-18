@@ -1,7 +1,7 @@
 body.page {
     background: $offwhite;
 
-    article {
+    article.page {
         @extend .col-md-offset-2;
         @extend .col-md-8;
     }
@@ -9,4 +9,8 @@ body.page {
     .entry-header {
         color: $dark;
     }
+}
+
+.page-sarjat article.page {
+    border-bottom: 1px solid;
 }

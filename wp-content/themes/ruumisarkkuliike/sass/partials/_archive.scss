@@ -7,11 +7,17 @@
     }
 }
 
-.post-type-desc {
-    max-width: 800px;
-    margin: 3rem auto 5rem;
+.post-type-desc,
+.taxonomy-description {
+    @extend .col-md-offset-2;
+    @extend .col-md-8;
+    margin-bottom: 4rem;
     padding-bottom: 4rem;
     border-bottom: 1px solid $light;
+
+    a {
+        color: white;
+    }
 }
 
 .archive-wrapper {
@@ -20,7 +26,8 @@
     text-align: center;
 }
 
-.archive article {
+.archive article,
+.kaikki-sarjat article {
 
     margin-bottom: 2em;
 
@@ -56,5 +63,14 @@
 .only-one article {
     .product-image {
         height: auto;
+    }
+}
+
+.kaikki-sarjat {
+
+    @extend .row;
+
+    article {
+        @extend .col-md-4;
     }
 }

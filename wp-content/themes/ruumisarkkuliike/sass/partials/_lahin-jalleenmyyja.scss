@@ -85,3 +85,17 @@
         }
     }
 }
+
+.lahimmat-jalleenmyyjat {
+	margin-bottom: 2em;
+
+	> div {
+		margin-bottom: 1em;
+		background: white;
+		padding: 1em;
+
+		h2 {
+			margin-top: 0;
+		}
+	}
+}

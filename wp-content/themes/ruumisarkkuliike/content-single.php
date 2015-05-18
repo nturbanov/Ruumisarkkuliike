@@ -63,7 +63,7 @@
 
                 <div class="label">Samaa paria</div>
                 <div>
-                    <?php $sarja = wp_get_post_terms( $product->ID, 'sarjat' ); ?>
+                    <?php $sarja = wp_get_post_terms( $product->ID, 'sarja' ); ?>
 
                     <div>
                         <a href="<?php echo get_permalink($product); ?>">
@@ -71,13 +71,17 @@
                         </a>
                     </div>
 
+                    <?php if ( is_array( $sarja ) ) : ?>
                     <a href="<?php echo get_term_link( $sarja[0] ); ?>"><?php echo $sarja[0]->name; ?></a> | <a href="<?php echo get_permalink($product); ?>"><?php echo $product->post_title; ?></a> <?php $pto = get_post_type_object( $product->post_type ); echo strtolower($pto->labels->singular_name); ?>
+                    <?php endif; ?>
                 </div>
                 <?php endif; ?>
 
             </div>
 
         </div><!-- .entry-meta -->
+
+        <?php include('partials/share.php'); ?>
 
 	</header><!-- .entry-header -->
 

@@ -4,6 +4,8 @@
     color: #fff;
     text-align: center;
 
+    @extend .row;
+
     .single & {
         text-align: left;
         .entry-title {
@@ -21,6 +23,10 @@
         font-size: 40px;
         margin-top: 0.25em;
 
+        .page & {
+            margin-top: 1em;
+        }
+
         div {
             font-size: 18px;
         }
@@ -32,7 +38,7 @@
 
     a {
         img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
         }
     }

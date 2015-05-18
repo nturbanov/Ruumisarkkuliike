@@ -11,12 +11,13 @@
         line-height: 70px;
         color: $dark;
         border-bottom: none;
+        transition: none;
     }
 
-    a[href="#"] {
-        color: white;
-        font-size: 14px;
-    }
+    // a[href="#"] {
+    //     color: white;
+    //     font-size: 14px;
+    // }
 
     // li.cpt a {
     //     font-size: 21px;
@@ -119,7 +120,7 @@
     display: none;
 }
 
-@include breakpoint( 0 $screen-sm - 1px ) {
+@include breakpoint( 0 $screen-md - 1px ) {
 
     .main-navigation {
         // background: $normal;
@@ -188,11 +189,13 @@
  * Adding them is left as an exercise for the reader.
  */
 .headroom {
-    transition: transform 200ms linear;
+    // transition: transform 200ms linear!important;
+    @include transition(all 200ms linear);
+
 }
 .headroom--pinned {
-    transform: translateY(0%);
+    @include transform(translateY(0%));
 }
 .headroom--unpinned {
-    transform: translateY(-100%);
+    @include transform(translateY(-100%));
 }

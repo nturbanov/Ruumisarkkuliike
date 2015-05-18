@@ -32,7 +32,7 @@
             }
         }
 
-        .entry-header {
+        header {
             text-align: center;
 
             a {
@@ -41,27 +41,10 @@
             }
 
             .entry-title {
-                margin: 0;
+                margin: 1em 0;
                 font-size: 14px;
-            }
-        }
-
-        .entry-title {
-            display: inline-block;
-            font-size: 18px;
-            font-weight: normal;
-
-            .single-suunnittelijat & {
-                position: absolute;
-                top: 50%;
-                width: 100%;
-                text-align: center;
                 font-weight: normal;
-                margin-top: -1em;
-
-                a {
-                    color: white;
-                }
+                display: inline-block;
             }
         }
 

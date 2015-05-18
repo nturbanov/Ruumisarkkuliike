@@ -2320,22 +2320,23 @@ hr {
 }
 
 /* line 39, sass/vendor/bootstrap/_grid.scss */
-.row, body:not(.home) #primary #main, body:not(.home) #primary #main .archive-wrapper, .share, .single:not(.single-suunnittelijat) .entry-meta {
+.row, body:not(.home) #primary #main, body:not(.home) #primary #main .archive-wrapper, .kaikki-sarjat, .entry-header, .single:not(.single-suunnittelijat) .entry-meta {
   margin-left: -5px;
   margin-right: -5px;
 }
 /* line 14, sass/vendor/bootstrap/mixins/_clearfix.scss */
-.row:before, body:not(.home) #primary #main:before, body:not(.home) #primary #main .archive-wrapper:before, .share:before, .single:not(.single-suunnittelijat) .entry-meta:before, .row:after, body:not(.home) #primary #main:after, body:not(.home) #primary #main .archive-wrapper:after, .share:after, .single:not(.single-suunnittelijat) .entry-meta:after {
+.row:before, body:not(.home) #primary #main:before, body:not(.home) #primary #main .archive-wrapper:before, .kaikki-sarjat:before, .entry-header:before, .single:not(.single-suunnittelijat) .entry-meta:before, .row:after, body:not(.home) #primary #main:after, body:not(.home) #primary #main .archive-wrapper:after, .kaikki-sarjat:after, .entry-header:after, .single:not(.single-suunnittelijat) .entry-meta:after {
   content: " ";
   display: table;
 }
 /* line 19, sass/vendor/bootstrap/mixins/_clearfix.scss */
-.row:after, body:not(.home) #primary #main:after, body:not(.home) #primary #main .archive-wrapper:after, .share:after, .single:not(.single-suunnittelijat) .entry-meta:after {
+.row:after, body:not(.home) #primary #main:after, body:not(.home) #primary #main .archive-wrapper:after, .kaikki-sarjat:after, .entry-header:after, .single:not(.single-suunnittelijat) .entry-meta:after {
   clear: both;
 }
 
 /* line 11, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .suunnittelijan-sarjat article, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .muut article, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .kategoria-nosto .wrapper .left, .kategoria-nosto .wrapper .right, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, body:not(.home) #primary #main.only-one article, .suunnittelijan-sarjat h3, body.single #primary article, body.page article, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .suunnittelijan-sarjat article, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .muut article, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .kaikki-sarjat article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .kategoria-nosto .wrapper .left, .kategoria-nosto .wrapper .right, .col-md-6, .share > *, .single:not(.single-suunnittelijat) .entry-meta > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, body:not(.home) #primary #main.only-one article, .post-type-desc,
+.taxonomy-description, .suunnittelijan-sarjat h3, body.single #primary article, body.page article.page, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 5px;
@@ -2865,7 +2866,8 @@ hr {
 }
 @media (min-width: 999px) {
   /* line 27, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-1, .col-md-2, .suunnittelijan-sarjat article, .col-md-3, .muut article, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .col-md-5, .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div, .col-md-7, .col-md-8, body:not(.home) #primary #main.only-one article, .suunnittelijan-sarjat h3, body.single #primary article, body.page article, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .suunnittelijan-sarjat article, .col-md-3, .muut article, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .kaikki-sarjat article, .col-md-5, .col-md-6, .share > *, .single:not(.single-suunnittelijat) .entry-meta > div, .col-md-7, .col-md-8, body:not(.home) #primary #main.only-one article, .post-type-desc,
+  .taxonomy-description, .suunnittelijan-sarjat h3, body.single #primary article, body.page article.page, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
 
@@ -2885,7 +2887,7 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-4, body:not(.home) #primary #main .archive-wrapper article {
+  .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .kaikki-sarjat article {
     width: 33.33333%;
   }
 
@@ -2895,7 +2897,7 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-6, .share > div, .single:not(.single-suunnittelijat) .entry-meta > div {
+  .col-md-6, .share > *, .single:not(.single-suunnittelijat) .entry-meta > div {
     width: 50%;
   }
 
@@ -2905,7 +2907,8 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-8, body:not(.home) #primary #main.only-one article, .suunnittelijan-sarjat h3, body.single #primary article, body.page article {
+  .col-md-8, body:not(.home) #primary #main.only-one article, .post-type-desc,
+  .taxonomy-description, .suunnittelijan-sarjat h3, body.single #primary article, body.page article.page {
     width: 66.66667%;
   }
 
@@ -3070,7 +3073,8 @@ hr {
   }
 
   /* line 60, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-offset-2, body:not(.home) #primary #main.only-one article, .suunnittelijan-sarjat h3, .suunnittelijan-sarjat article:first-of-type, body.single #primary article, body.page article {
+  .col-md-offset-2, body:not(.home) #primary #main.only-one article, .post-type-desc,
+  .taxonomy-description, .suunnittelijan-sarjat h3, .suunnittelijan-sarjat article:first-of-type, body.single #primary article, body.page article.page {
     margin-left: 16.66667%;
   }
 
@@ -5000,18 +5004,18 @@ input[type="button"].btn-block {
  */
 @font-face {
   font-family: "LancelotPro";
-  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?1427626385');
-  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?&1427626385#iefix') format('embedded-opentype'), url('fonts/LancelotPro/2C9BF0_0_0.woff?1427626385') format('woff'), url('fonts/LancelotPro/2C9BF0_0_0.woff2?1427626385') format('woff2'), url('fonts/LancelotPro/2C9BF0_0_0.ttf?1427626385') format('truetype');
+  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?1420215361');
+  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/LancelotPro/2C9BF0_0_0.woff?1420215361') format('woff'), url('fonts/LancelotPro/2C9BF0_0_0.woff2?1420215361') format('woff2'), url('fonts/LancelotPro/2C9BF0_0_0.ttf?1420215361') format('truetype');
 }
 @font-face {
   font-family: "Adagio Serif";
-  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?1427626384');
-  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?&1427626384#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_2_0.woff?1427626385') format('woff'), url('fonts/AdagioSerif/2C9BF0_2_0.woff2?1427626385') format('woff2'), url('fonts/AdagioSerif/2C9BF0_2_0.ttf?1427626385') format('truetype');
+  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?1420215361');
+  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_2_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_2_0.woff2?1420215361') format('woff2'), url('fonts/AdagioSerif/2C9BF0_2_0.ttf?1420215361') format('truetype');
 }
 @font-face {
   font-family: "Adagio Serif";
-  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?1427626384');
-  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?&1427626384#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1427626384') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1427626384') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.ttf?1427626384') format('truetype');
+  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?1420215361');
+  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.ttf?1420215361') format('truetype');
   font-weight: bold;
 }
 /* line 5, sass/partials/_base.scss */
@@ -5075,8 +5079,8 @@ body:not(.home) #primary {
 
 /* line 10, sass/partials/_header.scss */
 .site-title {
-  line-height: 70px;
-  margin: 0 0 0 2rem;
+  line-height: 1;
+  margin: 30px 0 0 2rem;
   font-size: 20px;
   font-family: 'LancelotPro';
   font-weight: normal;
@@ -5092,15 +5096,39 @@ body:not(.home) #primary {
 .site-title a:hover {
   text-decoration: none;
 }
+@media (min-width: 0) and (max-width: 500px) {
+  /* line 10, sass/partials/_header.scss */
+  .site-title {
+    font-size: 15px;
+    max-width: 170px;
+    line-height: 1.2;
+    margin: 20px 0 0 1rem;
+  }
+}
+@media (min-width: 999px) {
+  /* line 36, sass/partials/_header.scss */
+  .site-title:after {
+    display: inline-block;
+    background: url(i/honkanen-siluetti-tumma.png) no-repeat 0 0;
+    height: 56px;
+    width: 43px;
+    content: '';
+    position: absolute;
+    background-size: auto 50px;
+    top: 10px;
+    right: -60px;
+  }
+}
 
-/* line 33, sass/partials/_header.scss */
+/* line 54, sass/partials/_header.scss */
 .home .site-title {
   opacity: 0;
 }
 
-/* line 41, sass/partials/_header.scss */
+/* line 62, sass/partials/_header.scss */
 .site-branding {
   float: left;
+  position: relative;
 }
 
 /* line 1, sass/partials/_footer.scss */
@@ -5140,52 +5168,63 @@ body:not(.home) #primary {
 }
 
 /* line 10, sass/partials/_archive.scss */
-.post-type-desc {
-  max-width: 800px;
-  margin: 3rem auto 5rem;
+.post-type-desc,
+.taxonomy-description {
+  margin-bottom: 4rem;
   padding-bottom: 4rem;
   border-bottom: 1px solid #deecef;
 }
+/* line 18, sass/partials/_archive.scss */
+.post-type-desc a,
+.taxonomy-description a {
+  color: white;
+}
 
-/* line 17, sass/partials/_archive.scss */
+/* line 23, sass/partials/_archive.scss */
 .archive-wrapper {
   margin: 0 auto 0;
   text-align: center;
 }
 
-/* line 23, sass/partials/_archive.scss */
-.archive article {
+/* line 29, sass/partials/_archive.scss */
+.archive article,
+.kaikki-sarjat article {
   margin-bottom: 2em;
 }
-/* line 27, sass/partials/_archive.scss */
-.archive article .entry-header {
+/* line 34, sass/partials/_archive.scss */
+.archive article .entry-header,
+.kaikki-sarjat article .entry-header {
   text-align: center;
 }
-/* line 31, sass/partials/_archive.scss */
-.archive article a {
+/* line 38, sass/partials/_archive.scss */
+.archive article a,
+.kaikki-sarjat article a {
   color: #fff;
 }
-/* line 34, sass/partials/_archive.scss */
-.archive article a img {
+/* line 41, sass/partials/_archive.scss */
+.archive article a img,
+.kaikki-sarjat article a img {
   max-width: 100%;
   height: auto;
 }
-/* line 40, sass/partials/_archive.scss */
-.archive article .product-image {
+/* line 47, sass/partials/_archive.scss */
+.archive article .product-image,
+.kaikki-sarjat article .product-image {
   height: 246px;
   display: block;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 1em;
 }
-/* line 48, sass/partials/_archive.scss */
-.archive article .entry-title {
+/* line 55, sass/partials/_archive.scss */
+.archive article .entry-title,
+.kaikki-sarjat article .entry-title {
   display: inline-block;
   font-size: 14px;
   font-weight: normal;
   margin: 0;
 }
 
-/* line 57, sass/partials/_archive.scss */
+/* line 64, sass/partials/_archive.scss */
 .only-one article .product-image {
   height: auto;
 }
@@ -5219,40 +5258,45 @@ body:not(.home) #primary {
   color: #fff;
   text-align: center;
 }
-/* line 7, sass/partials/_content-header.scss */
+/* line 9, sass/partials/_content-header.scss */
 .single .entry-header {
   text-align: left;
 }
-/* line 9, sass/partials/_content-header.scss */
+/* line 11, sass/partials/_content-header.scss */
 .single .entry-header .entry-title {
   margin: 0 0 0.5em;
 }
-/* line 13, sass/partials/_content-header.scss */
+/* line 15, sass/partials/_content-header.scss */
 .single .entry-header .subheader {
   margin-top: 2em;
 }
-/* line 19, sass/partials/_content-header.scss */
+/* line 21, sass/partials/_content-header.scss */
 .entry-header .section-title,
 .entry-header .entry-title {
   font-size: 40px;
   margin-top: 0.25em;
 }
-/* line 24, sass/partials/_content-header.scss */
+/* line 26, sass/partials/_content-header.scss */
+.page .entry-header .section-title, .page
+.entry-header .entry-title {
+  margin-top: 1em;
+}
+/* line 30, sass/partials/_content-header.scss */
 .entry-header .section-title div,
 .entry-header .entry-title div {
   font-size: 18px;
 }
-/* line 29, sass/partials/_content-header.scss */
+/* line 35, sass/partials/_content-header.scss */
 .entry-header .entry-title {
   color: #555e6d;
 }
-/* line 34, sass/partials/_content-header.scss */
+/* line 40, sass/partials/_content-header.scss */
 .entry-header a img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
-/* line 41, sass/partials/_content-header.scss */
+/* line 47, sass/partials/_content-header.scss */
 .subheader {
   font-size: 18px;
 }
@@ -5328,29 +5372,25 @@ body:not(.home) #primary {
   line-height: 70px;
   color: #3d434e;
   border-bottom: none;
+  transition: none;
 }
-/* line 16, sass/partials/_navigation.scss */
-.main-navigation a[href="#"] {
-  color: white;
-  font-size: 14px;
-}
-/* line 27, sass/partials/_navigation.scss */
+/* line 28, sass/partials/_navigation.scss */
 .main-navigation .active,
 .main-navigation .active-parent {
   background: #3d434e;
 }
-/* line 32, sass/partials/_navigation.scss */
+/* line 33, sass/partials/_navigation.scss */
 .main-navigation .active > a,
 .main-navigation .active-parent > a {
   color: white;
 }
-/* line 42, sass/partials/_navigation.scss */
+/* line 43, sass/partials/_navigation.scss */
 .main-navigation ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
-/* line 47, sass/partials/_navigation.scss */
+/* line 48, sass/partials/_navigation.scss */
 .main-navigation ul ul {
   position: absolute;
   top: 70px;
@@ -5359,83 +5399,83 @@ body:not(.home) #primary {
   width: 100%;
   padding: 0;
 }
-/* line 57, sass/partials/_navigation.scss */
+/* line 58, sass/partials/_navigation.scss */
 .main-navigation ul ul ul {
   position: static;
   padding-bottom: 0;
 }
-/* line 61, sass/partials/_navigation.scss */
+/* line 62, sass/partials/_navigation.scss */
 .main-navigation ul ul ul li {
   background: rgba(0, 0, 0, 0.1);
 }
-/* line 65, sass/partials/_navigation.scss */
+/* line 66, sass/partials/_navigation.scss */
 .main-navigation ul ul ul li a {
   color: white;
 }
-/* line 71, sass/partials/_navigation.scss */
+/* line 72, sass/partials/_navigation.scss */
 .main-navigation ul ul li {
   float: none;
 }
-/* line 74, sass/partials/_navigation.scss */
+/* line 75, sass/partials/_navigation.scss */
 .main-navigation ul ul li a:hover {
   background: #3d434e;
 }
-/* line 77, sass/partials/_navigation.scss */
+/* line 78, sass/partials/_navigation.scss */
 .main-navigation ul ul li a:hover > ul {
   left: 100%;
 }
-/* line 83, sass/partials/_navigation.scss */
+/* line 84, sass/partials/_navigation.scss */
 .main-navigation ul ul a {
   color: white;
   line-height: 2.5;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* line 90, sass/partials/_navigation.scss */
+/* line 91, sass/partials/_navigation.scss */
 .main-navigation ul li:hover > ul {
   left: 0;
   background: #555e6d;
 }
-/* line 95, sass/partials/_navigation.scss */
+/* line 96, sass/partials/_navigation.scss */
 .main-navigation li {
   float: left;
 }
-/* line 98, sass/partials/_navigation.scss */
+/* line 99, sass/partials/_navigation.scss */
 .main-navigation li:hover {
   background: #555e6d;
 }
-/* line 101, sass/partials/_navigation.scss */
+/* line 102, sass/partials/_navigation.scss */
 .main-navigation li:hover > a {
   color: white;
 }
-/* line 106, sass/partials/_navigation.scss */
+/* line 107, sass/partials/_navigation.scss */
 .main-navigation li a:hover {
   color: white;
 }
 
 /* Small menu */
-/* line 118, sass/partials/_navigation.scss */
+/* line 119, sass/partials/_navigation.scss */
 .menu-toggle {
   display: none;
 }
 
-@media (min-width: 0) and (max-width: 767px) {
-  /* line 124, sass/partials/_navigation.scss */
+@media (min-width: 0) and (max-width: 998px) {
+  /* line 125, sass/partials/_navigation.scss */
   .main-navigation {
     height: 70px;
   }
 
-  /* line 129, sass/partials/_navigation.scss */
+  /* line 130, sass/partials/_navigation.scss */
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
     display: block;
   }
 
-  /* line 134, sass/partials/_navigation.scss */
+  /* line 135, sass/partials/_navigation.scss */
   .main-navigation ul {
     display: none;
   }
 
-  /* line 138, sass/partials/_navigation.scss */
+  /* line 139, sass/partials/_navigation.scss */
   .menu-toggle {
     width: 70px;
     height: 70px;
@@ -5445,7 +5485,7 @@ body:not(.home) #primary {
     margin: 0 auto;
     cursor: pointer;
   }
-  /* line 147, sass/partials/_navigation.scss */
+  /* line 148, sass/partials/_navigation.scss */
   .menu-toggle .burger-icon {
     position: relative;
     margin-top: 8px;
@@ -5500,7 +5540,7 @@ body:not(.home) #primary {
     -o-transform: translateY(-8px) rotate(-45deg);
     transform: translateY(-8px) rotate(-45deg);
   }
-  /* line 157, sass/partials/_navigation.scss */
+  /* line 158, sass/partials/_navigation.scss */
   .main-navigation.is-active .menu {
     display: block;
     position: absolute;
@@ -5508,20 +5548,20 @@ body:not(.home) #primary {
     width: 220px;
     right: -70px;
   }
-  /* line 164, sass/partials/_navigation.scss */
+  /* line 165, sass/partials/_navigation.scss */
   .main-navigation.is-active .menu li {
     float: none;
   }
-  /* line 168, sass/partials/_navigation.scss */
+  /* line 169, sass/partials/_navigation.scss */
   .main-navigation.is-active .menu > li > a {
     font-size: 0;
     height: 0;
   }
-  /* line 173, sass/partials/_navigation.scss */
+  /* line 174, sass/partials/_navigation.scss */
   .main-navigation.is-active .menu a {
     color: white;
   }
-  /* line 177, sass/partials/_navigation.scss */
+  /* line 178, sass/partials/_navigation.scss */
   .main-navigation.is-active .menu .sub-menu {
     position: static;
     display: block;
@@ -5531,18 +5571,26 @@ body:not(.home) #primary {
  * Note: I have omitted any vendor-prefixes for clarity.
  * Adding them is left as an exercise for the reader.
  */
-/* line 190, sass/partials/_navigation.scss */
+/* line 191, sass/partials/_navigation.scss */
 .headroom {
-  transition: transform 200ms linear;
-}
-
-/* line 193, sass/partials/_navigation.scss */
-.headroom--pinned {
-  transform: translateY(0%);
+  -webkit-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
 }
 
 /* line 196, sass/partials/_navigation.scss */
+.headroom--pinned {
+  -moz-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+/* line 199, sass/partials/_navigation.scss */
 .headroom--unpinned {
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
 }
 
@@ -5663,7 +5711,24 @@ body:not(.home) #primary {
 
 /* line 1, sass/partials/_share.scss */
 .share {
-  display: none;
+  border-bottom: 1px solid #deecef;
+  margin-bottom: 3em;
+  padding: 1em 0;
+  overflow: hidden;
+}
+/* line 8, sass/partials/_share.scss */
+.single-suunnittelijat .share {
+  margin-top: 2em;
+  border-top: 1px solid;
+  border-color: white;
+}
+/* line 13, sass/partials/_share.scss */
+.single-suunnittelijat .share a {
+  color: white;
+}
+/* line 23, sass/partials/_share.scss */
+.share > * i {
+  margin-right: 1em;
 }
 
 /* line 1, sass/partials/_muut.scss */
@@ -5693,39 +5758,22 @@ body:not(.home) #primary {
   height: auto;
 }
 /* line 35, sass/partials/_muut.scss */
-.muut article .entry-header {
+.muut article header {
   text-align: center;
 }
 /* line 38, sass/partials/_muut.scss */
-.muut article .entry-header a {
+.muut article header a {
   color: #3d434e;
   font-size: 14px;
 }
 /* line 43, sass/partials/_muut.scss */
-.muut article .entry-header .entry-title {
-  margin: 0;
+.muut article header .entry-title {
+  margin: 1em 0;
   font-size: 14px;
-}
-/* line 49, sass/partials/_muut.scss */
-.muut article .entry-title {
+  font-weight: normal;
   display: inline-block;
-  font-size: 18px;
-  font-weight: normal;
 }
-/* line 54, sass/partials/_muut.scss */
-.single-suunnittelijat .muut article .entry-title {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  font-weight: normal;
-  margin-top: -1em;
-}
-/* line 62, sass/partials/_muut.scss */
-.single-suunnittelijat .muut article .entry-title a {
-  color: white;
-}
-/* line 68, sass/partials/_muut.scss */
+/* line 51, sass/partials/_muut.scss */
 .muut article .product-image {
   height: 183px;
   display: block;
@@ -5745,10 +5793,19 @@ body:not(.home) #primary {
 /* line 21, sass/partials/_suunnittelijan-sarjat.scss */
 .suunnittelijan-sarjat article img {
   display: block;
+  width: 100%;
+  height: auto;
 }
-/* line 25, sass/partials/_suunnittelijan-sarjat.scss */
+/* line 27, sass/partials/_suunnittelijan-sarjat.scss */
 .suunnittelijan-sarjat article a {
   color: white;
+}
+/* line 31, sass/partials/_suunnittelijan-sarjat.scss */
+.suunnittelijan-sarjat article .entry-title {
+  margin: 1em 0;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
 }
 
 /* line 1, sass/partials/_post-navigation.scss */
@@ -5904,6 +5961,21 @@ body:not(.home) #primary {
   }
 }
 
+/* line 89, sass/partials/_lahin-jalleenmyyja.scss */
+.lahimmat-jalleenmyyjat {
+  margin-bottom: 2em;
+}
+/* line 92, sass/partials/_lahin-jalleenmyyja.scss */
+.lahimmat-jalleenmyyjat > div {
+  margin-bottom: 1em;
+  background: white;
+  padding: 1em;
+}
+/* line 97, sass/partials/_lahin-jalleenmyyja.scss */
+.lahimmat-jalleenmyyjat > div h2 {
+  margin-top: 0;
+}
+
 /* line 1, sass/partials/_single.scss */
 body.single {
   background: #faf8f5;
@@ -5940,7 +6012,7 @@ body.single .related-product a {
 }
 /* line 35, sass/partials/_single.scss */
 body.single .related-product a img {
-  height: 120px;
+  height: 200px;
   width: auto;
 }
 
@@ -5966,10 +6038,19 @@ body.page .entry-header {
   color: #3d434e;
 }
 
+/* line 14, sass/partials/_page.scss */
+.page-sarjat article.page {
+  border-bottom: 1px solid;
+}
+
 /* line 1, sass/partials/_suunnittelija.scss */
-.single-suunnittelijat {
+body.single-suunnittelijat {
   background: #3d434e;
-  color: #fff;
+  color: white;
+}
+/* line 5, sass/partials/_suunnittelija.scss */
+body.single-suunnittelijat .entry-title {
+  color: white;
 }
 
 /* line 4, sass/partials/_tuote.scss */
@@ -5980,7 +6061,7 @@ body.page .entry-header {
 .single:not(.single-suunnittelijat) .entry-meta {
   border-top: #deecef 1px solid;
   border-bottom: #deecef 1px solid;
-  margin: 0 0 3em;
+  margin: 0;
   padding: 3em 0;
 }
 /* line 19, sass/partials/_tuote.scss */

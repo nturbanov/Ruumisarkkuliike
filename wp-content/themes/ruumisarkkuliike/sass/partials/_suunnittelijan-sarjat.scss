@@ -20,10 +20,19 @@
 
         img {
             display: block;
+            width: 100%;
+            height: auto;
         }
 
         a {
             color: white;
+        }
+
+        .entry-title {
+            margin: 1em 0;
+            font-size: 14px;
+            font-weight: normal;
+            text-align: center;
         }
     }
 }

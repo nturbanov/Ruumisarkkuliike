@@ -56,7 +56,8 @@ get_header();
 					endif;
 
                     if ( is_post_type_archive() ) :
-                        echo '<p class="post-type-desc">Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod.</p>';
+                        $obj = get_post_type_object( get_post_type($post) );
+                        echo '<div class="post-type-desc">' . wpautop($obj->description) . '</div>';
                     endif;
 				?>
 			</header><!-- .page-header -->

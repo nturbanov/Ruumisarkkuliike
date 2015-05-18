@@ -9,8 +9,8 @@
 
 .site-title {
 
-    line-height: 70px;
-    margin: 0 0 0 2rem;
+    line-height: 1;
+    margin: 30px 0 0 2rem;
     font-size: 20px;
     font-family: 'LancelotPro';
     font-weight: normal;
@@ -23,6 +23,27 @@
             &:hover {
                 text-decoration: none;
             }
+        }
+
+    @include breakpoint( 0 500px ) {
+        font-size: 15px;
+        max-width: 170px;
+        line-height: 1.2;
+        margin: 20px 0 0 1rem;
+    }
+
+    @include breakpoint( $screen-md ) {
+        &:after {
+            display: inline-block;
+            background: url(i/honkanen-siluetti-tumma.png) no-repeat 0 0;
+            height: 56px;
+            width: 43px;
+            content: '';
+            position: absolute;
+            background-size: auto 50px;
+            top: 10px;
+            right: -60px;
+        }
     }
 }
 
@@ -40,4 +61,5 @@
 
 .site-branding {
     float: left;
+    position: relative;
 }

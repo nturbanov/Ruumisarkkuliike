@@ -126,6 +126,9 @@ function ruumisarkkuliike_scripts() {
     wp_enqueue_script('google_jsapi', 'https://www.google.com/jsapi?key='.$GOOGLE_API_KEY, null, '', true);
     wp_enqueue_script('google_maps', 'https://maps.googleapis.com/maps/api/js?key='.$GOOGLE_API_KEY.'&sensor=true&libraries=geometry,drawing&language=fi', null, '', true);
 
+    // wp_enqueue_script( 'share-button', get_template_directory_uri() . '/js/vendor/share.min.js', null, '0.5.0', 'true' );
+
+
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js', false, '1.11.2', true );
     // wp_register_script('jquery', get_template_directory_uri() . '/js/vendor/jquery.min.js', false, '1.11.2', true);

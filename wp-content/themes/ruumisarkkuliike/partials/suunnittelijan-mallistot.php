@@ -12,25 +12,9 @@
 
             <article>
                 <a href="<?php echo get_term_link( $term, 'sarjat' ); ?>">
-                <?php
-                $args = array(
-                    'posts_per_page'   => 1,
-                    'orderby'          => 'rand',
-                    'post_type'        => array(
-                        'verhoillut-arkut', 'puuarkut', 'uurnat'
-                        ),
-                    'tax_query'        => array(
-                        array(
-                            'taxonomy' => 'sarjat',
-                            'field'    => 'slug',
-                            'terms'    => $term->slug,
-                        ),
-                    ),
-                );
-                $post = get_posts( $args );
-                echo get_the_post_thumbnail( $post[0]->ID, 'thumbnail' );
-                ?>
-                <?php echo $term->name; ?>
+                <?php $term_image = get_field('sarjan_kuva', $term); ?>
+                        <img src="<?php echo $term_image['sizes']['large']; ?>" title="<?php echo $term_image['title']; ?>" alt="<?php echo $term_image['alt'].' '.$term_image['description']; ?>" width="<?php echo $term_image['sizes']['large-width']; ?>" height="<?php echo $term_image['sizes']['large-height']; ?>" />
+                <h1 class="entry-title"><?php echo $term->name; ?></h1>
                 </a>
             </article>
 
