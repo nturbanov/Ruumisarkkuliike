@@ -201,6 +201,9 @@ function mod_get_adjacent_post($direction = 'prev', $post_types = 'post') {
     $op = $direction == 'prev' ? '<' : '>';
     $order = $direction == 'prev' ? 'DESC' : 'ASC';
 
+    // select p.* from wp_posts p join wp_term_relationships r on r.object_id = p.id join wp_term_taxonomy t on t.term_taxonomy_id = r.term_taxonomy_id and t.taxonomy = 'sarjat' join wp_terms s on s.term_id = t.term_id and s.name = (select s2.name from wp_posts p2 join wp_term_relationships r2 on r2.object_id = p2.id join wp_term_taxonomy t2 on t2.term_taxonomy_id = r2.term_taxonomy_id and t2.taxonomy = 'sarjat' join wp_terms s2 on s2.term_id = t2.term_id where p2.id = 121) where r.object_id <> 121 order by p.menu_order
+
+
     $join  = apply_filters( "get_{$adjacent}_post_join", $join, $in_same_cat, $excluded_categories );
     $where = apply_filters( "get_{$adjacent}_post_where", $wpdb->prepare("WHERE p.post_date $op %s AND p.post_type IN({$post_types}) AND p.post_status = 'publish'", $current_post_date), $in_same_cat, $excluded_categories );
     $sort  = apply_filters( "get_{$adjacent}_post_sort", "ORDER BY p.post_date $order LIMIT 1" );

@@ -86,6 +86,12 @@
                 line-height: 2.5;
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
             }
+
+            // kolmannen tason ul
+            ul a {
+                border-top: none;
+                padding-left: 4rem;
+            }
         }
 
         li:hover > ul {

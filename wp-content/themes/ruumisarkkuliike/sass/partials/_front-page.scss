@@ -1,13 +1,19 @@
 #page {
     margin: 0 auto;
     padding: 0;
+
+    @include breakpoint(0 $screen-md - 1) {
+        padding: 0 10px;
+    }
 }
 
 .home {
     text-align: center;
+    background: white!important;
 
     #page {
         max-width: 100%;
+        padding: 0!important;
     }
 }
 
@@ -19,8 +25,13 @@
 
     img {
         width: 556px;
+        max-width: 90%;
         height: auto;
         margin-top: 15vw;
+
+        @include breakpoint(0 $screen-md - 1) {
+            margin-top: 100px;
+        }
     }
 }
 

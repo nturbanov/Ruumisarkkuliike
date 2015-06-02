@@ -1,3 +1,11 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+}
+
 .screen-reader-text {
     @extend .sr-only;
 }
@@ -9,6 +17,10 @@
 .entry-content {
     font-size: $content_font_size;
     line-height: $content_line_height;
+
+    p {
+        margin-top: 0;
+    }
 
     @include breakpoint(0 $screen-md - 1) {
         font-size: 18px;

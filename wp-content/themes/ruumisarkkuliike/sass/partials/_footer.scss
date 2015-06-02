@@ -3,6 +3,14 @@
     color: #fff;
     height: 100px;
     line-height: 100px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    @include breakpoint(0 $screen-md - 1) {
+        padding: 0 10px;
+    }
 
     div {
         // display: inline-block;
@@ -15,6 +23,10 @@
         display: inline-block;
         margin-right: 40px;
         vertical-align: middle;
+
+        @include breakpoint(0 $screen-md - 1) {
+            margin-right: 20px;
+        }
 
         &:hover {
             color: rgba(255, 255, 255, 1);
@@ -33,3 +45,5 @@
         }
     }
 }
+
+// @include sticky-footer(100px, "#page", "#content", "#colophon");

@@ -358,6 +358,10 @@ jQuery(document).ready(function ($) {
     //     }
     // });
 
+    $('.share-button > span').on('click', function() {
+        $(this).hide().siblings('.soc').show();
+    });
+
 }); // jQuery(document).ready
 
 var substringMatcher = function(strs) {
