@@ -201,20 +201,26 @@ function mod_get_adjacent_post($direction = 'prev', $post_types = 'post') {
     $op = $direction == 'prev' ? '<' : '>';
     $order = $direction == 'prev' ? 'DESC' : 'ASC';
 
-    // select p.* from wp_posts p join wp_term_relationships r on r.object_id = p.id join wp_term_taxonomy t on t.term_taxonomy_id = r.term_taxonomy_id and t.taxonomy = 'sarjat' join wp_terms s on s.term_id = t.term_id and s.name = (select s2.name from wp_posts p2 join wp_term_relationships r2 on r2.object_id = p2.id join wp_term_taxonomy t2 on t2.term_taxonomy_id = r2.term_taxonomy_id and t2.taxonomy = 'sarjat' join wp_terms s2 on s2.term_id = t2.term_id where p2.id = 121) where r.object_id <> 121 order by p.menu_order
+    $query = "select p.* from wp_posts p join wp_term_relationships r on r.object_id = p.id join wp_term_taxonomy t on t.term_taxonomy_id = r.term_taxonomy_id and t.taxonomy = 'sarjat' join wp_terms s on s.term_id = t.term_id and s.name = (select s2.name from wp_posts p2 join wp_term_relationships r2 on r2.object_id = p2.id join wp_term_taxonomy t2 on t2.term_taxonomy_id = r2.term_taxonomy_id and t2.taxonomy = 'sarjat' join wp_terms s2 on s2.term_id = t2.term_id where p2.id = $post->ID) where r.object_id <> $post->ID order by p.menu_order";
 
 
-    $join  = apply_filters( "get_{$adjacent}_post_join", $join, $in_same_cat, $excluded_categories );
-    $where = apply_filters( "get_{$adjacent}_post_where", $wpdb->prepare("WHERE p.post_date $op %s AND p.post_type IN({$post_types}) AND p.post_status = 'publish'", $current_post_date), $in_same_cat, $excluded_categories );
-    $sort  = apply_filters( "get_{$adjacent}_post_sort", "ORDER BY p.post_date $order LIMIT 1" );
+    // $join  = apply_filters( "get_{$adjacent}_post_join", $join, $in_same_cat, $excluded_categories );
+    // $where = apply_filters( "get_{$adjacent}_post_where", $wpdb->prepare("WHERE p.post_date $op %s AND p.post_type IN({$post_types}) AND p.post_status = 'publish'", $current_post_date), $in_same_cat, $excluded_categories );
+    // $sort  = apply_filters( "get_{$adjacent}_post_sort", "ORDER BY p.post_date $order LIMIT 1" );
 
-    $query = "SELECT p.* FROM $wpdb->posts AS p $join $where $sort";
+    // $query = "SELECT p.* FROM $wpdb->posts AS p $join $where $sort";
+
+    // var_dump($query);
+
     $query_key = 'adjacent_post_' . md5($query);
-    $result = wp_cache_get($query_key, 'counts');
-    if ( false !== $result )
-        return $result;
+    // $result = wp_cache_get($query_key, 'counts');
+    // if ( false !== $result )
+    //     return $result;
 
-    $result = $wpdb->get_row("SELECT p.* FROM $wpdb->posts AS p $join $where $sort");
+    // $result = $wpdb->get_row("SELECT p.* FROM $wpdb->posts AS p $join $where $sort");
+
+    $result = $wpdb->get_row($query);
+
     if ( null === $result )
         $result = '';
 
@@ -238,3 +244,165 @@ function cpt_nosto($cpt) {
     </section>
 <?php
 }
+
+
+/**
+ * Retrieve adjacent post modified to go across multiple post types and sort by menu order.
+ *
+ * Can either be next or previous post.
+ *
+ * @since 2.5.0
+ *
+ * @param bool         $in_same_term   Optional. Whether post should be in a same taxonomy term.
+ * @param array|string $excluded_terms Optional. Array or comma-separated list of excluded term IDs.
+ * @param bool         $previous       Optional. Whether to retrieve previous post.
+ * @param string       $taxonomy       Optional. Taxonomy, if $in_same_term is true. Default 'category'.
+ * @return mixed       Post object if successful. Null if global $post is not set. Empty string if no corresponding post exists.
+ */
+function my_get_adjacent_post( $in_same_term = false, $excluded_terms = '', $previous = true, $taxonomy = 'category', $post_types = 'post' ) {
+    global $wpdb, $post;
+
+    if(empty($post)) return NULL;
+    if(!$post_types) return NULL;
+
+    if(is_array($post_types)){
+        $txt = '';
+        for($i = 0; $i <= count($post_types) - 1; $i++){
+            $txt .= "'".$post_types[$i]."'";
+            if($i != count($post_types) - 1) $txt .= ', ';
+        }
+        $post_types = $txt;
+    }
+
+    if ( ( ! $post = get_post() ) || ! taxonomy_exists( $taxonomy ) )
+        return null;
+
+    $current_post_date = $post->post_date;
+
+    $current_menu_order = $post->menu_order;
+
+    $join = '';
+    $where = '';
+
+    if ( $in_same_term || ! empty( $excluded_terms ) ) {
+        $join = " INNER JOIN $wpdb->term_relationships AS tr ON p.ID = tr.object_id INNER JOIN $wpdb->term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id";
+        $where = $wpdb->prepare( "AND tt.taxonomy = %s", $taxonomy );
+
+        if ( ! empty( $excluded_terms ) && ! is_array( $excluded_terms ) ) {
+            // back-compat, $excluded_terms used to be $excluded_terms with IDs separated by " and "
+            if ( false !== strpos( $excluded_terms, ' and ' ) ) {
+                _deprecated_argument( __FUNCTION__, '3.3', sprintf( __( 'Use commas instead of %s to separate excluded terms.' ), "'and'" ) );
+                $excluded_terms = explode( ' and ', $excluded_terms );
+            } else {
+                $excluded_terms = explode( ',', $excluded_terms );
+            }
+
+            $excluded_terms = array_map( 'intval', $excluded_terms );
+        }
+
+        if ( $in_same_term ) {
+            if ( ! is_object_in_taxonomy( $post->post_type, $taxonomy ) )
+                return '';
+            $term_array = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
+
+            // Remove any exclusions from the term array to include.
+            $term_array = array_diff( $term_array, (array) $excluded_terms );
+            $term_array = array_map( 'intval', $term_array );
+
+            if ( ! $term_array || is_wp_error( $term_array ) )
+                return '';
+
+            $where .= " AND tt.term_id IN (" . implode( ',', $term_array ) . ")";
+        }
+
+        if ( ! empty( $excluded_terms ) ) {
+            $where .= " AND p.ID NOT IN ( SELECT tr.object_id FROM $wpdb->term_relationships tr LEFT JOIN $wpdb->term_taxonomy tt ON (tr.term_taxonomy_id = tt.term_taxonomy_id) WHERE tt.term_id IN (" . implode( $excluded_terms, ',' ) . ') )';
+        }
+    }
+
+    // 'post_status' clause depends on the current user.
+    if ( is_user_logged_in() ) {
+        $user_id = get_current_user_id();
+
+        $post_type_object = get_post_type_object( $post->post_type );
+        if ( empty( $post_type_object ) ) {
+            $post_type_cap    = $post->post_type;
+            $read_private_cap = 'read_private_' . $post_type_cap . 's';
+        } else {
+            $read_private_cap = $post_type_object->cap->read_private_posts;
+        }
+
+        /*
+         * Results should include private posts belonging to the current user, or private posts where the
+         * current user has the 'read_private_posts' cap.
+         */
+        $private_states = get_post_stati( array( 'private' => true ) );
+        $where .= " AND ( p.post_status = 'publish'";
+        foreach ( (array) $private_states as $state ) {
+            if ( current_user_can( $read_private_cap ) ) {
+                $where .= $wpdb->prepare( " OR p.post_status = %s", $state );
+            } else {
+                $where .= $wpdb->prepare( " OR (p.post_author = %d AND p.post_status = %s)", $user_id, $state );
+            }
+        }
+        $where .= " )";
+    } else {
+        $where .= " AND p.post_status = 'publish'";
+    }
+
+    $adjacent = $previous ? 'previous' : 'next';
+    $op = $previous ? '<' : '>';
+    $order = $previous ? 'DESC' : 'ASC';
+
+    $join  = apply_filters( "get_{$adjacent}_post_join", $join, $in_same_term, $excluded_terms );
+
+    $where = apply_filters( "get_{$adjacent}_post_where", $wpdb->prepare( "WHERE p.menu_order $op %s AND p.post_type IN({$post_types}) $where", $current_menu_order, $post->post_type ), $in_same_term, $excluded_terms );
+
+    $sort  = apply_filters( "get_{$adjacent}_post_sort", "ORDER BY p.menu_order $order LIMIT 1" );
+
+    $query = "SELECT p.ID FROM $wpdb->posts AS p $join $where $sort";
+
+    // var_dump($query);
+
+    $query_key = 'adjacent_post_' . md5( $query );
+    $result = wp_cache_get( $query_key, 'counts' );
+    if ( false !== $result ) {
+        if ( $result )
+            $result = get_post( $result );
+        return $result;
+    }
+
+    $result = $wpdb->get_var( $query );
+    if ( null === $result )
+        $result = '';
+
+    wp_cache_set( $query_key, $result, 'counts' );
+
+    if ( $result )
+        $result = get_post( $result );
+
+    return $result;
+}
+
+
+function get_previous_post_sort_mine( $sort ){
+    $sort = " ORDER BY p.menu_order DESC LIMIT 1";
+    return $sort;
+}
+// add_filter( 'get_previous_post_sort', 'get_previous_post_sort_mine' );
+
+function get_next_post_sort_mine( $sort ){
+    $sort = " ORDER BY p.menu_order ASC LIMIT 1";
+    return $sort;
+}
+// add_filter( 'get_next_post_sort', 'get_next_post_sort_mine' );
+
+function wpse73190_gist_adjacent_post_sort( $sql ) {
+    $pattern = '/post_date/';
+    $replacement = 'menu_order';
+
+    return preg_replace( $pattern, $replacement, $sql );
+}
+
+add_filter( 'get_next_post_sort', 'wpse73190_gist_adjacent_post_sort' );
+add_filter( 'get_previous_post_sort', 'wpse73190_gist_adjacent_post_sort' );

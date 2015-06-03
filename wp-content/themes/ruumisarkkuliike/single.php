@@ -24,8 +24,15 @@ get_header(); ?>
 			<?php //ruumisarkkuliike_post_nav(); ?>
 
             <?php
-            $prev = mod_get_adjacent_post('prev', array('verhoillut-arkut', 'puuarkut', 'uurnat'));
-            $next = mod_get_adjacent_post('next', array('verhoillut-arkut', 'puuarkut', 'uurnat'));
+            // $prev = mod_get_adjacent_post('prev', array('verhoillut-arkut', 'puuarkut', 'uurnat'));
+            // $next = mod_get_adjacent_post('next', array('verhoillut-arkut', 'puuarkut', 'uurnat'));
+
+
+            $prev = my_get_adjacent_post( true, '', true, 'sarjat', array('verhoillut-arkut', 'puuarkut', 'uurnat') );
+            $next = my_get_adjacent_post( true, '', false, 'sarjat', array('verhoillut-arkut', 'puuarkut', 'uurnat') );
+
+            // $prev = get_adjacent_post( true, '', true, 'sarjat' );
+            // $next = get_adjacent_post( true, '', false, 'sarjat' );
 
             // var_dump($prev);
             ?>
