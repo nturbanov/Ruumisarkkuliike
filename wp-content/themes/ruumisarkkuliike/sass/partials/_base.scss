@@ -25,6 +25,11 @@ body {
     @include breakpoint(0 $screen-md - 1) {
         font-size: 18px;
     }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 .entry-meta a,

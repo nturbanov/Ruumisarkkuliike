@@ -333,6 +333,8 @@ jQuery(document).ready(function ($) {
 
     $( '.swipebox' ).swipebox();
 
+    $( '.entry-content a[href$=".jpg"], .entry-content a[href$=".png"]' ).swipebox();
+
     $('#masthead').headroom({
         // vertical offset in px before element is first unpinned
         offset : 0,

@@ -5059,8 +5059,13 @@ body {
     font-size: 18px;
   }
 }
+/* line 29, sass/partials/_base.scss */
+.entry-content img {
+  max-width: 100%;
+  height: auto;
+}
 
-/* line 30, sass/partials/_base.scss */
+/* line 35, sass/partials/_base.scss */
 .entry-meta a,
 .entry-content a,
 .nearest-dist a {
@@ -5069,7 +5074,7 @@ body {
   color: #3d434e;
   transition: 0.1s all ease-in-out;
 }
-/* line 38, sass/partials/_base.scss */
+/* line 43, sass/partials/_base.scss */
 .entry-meta a:hover,
 .entry-content a:hover,
 .nearest-dist a:hover {
@@ -5077,12 +5082,12 @@ body {
   border-color: #3d434e;
 }
 
-/* line 44, sass/partials/_base.scss */
+/* line 49, sass/partials/_base.scss */
 a {
   color: #3d434e;
   transition: 0.1s all ease-in-out;
 }
-/* line 48, sass/partials/_base.scss */
+/* line 53, sass/partials/_base.scss */
 a :hover {
   text-decoration: none;
 }
