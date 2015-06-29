@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-04-23 15:23:09+0000\n"
+"PO-Revision-Date: 2015-05-15 10:49:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,87 +11,87 @@ msgstr ""
 "Project-Id-Version: Administration\n"
 
 #. translators: 1: Term splitting guide link
-#: wp-admin/about.php:123
+#: wp-admin/about.php:127
 msgid "Terms shared across multiple taxonomies will be split when one of them is updated. Find out more in the <a href=\"%1$s\">Plugin Developer Handbook</a>."
 msgstr "Useamman taksonomian välillä jaetut termit erotetaan kun yhtä niistä päivitetään. LIsää aiheesta <a href=\"%1$s\">Plugin Developer Handbookissa</a>"
 
-#: wp-admin/about.php:90
+#: wp-admin/about.php:105
+msgid "Goodbye boring loading screen, hello smooth and simple plugin updates. Click <em>Update&nbsp;Now</em> and watch the magic happen."
+msgstr "Hyvästi tylsät \"päivitetään\"-sivut. Napsauta <em>Päivitä&nbsp;nyt</em> ja nauti."
+
+#: wp-admin/about.php:94
 msgid "Switch themes in the Customizer"
 msgstr "Vaihda teemoja mukauttimessa"
 
-#: wp-admin/about.php:59
+#: wp-admin/about.php:63
 msgid "An easier way to share content"
 msgstr "Helpompi tapa jakaa sisältöä"
 
-#: wp-admin/about.php:60
+#: wp-admin/about.php:64
 msgid "Clip it, edit it, publish it. Get familiar with the new and improved Press This. From the <a href=\"%s\">Tools</a> menu, add Press This to your browser bookmark bar or your mobile device home screen. Once installed you can share your content with lightning speed. Sharing your favorite videos, images, and content has never been this fast or this easy."
 msgstr "Nappaa, muokkaa, julkaise. Tutustu uuteen ja paranneltuun Press This -toimintoon. <a href=\"%s\">Työkalut</a>-sivulta lisää Press This selaimesi kirjanmerkiksi tai mobiililaitteesi kotinäkymään. Voit sen jälkeen jakaa sisältöä salamannopeasti. Suosikkivideoiden, kuvien ja sisällön jakaminen ei ole koskaan ollut näin nopeaa ja helppoa."
 
-#: wp-admin/about.php:78
+#: wp-admin/about.php:82
 msgid "Extended character support"
 msgstr "Laajennettu merkistötuki"
 
-#: wp-admin/about.php:79
+#: wp-admin/about.php:83
 msgid "Writing in WordPress, whatever your language, just got better. WordPress 4.2 supports a host of new characters out-of-the-box, including native Chinese, Japanese, and Korean characters, musical and mathematical symbols, and hieroglyphs."
 msgstr "Kirjoittaminen WordPressissä parani juuri, kielestäsi riippumatta. WordPress 4.2 tukee useita uusia merkistöjä oletuksena, mukaanluettuna kiinalaisia, japanilaisia ja korealaisia merkkejä, musikaalisia ja matemaattiset symboleja ja hieroglyfejä."
 
 #. translators: 1: heart emoji, 2: frog face emoji, 3, monkey emoji, 4: pizza
 #. emoji, 5: Emoji Codex link
-#: wp-admin/about.php:82
+#: wp-admin/about.php:86
 msgid "Don&#8217;t use any of those characters? You can still have fun &mdash; emoji are now available in WordPress! Get creative and decorate your content with %1$s, %2$s, %3$s, %4$s, and all the many other <a href=\"%5$s\">emoji</a>."
 msgstr "Etkö käytä niistä mitään? Voit silti pitää hauskaa &mdash; WordPress tukee nyt emoji-merkkejä! Toteuta itseäsi ja koristele sisältöä %1$s, %2$s, %3$s, %4$s ja monella muulla <a href=\"%5$s\">emojilla</a>."
 
-#: wp-admin/about.php:91
+#: wp-admin/about.php:95
 msgid "Browse and preview your installed themes from the Customizer. Make sure the theme looks great with <em>your</em> content, before it debuts on your site. "
 msgstr "Selaa ja esikatsele asennettuja teemojasi mukauttimessa. Varmista että teema näyttää hyvältä <em>sinun</em> sisällöilläsi ennen kuin otat sen sivustollasi käyttöön."
 
-#: wp-admin/about.php:95
+#: wp-admin/about.php:99
 msgid "Even more embeds"
 msgstr "Lisää upotteita"
 
-#: wp-admin/about.php:96
+#: wp-admin/about.php:100
 msgid "Paste links from Tumblr.com and Kickstarter and watch them magically appear right in the editor. With every release, your publishing and editing experience get closer together."
 msgstr "Liitä linkki Tumblr.comista tai Kickstarterista ja ne upotetaan automaattisesti muokkaimeen. Sivustosi julkinen näkymä ja muokkausnäkymä lähentyvät versio versiolta toisiaan."
 
-#: wp-admin/about.php:101
-msgid "Goodbye boring loading screen, hello smooth and simple plugin updates. Click <em>Update&nbsp;Now</em> and watch the magic happen."
-msgstr "Hyvästi tylsät \"päivitetään\"-sivut. Klikkaa <em>Päivitä&nbsp;nyt</em> ja nauti."
-
-#: wp-admin/about.php:110
+#: wp-admin/about.php:114
 msgid "utf8mb4 support"
 msgstr "utf8mb4-tuki"
 
-#: wp-admin/about.php:100
+#: wp-admin/about.php:104
 msgid "Streamlined plugin updates"
 msgstr "Sujuvammat lisäosapäivitykset"
 
-#: wp-admin/about.php:111
+#: wp-admin/about.php:115
 msgid "Database character encoding has changed from utf8 to utf8mb4, which adds support for a whole range of new 4-byte characters."
 msgstr "Tietokannan merkistökoodaus on muuttunut utf8:sta utf8mb4:ään, mikä mahdollistaa tuen monelle uusille 4-tavuisille merkeille."
 
 #. translators: %s wp.a11y.speak()
-#: wp-admin/about.php:116
+#: wp-admin/about.php:120
 msgid "You can now send audible notifications to screen readers in JavaScript with %s. Pass it a string, and an update will be sent to a dedicated ARIA live notifications area."
 msgstr "Voit nyt antaa äänipalautetta ruudunlukijoille metodilla %s. Anna sille argumenttina merkkijono, ja se lähetetään dedikoituun ARIA-viestialueeseen."
 
-#: wp-admin/about.php:113
+#: wp-admin/about.php:117
 msgid "JavaScript accessibility"
 msgstr "Esteetöntä JavaScriptiä"
 
-#: wp-admin/about.php:120
+#: wp-admin/about.php:124
 msgid "Shared term splitting"
 msgstr "Jaettujen termien pilkkominen"
 
 #. translators: 1: WP_Query, 2: WP_Comment_Query, 3: WP_User_Query
-#: wp-admin/about.php:129
+#: wp-admin/about.php:133
 msgid "%1$s, %2$s, and %3$s now support complex ordering with named meta query clauses."
 msgstr "%1$s, %2$s, ja %3$s tukevat nyt edistyneitä lajittelutapoja nimettyjen meta query -lohkojen avulla."
 
-#: wp-admin/about.php:126
+#: wp-admin/about.php:130
 msgid "Complex query ordering"
 msgstr "Edistyneet kyselyjen lajittelukriteerit"
 
-#: wp-admin/about.php:82
+#: wp-admin/about.php:86
 msgid "https://codex.wordpress.org/Emoji"
 msgstr "https://codex.wordpress.org/Emoji"
 
@@ -125,7 +125,7 @@ msgstr "https://codex.wordpress.org/First_Steps_With_WordPress"
 
 #: wp-admin/edit-form-advanced.php:365
 msgid "<strong>Format</strong> - Post Formats designate how your theme will display a specific post. For example, you could have a <em>standard</em> blog post with a title and paragraphs, or a short <em>aside</em> that omits the title and contains a short text blurb. Please refer to the Codex for <a href=\"https://codex.wordpress.org/Post_Formats#Supported_Formats\">descriptions of each post format</a>. Your theme could enable all or some of 10 possible formats."
-msgstr "<strong>Muoto</strong> - Muodot määrittelevät miten teema näyttää artikkelin. Esimerkiksi voit määrittää <em>normaalin</em> artikkelin otsikolla ja tekstillä tai lyhyen <em>sivuhuomautuksen</em>, joka ei huomioi otsikkoa ja sisältää lyhyen tekstipätkän. Katso <a href=\"https://codex.wordpress.org/Post_Formats#Supported_Formats\">kaikkien muotojen kuvaukset</a> Codexista. Teema voi ottaa käyttöön kaikki kymmenen muotoa tai vain osan niistä."
+msgstr "<strong>Artikkelimuoto</strong> - Artikkelimuodot määrittelevät miten teema näyttää artikkelin. Esimerkiksi voit määrittää <em>normaalin</em> artikkelin otsikolla ja tekstillä tai lyhyen <em>sivuhuomautuksen</em>, joka ei huomioi otsikkoa ja sisältää lyhyen tekstipätkän. Katso <a href=\"https://codex.wordpress.org/Post_Formats#Supported_Formats\">kaikkien artikkelimuotojen kuvaukset</a> Codexista. Teema voi ottaa käyttöön kaikki kymmenen artikkelimuotoa tai vain osan niistä."
 
 #: wp-admin/includes/class-wp-themes-list-table.php:216
 #: wp-admin/theme-editor.php:33 wp-admin/update-core.php:305
@@ -404,17 +404,17 @@ msgstr "Jos sivustosi juurihakemisto ei olisi <a href=\"https://codex.wordpress.
 msgid "If your <code>web.config</code> file were <a href=\"https://codex.wordpress.org/Changing_File_Permissions\">writable</a>, we could do this automatically, but it isn&#8217;t so this is the url rewrite rule you should have in your <code>web.config</code> file. Click in the field and press <kbd>CTRL + a</kbd> to select all. Then insert this rule inside of the <code>/&lt;configuration&gt;/&lt;system.webServer&gt;/&lt;rewrite&gt;/&lt;rules&gt;</code> element in <code>web.config</code> file."
 msgstr "Kirjoitussuojauksen takia <code>web.config</code>-tiedostoa ei päivitetty automaattisesti. <a href=\"https://codex.wordpress.org/Changing_File_Permissions\">Poista kirjoitussuojaus</a> tai kopioi nämä säännöt <code>web.config</code>-tiedostoon. Napsauta kenttää ja paina <kbd>CTRL + a</kbd> valitaksesi sen sisällön. Lisää sitten oheinen koodi <code>/&lt;configuration&gt;/&lt;system.webServer&gt;/&lt;rewrite&gt;/&lt;rules&gt;</code> elementin sisään <code>web.config</code>-tiedostossa."
 
+#: wp-admin/includes/meta-boxes.php:575
+msgid "Custom fields can be used to add extra metadata to a post that you can <a href=\"https://codex.wordpress.org/Using_Custom_Fields\" target=\"_blank\">use in your theme</a>."
+msgstr "Lisäkentät mahdollistavat ylimääräisen tiedon, kuvien tai tekstin lisäämisen artikkeliin. Lue lisää <a href=\"https://codex.wordpress.org/Using_Custom_Fields\" target=\"_blank\">lisäkenttien käytöstä</a>."
+
 #: wp-admin/includes/meta-boxes.php:591
 msgid "https://codex.wordpress.org/Introduction_to_Blogging#Managing_Comments"
 msgstr "https://codex.wordpress.org/Introduction_to_Blogging#Managing_Comments"
 
-#: wp-admin/includes/meta-boxes.php:575
-msgid "Custom fields can be used to add extra metadata to a post that you can <a href=\"https://codex.wordpress.org/Using_Custom_Fields\" target=\"_blank\">use in your theme</a>."
-msgstr "Avainkentät mahdollistavat ylimääräisen tiedon, kuvien tai tekstin lisäämisen artikkeliin. Lue lisää <a href=\"https://codex.wordpress.org/Using_Custom_Fields\" target=\"_blank\">avainkenttien käytöstä</a>."
-
 #: wp-admin/includes/meta-boxes.php:525
 msgid "Excerpts are optional hand-crafted summaries of your content that can be used in your theme. <a href=\"https://codex.wordpress.org/Excerpt\" target=\"_blank\">Learn more about manual excerpts.</a>"
-msgstr "Otteet ovat lyhyitä tiivistelmiä artikkelisi sisällöstä.  Lue <a href=\"https://codex.wordpress.org/Excerpt\" target=\"_blank\">lisää otteiden käytöstä</a>"
+msgstr "Otteet ovat vapaavalintaisia, käsin laadittuja lyhyitä tiivistelmiä artikkelisi sisällöstä, joita voidaan käyttää teemassasi.  Lue <a href=\"https://codex.wordpress.org/Excerpt\" target=\"_blank\">lisää otteiden käytöstä</a>."
 
 #: wp-admin/options-reading.php:48
 msgid "The <a href=\"https://codex.wordpress.org/Glossary#Character_set\">character encoding</a> of your site (UTF-8 is recommended)"
@@ -594,11 +594,11 @@ msgid ""
 msgstr ""
 "Morjes ###USERNAME###,\n"
 "\n"
-"Klikkasit hiljattain 'Poista sivusto'-linkkiä sivustollasi ja täytit sivulla\n"
+"Napsautit hiljattain 'Poista sivusto'-linkkiä sivustollasi ja täytit sivulla\n"
 "olevan lomakkeen.\n"
 "\n"
-"Jos todella haluat poistaa sivustosi, klikkaa allaolevaa linkkiä. Sinulta ei pyydetä\n"
-"enää vahvistusta joten klikkaa linkkiä vain jos olet asiasta aivan varma:\n"
+"Jos todella haluat poistaa sivustosi, napsauta allaolevaa linkkiä. Sinulta ei pyydetä\n"
+"enää vahvistusta joten napsauta linkkiä vain jos olet asiasta aivan varma:\n"
 "###URL_DELETE###\n"
 "\n"
 "Jos poistat sivustosi, harkitse toki sivuston avaamista tänne uudelleen\n"
@@ -608,6 +608,14 @@ msgstr ""
 "Kiitos sivuston käytöstä,\n"
 "Ylläpitäjä\n"
 "###SITE_NAME###"
+
+#: wp-admin/user-edit.php:42
+msgid "You can log out of other devices, such as your phone or a public computer, by clicking the Log Out of All Other Sessions button."
+msgstr "Voit kirjautua ulos kaikista muista laitteista, kuten puhelimesta tai julkisesta tietokoneesta, napsauttamalla Kirjaudu ulos kaikista istunnoista -painiketta."
+
+#: wp-admin/tools.php:54
+msgid "Copy &#8220;Press This&#8221; bookmarklet code"
+msgstr "Kopioi &#8220;Press This&#8221; -sovelluskirjanmerkki"
 
 #: wp-admin/tools.php:46
 msgid "Install Press This"
@@ -636,13 +644,9 @@ msgstr "Mikäli et voi vetää sovelluskirjanmerkkiä kirjanmerkkeihisi, kopioi 
 msgid "There is a new version of %1$s available. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">View version %4$s details</a> or <a href=\"%5$s\" class=\"update-link\">update now</a>."
 msgstr "Uusi versio lisäosasta %1$s on saatavilla. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">Näytä version %4$s lisätiedot</a> tai <a href=\"%5$s\" class=\"update-link\">päivitä heti</a>."
 
-#: wp-admin/about.php:61 wp-admin/tools.php:48
+#: wp-admin/about.php:65 wp-admin/tools.php:48
 msgid "Drag the bookmarklet below to your bookmarks bar. Then, when you&#8217;re on a page you want to share, simply &#8220;press&#8221; it."
 msgstr "Vedä sovelluskirjanmerkki kirjanmerkkipalkkiisi. Kun seuraavan kerran olet sivulla, jonka haluat jakaa, &#8220;napsautat&#8221; vain lisäämääsi kirjanmerkkiä."
-
-#: wp-admin/tools.php:54
-msgid "Copy &#8220;Press This&#8221; bookmarklet code"
-msgstr "Kopioi &#8220;Julkaise tämä&#8221; -sovelluskirjanmerkki"
 
 #: wp-admin/includes/theme.php:524
 msgid "Close details dialog"
@@ -659,10 +663,6 @@ msgstr "Lisätäksesi linkin, <strong>avaa linkit-osio, anna URL-osoite ja linkk
 #: wp-admin/tools.php:67
 msgid "Direct link (best for mobile)"
 msgstr "Suora linkki (paras mobiililaitteille)"
-
-#: wp-admin/user-edit.php:42
-msgid "You can log out of other devices, such as your phone or a public computer, by clicking the Log Out of All Other Sessions button."
-msgstr "Voit kirjautua ulos kaikista muista laitteista, kuten puhelimesta tai julkisesta tietokoneesta, klikkaamalla Kirjaudu ulos kaikista istunnoista -painiketta."
 
 #: wp-admin/includes/template.php:1702
 msgid "Posts Page"
@@ -697,6 +697,14 @@ msgstr "Muokkaa valittua valikkoa"
 #: wp-admin/includes/template.php:1698
 msgid "Front Page"
 msgstr "Etusivu"
+
+#: wp-admin/includes/class-wp-press-this.php:1206
+msgid "Press This!"
+msgstr "Press This!"
+
+#: wp-admin/includes/class-wp-press-this.php:793
+msgid "Post formats"
+msgstr "Artikkelimuodot"
 
 #: wp-admin/includes/revision.php:207 wp-admin/includes/revision.php:225
 msgctxt "revision date short format"
@@ -800,10 +808,6 @@ msgstr ""
 "Sivuston ###SITENAME### tiimi\n"
 "###SITEURL###"
 
-#: wp-admin/includes/class-wp-press-this.php:1206
-msgid "Press This!"
-msgstr "Julkaise tämä!"
-
 #: wp-admin/includes/class-wp-upgrader.php:3187
 msgid ""
 "UPDATE LOG\n"
@@ -869,10 +873,6 @@ msgstr "Etsi kategorioista"
 #: wp-admin/includes/class-wp-press-this.php:854
 msgid "Search categories by name"
 msgstr "Etsi kategorioita nimen perusteella"
-
-#: wp-admin/includes/class-wp-press-this.php:793
-msgid "Post formats"
-msgstr "Muoto"
 
 #: wp-admin/includes/class-wp-press-this.php:1303
 msgid "Scan"
@@ -1058,7 +1058,7 @@ msgstr "<strong>WordPress-uutiset</strong> - WordPress-projektiin liittyvät uus
 
 #: wp-admin/includes/template.php:2090
 msgid "Add, edit, and play around with your widgets from the Customizer."
-msgstr "Lisää, muokkaa ja kokeile vimpaimia Mukauttimessa."
+msgstr "Lisää, muokkaa ja kokeile vimpaimia mukauttimessa."
 
 #: wp-admin/includes/screen.php:979
 msgid "Enable full-height editor and distraction-free functionality."
@@ -1076,13 +1076,13 @@ msgstr "https://planet.wordpress.org/"
 msgid "Untested with your version of WordPress"
 msgstr "Tätä lisäosaa ei ole testattu WordPress-versiosi kanssa"
 
-#: wp-admin/custom-header.php:455
-msgid "You can now manage and live-preview Custom Header in the <a href=\"%1$s\">Customizer</a>."
-msgstr "Voit nyt hallinnoida ja esikatsella otsakkeita <a href=\"%1$s\">Mukauttimessa</a>."
-
 #: wp-admin/custom-background.php:187
 msgid "You can now manage and live-preview Custom Backgrounds in the <a href=\"%1$s\">Customizer</a>."
-msgstr "Voit nyt hallinnoida ja esikatsella taustakuvia <a href=\"%1$s\">Mukauttimessa</a>."
+msgstr "Voit nyt hallinnoida ja esikatsella taustakuvia <a href=\"%1$s\">mukauttimessa</a>."
+
+#: wp-admin/custom-header.php:455
+msgid "You can now manage and live-preview Custom Header in the <a href=\"%1$s\">Customizer</a>."
+msgstr "Voit nyt hallinnoida ja esikatsella otsakkeita <a href=\"%1$s\">mukauttimessa</a>."
 
 #: wp-admin/includes/class-wp-links-list-table.php:82
 #: wp-admin/includes/class-wp-posts-list-table.php:285
@@ -1206,17 +1206,17 @@ msgstr "Julkaisuvastaava"
 msgid "Use the arrow buttons at the top of the dialog, or the left and right arrow keys on your keyboard, to navigate between media items quickly."
 msgstr "Käytä dialogin yläosassa olevia nuolipainikkeita tai näppäimistösi nuolinäppäimiä mediatiedostojen selaamiseen."
 
-#: wp-admin/upload.php:49 wp-admin/upload.php:184
-msgid "You can view your media in a simple visual grid or a list with columns. Switch between these views using the icons to the left above the media."
-msgstr "Voit selata mediaa yksinkertaisessa ruudukkonäkymässä tai listassa, jossa on sarakkeita. Voit vaihtaa näiden näkymien välillä vasemmalla median yläpuolella olevista ikoneista."
+#: wp-admin/upload.php:57
+msgid "Clicking an item will display an Attachment Details dialog, which allows you to preview media and make quick edits. Any changes you make to the attachment details will be automatically saved."
+msgstr "Kohteen napsauttaminen tuo näkyviin liitteen tiedot -dialogin, jossa voit esikatsella mediatiedostoja ja tehdä nopeita muokkauksia. Kaikki tekemäsi muutokset tässä näkymässä tallentuvat automaattisesti."
 
 #: wp-admin/upload.php:50
 msgid "To delete media items, click the Bulk Select button at the top of the screen. Select any items you wish to delete, then click the Delete Selected button. Clicking the Cancel Selection button takes you back to viewing your media."
-msgstr "Voit poista mediatiedostoja klikkaamalla massatoiminnot-painiketta ruudun yläosassa. Valitse poistettavat kohteet ja klikkaa poista valitut -painiketta. Peruuta valinnat -painike vie takaisin median selausnäkymään."
+msgstr "Voit poista mediatiedostoja klikkaamalla massatoiminnot-painiketta ruudun yläosassa. Valitse poistettavat kohteet ja napsauta poista valitut -painiketta. Peruuta valinnat -painike vie takaisin median selausnäkymään."
 
-#: wp-admin/upload.php:57
-msgid "Clicking an item will display an Attachment Details dialog, which allows you to preview media and make quick edits. Any changes you make to the attachment details will be automatically saved."
-msgstr "Kohteen klikkaaminen tuo näkyviin liitteen tiedot -dialogin, jossa voit esikatsella mediatiedostoja ja tehdä nopeita muokkauksia. Kaikki tekemäsi muutokset tässä näkymässä tallentuvat automaattisesti."
+#: wp-admin/upload.php:49 wp-admin/upload.php:184
+msgid "You can view your media in a simple visual grid or a list with columns. Switch between these views using the icons to the left above the media."
+msgstr "Voit selata mediaa yksinkertaisessa ruudukkonäkymässä tai listassa, jossa on sarakkeita. Voit vaihtaa näiden näkymien välillä vasemmalla median yläpuolella olevista ikoneista."
 
 #: wp-admin/upload.php:59
 msgid "You can also delete individual items and access the extended edit screen from the details dialog."
@@ -1422,7 +1422,7 @@ msgstr[1] "Paina nähdäksesi arvostelut jotka antoivat %d tähteä"
 
 #: wp-admin/customize.php:153
 msgid "The Customizer allows you to preview changes to your site before publishing them. You can also navigate to different pages on your site to preview them."
-msgstr "Mukauta-työkalu mahdollistaa muutosten esikatselun ennen niiden julkaisua. Voit myös esikatsella sivustosi muita sivuja siirtymällä niihin."
+msgstr "Mukautin mahdollistaa muutosten esikatselun ennen niiden julkaisua. Voit myös esikatsella sivustosi muita sivuja siirtymällä niihin."
 
 #: wp-admin/includes/class-wp-upgrader.php:3035
 msgid "If you reach out to us, we'll also ensure you'll never have this problem again."
@@ -1444,10 +1444,6 @@ msgstr "Suodatus:"
 #: wp-admin/themes.php:115 wp-admin/themes.php:264
 msgid "No themes found. Try a different search."
 msgstr "Teemoja ei löytynyt. Kokeile eri hakukriteerejä."
-
-#: wp-admin/includes/image-edit.php:90
-msgid "To crop the image, click on it and drag to make your selection."
-msgstr "Rajaa kuva klikkaamalla sitä ja valitsemalla haluamasi alue raahaamalla."
 
 #: wp-admin/includes/media.php:2726
 msgid "Displayed on attachment pages."
@@ -1476,6 +1472,10 @@ msgstr "Kun olet tehnyt valinnan, voit muokata sitä syöttämällä koon piksel
 #: wp-admin/includes/image-edit.php:126
 msgid "You can edit the image while preserving the thumbnail. For example, you may wish to have a square thumbnail that displays just a section of the image."
 msgstr "Voit muokata kuvaa ja säilyttää silti pikkukuvan sellaisenaan, esimerkiksi neliön muotoon rajattuna kuvan osana."
+
+#: wp-admin/includes/image-edit.php:90
+msgid "To crop the image, click on it and drag to make your selection."
+msgstr "Rajaa kuva napsauttamalla sitä ja valitsemalla haluamasi alue raahaamalla."
 
 #: wp-admin/theme-install.php:121
 msgctxt "themes"
@@ -1544,10 +1544,6 @@ msgstr "Poista kaikki sisältö."
 msgid "Remove allows you to remove a user from your site. It does not delete their content. You can also remove multiple users at once by using Bulk Actions."
 msgstr "Poista-toiminto mahdollistaa käyttäjän poistamisen sivustolta. Se ei poista kyseisen käyttäjän sisältöjä. Voit poistaa useampia käyttäjiä kerralla massatoiminnot-valikon kautta."
 
-#: wp-admin/index.php:57
-msgid "<strong>Box Controls</strong> - Click the title bar of the box to expand or collapse it. Some boxes added by plugins may have configurable content, and will show a &#8220;Configure&#8221; link in the title bar if you hover over it."
-msgstr "<strong>Laatikoiden hallinta</strong> - Klikkaa laatikon otsikkopalkkia sen laajentamiseksi tai pienentämiseksi. Joillakin laatikoilla voi olla mukautettavaa sisältöä. Pääset muokkaamaan näitä asetuksia laatikon otsikkopalkissa olevasta &#8221;Muokkaa&#8221;-linkistä."
-
 #: wp-admin/index.php:67
 msgid "<strong>At A Glance</strong> - Displays a summary of the content on your site and identifies which theme and version of WordPress you are using."
 msgstr "<strong>Sivustosi sisällöt lyhyesti</strong> - Näyttää tiivistelmän sivustosi sisällöstä ja kertoo mitä teemaa ja WordPressin versiota käytät."
@@ -1555,6 +1551,10 @@ msgstr "<strong>Sivustosi sisällöt lyhyesti</strong> - Näyttää tiivistelmä
 #: wp-admin/users.php:48
 msgid "Delete brings you to the Delete Users screen for confirmation, where you can permanently remove a user from your site and delete their content. You can also delete multiple users at once by using Bulk Actions."
 msgstr "\"Poista\" ohjaa Poista käyttäjiä -vahvistusnäyttöön, jossa voit pysyvästi poistaa käyttäjän sivustoltasi ja poistaa tämän sisällöt. Voit myös poistaa useita käyttäjiä kerralla massatoiminnot-valinnan kautta."
+
+#: wp-admin/index.php:57
+msgid "<strong>Box Controls</strong> - Click the title bar of the box to expand or collapse it. Some boxes added by plugins may have configurable content, and will show a &#8220;Configure&#8221; link in the title bar if you hover over it."
+msgstr "<strong>Laatikoiden hallinta</strong> - Napsauta laatikon otsikkopalkkia sen laajentamiseksi tai pienentämiseksi. Joillakin laatikoilla voi olla mukautettavaa sisältöä. Pääset muokkaamaan näitä asetuksia laatikon otsikkopalkissa olevasta &#8221;Muokkaa&#8221;-linkistä."
 
 #: wp-admin/includes/ajax-actions.php:1668
 msgid "Type"
@@ -1619,16 +1619,16 @@ msgid "If an update is available, you&#8127;ll see a notification appear in the 
 msgstr "Jos päivitys on saatavilla, näet ilmoituksen työkalupalkissa ja navigointipalkissa."
 
 #: wp-admin/update-core.php:486
-msgid "<strong>WordPress</strong> &mdash; Updating your WordPress installation is a simple one-click procedure: just <strong>click on the &#8220;Update Now&#8221; button</strong> when you are notified that a new version is available."
-msgstr "<strong>WordPress</strong> &mdash; WordPress-asennuksen päivittäminen onnistuu yhdellä napsautuksella: <strong>klikkaa &#8221;Päivitä nyt&#8221;-painiketta</strong> kun saat ilmoituksen uudesta versiosta."
-
-#: wp-admin/update-core.php:486
 msgid "In most cases, WordPress will automatically apply maintenance and security updates in the background for you."
 msgstr "Useimmissa tapauksissa WordPress päivittää bugi- ja turvallisuuspäivitykset automaattisesti taustalla."
 
 #: wp-admin/update-core.php:490
 msgid "<strong>Translations</strong> &mdash; The files translating WordPress into your language are updated for you whenever any other updates occur. But if these files are out of date, you can <strong>click the &#8220;Update Translations&#8221;</strong> button."
-msgstr "<strong>Käännökset</strong> &mdash; WordPressin käännöstiedostot päivitetään silloin kun muita päivityksiä tehdään. Jos käännökset eivät kuitenkaan ole ajan tasalla, voit <strong>klikata the &#8221;Päivitä käännökset&#8221;</strong>-painiketta."
+msgstr "<strong>Käännökset</strong> &mdash; WordPressin käännöstiedostot päivitetään silloin kun muita päivityksiä tehdään. Jos käännökset eivät kuitenkaan ole ajan tasalla, voit <strong>napsauttaa the &#8221;Päivitä käännökset&#8221;</strong>-painiketta."
+
+#: wp-admin/update-core.php:486
+msgid "<strong>WordPress</strong> &mdash; Updating your WordPress installation is a simple one-click procedure: just <strong>click on the &#8220;Update Now&#8221; button</strong> when you are notified that a new version is available."
+msgstr "<strong>WordPress</strong> &mdash; WordPress-asennuksen päivittäminen onnistuu yhdellä napsautuksella: <strong>napsauta &#8221;Päivitä nyt&#8221;-painiketta</strong> kun saat ilmoituksen uudesta versiosta."
 
 #: wp-admin/update-core.php:477
 msgid "On this screen, you can update to the latest version of WordPress, as well as update your themes and plugins from the WordPress.org repositories."
@@ -1644,7 +1644,7 @@ msgstr "Tervetuloa WordPress-versioon&nbsp;%s"
 
 #: wp-admin/themes.php:65
 msgid "If you would like to see more themes to choose from, click on the &#8220;Add New&#8221; button and you will be able to browse or search for additional themes from the <a href=\"%s\" target=\"_blank\">WordPress.org Theme Directory</a>. Themes in the WordPress.org Theme Directory are designed and developed by third parties, and are compatible with the license WordPress uses. Oh, and they&#8217;re free!"
-msgstr "Jos haluat nähdä lisää teemoja, klikkaa &#8221;Lisää uusi&#8221;-painiketta ja voit selata tai hakea teemoja <a href=\"%s\" target=\"_blank\">WordPress.orgin teemahakemistosta</a>. Teemat WordPress.orgin teemahakemistossa ovat kolmansien osapuolien suunnittelemia ja toteuttamia, ja ne ovat yhteensopivia WordPressin käyttämän lisenssin kanssa. Ne ovat myös ilmaisia."
+msgstr "Jos haluat nähdä lisää teemoja, napsauta &#8221;Lisää uusi&#8221;-painiketta ja voit selata tai hakea teemoja <a href=\"%s\" target=\"_blank\">WordPress.orgin teemahakemistosta</a>. Teemat WordPress.orgin teemahakemistossa ovat kolmansien osapuolien suunnittelemia ja toteuttamia, ja ne ovat yhteensopivia WordPressin käyttämän lisenssin kanssa. Ne ovat myös ilmaisia."
 
 #: wp-admin/includes/theme.php:211
 msgid "Fixed Layout"
@@ -1734,29 +1734,29 @@ msgstr "Tätä näkymää käytetään asennettujen teemojen hallintaan. WordPre
 msgid "Hover or tap to see Activate and Live Preview buttons"
 msgstr "Ota käyttöön -ja esikatselu-painikkeet saat näkyviin viemällä hiiren kursorin teeman kuvan päälle."
 
-#: wp-admin/themes.php:48
-msgid "Click on the theme to see the theme name, version, author, description, tags, and the Delete link"
-msgstr "Klikkaa teemaa nähdäksesi teeman nimen, version, tekijän, kuvauksen, avainsanat ja poista-linkin."
-
-#: wp-admin/themes.php:49
-msgid "Click Customize for the current theme or Live Preview for any other theme to see a live preview"
-msgstr "Klikkaa Mukauta (aktiiviselle teemalle) tai esikatsele jotain muuta asennettua teemaa."
-
-#: wp-admin/themes.php:78
-msgid "Tap or hover on any theme then click the Live Preview button to see a live preview of that theme and change theme options in a separate, full-screen view. You can also find a Live Preview button at the bottom of the theme details screen. Any installed theme can be previewed and customized in this way."
-msgstr "Vie hiiren kursori minkä tahansa teeman päälle ja klikkaa Esikatsele-painiketta nähdäksesi kyseisen teeman esikatselutilassa, jossa voit myös muokata sen asetuksia. Löydät esikatselu-linkin myös teeman tietojen alaosasta. Mitä tahansa asennettua teemaa voidaan esikatsella ja muokata tällä tavoin."
+#: wp-admin/themes.php:80
+msgid "When previewing on smaller monitors, you can use the collapse icon at the bottom of the left-hand pane. This will hide the pane, giving you more room to preview your site in the new theme. To bring the pane back, click on the collapse icon again."
+msgstr "Kun esikatselet pienemmällä ruudulla, voit käyttää piilotusikonia vasemman sivupalkin alaosassa. Saat palkin takaisin näkyviin napsauttamalla ikonia uudelleen."
 
 #: wp-admin/themes.php:79
 msgid "The theme being previewed is fully interactive &mdash; navigate to different pages to see how the theme handles posts, archives, and other page templates. The settings may differ depending on what theme features the theme being previewed supports. To accept the new settings and activate the theme all in one step, click the Save &amp; Activate button above the menu."
-msgstr "Esikatseltava teema on täysin vuorovaikutteinen: voit selata sivustollasi olevia sivuja nähdäksesi miten teema näyttää artikkelit, arkistot ja muut sivupohjat. Saatavilla olevat asetukset saattavat vaihdella teemasta toiseen. Hyväksy uudet asetukset ja ota teema käyttöön kerralla klikkaamalla Tallenna ja ota käyttöön -painiketta valikon yläpuolella."
+msgstr "Esikatseltava teema on täysin vuorovaikutteinen: voit selata sivustollasi olevia sivuja nähdäksesi miten teema näyttää artikkelit, arkistot ja muut sivupohjat. Saatavilla olevat asetukset saattavat vaihdella teemasta toiseen. Hyväksy uudet asetukset ja ota teema käyttöön kerralla napsauttamalla Tallenna ja ota käyttöön -painiketta valikon yläpuolella."
 
-#: wp-admin/themes.php:80
-msgid "When previewing on smaller monitors, you can use the collapse icon at the bottom of the left-hand pane. This will hide the pane, giving you more room to preview your site in the new theme. To bring the pane back, click on the collapse icon again."
-msgstr "Kun esikatselet pienemmällä ruudulla, voit käyttää piilotusikonia vasemman sivupalkin alaosassa. Saat palkin takaisin näkyviin klikkaamalla ikonia uudelleen."
+#: wp-admin/themes.php:78
+msgid "Tap or hover on any theme then click the Live Preview button to see a live preview of that theme and change theme options in a separate, full-screen view. You can also find a Live Preview button at the bottom of the theme details screen. Any installed theme can be previewed and customized in this way."
+msgstr "Vie hiiren kursori minkä tahansa teeman päälle ja napsauta Esikatsele-painiketta nähdäksesi kyseisen teeman esikatselutilassa, jossa voit myös muokata sen asetuksia. Löydät esikatselu-linkin myös teeman tietojen alaosasta. Mitä tahansa asennettua teemaa voidaan esikatsella ja muokata tällä tavoin."
+
+#: wp-admin/themes.php:49
+msgid "Click Customize for the current theme or Live Preview for any other theme to see a live preview"
+msgstr "Napsauta Mukauta (aktiiviselle teemalle) tai esikatsele jotain muuta asennettua teemaa."
+
+#: wp-admin/themes.php:48
+msgid "Click on the theme to see the theme name, version, author, description, tags, and the Delete link"
+msgstr "Napsauta teemaa nähdäksesi teeman nimen, version, tekijän, kuvauksen, avainsanat ja poista-linkin."
 
 #: wp-admin/widgets.php:356
 msgid "To activate a widget drag it to a sidebar or click on it. To deactivate a widget and delete its settings, drag it back."
-msgstr "Aktivoi vimpain raahaamalla se vimpainalueeseen tai klikkaa sitä. Poista se käytöstä raahaamalla se pois vimpainalueesta."
+msgstr "Aktivoi vimpain raahaamalla se vimpainalueeseen tai napsauta sitä. Poista se käytöstä raahaamalla se pois vimpainalueesta."
 
 #. translators: 1: The rating, 2: The number of ratings
 #: wp-admin/includes/template.php:2225
@@ -1841,16 +1841,6 @@ msgstr "Lomakkeen lähettäminen ei onnistunut, päivitä sivu ja kokeile uudell
 msgid "Oops, you don&#8217;t have access to add new drafts."
 msgstr "Hups, sinulla ei ole oikeutta lisätä uusia luonnoksia."
 
-#: wp-admin/themes.php:107
-msgid ""
-"Are you sure you want to delete this theme?\n"
-"\n"
-"Click 'Cancel' to go back, 'OK' to confirm the delete."
-msgstr ""
-"Haluatko todella poistaa tämän teeman\n"
-"\n"
-"Klikkaa 'peruuta' jos haluat pitää teeman, klikkaa 'OK' poistaaksesi teeman."
-
 #: wp-admin/customize.php:139 wp-admin/themes.php:366
 msgid "Close overlay"
 msgstr "Sulje ikkuna"
@@ -1866,6 +1856,16 @@ msgstr "<strong>Nopea luonnos</strong> - Voit luoda nopeasti uuden artikkelin ja
 #: wp-admin/index.php:55
 msgid "<strong>Screen Options</strong> - Use the Screen Options tab to choose which Dashboard boxes to show."
 msgstr "<strong>Näyttöasetukset</strong> - Käytä Näyttöasetukset-välilehteä valitaksesi mitä ohjausnäkymän laatikoista haluat näkyviin."
+
+#: wp-admin/themes.php:107
+msgid ""
+"Are you sure you want to delete this theme?\n"
+"\n"
+"Click 'Cancel' to go back, 'OK' to confirm the delete."
+msgstr ""
+"Haluatko todella poistaa tämän teeman?\n"
+"\n"
+"Napsauta 'peruuta' jos haluat pitää teeman, klikkaa 'OK' poistaaksesi teeman."
 
 #: wp-admin/includes/dashboard.php:42
 msgid "Activity"
@@ -2210,7 +2210,7 @@ msgstr "Valikkoja voidaan näyttää teemassa määritellyissä paikoissa, jopa 
 
 #: wp-admin/nav-menus.php:518
 msgid "<strong>Clicking the arrow to the right of any menu item</strong> in the editor will reveal a standard group of settings. Additional settings such as link target, CSS classes, link relationships, and link descriptions can be enabled and disabled via the Screen Options tab."
-msgstr "<strong>Klikkaamalla valikkokohteen vieressä olevaa nuolta</strong> muokkaimessa aukeaa ryhmä asetuksia. Lisäasetuksia, kuten linkin kohteen, CSS-luokat, linkin suhteen ja linkin kuvauksen saa esiin ja piiloon Näyttöasetukset-välilehdeltä."
+msgstr "<strong>Napsauttamalla valikkokohteen vieressä olevaa nuolta</strong> muokkaimessa aukeaa ryhmä asetuksia. Lisäasetuksia, kuten linkin kohteen, CSS-luokat, linkin suhteen ja linkin kuvauksen saa esiin ja piiloon Näyttöasetukset-välilehdeltä."
 
 #: wp-admin/edit-form-comment.php:96
 msgid "IP address:"
@@ -2602,10 +2602,6 @@ msgstr "Muokkaa valikoita"
 msgid "Manage Locations"
 msgstr "Valikoiden sijainnit"
 
-#: wp-admin/nav-menus.php:519
-msgid "Add one or several items at once by <strong>selecting the checkbox next to each item and clicking Add to Menu</strong>"
-msgstr "Lisää yksi tai useampi valinta kerralla <strong>ruksaamalla kunkin kohteen vieressä oleva valintaruutu ja klikkaamalla Lisää valikkoon</strong>"
-
 #: wp-admin/nav-menus.php:509
 msgid "You can assign theme locations to individual menus by <strong>selecting the desired settings</strong> at the bottom of the menu editor. To assign menus to all theme locations at once, <strong>visit the Manage Locations tab</strong> at the top of the screen."
 msgstr "Valikon voi asettaa haluttuun kohtaan teemassa <strong>valitsemalla asetuksen</strong> valikkomuokkaimen alaosassa. Jos haluat määrittää kaikki teeman valikot kerralla, siirry <strong>Valikoiden sijainnit</strong>-sivulehteen näkymän yläosassa."
@@ -2634,13 +2630,17 @@ msgstr "Tässä näkymässä voi asettaa kaikki teeman valikot."
 msgid "To assign menus to one or more theme locations, <strong>select a menu from each location&#8217;s drop down.</strong> When you&#8217;re finished, <strong>click Save Changes</strong>"
 msgstr "Valikkojen asetus tapahtuu <strong>valitsemalla valikko jokaiseen kohtaa pudotusvalikosta.</strong> Kun olet valmis <strong>paina Tallenna muutokset.</strong>"
 
-#: wp-admin/nav-menus.php:532
-msgid "To edit a menu currently assigned to a theme location, <strong>click the adjacent &#8217;Edit&#8217; link</strong>"
-msgstr "Tiettyyn paikkaan asetettua valikkoa pääsee muokkaamaan <strong>klikkaamalla vieressä olevaa muokkaa linkkiä</strong>"
-
 #: wp-admin/nav-menus.php:533
 msgid "To add a new menu instead of assigning an existing one, <strong>click the &#8217;Use new menu&#8217; link</strong>. Your new menu will be automatically assigned to that theme location"
-msgstr "Uuden valikon lisääminen olemassa olevan sijaan onnistuu klikkaamalla &#8217;Käytä uutta valikkoa&#8217; linkkiä. Uusi valikko asetetaan valittuun kohtaan."
+msgstr "Uuden valikon lisääminen olemassa olevan sijaan onnistuu <strong>napsauttamalla &#8217;Luo uusi valikko&#8217; -linkkiä</strong>. Uusi valikko asetetaan valittuun kohtaan."
+
+#: wp-admin/nav-menus.php:532
+msgid "To edit a menu currently assigned to a theme location, <strong>click the adjacent &#8217;Edit&#8217; link</strong>"
+msgstr "Tiettyyn paikkaan asetettua valikkoa pääsee muokkaamaan <strong>napsauttamalla vieressä olevaa muokkaa-linkkiä</strong>"
+
+#: wp-admin/nav-menus.php:519
+msgid "Add one or several items at once by <strong>selecting the checkbox next to each item and clicking Add to Menu</strong>"
+msgstr "Lisää yksi tai useampi valinta kerralla <strong>ruksaamalla kunkin kohteen vieressä oleva valintaruutu ja napsauttamalla Lisää valikkoon</strong>"
 
 #: wp-admin/includes/revision.php:358
 msgid "Restore This Revision"
@@ -2788,14 +2788,6 @@ msgstr "Valitut valikot on poistettu onnistuneesti."
 msgid "Menu 1"
 msgstr "Valikko 1"
 
-#: wp-admin/nav-menus.php:722
-msgid "Edit your default menu by adding or removing items. Drag each item into the order you prefer. Click Create Menu to save your changes."
-msgstr "Muokkaa oletusvalikkoasi lisäämällä tai poistamalla valintoja. Raahaa kukin valinta haluamaasi järjestykseen. Tallenna muutokset klikkaamalla \"Luo valikko\"."
-
-#: wp-admin/nav-menus.php:735
-msgid "Give your menu a name above, then click Create Menu."
-msgstr "Nimeä valikkosi, klikkaa sitten Luo valikko."
-
 #: wp-admin/nav-menus.php:754
 msgid "Auto add pages"
 msgstr "Lisää sivut automaattisesti"
@@ -2811,6 +2803,14 @@ msgstr "Teeman sijainnit"
 #: wp-admin/nav-menus.php:766
 msgid "(Currently set to: %s)"
 msgstr "(Nykyinen asetus: %s)"
+
+#: wp-admin/nav-menus.php:735
+msgid "Give your menu a name above, then click Create Menu."
+msgstr "Nimeä valikkosi, napsauta sitten Luo valikko."
+
+#: wp-admin/nav-menus.php:722
+msgid "Edit your default menu by adding or removing items. Drag each item into the order you prefer. Click Create Menu to save your changes."
+msgstr "Muokkaa oletusvalikkoasi lisäämällä tai poistamalla valintoja. Raahaa kukin valinta haluamaasi järjestykseen. Tallenna muutokset napsauttamalla \"Luo valikko\"."
 
 #: wp-admin/plugin-editor.php:248 wp-admin/theme-editor.php:209
 msgid "Look Up"
@@ -2831,7 +2831,7 @@ msgstr "%s muokkaa parhaillaan"
 
 #: wp-admin/edit-form-advanced.php:350
 msgid "You can upload and insert media (images, audio, documents, etc.) by clicking the Add Media button. You can select from the images and files already uploaded to the Media Library, or upload new media to add to your page or post. To create an image gallery, select the images to add and click the &#8220;Create a new gallery&#8221; button."
-msgstr "Medioita (kuvia, audiota, dokumentteja, jne.) voi tallentaa klikkaamalla &#8220;Lisää media&#8221; nappia. Voit valita jo tallennetuista kuvista ja tiedostoista tai tallentaa uusia medioita, joita käytät sivuilla tai artikkeleilla. Kuvagallerian voi luoda valitsemalla useita kuvia ja klikkaamalla &#8220;Luo uusi galleria&#8221;."
+msgstr "Medioita (kuvia, audiota, dokumentteja, jne.) voi tallentaa napsauttamalla &#8220;Lisää media&#8221; nappia. Voit valita jo tallennetuista kuvista ja tiedostoista tai tallentaa uusia medioita, joita käytät sivuilla tai artikkeleilla. Kuvagallerian voi luoda valitsemalla useita kuvia ja napsauttamalla &#8220;Luo uusi galleria&#8221;."
 
 #: wp-admin/includes/image-edit.php:165
 msgid "Image rotation is not supported by your web host."
@@ -2857,10 +2857,6 @@ msgstr "Käyttääksesi taustakuvaa, tallenna se, tai valitse kuva Mediakirjasto
 msgid "Don&#8217;t forget to click &#8220;Save Changes&#8221; when you&#8217;re done!"
 msgstr "Älä unohda napsauttaa Tallenna Muutokset -painiketta kun olet valmis."
 
-#: wp-admin/edit-form-advanced.php:287
-msgid "The title field and the big Post Editing Area are fixed in place, but you can reposition all the other boxes using drag and drop. You can also minimize or expand them by clicking the title bar of each box. Use the Screen Options tab to unhide more boxes (Excerpt, Send Trackbacks, Custom Fields, Discussion, Slug, Author) or to choose a 1- or 2-column layout for this screen."
-msgstr "Otsikon ja ison tekstikentän sijainnit ovat kiinteät, mutta kaikkia muita osioita voi siirrellä raahaamalla niitä. Osiot voi myös pienentää ja suurentaa painamalla osion otsikkokenttää. Näyttöasetukset-välilehdeltä voi piilottaa osioita (ote, lähetä paluuviitteet, avainkentät, keskustelu, polkutunnus, kirjoittaja) tai valita yksi tai kaksi sarakkeisen ulkoasun."
-
 #: wp-admin/edit-form-advanced.php:361
 msgid "Several boxes on this screen contain settings for how your content will be published, including:"
 msgstr "Monet osiot tässä näkymässä sisältävät asetuksia siihen, miten sisältö julkaistaan. Näihin kuuluvat:"
@@ -2876,6 +2872,10 @@ msgstr "Teemoja vaihdettaessa niissä on yleensä eroja vimpainalueissa/sivupalk
 #: wp-admin/edit-form-advanced.php:355
 msgid "Inserting Media"
 msgstr "Median lisääminen"
+
+#: wp-admin/edit-form-advanced.php:287
+msgid "The title field and the big Post Editing Area are fixed in place, but you can reposition all the other boxes using drag and drop. You can also minimize or expand them by clicking the title bar of each box. Use the Screen Options tab to unhide more boxes (Excerpt, Send Trackbacks, Custom Fields, Discussion, Slug, Author) or to choose a 1- or 2-column layout for this screen."
+msgstr "Otsikon ja ison tekstikentän sijainnit ovat kiinteät, mutta kaikkia muita osioita voi siirrellä raahaamalla niitä. Osiot voi myös pienentää ja suurentaa painamalla osion otsikkokenttää. Näyttöasetukset-välilehdeltä voi piilottaa osioita (ote, lähetä paluuviitteet, lisäkentät, keskustelu, polkutunnus, kirjoittaja) tai valita yksi- tai kaksisarakkeisen ulkoasun."
 
 #: wp-admin/includes/media.php:2570
 msgid "You are using the multi-file uploader. Problems? Try the <a href=\"%1$s\" target=\"%2$s\">browser uploader</a> instead."
@@ -2995,10 +2995,6 @@ msgstr "Hakukoneet kielletty"
 msgid "Welcome to WordPress!"
 msgstr "Tervetuloa käyttämään WordPressiä!"
 
-#: wp-admin/includes/update-core.php:1177 wp-admin/update-core.php:433
-msgid "Welcome to WordPress %1$s. You will be redirected to the About WordPress screen. If not, click <a href=\"%2$s\">here</a>."
-msgstr "Tervetuloa WordPress-versioon %1$s. Sinut ohjataan Tietoa WordPressistä-sivulle. Jos ohjaus ei toimi, <a href=\"%2$s\">klikkaa tästä</a>."
-
 #: wp-admin/includes/dashboard.php:1288
 msgid "We&#8217;ve assembled some links to get you started:"
 msgstr "Näillä linkeillä pääset alkuun:"
@@ -3114,6 +3110,10 @@ msgstr "Voit myös selata käyttäjän suosikkilisäosia käyttämällä Sinun s
 msgid "If you want to install a plugin that you&#8217;ve downloaded elsewhere, click the Upload link in the upper left. You will be prompted to upload the .zip package, and once uploaded, you can activate the new plugin."
 msgstr "Jos haluat asentaa muualta ladatun lisäosan, paina Siirrä nappia vasemmalta ylhäältä. Sinulta pyydetään .zip-pakettia. Kun olet sen ladannut, voit aktivoida lisäosan."
 
+#: wp-admin/includes/update-core.php:1180 wp-admin/update-core.php:433
+msgid "Welcome to WordPress %1$s. You will be redirected to the About WordPress screen. If not, click <a href=\"%2$s\">here</a>."
+msgstr "Tervetuloa WordPress-versioon %1$s. Sinut ohjataan Tietoa WordPressistä-sivulle. Jos ohjaus ei toimi, <a href=\"%2$s\">napsauta tästä</a>."
+
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:70
 msgctxt "Plugin Installer"
 msgid "Favorites"
@@ -3206,7 +3206,7 @@ msgstr "Ohje-välilehti"
 
 #: wp-admin/theme-install.php:87
 msgid "To install the theme so you can preview it with your site&#8217;s content and customize its theme options, click the \"Install\" button at the top of the left-hand pane. The theme files will be downloaded to your website automatically. When this is complete, the theme is now available for activation, which you can do by clicking the \"Activate\" link, or by navigating to your Manage Themes screen and clicking the \"Live Preview\" link under any installed theme&#8217;s thumbnail image."
-msgstr "Asentaaksesi ja esikatsellaksesi teemaa paina Asenna nyt -nappia. Teeman tiedostot ladataan sivullesi automaattisesti. Kun lataus on valmis, voit aktivoida teeman painamalla Ota käyttöön tai sitten voit esikatsella menemällä Asenna teemat näkymään ja klikkaamalla Esikatsele tai teeman kuvaketta."
+msgstr "Asentaaksesi ja esikatsellaksesi teemaa paina Asenna nyt -nappia. Teeman tiedostot ladataan sivullesi automaattisesti. Kun lataus on valmis, voit aktivoida teeman painamalla Ota käyttöön tai sitten voit esikatsella menemällä Asenna teemat näkymään ja napsauttamalla Esikatsele tai teeman kuvaketta."
 
 #: wp-admin/custom-header.php:515
 msgid "You can select an image to be shown at the top of your site by uploading from your computer or choosing from your media library. After selecting an image you will be able to crop it."
@@ -3249,7 +3249,7 @@ msgstr "Sivun luominen muistuttaa artikkelin luomista. Näkymiä voi mukauttaa s
 
 #: wp-admin/custom-header.php:106
 msgid "You can set a custom image header for your site. Simply upload the image and crop it, and the new header will go live immediately. Alternatively, you can use an image that has already been uploaded to your Media Library by clicking the &#8220;Choose Image&#8221; button."
-msgstr "Voit asettaa oman otsakekuvan sivustolle. Tallenna kuva ja leikkaa sitä ja se menee suoraan julki. Vaihtoehtoisesti voit myös käyttää kuvaa, joka on jo tallennettu mediakirjastoon klikkaamalla &#8220;Valitse kuva&#8221; -nappia."
+msgstr "Voit asettaa oman otsakekuvan sivustolle. Tallenna kuva ja leikkaa sitä ja se menee suoraan julki. Vaihtoehtoisesti voit myös käyttää kuvaa, joka on jo tallennettu mediakirjastoon napsauttamalla &#8220;Valitse kuva&#8221; -nappia."
 
 #: wp-admin/custom-header.php:781
 msgid "Skip Cropping, Publish Image as Is"
@@ -3348,7 +3348,7 @@ msgstr "Tietokantataulujen etuliite tiedostossa <code>wp-config.php</code> ei sa
 
 #: wp-admin/media-new.php:51
 msgid "Revert to the <strong>Browser Uploader</strong> by clicking the link below the drag and drop box."
-msgstr "Vaihda <strong>selaimen omaan tiedostonsiirtoon</strong> klikkaamalla alla olevaa linkkiä."
+msgstr "Vaihda <strong>selaimen omaan tiedostonsiirtoon</strong> napsauttamalla alla olevaa linkkiä."
 
 #: wp-admin/users.php:393
 msgid "User deleted."
@@ -3706,10 +3706,6 @@ msgstr "Poista sivusto pysyvästi"
 msgid "Remember, once deleted your site cannot be restored."
 msgstr "Muista, kerran poistettua sivustoa ei saa enää takaisin käyttöön."
 
-#: wp-admin/ms-delete-site.php:23
-msgid "I'm sorry, the link you clicked is stale. Please select another option."
-msgstr "Klikkaamasi linkki oli vanhentunut. Kokeile toista vaihtoehtoa."
-
 #: wp-admin/ms-delete-site.php:21
 msgid "Thank you for using %s, your site has been deleted. Happy trails to you until we meet again."
 msgstr "Sivustosi on poistettu. %s kiittää, ja nähtään taas!"
@@ -3718,13 +3714,17 @@ msgstr "Sivustosi on poistettu. %s kiittää, ja nähtään taas!"
 msgid "You do not have sufficient permissions to delete this site."
 msgstr "Sinulla ei ole riittäviä oikeuksia tämän sivuston poistamiseen."
 
-#: wp-admin/ms-delete-site.php:81
-msgid "If you do not want to use your %s site any more, you can delete it using the form below. When you click <strong>Delete My Site Permanently</strong> you will be sent an email with a link in it. Click on this link to delete your site."
-msgstr "Jos et halua enää käyttää %s -sivustoasi, voit poistaa sen alla olevalla lomakkeella. Klikattuasi <strong>Poista sivustoni pysyvästi</strong>-linkkiä sinulle lähetetään vahvistusviesti sähköpostiisi, jossa olevaa linkkiä klikkaamalla saat poistettua sivustosi."
-
 #: wp-admin/ms-delete-site.php:77
 msgid "Thank you. Please check your email for a link to confirm your action. Your site will not be deleted until this link is clicked. "
-msgstr "Kiitos. Tarkista vahvistusviesti sähköpostistasi. Sivustoasi ei poisteta ennen kuin olet klikannut viestissä olevaa vahvistuslinkkiä."
+msgstr "Kiitos. Tarkista vahvistusviesti sähköpostistasi. Sivustoasi ei poisteta ennen kuin olet napsauttanut viestissä olevaa vahvistuslinkkiä."
+
+#: wp-admin/ms-delete-site.php:81
+msgid "If you do not want to use your %s site any more, you can delete it using the form below. When you click <strong>Delete My Site Permanently</strong> you will be sent an email with a link in it. Click on this link to delete your site."
+msgstr "Jos et halua enää käyttää %s -sivustoasi, voit poistaa sen alla olevalla lomakkeella. Napsautettuasi <strong>Poista sivustoni pysyvästi</strong> -linkkiä sinulle lähetetään vahvistusviesti sähköpostiisi, jossa olevaa linkkiä napsauttamalla saat poistettua sivustosi."
+
+#: wp-admin/ms-delete-site.php:23
+msgid "I'm sorry, the link you clicked is stale. Please select another option."
+msgstr "Napsauttamasi linkki oli vanhentunut. Kokeile toista vaihtoehtoa."
 
 #: wp-admin/includes/ms.php:34
 msgid "This file is too big. Files must be less than %1$s KB in size."
@@ -4148,26 +4148,26 @@ msgstr "Näytä työkalupalkki kun tarkastelet sivustoa"
 
 #. translators: 1: WordPress version number, 2: plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:167
+#: wp-admin/about.php:171
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "<strong>Versio %1$s</strong> paikkasi tietoturva-aukon ja korjasi %2$s bugin."
 msgstr[1] "<strong>Versio %1$s</strong> paikkasi tietoturva-aukon ja korjasi %2$s bugia."
 
-#: wp-admin/about.php:47 wp-admin/about.php:174
+#: wp-admin/about.php:47 wp-admin/about.php:51 wp-admin/about.php:178
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "<a href=\"%s\">Lisätietoja tästä päivityksestä</a>."
 
 #. translators: 1: WordPress version number, 2: plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:171
+#: wp-admin/about.php:45 wp-admin/about.php:175
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "<strong>Versio %1$s</strong> paikkasi joitakin tietoturva-aukkoja ja korjasi %2$s bugin."
 msgstr[1] "<strong>Versio %1$s</strong> paikkasi joitakin tietoturva-aukkoja ja korjasi %2$s bugia."
 
 #. translators: 1: WordPress version number, 2: plural number of bugs.
-#: wp-admin/about.php:163
+#: wp-admin/about.php:167
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "<strong>Versio %1$s</strong> korjasi %2$s bugin."
@@ -4177,19 +4177,19 @@ msgstr[1] "<strong>Versio %1$s</strong> korjasi %2$s bugia."
 msgid "Welcome to your WordPress Dashboard! This is the screen you will see when you log in to your site, and gives you access to all the site management features of WordPress. You can get help for any screen by clicking the Help tab in the upper corner."
 msgstr "Tervetuloa WordPressin ohjausnäkymään! Näet tämän aina kun kirjaudut sisään, ja pääset tätä kautta kaikkiin sivuston hallintaominaisuuksiin. Saat tarvittaessa apua oikean yläkulman Ohje-välilehdeltä."
 
-#: wp-admin/about.php:156
+#: wp-admin/about.php:44 wp-admin/about.php:160
 msgid "Maintenance and Security Release"
 msgid_plural "Maintenance and Security Releases"
 msgstr[0] "Huolto- ja tietoturvapäivitys"
 msgstr[1] "Huolto- ja tietoturvapäivitykset"
 
-#: wp-admin/about.php:44 wp-admin/about.php:155
+#: wp-admin/about.php:159
 msgid "Security Release"
 msgid_plural "Security Releases"
 msgstr[0] "Tietoturvapäivitys"
 msgstr[1] "Tietoturvapäivitykset"
 
-#: wp-admin/about.php:154
+#: wp-admin/about.php:158
 msgid "Maintenance Release"
 msgid_plural "Maintenance Releases"
 msgstr[0] "Huoltopäivitys"
@@ -4200,7 +4200,7 @@ msgid "What&#8217;s New"
 msgstr "Uudet ominaisuudet"
 
 #. translators: 1: WordPress version number.
-#: wp-admin/about.php:45 wp-admin/about.php:159
+#: wp-admin/about.php:49 wp-admin/about.php:163
 msgid "<strong>Version %1$s</strong> addressed a security issue."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues."
 msgstr[0] "<strong>Versio %1$s</strong> paikkasi tietoturva-aukon."
@@ -4210,11 +4210,11 @@ msgstr[1] "<strong>Versio %1$s</strong> paikkasi joitakin tietoturva-aukkoja."
 msgid "This screen allows you to choose your default permalink structure. You can choose from common settings or create custom URL structures."
 msgstr "Tällä ruudulla pystyt valitsemaan kestolinkin rakenteen. Voit valita joko vakioasetukset tai luoda oman URL-rakenteen."
 
-#: wp-admin/about.php:138
+#: wp-admin/about.php:142
 msgid "Return to Updates"
 msgstr "Palaa päivitykset -kohtaan"
 
-#: wp-admin/includes/update-core.php:1178 wp-admin/update-core.php:434
+#: wp-admin/includes/update-core.php:1181 wp-admin/update-core.php:434
 msgid "Welcome to WordPress %1$s. <a href=\"%2$s\">Learn more</a>."
 msgstr "Tervetuloa käyttämään WordPressin versiota %1$s. <a href=\"%2$s\">Lue lisää</a>."
 
@@ -4470,10 +4470,6 @@ msgstr "Sivujen hallinta"
 msgid "You can hide/display columns based on your needs and decide how many users to list per screen using the Screen Options tab."
 msgstr "Voit näyttää/piilottaa sarakkeita tarpeittesi mukaan ja valita Näyttöasetukset-valikosta montako artikkelia sivulla näytetään."
 
-#: wp-admin/edit.php:195
-msgid "<strong>Edit</strong> takes you to the editing screen for that post. You can also reach that screen by clicking on the post title."
-msgstr "<strong>Muokkaa</strong> vie sinut kyseisen artikkelin muokkausnäkymään. Voit myös klikata artikkelin otsikkoa."
-
 #: wp-admin/users.php:43
 msgid "Edit takes you to the editable profile screen for that user. You can also reach that screen by clicking on the username."
 msgstr "Muokkaa vie sinut kyseisen käyttäjän muokattavalle profiilisivulle. Pääset sinne myös klikkaamalla käyttäjänimeä."
@@ -4498,6 +4494,10 @@ msgstr "Listaa kaikki tietyn käyttäjän luomat artikkelit napsauttamalla Artik
 msgid "Hovering over a row in the users list will display action links that allow you to manage users. You can perform the following actions:"
 msgstr "Osoittimen vieminen käyttäjälistan rivin päälle paljastaa toimintoja käyttäjien hallinnoimiseksi. Voit suorittaa seuraavat toiminnot:"
 
+#: wp-admin/edit.php:195
+msgid "<strong>Edit</strong> takes you to the editing screen for that post. You can also reach that screen by clicking on the post title."
+msgstr "<strong>Muokkaa</strong> vie sinut kyseisen artikkelin muokkausnäkymään. Voit myös napsauttaa artikkelin otsikkoa."
+
 #: wp-admin/user-new.php:153
 msgid "Because this is a multisite installation, you may add accounts that already exist on the Network by specifying a username or email, and defining a role. For more options, such as specifying a password, you have to be a Network Administrator and use the hover link under an existing user&#8217;s name to Edit the user profile under Network Admin > All Users."
 msgstr "Koska tämä on multisite-asennus, voit lisätä jo olemassaolevia tilejä antamalla käyttäjätunnuksen tai sähköpostin ja määrittämällä käyttäjälle roolin tälle sivustolle. Muiden käyttäjäasetusten (kuten käyttäjän salasanan) muokkaamiseksi tarvitset järjestelmänvalvojan oikeudet."
@@ -4510,11 +4510,11 @@ msgstr "Tiedostoon wp-admin/includes/template.php on viitattu suoraan luultavast
 msgid "Welcome to WordPress %s"
 msgstr "Tervetuloa käyttämään WordPress-versiota %s"
 
-#: wp-admin/about.php:142
+#: wp-admin/about.php:146
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Mene ohjausnäkymän etusivulle"
 
-#: wp-admin/about.php:138
+#: wp-admin/about.php:142
 msgid "Return to Dashboard &rarr; Updates"
 msgstr "Palaa sivulle Ohjausnäkymä &rarr; Päivitykset"
 
@@ -4526,7 +4526,7 @@ msgstr "WordPressiä kehittää maailmanlaajuinen joukko innostuneita yksilöit�
 msgid "Core Developers"
 msgstr "Core-kehittäjät"
 
-#: wp-admin/about.php:106
+#: wp-admin/about.php:110
 msgid "Under the Hood"
 msgstr "Teknisiä uudistuksia"
 
@@ -5271,10 +5271,6 @@ msgstr "Kaikki tiedostoihin tehdyt muutokset tällä sivulla vaikuttavat kaikkii
 msgid "The boxes on your Dashboard screen are:"
 msgstr "Ohjausnäkymässäsi olevat laatikot ovat:"
 
-#: wp-admin/tools.php:17
-msgid "Press This is a bookmarklet that makes it easy to blog about something you come across on the web. You can use it to just grab a link, or to post an excerpt. Press This will even allow you to choose from images included on the page and use them in your post. Just drag the Press This link on this screen to your bookmarks bar in your browser, and you&#8217;ll be on your way to easier content creation. Clicking on it while on another website opens a popup window with all these options."
-msgstr "Julkaise tämä on sovelluskirjanmerkki, jolla voit helposti kirjoittaa webissä löytämästäsi sisällöstä blogissasi. Voit käyttää sitä vain linkin kopioimiseen tai julkaista sen avulla otteen. "
-
 #: wp-admin/users.php:26
 msgid "This screen lists all the existing users for your site. Each user has one of five defined roles as set by the site admin: Site Administrator, Editor, Author, Contributor, or Subscriber. Users with roles other than Administrator will see fewer options in the dashboard navigation when they are logged in, based on their role."
 msgstr "Tämä ruutu listaa kaikki sivustosi olemassaolevat käyttäjät. Jokaisella käyttäjällä on yksi viidestä määritellystä roolista: Sivuston pääkäyttäjä, Päätoimittaja, Kirjoittaja, Avustaja tai Tilaaja. Muut kuin pääkäyttäjä näkevät rajoitetun määrän vaihtoehtoja hallintanäkymässään, roolistaan riippuen."
@@ -5282,6 +5278,10 @@ msgstr "Tämä ruutu listaa kaikki sivustosi olemassaolevat käyttäjät. Jokais
 #: wp-admin/plugin-editor.php:134
 msgid "If you want to make changes but don&#8217;t want them to be overwritten when the plugin is updated, you may be ready to think about writing your own plugin. For information on how to edit plugins, write your own from scratch, or just better understand their anatomy, check out the links below."
 msgstr "Jos haluat tehdä muutoksia, muttet halua että ne ylikirjoitetaan kun lisäosa päivitetään, kannattaa harkita oman lisäosan kirjoittamista. Saat lisätietoa alla olevista linkeistä."
+
+#: wp-admin/tools.php:17
+msgid "Press This is a bookmarklet that makes it easy to blog about something you come across on the web. You can use it to just grab a link, or to post an excerpt. Press This will even allow you to choose from images included on the page and use them in your post. Just drag the Press This link on this screen to your bookmarks bar in your browser, and you&#8217;ll be on your way to easier content creation. Clicking on it while on another website opens a popup window with all these options."
+msgstr "Press This on sovelluskirjanmerkki, jolla voit helposti kirjoittaa webissä löytämästäsi sisällöstä blogissasi. Voit käyttää sitä vain linkin kopioimiseen tai julkaista sen avulla otteen. Press This -kirjanmerkillä voit jopa valita sivulla olevien kuvien välillä käyttää niitä artikkelissasi. Raahaa tällä sivulla oleva Press This -linkki selaimen kirjanmerkkipalkkiin ja ottanut ison askeleen kohtia helpompaa sisällönluotia. Kirjanmerkin napsauttaminen toisella sivustolla avaa ponnahdusikkunan, jossa voit käyttää näitä toimintoja."
 
 #. translators: Default page slug
 #: wp-admin/includes/upgrade.php:223
@@ -5423,7 +5423,7 @@ msgstr "Päivämäärät:"
 
 #: wp-admin/export.php:156
 msgid "This will contain all of your posts, pages, comments, custom fields, terms, navigation menus and custom posts."
-msgstr "Tähän kuuluvat kaikki tekemäsi artikkelit, sivut, kommentit, mukautetut kentät, termit, valikot ja mukautetut artikkelit."
+msgstr "Tähän kuuluvat kaikki tekemäsi artikkelit, sivut, kommentit, lisäkentät, termit, valikot ja mukautetut artikkelit."
 
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:228
 msgctxt "themes"
@@ -5454,10 +5454,6 @@ msgstr "Vastauksena"
 msgid "The Available Widgets section contains all the widgets you can choose from. Once you drag a widget into a sidebar, it will open to allow you to configure its settings. When you are happy with the widget settings, click the Save button and the widget will go live on your site. If you click Delete, it will remove the widget."
 msgstr "Saatavilla olevat vimpaimet sisältävät kaikki vimpaimet jotka ovat käytettävissäsi. Kun raahaat vimpaimen sivupalkkiin, se avautuu ja antaa sinun muokata sen asetuksia. Kun olet tyytyväinen asetuksiin, klikkaa Tallenna-painiketta ja vimpain näkyy sivustollasi. Klikkaamalla Poista-painiketta voit poistaa vimpaimen."
 
-#: wp-admin/edit-form-advanced.php:339 wp-admin/media.php:78
-msgid "Remember to click Update Media to save metadata entered or changed."
-msgstr "Muista klikata Päivitä mediatiedosto tallentaaksesi uuden tai muuttuneen metadatan."
-
 #: wp-admin/edit-form-advanced.php:338 wp-admin/media.php:77
 msgid "Note that you crop the image by clicking on it (the Crop icon is already selected) and dragging the cropping frame to select the desired part. Then click Save to retain the cropping."
 msgstr "Rajaa ensin kuvasta haluamasi alue. Paina sitten tallenna säilyttääksesi rajauksen."
@@ -5469,6 +5465,10 @@ msgstr "Tällä sivulla voit muokata mediakirjastossa olevan tiedoston viittä m
 #: wp-admin/edit-form-advanced.php:337 wp-admin/media.php:76
 msgid "For images only, you can click on Edit Image under the thumbnail to expand out an inline image editor with icons for cropping, rotating, or flipping the image as well as for undoing and redoing. The boxes on the right give you more options for scaling the image, for cropping it, and for cropping the thumbnail in a different way than you crop the original image. You can click on Help in those boxes to get more information."
 msgstr "Vain kuville: voit muokata kuvaa (rajaus, kierto ja kuvan kääntö) suoraan sivulla napsauttamalla Muokkaa kuvaa -painiketta. "
+
+#: wp-admin/edit-form-advanced.php:339 wp-admin/media.php:78
+msgid "Remember to click Update Media to save metadata entered or changed."
+msgstr "Muista napsauttaa Päivitä mediatiedosto tallentaaksesi uuden tai muuttuneen metadatan."
 
 #: wp-admin/user-new.php:279
 msgid "E-mail or Username"
@@ -5802,7 +5802,7 @@ msgstr "<strong>Polkutunnus</strong> - Polkutunnus on URL-yhteensopiva versio ot
 
 #: wp-admin/edit-form-advanced.php:310
 msgid "You can also create posts with the <a href=\"%s\">Press This bookmarklet</a>."
-msgstr "Voit myös luoda artikkeleita <a href=\"%s\">Julkaise tämä -sovelluskirjanmerkillä</a>."
+msgstr "Voit myös luoda artikkeleita <a href=\"%s\">Press This -sovelluskirjanmerkillä</a>."
 
 #: wp-admin/user-edit.php:41
 msgid "Your username cannot be changed, but you can use other fields to enter your real name or a nickname, and change which name to display on your posts."
@@ -5836,13 +5836,6 @@ msgstr "Kirjoita valikon nimi tähän"
 msgid "The WordPress URL and the Site URL can be the same (example.com) or different; for example, having the WordPress core files (example.com/wordpress) in a subdirectory instead of the root directory."
 msgstr "WordPressin osoite ja sivuston osoite voivat olla samat (kuten example.com) tai eri, kun esimerkiksi WordPressin tiedostot (example.com/wordpress) ovat alihakemistossa juurihakemiston sijaan."
 
-#: wp-admin/options-discussion.php:41 wp-admin/options-general.php:94
-#: wp-admin/options-media.php:24 wp-admin/options-permalink.php:23
-#: wp-admin/options-permalink.php:32 wp-admin/options-permalink.php:39
-#: wp-admin/options-reading.php:57 wp-admin/options-writing.php:22
-msgid "You must click the Save Changes button at the bottom of the screen for new settings to take effect."
-msgstr "Sinun täytyy klikata Tallenna muutokset -painiketta sivun alalaidassa, jotta uudet asetukset astuvat voimaan."
-
 #: wp-admin/options-general.php:84
 msgid "The fields on this screen determine some of the basics of your site setup."
 msgstr "Tämän ruudun kentät määrittelevät joitain perusasioita sivustosi asennuksesta."
@@ -5854,6 +5847,13 @@ msgstr "Tämä näkymä sisältää asetukset, jotka vaikuttavat sisältösi nä
 #: wp-admin/options-general.php:93
 msgid "UTC means Coordinated Universal Time."
 msgstr "UTC eli Coordinated Universal Time."
+
+#: wp-admin/options-discussion.php:41 wp-admin/options-general.php:94
+#: wp-admin/options-media.php:24 wp-admin/options-permalink.php:23
+#: wp-admin/options-permalink.php:32 wp-admin/options-permalink.php:39
+#: wp-admin/options-reading.php:57 wp-admin/options-writing.php:22
+msgid "You must click the Save Changes button at the bottom of the screen for new settings to take effect."
+msgstr "Sinun täytyy napsauttaa Tallenna muutokset -painiketta sivun alalaidassa, jotta uudet asetukset astuvat voimaan."
 
 #: wp-admin/edit-link-form.php:59
 msgid "The boxes for link name, web address, and description have fixed positions, while the others may be repositioned using drag and drop. You can also hide boxes you don&#8217;t use in the Screen Options tab, or minimize boxes by clicking on the title bar of the box."
@@ -6113,11 +6113,7 @@ msgstr "<strong>Keskustelu</strong> - Voit sallia ja estää kommentoinnin ja p�
 
 #: wp-admin/edit-form-advanced.php:362
 msgid "<strong>Publish</strong> - You can set the terms of publishing your post in the Publish box. For Status, Visibility, and Publish (immediately), click on the Edit link to reveal more options. Visibility includes options for password-protecting a post or making it stay at the top of your blog indefinitely (sticky). Publish (immediately) allows you to set a future or past date and time, so you can schedule a post to be published in the future or backdate a post."
-msgstr "<strong>Julkaise</strong> - Voit valita artikkelisi julkaisemisen ehdot Julkaise-laatikossa. Tila-, Näkyvyys- tai Julkaise heti -valinnan muokkaamiseksi klikkaa Muokkaa-linkkiä saadaksesi lisävalintoja. Näkyvyys sisältää asetuksia artikkelin suojaamiseksi salasanalla tai voidaksesi tehdä siitä artikkelin, joka pysyy aina blogisi etusivun yläosassa. Julkaise heti antaa sinun valita tulevan tai mennen julkaisuajankohdan, joten voit valita artikkelin tulevan julkaisuajankohdan tai antaa sille menneen päivämäärän."
-
-#: wp-admin/edit.php:186
-msgid "You can refine the list to show only posts in a specific category or from a specific month by using the dropdown menus above the posts list. Click the Filter button after making your selection. You also can refine the list by clicking on the post author, category or tag in the posts list."
-msgstr "Voit suodattaa listausta näyttämään artikkelit vain tietystä kategoriasta tai kuukauden perusteella yläreunassa sijaitsevien alasvetovalikoiden avulla.  Klikkaa suodata-nappia tehtyäsi valinnat.  Voit myös suodattaa artikkeleita klikkaamalla artikkelin kirjoittaja, kategoria tai avainsanat -linkkejä."
+msgstr "<strong>Julkaise</strong> - Voit valita artikkelisi julkaisemisen ehdot Julkaise-laatikossa. Tila-, Näkyvyys- tai Julkaise heti -valinnan muokkaamiseksi napsauta Muokkaa-linkkiä saadaksesi lisävalintoja. Näkyvyys sisältää asetuksia artikkelin suojaamiseksi salasanalla tai voidaksesi tehdä siitä artikkelin, joka pysyy aina blogisi etusivun yläosassa. Julkaise heti antaa sinun valita tulevan tai mennen julkaisuajankohdan, joten voit valita artikkelin tulevan julkaisuajankohdan tai antaa sille menneen päivämäärän."
 
 #: wp-admin/edit.php:193
 msgid "Hovering over a row in the posts list will display action links that allow you to manage your post. You can perform the following actions:"
@@ -6137,9 +6133,13 @@ msgstr "Voit näyttää/piilottaa sarakkeita tarpeittesi mukaan ja valita Näytt
 msgid "You can filter the list of posts by post status using the text links in the upper left to show All, Published, Draft, or Trashed posts. The default view is to show all posts."
 msgstr "Voit suodattaa artikkeleita käyttämällä vasemmassa yläreunassa olevia linkkejä: kaikki, julkaistu, luonnos tai roskakorissa.  Oletuksena kaikki artikkelit näytetään."
 
+#: wp-admin/edit.php:186
+msgid "You can refine the list to show only posts in a specific category or from a specific month by using the dropdown menus above the posts list. Click the Filter button after making your selection. You also can refine the list by clicking on the post author, category or tag in the posts list."
+msgstr "Voit suodattaa listausta näyttämään artikkelit vain tietystä kategoriasta tai kuukauden perusteella yläreunassa sijaitsevien alasvetovalikoiden avulla.  Napsauta suodata-nappia tehtyäsi valinnat.  Voit myös suodattaa artikkeleita napsauttamalla artikkelin kirjoittaja-, kategoria- tai avainsanat-linkkejä."
+
 #: wp-admin/edit.php:185
 msgid "You can view posts in a simple title list or with an excerpt. Choose the view you prefer by clicking on the icons at the top of the list on the right."
-msgstr "Voit listata artikkeleita näyttämällä pelkän otsikon tai otsikon ja lyhennelmän.  Valitse haluamasi näkymä oikeassa yläreunassa sijaitsevien kuvakkeiden avulla."
+msgstr "Voit listata artikkeleita näyttämällä pelkän otsikon tai otsikon ja otteen. Valitse haluamasi näkymä oikeassa yläreunassa sijaitsevien kuvakkeiden avulla."
 
 #: wp-admin/plugins.php:473
 msgid "Search Installed Plugins"
@@ -6190,10 +6190,6 @@ msgstr "Asenna Movable Type -tuontityökalu tuodaksesi artikkeleita Movable Type
 msgid "Install the RSS importer to import posts from an RSS feed."
 msgstr "Asenna RSS-tuontityökalu tuodaksesi artikkeleita RSS-syötteestä."
 
-#: wp-admin/includes/import.php:199
-msgid "Install the WordPress importer to import posts, pages, comments, custom fields, categories, and tags from a WordPress export file."
-msgstr "Asenna WordPress-tuontityökalu tuodaksesi artikkelit, sivut, kommentit, avainkentät, kategoriat ja avainsanat WordPress-vientitiedostosta."
-
 #: wp-admin/includes/import.php:181
 msgid "Install the blogroll importer to import links in OPML format."
 msgstr "Asenna blogilistan tuontityökalu tuodaksesi linkit OPML-muodossa."
@@ -6201,6 +6197,10 @@ msgstr "Asenna blogilistan tuontityökalu tuodaksesi linkit OPML-muodossa."
 #: wp-admin/includes/import.php:157
 msgid "Install the Blogger importer to import posts, comments, and users from a Blogger blog."
 msgstr "Asenna Blogger-tuontityökalu tuodaksesi artikkeleita Blogger-palvelusta. "
+
+#: wp-admin/includes/import.php:199
+msgid "Install the WordPress importer to import posts, pages, comments, custom fields, categories, and tags from a WordPress export file."
+msgstr "Asenna WordPress-tuontityökalu tuodaksesi artikkelit, sivut, kommentit, lisäkentät, kategoriat ja avainsanat WordPress-vientitiedostosta."
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:143
 msgctxt "site"
@@ -6327,7 +6327,7 @@ msgstr "Poista käyttäjät sivustolta"
 
 #: wp-admin/tools.php:42
 msgid "Use Press This to clip text, images and videos from any web page. Then edit and add more straight from Press This before you save or publish it in a post on your site."
-msgstr "Käytä Julkaise tämä -sovelluskirjanmerkkiä leikataksesi tekstiä, kuvia ja videoita miltä tahansa sivulta. Voit sen jälkeen muokata tai lisätä sisältöä sekä tallentaa tai julkaista artikkelin sivustollasi."
+msgstr "Käytä Press This -sovelluskirjanmerkkiä leikataksesi tekstiä, kuvia ja videoita miltä tahansa sivulta. Voit sen jälkeen muokata tai lisätä sisältöä sekä tallentaa tai julkaista artikkelin sivustollasi."
 
 #: wp-admin/includes/schema.php:377
 msgid "My Site"
@@ -6460,7 +6460,7 @@ msgstr "Yritä uudelleen"
 
 #: wp-admin/includes/ajax-actions.php:1198
 msgid "Please provide a custom field name."
-msgstr "Anna avainkentän nimi."
+msgstr "Anna lisäkentän nimi."
 
 #: wp-admin/custom-background.php:285
 msgid "Display Options"
@@ -6573,7 +6573,7 @@ msgstr "Tämä käyttäjä on jo tämän sivuston jäsen."
 
 #: wp-admin/user-new.php:213
 msgid "Invitation email sent to user. A confirmation link must be clicked for them to be added to your site."
-msgstr "Kutsuviesti lähetettiin käyttäjälle. Varmistuslinkin pitää olla klikattu tullakseen lisätyksi sivustollesi"
+msgstr "Kutsuviesti lähetettiin käyttäjälle. Varmistuslinkkiä pitää napsauttaa tullakseen lisätyksi sivustollesi."
 
 #: wp-admin/update-core.php:222
 msgid "The following plugins have new versions available. Check the ones you want to update and then click &#8220;Update Plugins&#8221;."
@@ -6789,7 +6789,7 @@ msgid "The password you chose during the install."
 msgstr "Asennuksen yhteydessä valitsemasi salasana."
 
 #: wp-admin/includes/class-wp-upgrader.php:2672
-#: wp-admin/includes/update-core.php:1174 wp-admin/update-core.php:432
+#: wp-admin/includes/update-core.php:1177 wp-admin/update-core.php:432
 msgid "WordPress updated successfully"
 msgstr "WordPress päivitettiin onnistuneesti."
 
@@ -6815,7 +6815,7 @@ msgstr "Muokkaa valikon kohtaa"
 msgid "Please enter a valid menu name."
 msgstr "Anna valikolle kelvollinen nimi."
 
-#: wp-admin/about.php:142
+#: wp-admin/about.php:146
 msgid "Go to Dashboard"
 msgstr "Palaa Ohjausnäkymä-sivulle"
 
@@ -8169,7 +8169,7 @@ msgctxt "link"
 msgid "Add New"
 msgstr "Lisää uusi"
 
-#: wp-admin/includes/update-core.php:1055
+#: wp-admin/includes/update-core.php:1058
 msgid "Upgrading database&#8230;"
 msgstr "Päivitetään tietokantaa&#8230;"
 
@@ -8280,11 +8280,6 @@ msgstr "Lisäosia ei löytynyt."
 #: wp-admin/edit-tags.php:127 wp-admin/edit-tags.php:143 wp-admin/post.php:150
 msgid "You attempted to edit an item that doesn&#8217;t exist. Perhaps it was deleted?"
 msgstr "Yritit muokata artikkelia, jota ei löydy. Onko se mahdollisesti poistettu?"
-
-#: wp-admin/async-upload.php:55 wp-admin/post.php:153 wp-admin/post.php:249
-#: wp-admin/post.php:272 wp-admin/post.php:290
-msgid "Unknown post type."
-msgstr "Tuntematon artikkelityyppi."
 
 #: wp-admin/update.php:219
 msgid "Installing Theme: %s"
@@ -8475,6 +8470,11 @@ msgstr "Tiedostojen sijainti"
 msgid "WordPress has been installed. Were you expecting more steps? Sorry to disappoint."
 msgstr "WordPress on nyt asennettu. Jos odotit lisävaiheita, olemme pahoillamme."
 
+#: wp-admin/async-upload.php:55 wp-admin/post.php:153 wp-admin/post.php:249
+#: wp-admin/post.php:272 wp-admin/post.php:290
+msgid "Unknown post type."
+msgstr "Tuntematon sisältötyyppi."
+
 #: wp-admin/edit.php:203 wp-admin/includes/class-wp-list-table.php:438
 msgid "Bulk Actions"
 msgstr "Massatoiminnot"
@@ -8620,14 +8620,6 @@ msgstr "Suodata"
 msgid "Empty Trash"
 msgstr "Tyhjennä roskakori"
 
-#: wp-admin/edit-form-advanced.php:82 wp-admin/edit-form-advanced.php:98
-msgid "Custom field updated."
-msgstr "Avainkenttä päivitetty"
-
-#: wp-admin/edit-form-advanced.php:83 wp-admin/edit-form-advanced.php:99
-msgid "Custom field deleted."
-msgstr "Avainkenttä poistettu"
-
 #: wp-admin/edit-form-advanced.php:84
 msgid "Post updated."
 msgstr "Artikkeli päivitetty"
@@ -8656,10 +8648,6 @@ msgstr "Artikkelin luonnos päivitetty. <a target=\"_blank\" href=\"%s\">Esikats
 #: wp-admin/edit-form-advanced.php:217
 msgid "Send Trackbacks"
 msgstr "Lähetä paluuviitteet"
-
-#: wp-admin/edit-form-advanced.php:220
-msgid "Custom Fields"
-msgstr "Avainkentät"
 
 #: wp-admin/edit-form-advanced.php:233 wp-admin/menu.php:239
 msgid "Discussion"
@@ -8947,7 +8935,7 @@ msgstr "Kansio on jo olemassa."
 
 #: wp-admin/includes/class-wp-upgrader.php:133 wp-admin/includes/file.php:644
 #: wp-admin/includes/file.php:748 wp-admin/includes/file.php:799
-#: wp-admin/includes/update-core.php:1128
+#: wp-admin/includes/update-core.php:1131
 msgid "Could not create directory."
 msgstr "Hakemistoa ei voi luoda."
 
@@ -9041,11 +9029,6 @@ msgstr "Sivuillasi nyt"
 #: wp-admin/includes/dashboard.php:108
 msgid "View all"
 msgstr "Näytä kaikki"
-
-#: wp-admin/about.php:64 wp-admin/tools.php:16 wp-admin/tools.php:40
-#: wp-admin/tools.php:51
-msgid "Press This"
-msgstr "Julkaise tämä"
 
 #: wp-admin/includes/class-wp-press-this.php:1444
 #: wp-admin/includes/meta-boxes.php:257 wp-admin/includes/meta-boxes.php:258
@@ -9864,10 +9847,6 @@ msgstr "Sinulla ei ole oikeuksia muokata sivuja."
 msgid "You are not allowed to edit posts."
 msgstr "Sinulla ei ole oikeuksia muokata artikkeleita."
 
-#: wp-admin/includes/post.php:1270
-msgid "Click to edit this part of the permalink"
-msgstr "Klikkaa tästä muokataksesi kestolinkkiä"
-
 #: wp-admin/includes/post.php:1272
 msgid "Temporary permalink. Click to edit this part."
 msgstr "Väliaikainen pysyväislinkki. Napsauta muokataksesi."
@@ -10009,10 +9988,6 @@ msgstr "Avain"
 #: wp-admin/includes/template.php:714
 msgid "Enter new"
 msgstr "Syötä uusi"
-
-#: wp-admin/includes/template.php:725
-msgid "Add Custom Field"
-msgstr "Lisää avainkenttä"
 
 #: wp-admin/includes/template.php:915
 msgid "Before you can upload your import file, you will need to fix the following error:"
@@ -10213,7 +10188,7 @@ msgstr "Väliaikaistiedoston luominen epäonnistui"
 
 #: wp-admin/includes/file.php:664 wp-admin/includes/file.php:761
 #: wp-admin/includes/file.php:794 wp-admin/includes/update-core.php:1020
-#: wp-admin/includes/update-core.php:1123
+#: wp-admin/includes/update-core.php:1126
 msgid "Could not copy file."
 msgstr "Tiedoston kopiointi epäonnistui"
 
@@ -10257,10 +10232,6 @@ msgstr "&mdash; Ei muutosta &mdash;"
 #: wp-admin/includes/class-wp-comments-list-table.php:424
 msgid "In reply to <a href=\"%1$s\">%2$s</a>."
 msgstr "Vastaus käyttäjälle <a href=\"%1$s\">%2$s</a>."
-
-#: wp-admin/includes/template.php:688
-msgid "Add New Custom Field:"
-msgstr "Lisää uusi avainkenttä:"
 
 #: wp-admin/includes/class-wp-upgrader.php:1119
 msgid "Removing the old version of the theme&#8230;"
@@ -10382,10 +10353,6 @@ msgstr "Kategorioilla voi olla keskinäinen hierarkia, toisin kuin avainsanoilla
 #: wp-admin/edit-tags.php:342
 msgid "<strong>Note:</strong><br />Deleting a category does not delete the posts in that category. Instead, posts that were only assigned to the deleted category are set to the category <strong>%s</strong>."
 msgstr "<strong>Huom!</strong><br />Kategorian poistaminen ei poista sen artikkeleita. Artikkelit, joilla ei ole mitään muuta kategoriaa, siirretään kategoriaan <strong>%s</strong>."
-
-#: wp-admin/export.php:149
-msgid "This format, which we call WordPress eXtended RSS or WXR, will contain your posts, pages, comments, custom fields, categories, and tags."
-msgstr "Tämä muoto (WordPress eXtended RSS tai WXR) sisältää artikkelit, kommentit, avainkentät, kategoriat ja avainsanat."
 
 #: wp-admin/includes/meta-boxes.php:875 wp-admin/includes/meta-boxes.php:877
 msgid "+ Add New Category"
@@ -10515,6 +10482,39 @@ msgstr "Lataa kuva omalta tietokoneeltasi:"
 msgid "Bulk Edit"
 msgstr "Muokkaa useita"
 
+#: wp-admin/includes/post.php:1270
+msgid "Click to edit this part of the permalink"
+msgstr "Napsauta tästä muokataksesi kestolinkkiä"
+
+#: wp-admin/includes/template.php:688
+msgid "Add New Custom Field:"
+msgstr "Lisää uusi kenttä:"
+
+#: wp-admin/includes/template.php:725
+msgid "Add Custom Field"
+msgstr "Uusi lisäkenttä"
+
+#: wp-admin/export.php:149
+msgid "This format, which we call WordPress eXtended RSS or WXR, will contain your posts, pages, comments, custom fields, categories, and tags."
+msgstr "Tämä muoto (WordPress eXtended RSS tai WXR) sisältää artikkelit, kommentit, lisäkentät, kategoriat ja avainsanat."
+
+#: wp-admin/edit-form-advanced.php:220
+msgid "Custom Fields"
+msgstr "Lisäkentät"
+
+#: wp-admin/edit-form-advanced.php:83 wp-admin/edit-form-advanced.php:99
+msgid "Custom field deleted."
+msgstr "Lisäkenttä poistettu"
+
+#: wp-admin/edit-form-advanced.php:82 wp-admin/edit-form-advanced.php:98
+msgid "Custom field updated."
+msgstr "Lisäkenttä päivitetty"
+
+#: wp-admin/about.php:68 wp-admin/tools.php:16 wp-admin/tools.php:40
+#: wp-admin/tools.php:51
+msgid "Press This"
+msgstr "Press This"
+
 #: wp-admin/includes/media.php:2372 wp-admin/includes/nav-menu.php:656
 #: wp-admin/includes/nav-menu.php:896
 msgid "&laquo;"
@@ -10532,12 +10532,6 @@ msgstr "Kommenttia %d ei ole olemassa."
 #: wp-admin/includes/ajax-actions.php:958
 msgid "Sorry, you must be logged in to reply to a comment."
 msgstr "Kommentointi on sallittu vain sisäänkirjautumisen jälkeen."
-
-#: wp-admin/includes/ajax-actions.php:1175
-#: wp-admin/includes/ajax-actions.php:1180
-#: wp-admin/includes/ajax-actions.php:1200
-msgid "Please provide a custom field value."
-msgstr "Anna avainkentälle arvo."
 
 #: wp-admin/includes/ajax-actions.php:1262
 msgid "User <a href=\"#%s\">%s</a> added"
@@ -10652,3 +10646,9 @@ msgstr "Olet siirtämässä tämän kommentin roskakoriin:"
 #: wp-admin/includes/class-wp-posts-list-table.php:1073
 msgid "Date"
 msgstr "Päivämäärä"
+
+#: wp-admin/includes/ajax-actions.php:1175
+#: wp-admin/includes/ajax-actions.php:1180
+#: wp-admin/includes/ajax-actions.php:1200
+msgid "Please provide a custom field value."
+msgstr "Anna lisäkentälle arvo."

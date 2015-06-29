@@ -84,7 +84,7 @@ function add_marker( $marker, map ) {
         map: map,
         draggable: false,
         shadow: false,
-        content: '<span style="font-size: 40px; background: transparent; box-shadow: none;" class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>'
+        content: '<span style="font-size: 30px; background: transparent; box-shadow: none;" class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>'
     });
 
 
@@ -281,33 +281,6 @@ jQuery(document).ready(function ($) {
     });
 
     $('.typeahead').on('typeahead:selected typeahead:autocompleted', function (e, val) {
-        // console.log(val);
-
-        /*
-        $.each(distributors, function( index, value ) {
-            // console.log(value.position);
-            // console.log(val.value);
-            if ( value.name === val.value ) {
-                // console.log(value.lat);
-                // console.log(map.markers);
-
-                var result = $.grep(map.markers, function(e,i){
-                    // console.log('k: '+e.position.k);
-                    // console.log('D: '+e.position.D);
-                    // console.log(parseFloat(value.lat));
-                    // console.log(parseFloat(e.position.k));
-                    // console.log(( parseFloat(e.position.k) === parseFloat(value.lat) ));
-                    return ( parseFloat(e.position.k) === parseFloat(value.lat) && parseFloat(e.position.D) === parseFloat(value.lng) );
-                });
-
-                // console.log(result[0].position);
-                // map.setZoom(17);
-                // map.panTo(result[0].position);
-                // infowindow.open( map, result[0] );
-                // curmarker
-            }
-        });
-        */
 
         // map.setZoom(17);
         // map.panTo(curmarker.position);
@@ -315,11 +288,10 @@ jQuery(document).ready(function ($) {
         $('.lahimmat-jalleenmyyjat').empty();
 
         $.each(distributors, function( index, dist ) {
-            // console.log(dist);
-            if ( dist.address.replace(/ /g,'').indexOf(val.value) > -1 ) {
-                //console.log(dist);
+            // console.log(val.value);
+            if ( dist.city && dist.city.indexOf(val.value) > -1 ) {
 
-                var distHTML = '<div><h2>' + dist.name + '</h2><div>' + dist.address + '</div><div>' + dist.phone + '</div><a href="' + dist.website + '">' + dist.website + '</a></div>'
+                var distHTML = '<div><h2>' + dist.name + '</h2><div>' + dist.address + '</div><div>' + dist.phone + '</div><a target="_blank" href="' + dist.websiteHREF + '">' + dist.website + '</a></div>'
 
                 $('.lahimmat-jalleenmyyjat').append(distHTML);
             }
@@ -350,15 +322,6 @@ jQuery(document).ready(function ($) {
     $('.menu-toggle').click( function() {
         $(this).parent('.main-navigation').toggleClass('is-active');
     });
-
-    // new Share(".share-button", {
-    //     disable_css: true,
-    //     networks: {
-    //         facebook: {
-    //           app_id: "abc123"
-    //         }
-    //     }
-    // });
 
     $('.share-button > span').on('click', function() {
         $(this).hide().siblings('.soc').show();
@@ -402,16 +365,17 @@ var substringMatcher = function(strs) {
 var cities = [];
 
 $.each(distributors, function(i, distributor) {
-    // console.log(distributor);
-    var myRegexp = /,.*? (.*), Finland/;
-    var match = myRegexp.exec(distributor.address);
-    // console.log(match[1]);
-    var city = match[1];
-    city = city.replace(/[0-9]/g, '');
-    city = city.replace(/\s+/g, '');
-    if (cities.indexOf(city) < 0) {
+
+    if ( distributor.website && distributor.website.indexOf('http://') < 0 ) {
+        distributor.websiteHREF = 'http://' + distributor.website;
+    }
+    else {
+        distributor.websiteHREF = distributor.website;
+    }
+
+    if (distributor.city && cities.indexOf(distributor.city) < 0) {
         // console.log(distributor);
-        cities.push(city);
+        cities.push(distributor.city);
     }
 });
 

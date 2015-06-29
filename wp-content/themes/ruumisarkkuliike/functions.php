@@ -230,9 +230,13 @@ add_action( 'pre_get_posts', 'all_my_pregets' );
 function all_my_pregets( $query ) {
     if ( !is_admin() && $query->is_main_query() ) {
         $query->set( 'posts_per_page', -1 );
-        $query->set('order', 'ASC');
-        $query->set('orderby', 'menu_order');
+        $query->set( 'order', 'ASC' );
+        $query->set( 'orderby', 'menu_order' );
 
+        if ( is_tag() ) {
+            $query->set( 'order', 'DESC' );
+            $query->set( 'orderby', array( 'type' => 'DESC', 'title' => 'ASC' ) );
+        }
     }
     return $query;
 }
@@ -316,4 +320,8 @@ function wp_get_attachment( $attachment_id ) {
         'src' => $attachment->guid,
         'title' => $attachment->post_title
     );
+}
+
+function addScheme($url, $scheme = 'http://') {
+    return parse_url($url, PHP_URL_SCHEME) === null ? $scheme . $url : $url;
 }

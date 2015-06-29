@@ -238,7 +238,7 @@ msgstr "Vimpainalue"
 msgid "Social Links Menu"
 msgstr "Some-valikko"
 
-#. #-#-#-#-#  twentyfifteen.pot (Twenty Fifteen 1.1)  #-#-#-#-#
+#. #-#-#-#-#  twentyfifteen.pot (Twenty Fifteen 1.2)  #-#-#-#-#
 #. Author URI of the plugin/theme
 #: footer.php:25
 msgid "https://wordpress.org/"

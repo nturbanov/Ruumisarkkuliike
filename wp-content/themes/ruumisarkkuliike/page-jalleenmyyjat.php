@@ -47,7 +47,7 @@ get_header(); ?>
                         <h4><?php echo $location['nimi']; ?></h4>
                         <div class="address"><?php echo $location['address']; ?></div>
                         <div class="puhnro"><?php echo $location['puhnro']; ?></div>
-                        <a href="<?php echo $location['nettisivut']; ?>"><?php echo $location['nettisivut']; ?></a>
+                        <a target="_blank" href="<?php echo addScheme( $location['nettisivut'] ); ?>"><?php echo $location['nettisivut']; ?></a>
                     </div>
 
                 <?php endforeach; ?>
