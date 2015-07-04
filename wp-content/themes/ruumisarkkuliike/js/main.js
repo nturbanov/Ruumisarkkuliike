@@ -84,7 +84,7 @@ function add_marker( $marker, map ) {
         map: map,
         draggable: false,
         shadow: false,
-        content: '<span style="font-size: 30px; background: transparent; box-shadow: none;" class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>'
+        content: '<span style="font-size: 25px; background: transparent; box-shadow: none;" class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>'
     });
 
 
@@ -325,6 +325,25 @@ jQuery(document).ready(function ($) {
 
     $('.share-button > span').on('click', function() {
         $(this).hide().siblings('.soc').show();
+    });
+
+    $('.mobile select').change(function() {
+
+        val = $(this).val();
+
+        $('.lahimmat-jalleenmyyjat').empty();
+
+        $.each(distributors, function( index, dist ) {
+
+            if ( dist.city && dist.city.indexOf(val) > -1 ) {
+
+                var distHTML = '<div><h2>' + dist.name + '</h2><div>' + dist.address + '</div><div>' + dist.phone + '</div><a target="_blank" href="' + dist.websiteHREF + '">' + dist.website + '</a></div>'
+
+                $('.lahimmat-jalleenmyyjat').append(distHTML);
+            }
+
+        });
+
     });
 
 }); // jQuery(document).ready

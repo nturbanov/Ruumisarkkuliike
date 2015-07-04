@@ -2335,8 +2335,8 @@ hr {
 }
 
 /* line 11, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .suunnittelijan-sarjat article, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .muut article, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .kaikki-sarjat article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .kategoria-nosto .wrapper .left, .kategoria-nosto .wrapper .right, .col-md-6, .share > *, .single:not(.single-suunnittelijat) .entry-meta > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, body:not(.home) #primary #main.only-one article, .post-type-desc,
-.taxonomy-description, .suunnittelijan-sarjat h3, body.single #primary article, body.page article.page, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .suunnittelijan-sarjat article, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .muut article, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .kaikki-sarjat article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .kategoria-nosto .wrapper .left, .kategoria-nosto .wrapper .right, .col-md-6, .share > *, .page-jalleenmyyjat .form-container, .map-container, .single:not(.single-suunnittelijat) .entry-meta > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, body:not(.home) #primary #main.only-one article, .post-type-desc,
+.taxonomy-description, .suunnittelijan-sarjat h3, body.single #primary article, body.page article.page, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, body.page.page-jalleenmyyjat article.page, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 5px;
@@ -2866,8 +2866,8 @@ hr {
 }
 @media (min-width: 999px) {
   /* line 27, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-1, .col-md-2, .suunnittelijan-sarjat article, .col-md-3, .muut article, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .kaikki-sarjat article, .col-md-5, .col-md-6, .share > *, .single:not(.single-suunnittelijat) .entry-meta > div, .col-md-7, .col-md-8, body:not(.home) #primary #main.only-one article, .post-type-desc,
-  .taxonomy-description, .suunnittelijan-sarjat h3, body.single #primary article, body.page article.page, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .suunnittelijan-sarjat article, .col-md-3, .muut article, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .kaikki-sarjat article, .col-md-5, .col-md-6, .share > *, .page-jalleenmyyjat .form-container, .map-container, .single:not(.single-suunnittelijat) .entry-meta > div, .col-md-7, .col-md-8, body:not(.home) #primary #main.only-one article, .post-type-desc,
+  .taxonomy-description, .suunnittelijan-sarjat h3, body.single #primary article, body.page article.page, .col-md-9, .col-md-10, .col-md-11, .col-md-12, body.page.page-jalleenmyyjat article.page {
     float: left;
   }
 
@@ -2897,7 +2897,7 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-6, .share > *, .single:not(.single-suunnittelijat) .entry-meta > div {
+  .col-md-6, .share > *, .page-jalleenmyyjat .form-container, .map-container, .single:not(.single-suunnittelijat) .entry-meta > div {
     width: 50%;
   }
 
@@ -2928,7 +2928,7 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-12 {
+  .col-md-12, body.page.page-jalleenmyyjat article.page {
     width: 100%;
   }
 
@@ -3063,7 +3063,7 @@ hr {
   }
 
   /* line 60, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-offset-0 {
+  .col-md-offset-0, body.page.page-jalleenmyyjat article.page {
     margin-left: 0%;
   }
 
@@ -4986,6 +4986,307 @@ input[type="button"].btn-block {
   margin-left: -1px;
 }
 
+@-ms-viewport {
+  width: device-width;
+}
+/* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+.visible-xs, .page-jalleenmyyjat .form-container form.mobile {
+  display: none !important;
+}
+
+/* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+.visible-sm, .page-jalleenmyyjat .form-container form.mobile {
+  display: none !important;
+}
+
+/* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+.visible-md {
+  display: none !important;
+}
+
+/* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+.visible-lg {
+  display: none !important;
+}
+
+/* line 34, sass/vendor/bootstrap/_responsive-utilities.scss */
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  /* line 7, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  .visible-xs, .page-jalleenmyyjat .form-container form.mobile {
+    display: block !important;
+  }
+
+  /* line 10, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  table.visible-xs {
+    display: table;
+  }
+
+  /* line 11, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  tr.visible-xs {
+    display: table-row !important;
+  }
+
+  /* line 12, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  th.visible-xs,
+  td.visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (max-width: 767px) {
+  /* line 52, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-xs-block {
+    display: block !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 57, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-xs-inline {
+    display: inline !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 62, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-xs-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 998px) {
+  /* line 7, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  .visible-sm, .page-jalleenmyyjat .form-container form.mobile {
+    display: block !important;
+  }
+
+  /* line 10, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  table.visible-sm {
+    display: table;
+  }
+
+  /* line 11, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  tr.visible-sm {
+    display: table-row !important;
+  }
+
+  /* line 12, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  th.visible-sm,
+  td.visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 998px) {
+  /* line 71, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-sm-block {
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 998px) {
+  /* line 76, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-sm-inline {
+    display: inline !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 998px) {
+  /* line 81, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-sm-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: 999px) and (max-width: 1199px) {
+  /* line 7, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  .visible-md {
+    display: block !important;
+  }
+
+  /* line 10, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  table.visible-md {
+    display: table;
+  }
+
+  /* line 11, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  tr.visible-md {
+    display: table-row !important;
+  }
+
+  /* line 12, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  th.visible-md,
+  td.visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 999px) and (max-width: 1199px) {
+  /* line 90, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-md-block {
+    display: block !important;
+  }
+}
+
+@media (min-width: 999px) and (max-width: 1199px) {
+  /* line 95, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-md-inline {
+    display: inline !important;
+  }
+}
+
+@media (min-width: 999px) and (max-width: 1199px) {
+  /* line 100, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-md-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 7, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  .visible-lg {
+    display: block !important;
+  }
+
+  /* line 10, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  table.visible-lg {
+    display: table;
+  }
+
+  /* line 11, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  tr.visible-lg {
+    display: table-row !important;
+  }
+
+  /* line 12, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  th.visible-lg,
+  td.visible-lg {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 109, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-lg-block {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 114, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-lg-inline {
+    display: inline !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 119, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-lg-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  .hidden-xs, .page-jalleenmyyjat .form-container form {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 998px) {
+  /* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  .hidden-sm, .page-jalleenmyyjat .form-container form {
+    display: none !important;
+  }
+}
+@media (min-width: 999px) and (max-width: 1199px) {
+  /* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  .hidden-lg {
+    display: none !important;
+  }
+}
+/* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+.visible-print {
+  display: none !important;
+}
+
+@media print {
+  /* line 7, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  .visible-print {
+    display: block !important;
+  }
+
+  /* line 10, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  table.visible-print {
+    display: table;
+  }
+
+  /* line 11, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  tr.visible-print {
+    display: table-row !important;
+  }
+
+  /* line 12, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  th.visible-print,
+  td.visible-print {
+    display: table-cell !important;
+  }
+}
+/* line 153, sass/vendor/bootstrap/_responsive-utilities.scss */
+.visible-print-block {
+  display: none !important;
+}
+@media print {
+  /* line 153, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-print-block {
+    display: block !important;
+  }
+}
+
+/* line 160, sass/vendor/bootstrap/_responsive-utilities.scss */
+.visible-print-inline {
+  display: none !important;
+}
+@media print {
+  /* line 160, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-print-inline {
+    display: inline !important;
+  }
+}
+
+/* line 167, sass/vendor/bootstrap/_responsive-utilities.scss */
+.visible-print-inline-block {
+  display: none !important;
+}
+@media print {
+  /* line 167, sass/vendor/bootstrap/_responsive-utilities.scss */
+  .visible-print-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media print {
+  /* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
+  .hidden-print {
+    display: none !important;
+  }
+}
 /**
  * Burger parts
  *
@@ -6198,28 +6499,40 @@ body.single .related-product a img {
 }
 
 /* line 3, sass/partials/_jalleenmyyjat.scss */
-.page-jalleenmyyjat form {
+.page-jalleenmyyjat .entry-title {
+  margin-bottom: 40px;
+}
+/* line 7, sass/partials/_jalleenmyyjat.scss */
+.page-jalleenmyyjat .form-container {
+  margin-bottom: 60px;
+}
+/* line 10, sass/partials/_jalleenmyyjat.scss */
+.page-jalleenmyyjat .form-container form {
   margin-bottom: 2em;
 }
 
-/* line 9, sass/partials/_jalleenmyyjat.scss */
-.acf-map {
+/* line 23, sass/partials/_jalleenmyyjat.scss */
+.map-container {
+  margin-bottom: 60px;
+}
+/* line 27, sass/partials/_jalleenmyyjat.scss */
+.map-container .acf-map {
   width: 100%;
-  height: 400px;
+  height: 600px;
   border: #ccc solid 1px;
-  margin: 20px 0;
+  margin: 0;
 }
 
 /* line 1, sass/partials/_page.scss */
 body.page {
   background: #faf8f5;
 }
-/* line 9, sass/partials/_page.scss */
+/* line 14, sass/partials/_page.scss */
 body.page .entry-header {
   color: #3d434e;
 }
 
-/* line 14, sass/partials/_page.scss */
+/* line 19, sass/partials/_page.scss */
 .page-sarjat article.page {
   border-bottom: 1px solid;
 }
@@ -6274,18 +6587,23 @@ body.single-suunnittelijat .entry-title {
   margin-bottom: 2em;
 }
 
-/* line 78, sass/style.scss */
+/* line 1, sass/partials/_typeahead.scss */
 .twitter-typeahead {
   width: 100%;
 }
+/* line 8, sass/partials/_typeahead.scss */
+.twitter-typeahead .form-control {
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+}
 
-/* line 82, sass/style.scss */
+/* line 19, sass/partials/_typeahead.scss */
 .twitter-typeahead .tt-query,
 .twitter-typeahead .tt-hint {
   margin-bottom: 0;
 }
 
-/* line 86, sass/style.scss */
+/* line 23, sass/partials/_typeahead.scss */
 .tt-dropdown-menu {
   min-width: 160px;
   margin-top: 2px;
@@ -6308,20 +6626,20 @@ body.single-suunnittelijat .entry-title {
   position: static;
 }
 
-/* line 108, sass/style.scss */
+/* line 45, sass/partials/_typeahead.scss */
 .tt-suggestion {
   display: block;
   padding: 3px 20px;
 }
 
-/* line 113, sass/style.scss */
+/* line 50, sass/partials/_typeahead.scss */
 .tt-suggestion:hover {
   cursor: pointer;
   color: #fff;
   background-color: #555e6d;
 }
 
-/* line 120, sass/style.scss */
+/* line 57, sass/partials/_typeahead.scss */
 .tt-suggestion.tt-is-under-cursor {
   color: #fff;
   cursor: pointer;
@@ -6335,12 +6653,12 @@ body.single-suunnittelijat .entry-title {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
 
-/* line 133, sass/style.scss */
+/* line 70, sass/partials/_typeahead.scss */
 .tt-suggestion.tt-is-under-cursor a {
   color: #fff;
 }
 
-/* line 137, sass/style.scss */
+/* line 74, sass/partials/_typeahead.scss */
 .tt-suggestion p {
   margin: 0;
 }
