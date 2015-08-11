@@ -35,6 +35,7 @@ get_header(); ?>
                 $locations[$n] = get_field('osoite', $jalleenmyyja->ID);
                 $locations[$n]['nimi'] = $jalleenmyyja->post_title;
                 $locations[$n]['puhnro'] = get_field('puhelinnumero', $jalleenmyyja->ID);
+                $locations[$n]['sahkoposti'] = get_field('sahkoposti', $jalleenmyyja->ID);
                 $locations[$n]['nettisivut'] = get_field('nettisivujen_osoite', $jalleenmyyja->ID);
                 $n++;
             }
@@ -44,10 +45,13 @@ get_header(); ?>
                     <?php foreach ( $locations as $location ) : ?>
 
                         <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
-                            <h4><?php echo $location['nimi']; ?></h4>
-                            <div class="address"><?php echo $location['address']; ?></div>
-                            <div class="puhnro"><?php echo $location['puhnro']; ?></div>
-                            <a target="_blank" href="<?php echo addScheme( $location['nettisivut'] ); ?>"><?php echo $location['nettisivut']; ?></a>
+                            <div class="vcard">
+                                <h3><?php echo $location['nimi']; ?></h3>
+                                <div class="address"><?php echo $location['address']; ?></div>
+                                <div><a class="phone" href="tel:<?php echo $location['puhnro']; ?>"><?php echo $location['puhnro']; ?></a></div>
+                                <div><a class="email" href="mailto:<?php echo $location['sahkoposti']; ?>"><?php echo $location['sahkoposti']; ?></a></div>
+                                <div class="website"><a target="_blank" href="<?php echo addScheme( $location['nettisivut'] ); ?>"><?php echo $location['nettisivut']; ?></a></div>
+                            </div>
                         </div>
 
                     <?php endforeach; ?>

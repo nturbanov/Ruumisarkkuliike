@@ -21,6 +21,10 @@
         }
     }
 
+    .dist {
+        margin-bottom: 12px;
+    }
+
     > div {
         display: none;
         transition: all 0.3s ease-in-out;
@@ -40,15 +44,15 @@
             font-size: 16px;
         }
 
-        a {
-            color: $dark;
-            display: inline-block;
-            padding: 1em 0 0;
-        }
-
         .vcard {
             padding-bottom: 2em;
             border-bottom: 1px solid rgba($dark, 0.1);
+
+            > a {
+                color: $dark;
+                display: inline-block;
+                padding: 1em 0 0;
+            }
         }
 
         .loader {
@@ -96,6 +100,7 @@
 
 		h2 {
 			margin-top: 0;
+            line-height: 1.1;
 		}
 	}
 }

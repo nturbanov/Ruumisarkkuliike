@@ -245,7 +245,9 @@ jQuery(document).ready(function ($) {
             distributor_url = 'http://' + closestDistributor.website;
         }
 
-        $newDistributor = $( '<div class="vcard"><div>' + closestDistributor.name + '</div><div>' + closestDistributor.address + '</div><div>' + closestDistributor.phone + '</div><a target="_blank" href="' + distributor_url + '">' + closestDistributor.website + '</a></div>' );
+        $newDistributor = $( '<div class="vcard"><div class="name">' + closestDistributor.name + '</div><div class="address">' + closestDistributor.address + '</div><div><a class="phone" href="tel:' + closestDistributor.phone + '">' + closestDistributor.phone + '</a></div><div><a class="email" href="mailto:' + closestDistributor.email + '">' + closestDistributor.email + '</a></div><div class="website"><a target="_blank" href="' + distributor_url + '">' + closestDistributor.website + '</a><div></div>' );
+
+        console.log(closestDistributor);
 
         $('.nearest-dist .dist').html($newDistributor);
 
@@ -291,7 +293,7 @@ jQuery(document).ready(function ($) {
             // console.log(val.value);
             if ( dist.city && dist.city.indexOf(val.value) > -1 ) {
 
-                var distHTML = '<div><h2>' + dist.name + '</h2><div>' + dist.address + '</div><div>' + dist.phone + '</div><a target="_blank" href="' + dist.websiteHREF + '">' + dist.website + '</a></div>'
+                var distHTML = '<div class="vcard"><h2 class="name">' + dist.name + '</h2><div class="address">' + dist.address + '</div><div><a class="phone" href="tel:' + dist.phone + '">' + dist.phone + '</a></div><div><a class="email" href="mailto:' + dist.email + '">' + dist.email + '</a></div><div class="website"><a target="_blank" href="' + dist.websiteHREF + '">' + dist.website + '</a><div></div></div>';
 
                 $('.lahimmat-jalleenmyyjat').append(distHTML);
             }
@@ -337,7 +339,7 @@ jQuery(document).ready(function ($) {
 
             if ( dist.city && dist.city.indexOf(val) > -1 ) {
 
-                var distHTML = '<div><h2>' + dist.name + '</h2><div>' + dist.address + '</div><div>' + dist.phone + '</div><a target="_blank" href="' + dist.websiteHREF + '">' + dist.website + '</a></div>'
+                var distHTML = '<div class="vcard"><h2 class="name">' + dist.name + '</h2><div class="address">' + dist.address + '</div><div><a class="phone" href="tel:' + dist.phone + '">' + dist.phone + '</a></div><div><a class="email" href="mailto:' + dist.email + '">' + dist.email + '</a></div><div class="website"><a target="_blank" href="' + dist.websiteHREF + '">' + dist.website + '</a><div></div></div>';
 
                 $('.lahimmat-jalleenmyyjat').append(distHTML);
             }

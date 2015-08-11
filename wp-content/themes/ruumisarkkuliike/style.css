@@ -5305,24 +5305,24 @@ input[type="button"].btn-block {
  */
 @font-face {
   font-family: "LancelotPro";
-  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?1420215361');
-  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/LancelotPro/2C9BF0_0_0.woff?1420215361') format('woff'), url('fonts/LancelotPro/2C9BF0_0_0.woff2?1420215361') format('woff2'), url('fonts/LancelotPro/2C9BF0_0_0.ttf?1420215361') format('truetype');
+  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?1427626385');
+  src: url('fonts/LancelotPro/2C9BF0_0_0.eot?&1427626385#iefix') format('embedded-opentype'), url('fonts/LancelotPro/2C9BF0_0_0.woff?1427626385') format('woff'), url('fonts/LancelotPro/2C9BF0_0_0.woff2?1427626385') format('woff2'), url('fonts/LancelotPro/2C9BF0_0_0.ttf?1427626385') format('truetype');
 }
 @font-face {
   font-family: "Adagio Serif";
-  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?1420215361');
-  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_2_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_2_0.woff2?1420215361') format('woff2'), url('fonts/AdagioSerif/2C9BF0_2_0.ttf?1420215361') format('truetype');
+  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?1427626384');
+  src: url('fonts/AdagioSerif/2C9BF0_2_0.eot?&1427626384#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_2_0.woff?1427626385') format('woff'), url('fonts/AdagioSerif/2C9BF0_2_0.woff2?1427626385') format('woff2'), url('fonts/AdagioSerif/2C9BF0_2_0.ttf?1427626385') format('truetype');
 }
 @font-face {
   font-family: "Adagio Serif";
-  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?1420215361');
-  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?&1420215361#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1420215361') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.woff2?1420215361') format('woff2'), url('fonts/AdagioSerif/2C9BF0_1_0.ttf?1420215361') format('truetype');
+  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?1427626384');
+  src: url('fonts/AdagioSerif/2C9BF0_1_0.eot?&1427626384#iefix') format('embedded-opentype'), url('fonts/AdagioSerif/2C9BF0_1_0.woff?1427626384') format('woff'), url('fonts/AdagioSerif/2C9BF0_1_0.woff2?1427626384') format('woff2'), url('fonts/AdagioSerif/2C9BF0_1_0.ttf?1427626384') format('truetype');
   font-weight: bold;
 }
 @font-face {
   font-family: "si";
-  src: url('fonts/socicon-1.3/socicon.eot?1400933018');
-  src: url('fonts/socicon-1.3/socicon.eot?&1400933018#iefix') format('embedded-opentype'), url('fonts/socicon-1.3/socicon.woff?1400933018') format('woff'), url('fonts/socicon-1.3/socicon.ttf?1400933018') format('truetype'), url('fonts/socicon-1.3/socicon.svg?1400933018') format('svg');
+  src: url('fonts/socicon-1.3/socicon.eot?1435651341');
+  src: url('fonts/socicon-1.3/socicon.eot?&1435651341#iefix') format('embedded-opentype'), url('fonts/socicon-1.3/socicon.woff?1435651341') format('woff'), url('fonts/socicon-1.3/socicon.ttf?1435651341') format('truetype'), url('fonts/socicon-1.3/socicon.svg?1435651341') format('svg');
   font-weight: normal;
 }
 /**
@@ -6353,6 +6353,10 @@ body:not(.home) #primary {
   margin-left: 6px;
 }
 /* line 24, sass/partials/_lahin-jalleenmyyja.scss */
+.nearest-dist .dist {
+  margin-bottom: 12px;
+}
+/* line 28, sass/partials/_lahin-jalleenmyyja.scss */
 .nearest-dist > div {
   display: none;
   transition: all 0.3s ease-in-out;
@@ -6363,32 +6367,32 @@ body:not(.home) #primary {
   background: #deecef;
   padding: 1em;
 }
-/* line 34, sass/partials/_lahin-jalleenmyyja.scss */
+/* line 38, sass/partials/_lahin-jalleenmyyja.scss */
 .nearest-dist > div.open {
   display: block;
 }
-/* line 38, sass/partials/_lahin-jalleenmyyja.scss */
+/* line 42, sass/partials/_lahin-jalleenmyyja.scss */
 .nearest-dist > div p {
   opacity: 0.4;
   font-size: 16px;
 }
-/* line 43, sass/partials/_lahin-jalleenmyyja.scss */
-.nearest-dist > div a {
-  color: #3d434e;
-  display: inline-block;
-  padding: 1em 0 0;
-}
-/* line 49, sass/partials/_lahin-jalleenmyyja.scss */
+/* line 47, sass/partials/_lahin-jalleenmyyja.scss */
 .nearest-dist > div .vcard {
   padding-bottom: 2em;
   border-bottom: 1px solid rgba(61, 67, 78, 0.1);
 }
-/* line 54, sass/partials/_lahin-jalleenmyyja.scss */
+/* line 51, sass/partials/_lahin-jalleenmyyja.scss */
+.nearest-dist > div .vcard > a {
+  color: #3d434e;
+  display: inline-block;
+  padding: 1em 0 0;
+}
+/* line 58, sass/partials/_lahin-jalleenmyyja.scss */
 .nearest-dist > div .loader {
   top: -5px;
   position: relative;
 }
-/* line 58, sass/partials/_lahin-jalleenmyyja.scss */
+/* line 62, sass/partials/_lahin-jalleenmyyja.scss */
 .nearest-dist > div .loader .glyphicon {
   font-size: 30px;
   display: inline-block;
@@ -6433,29 +6437,30 @@ body:not(.home) #primary {
     width: 70px;
     height: 70px;
   }
-  /* line 79, sass/partials/_lahin-jalleenmyyja.scss */
+  /* line 83, sass/partials/_lahin-jalleenmyyja.scss */
   .nearest-dist > span {
     font-size: 0;
   }
-  /* line 82, sass/partials/_lahin-jalleenmyyja.scss */
+  /* line 86, sass/partials/_lahin-jalleenmyyja.scss */
   .nearest-dist > span .glyphicon {
     top: 14px;
   }
 }
 
-/* line 89, sass/partials/_lahin-jalleenmyyja.scss */
+/* line 93, sass/partials/_lahin-jalleenmyyja.scss */
 .lahimmat-jalleenmyyjat {
   margin-bottom: 2em;
 }
-/* line 92, sass/partials/_lahin-jalleenmyyja.scss */
+/* line 96, sass/partials/_lahin-jalleenmyyja.scss */
 .lahimmat-jalleenmyyjat > div {
   margin-bottom: 1em;
   background: white;
   padding: 1em;
 }
-/* line 97, sass/partials/_lahin-jalleenmyyja.scss */
+/* line 101, sass/partials/_lahin-jalleenmyyja.scss */
 .lahimmat-jalleenmyyjat > div h2 {
   margin-top: 0;
+  line-height: 1.1;
 }
 
 /* line 1, sass/partials/_single.scss */
@@ -6521,6 +6526,10 @@ body.single .related-product a img {
   height: 600px;
   border: #ccc solid 1px;
   margin: 0;
+}
+/* line 34, sass/partials/_jalleenmyyjat.scss */
+.map-container .marker {
+  display: none;
 }
 
 /* line 1, sass/partials/_page.scss */
@@ -6661,6 +6670,20 @@ body.single-suunnittelijat .entry-title {
 /* line 74, sass/partials/_typeahead.scss */
 .tt-suggestion p {
   margin: 0;
+}
+
+/* line 3, sass/partials/_vcard.scss */
+.vcard .name {
+  font-size: 16px;
+  margin-bottom: 0.5em;
+}
+/* line 8, sass/partials/_vcard.scss */
+.vcard .address {
+  margin-bottom: 0.5em;
+}
+/* line 20, sass/partials/_vcard.scss */
+.vcard .website {
+  margin-top: 0.5em;
 }
 
 /*# sourceMappingURL=style.css.map */
