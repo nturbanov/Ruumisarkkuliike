@@ -5407,8 +5407,14 @@ body:not(.home) #primary {
   z-index: 10;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3);
 }
+@media (min-width: 0) and (max-width: 998px) {
+  /* line 9, sass/partials/_header.scss */
+  body:not(.home) #masthead {
+    margin-left: -10px;
+  }
+}
 
-/* line 10, sass/partials/_header.scss */
+/* line 16, sass/partials/_header.scss */
 .site-title {
   line-height: 1;
   margin: 30px 0 0 2rem;
@@ -5417,18 +5423,18 @@ body:not(.home) #primary {
   font-weight: normal;
   text-transform: uppercase;
 }
-/* line 19, sass/partials/_header.scss */
+/* line 25, sass/partials/_header.scss */
 .site-title a {
   color: #3d434e;
   display: inline-block;
   border-bottom: none;
 }
-/* line 23, sass/partials/_header.scss */
+/* line 29, sass/partials/_header.scss */
 .site-title a:hover {
   text-decoration: none;
 }
 @media (min-width: 0) and (max-width: 500px) {
-  /* line 10, sass/partials/_header.scss */
+  /* line 16, sass/partials/_header.scss */
   .site-title {
     font-size: 15px;
     max-width: 170px;
@@ -5437,7 +5443,7 @@ body:not(.home) #primary {
   }
 }
 @media (min-width: 999px) {
-  /* line 36, sass/partials/_header.scss */
+  /* line 42, sass/partials/_header.scss */
   .site-title:after {
     display: inline-block;
     background: url(i/honkanen-siluetti-tumma.png) no-repeat 0 0;
@@ -5451,12 +5457,12 @@ body:not(.home) #primary {
   }
 }
 
-/* line 54, sass/partials/_header.scss */
+/* line 60, sass/partials/_header.scss */
 .home .site-title {
   opacity: 0;
 }
 
-/* line 62, sass/partials/_header.scss */
+/* line 68, sass/partials/_header.scss */
 .site-branding {
   float: left;
   position: relative;
@@ -6661,6 +6667,63 @@ body.single-suunnittelijat .entry-title {
 /* line 74, sass/partials/_typeahead.scss */
 .tt-suggestion p {
   margin: 0;
+}
+
+/* line 1, sass/partials/_carousel.scss */
+.rslides_tabs {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  margin: -40px 0 51px 0;
+  z-index: 100;
+}
+/* line 9, sass/partials/_carousel.scss */
+.rslides_tabs li {
+  display: inline-block;
+}
+/* line 12, sass/partials/_carousel.scss */
+.rslides_tabs li a {
+  display: block;
+  font-size: 0;
+  background: #555e6d;
+  border-radius: 6px;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+}
+/* line 22, sass/partials/_carousel.scss */
+.rslides_tabs li.rslides_here a {
+  background: #deecef;
+}
+
+/* line 29, sass/partials/_carousel.scss */
+.rslides_nav {
+  color: #555e6d;
+  z-index: 100;
+  font-size: 40px;
+  top: 18%;
+  position: absolute;
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+/* line 39, sass/partials/_carousel.scss */
+.rslides_nav.prev {
+  left: 20px;
+}
+/* line 42, sass/partials/_carousel.scss */
+.rslides_nav.next {
+  right: 20px;
+}
+/* line 46, sass/partials/_carousel.scss */
+.rslides_nav:hover {
+  color: #deecef;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  /* line 29, sass/partials/_carousel.scss */
+  .rslides_nav {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
