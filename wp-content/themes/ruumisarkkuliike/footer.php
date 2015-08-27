@@ -48,6 +48,7 @@ foreach ( $jalleenmyyjat as $jalleenmyyja ) {
     $locations[$n]['phone'] = get_field('puhelinnumero', $jalleenmyyja->ID);
     $locations[$n]['website'] = get_field('nettisivujen_osoite', $jalleenmyyja->ID);
     $locations[$n]['city'] = get_field('paikkakunta', $jalleenmyyja->ID);
+    $locations[$n]['email'] = get_field('sahkoposti', $jalleenmyyja->ID);
     $n++;
 }
 
