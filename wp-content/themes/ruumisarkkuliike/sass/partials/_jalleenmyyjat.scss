@@ -1,7 +1,9 @@
-.page-jalleenmyyjat {
+.page-hautaustoimistot {
 
-    .entry-title {
+    .entry-content {
         margin-bottom: 40px;
+        @extend .col-md-offset-2;
+        @extend .col-md-8;
     }
 
     .form-container {

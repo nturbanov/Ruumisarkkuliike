@@ -2335,8 +2335,8 @@ hr {
 }
 
 /* line 11, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .suunnittelijan-sarjat article, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .muut article, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .kaikki-sarjat article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .kategoria-nosto .wrapper .left, .kategoria-nosto .wrapper .right, .col-md-6, .share > *, .page-jalleenmyyjat .form-container, .map-container, .single:not(.single-suunnittelijat) .entry-meta > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, body:not(.home) #primary #main.only-one article, .post-type-desc,
-.taxonomy-description, .suunnittelijan-sarjat h3, body.single #primary article, body.page article.page, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, body.page.page-jalleenmyyjat article.page, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .suunnittelijan-sarjat article, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .muut article, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .kaikki-sarjat article, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .kategoria-nosto .wrapper .left, .kategoria-nosto .wrapper .right, .col-md-6, .share > *, .page-hautaustoimistot .form-container, .map-container, .single:not(.single-suunnittelijat) .entry-meta > div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, body:not(.home) #primary #main.only-one article, .post-type-desc,
+.taxonomy-description, .suunnittelijan-sarjat h3, body.single #primary article, .page-hautaustoimistot .entry-content, body.page article.page, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, body.page.page-hautaustoimistot article.page, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 5px;
@@ -2866,8 +2866,8 @@ hr {
 }
 @media (min-width: 999px) {
   /* line 27, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-1, .col-md-2, .suunnittelijan-sarjat article, .col-md-3, .muut article, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .kaikki-sarjat article, .col-md-5, .col-md-6, .share > *, .page-jalleenmyyjat .form-container, .map-container, .single:not(.single-suunnittelijat) .entry-meta > div, .col-md-7, .col-md-8, body:not(.home) #primary #main.only-one article, .post-type-desc,
-  .taxonomy-description, .suunnittelijan-sarjat h3, body.single #primary article, body.page article.page, .col-md-9, .col-md-10, .col-md-11, .col-md-12, body.page.page-jalleenmyyjat article.page {
+  .col-md-1, .col-md-2, .suunnittelijan-sarjat article, .col-md-3, .muut article, .col-md-4, body:not(.home) #primary #main .archive-wrapper article, .kaikki-sarjat article, .col-md-5, .col-md-6, .share > *, .page-hautaustoimistot .form-container, .map-container, .single:not(.single-suunnittelijat) .entry-meta > div, .col-md-7, .col-md-8, body:not(.home) #primary #main.only-one article, .post-type-desc,
+  .taxonomy-description, .suunnittelijan-sarjat h3, body.single #primary article, .page-hautaustoimistot .entry-content, body.page article.page, .col-md-9, .col-md-10, .col-md-11, .col-md-12, body.page.page-hautaustoimistot article.page {
     float: left;
   }
 
@@ -2897,7 +2897,7 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-6, .share > *, .page-jalleenmyyjat .form-container, .map-container, .single:not(.single-suunnittelijat) .entry-meta > div {
+  .col-md-6, .share > *, .page-hautaustoimistot .form-container, .map-container, .single:not(.single-suunnittelijat) .entry-meta > div {
     width: 50%;
   }
 
@@ -2908,7 +2908,7 @@ hr {
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
   .col-md-8, body:not(.home) #primary #main.only-one article, .post-type-desc,
-  .taxonomy-description, .suunnittelijan-sarjat h3, body.single #primary article, body.page article.page {
+  .taxonomy-description, .suunnittelijan-sarjat h3, body.single #primary article, .page-hautaustoimistot .entry-content, body.page article.page {
     width: 66.66667%;
   }
 
@@ -2928,7 +2928,7 @@ hr {
   }
 
   /* line 35, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-12, body.page.page-jalleenmyyjat article.page {
+  .col-md-12, body.page.page-hautaustoimistot article.page {
     width: 100%;
   }
 
@@ -3063,7 +3063,7 @@ hr {
   }
 
   /* line 60, sass/vendor/bootstrap/mixins/_grid-framework.scss */
-  .col-md-offset-0, body.page.page-jalleenmyyjat article.page {
+  .col-md-offset-0, body.page.page-hautaustoimistot article.page {
     margin-left: 0%;
   }
 
@@ -3074,7 +3074,7 @@ hr {
 
   /* line 60, sass/vendor/bootstrap/mixins/_grid-framework.scss */
   .col-md-offset-2, body:not(.home) #primary #main.only-one article, .post-type-desc,
-  .taxonomy-description, .suunnittelijan-sarjat h3, .suunnittelijan-sarjat article:first-of-type, body.single #primary article, body.page article.page {
+  .taxonomy-description, .suunnittelijan-sarjat h3, .suunnittelijan-sarjat article:first-of-type, body.single #primary article, .page-hautaustoimistot .entry-content, body.page article.page {
     margin-left: 16.66667%;
   }
 
@@ -4990,12 +4990,12 @@ input[type="button"].btn-block {
   width: device-width;
 }
 /* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
-.visible-xs, .page-jalleenmyyjat .form-container form.mobile {
+.visible-xs, .page-hautaustoimistot .form-container form.mobile {
   display: none !important;
 }
 
 /* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
-.visible-sm, .page-jalleenmyyjat .form-container form.mobile {
+.visible-sm, .page-hautaustoimistot .form-container form.mobile {
   display: none !important;
 }
 
@@ -5027,7 +5027,7 @@ input[type="button"].btn-block {
 
 @media (max-width: 767px) {
   /* line 7, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
-  .visible-xs, .page-jalleenmyyjat .form-container form.mobile {
+  .visible-xs, .page-hautaustoimistot .form-container form.mobile {
     display: block !important;
   }
 
@@ -5070,7 +5070,7 @@ input[type="button"].btn-block {
 
 @media (min-width: 768px) and (max-width: 998px) {
   /* line 7, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
-  .visible-sm, .page-jalleenmyyjat .form-container form.mobile {
+  .visible-sm, .page-hautaustoimistot .form-container form.mobile {
     display: block !important;
   }
 
@@ -5199,13 +5199,13 @@ input[type="button"].btn-block {
 
 @media (max-width: 767px) {
   /* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
-  .hidden-xs, .page-jalleenmyyjat .form-container form {
+  .hidden-xs, .page-hautaustoimistot .form-container form {
     display: none !important;
   }
 }
 @media (min-width: 768px) and (max-width: 998px) {
   /* line 18, sass/vendor/bootstrap/mixins/_responsive-visibility.scss */
-  .hidden-sm, .page-jalleenmyyjat .form-container form {
+  .hidden-sm, .page-hautaustoimistot .form-container form {
     display: none !important;
   }
 }
@@ -6510,30 +6510,30 @@ body.single .related-product a img {
 }
 
 /* line 3, sass/partials/_jalleenmyyjat.scss */
-.page-jalleenmyyjat .entry-title {
+.page-hautaustoimistot .entry-content {
   margin-bottom: 40px;
 }
-/* line 7, sass/partials/_jalleenmyyjat.scss */
-.page-jalleenmyyjat .form-container {
+/* line 9, sass/partials/_jalleenmyyjat.scss */
+.page-hautaustoimistot .form-container {
   margin-bottom: 60px;
 }
-/* line 10, sass/partials/_jalleenmyyjat.scss */
-.page-jalleenmyyjat .form-container form {
+/* line 12, sass/partials/_jalleenmyyjat.scss */
+.page-hautaustoimistot .form-container form {
   margin-bottom: 2em;
 }
 
-/* line 23, sass/partials/_jalleenmyyjat.scss */
+/* line 25, sass/partials/_jalleenmyyjat.scss */
 .map-container {
   margin-bottom: 60px;
 }
-/* line 27, sass/partials/_jalleenmyyjat.scss */
+/* line 29, sass/partials/_jalleenmyyjat.scss */
 .map-container .acf-map {
   width: 100%;
   height: 600px;
   border: #ccc solid 1px;
   margin: 0;
 }
-/* line 34, sass/partials/_jalleenmyyjat.scss */
+/* line 36, sass/partials/_jalleenmyyjat.scss */
 .map-container .marker {
   display: none;
 }

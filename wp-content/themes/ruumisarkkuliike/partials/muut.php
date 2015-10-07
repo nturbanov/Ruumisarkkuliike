@@ -3,7 +3,7 @@
     <div class="container">
 
         <?php if ( is_singular( array( 'verhoillut-arkut', 'puuarkut', 'uurnat' ) ) ) : ?>
-            <h2>Saattaisit pitää myös näistä</h2>
+            <h2>Katso myös nämä</h2>
         <?php else : ?>
             <h2>Lisää suunnittelijoita</h2>
         <?php endif; ?>
@@ -14,7 +14,8 @@
 
         $args = array(
             'post_type' => get_post_type(),
-            'posts_per_page' => 4
+            'posts_per_page' => 4,
+            'orderby' => 'rand'
             );
 
         $my_query = new WP_Query( $args );

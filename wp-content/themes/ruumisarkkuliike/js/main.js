@@ -268,7 +268,7 @@ jQuery(document).ready(function ($) {
         $(this).find('> div').toggleClass('open');
     });
 
-    if ( $('.page-jalleenmyyjat').length > 0 ) {
+    if ( $('.page-hautaustoimistot').length > 0 ) {
         geoLocateMe();
         center_map( map );
     }
