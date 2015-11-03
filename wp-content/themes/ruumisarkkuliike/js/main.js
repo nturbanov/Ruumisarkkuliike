@@ -321,8 +321,13 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    $('.menu-toggle').click( function() {
+    $('.menu-toggle').on('click', function() {
         $(this).parent('.main-navigation').toggleClass('is-active');
+        // $('body').css({overflow: 'hidden', height: '100vh', position: 'fixed'});
+    });
+
+    $(document).on('click', '.is-active .sub-menu .has-children', function() {
+        $(this).toggleClass('is-open');
     });
 
     $('.share-button > span').on('click', function() {

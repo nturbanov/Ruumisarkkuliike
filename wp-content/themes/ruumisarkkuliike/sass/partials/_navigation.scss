@@ -8,22 +8,11 @@
         display: block;
         text-decoration: none;
         padding: 0 3rem;
-        line-height: 70px;
+        line-height: $navi-height;
         color: $dark;
         border-bottom: none;
         transition: none;
     }
-
-    // a[href="#"] {
-    //     color: white;
-    //     font-size: 14px;
-    // }
-
-    // li.cpt a {
-    //     font-size: 21px;
-    //     font-weight: bold;
-    //     line-height: 2;
-    // }
 
     .active,
     .active-parent {
@@ -35,11 +24,6 @@
         }
     }
 
-    // li.sarjat,
-    // #menu-item-30 {
-    //     background: $dark;
-    // }
-
     ul {
         list-style: none;
         margin: 0;
@@ -49,7 +33,7 @@
             // box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
             // float: left;
             position: absolute;
-            top: 70px;;
+            top: $navi-height;
             left: -999em;
             z-index: 99999;
             width: 100%;
@@ -161,15 +145,64 @@
             @include burger-to-cross;
         }
 
-        .menu {
+        .menu-paanavigaatio-container {
             display: block;
             position: absolute;
-            background: $dark;
             width: 220px;
             right: -$navi-height;
+            height: calc(100vh - #{$navi-height});
+            overflow-y: scroll;
+
+            .menu {
+                display: block;
+                background: $normal;
+
+                > li > a {
+                   line-height: 3;
+                   opacity: 0.25;
+                }
+
+                .sub-menu {
+
+                    .sub-menu {
+                        display: none;
+                    }
+
+                    .has-children {
+                        > a:after {
+                            content: '›';
+                            position: absolute;
+                            color: white;
+                            right: 20px;
+                            transition: all 0.1s ease-in;
+                            transform: rotate(90deg);
+                        }
+
+                        &.is-open {
+                            > a:after {
+                                transform: rotate(-90deg);
+                            }
+                            .sub-menu {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
 
             li {
                 float: none;
+
+                &:hover,
+                &.active-parent {
+                    background: $normal;
+                    > ul {
+                        background: $normal;
+                    }
+                }
+                &.active {
+                    background: $dark;
+                }
             }
 
             > li > a {
@@ -184,9 +217,17 @@
             .sub-menu {
                 position: static;
                 display: block;
+
+                > li {
+                    > a {
+                        padding-left: 3.5rem;
+                    }
+                    > .sub-menu > li > a {
+                        padding-left: 4rem;
+                    }
+                }
             }
         }
-
     }
 }
 
